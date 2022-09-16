@@ -1,5 +1,5 @@
 
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import  Cadastro  from './pages/advogado/cadastro/index.js';
 
 export default function Index() {
