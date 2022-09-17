@@ -21,7 +21,7 @@ async function sim(){
     try{
         const r = await AdvogadoLogin(email, senha);
         Storage('usuario-logado', r)
-        alert('deu certo')
+
         setTimeout(() => {
             navigate('/consultoria');
         }, 1000);
@@ -30,7 +30,8 @@ async function sim(){
     
     
         catch (err){
-            alert('deu erro')
+           
+            alert('deu erro') 
         }
 }
 
