@@ -9,9 +9,10 @@ server.post('/advogado/login', async (req, resp) => {
         const { email, senha } = req.body;
         const resposta = await LoginAdvogado(email, senha)
         if (!resposta) {
-
+            throw new Error('Email ou senha inválidos!')
+        }
         resp.send(resposta)
-    }}
+    }
     catch (err) {
         resp.status(401).send({
             erro: err.message

@@ -18,7 +18,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 85vh;
+        height: 90vh;
         width: 50vw;
         background-color: #FFFFFF;
         border-radius: 2em;
@@ -39,8 +39,13 @@
                 box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
                 padding:  1em 1em 1em 1em;
                 font-family: 'Open-Sans-SemiBold';
+                
+            }
+            input::placeholder{
+                color: #636364;
             }
             p{
+                
                 font-family: 'Open-Sans-SemiBold';
                 span{
                     color: red;
@@ -51,7 +56,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-around;
-            margin-top: 3em;
+            margin-top: 1em;
 
             .entrar-button{
                 background-color: #0D263E;
@@ -67,13 +72,26 @@
 
         }
         .error{
+            height: 3vh;
             color: red;
             display: flex;
             justify-content: center;
             align-items: center;
             font-family: 'Open-Sans-SemiBold';
+            font-size: .7em;
+            margin-top: 1em;
         }
         
+    }
+    .cadastro-con{
+        font-family: 'Open-Sans-SemiBold';
+        font-size: .7em;
+        margin-top: 1em;
+        a{
+            color: #AD8217;
+            cursor: pointer;
+            
+        }
     }
 
     

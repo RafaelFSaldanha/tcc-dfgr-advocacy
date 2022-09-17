@@ -13,54 +13,65 @@ export default function LoginPage() {
     const [erro, setErro] = useState('');
 
     const navigate = useNavigate();
+    const ref = useRef();
 
+async function entrarClick(){
+    ref.current.continuousStart();
 
-async function sim(){
     try{
+        
         const r = await AdvogadoLogin(email, senha);
         Storage('usuario-logado', r)
 
         setTimeout(() => {
             navigate('/consultoria');
-        }, 1000);
+        }, 3000);
         
         }
     catch (err){
-            
+            ref.current.complete();
             if(err.response.status === 401){
                 setErro(err.response.data.erro);
             } 
         }
 }
+    async function cadastrarClick(){
+        ref.current.continuousStart();
+
+        setTimeout(() => {
+            navigate('/cadastro');
+        }, 3500)
+    }
 
 
 
 
     return(
         <main className='Login-main'>
-            <LoadingBar color='#000000' />
+            <LoadingBar color='#AD8217' ref={ref} />
             <div className='div-bg-main'>
                 <img className='logo' src={logoDourada}/>
                 <div className='div-bg-input'>
                    <div className='input-email'>
                     <p>Email<span> *</span></p>
-                    <input value={email} type='email' onChange={e => setEmail(e.target.value)} />
+                    <input value={email} type='email'placeholder='Insira seu email' onChange={e => setEmail(e.target.value)} />
                     </div>
                     <div className='input-senha'>
                     <p>Senha <span> *</span></p>
-                    <input value={senha} type='password' onChange={e => setSenha(e.target.value)}/>
+                    <input value={senha} type='password' placeholder='*********' onChange={e => setSenha(e.target.value)}/>
                     </div>
-                    <div className='error'>
+                
+                </div>
+                <div className='error'>
                         {erro}
                         </div>
-                </div>
                 <div className='div-bg-button'>
 
-                    <button onClick={sim} className='entrar-button'>Entrar</button>
+                    <button onClick={entrarClick}  className='entrar-button' >Entrar</button>
 
                     
                 </div>
-                <p></p>
+                <p className='cadastro-con'>Não tem uma conta ainda? <a onClick={cadastrarClick} > Cadastre-se </a></p>
             </div>
         </main>
     );
