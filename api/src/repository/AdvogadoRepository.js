@@ -2,16 +2,16 @@ import { con } from "./connection.js";
 
 export async function LoginAdvogado(email, senha){
     const comando = 
-        `Select id_advogado     id
-                ds_email        email,
+        `Select id_advogado    id,
+                nm_advogado    nome
          from   tb_advogado
          where  ds_email    =   ?
          and    ds_senha    =   ?         `
 
     const [linhas] = await con.query(comando, [email, senha]);
     return linhas[0];
-
 }
+
 export async function AgendarConsultoria(consultoria) {
     const comando= `insert into tb_consultoria (id_advogado, id_cliente, ds_atuacao, nm_cliente, dt_consultoria, hr_consultoria, ds_consultoria)
     values (?, ?, ?, ?, ?, ?, ?)`
