@@ -11,26 +11,25 @@ export default function LoginPage() {
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
     const [erro, setErro] = useState('');
-    const [carr, setCarr] = useState(false);
 
     const navigate = useNavigate();
-    const ref = useRef;
 
 
 async function sim(){
     try{
         const r = await AdvogadoLogin(email, senha);
         Storage('usuario-logado', r)
-        alert('deu certo')
+
         setTimeout(() => {
             navigate('/consultoria');
         }, 1000);
         
         }
-    
-    
-        catch (err){
-            alert('deu erro')
+    catch (err){
+            
+            if(err.response.status === 401){
+                setErro(err.response.data.erro);
+            } 
         }
 }
 
