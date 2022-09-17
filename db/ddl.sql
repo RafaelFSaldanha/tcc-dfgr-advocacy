@@ -29,7 +29,6 @@ create table tb_advogado(
         ds_senha 		varchar(30) not null,
         ds_localizacao	varchar(100) not null,
         ds_oab			varchar(8) not null,
-        ds_atuacao		varchar(30) not null,
         nr_telefone		varchar(20) not null,
         foreign key	(id_area) references tb_area_atuacao (id_area)
         
