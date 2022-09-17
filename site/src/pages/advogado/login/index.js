@@ -11,10 +11,8 @@ export default function LoginPage() {
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
     const [erro, setErro] = useState('');
-    const [carr, setCarr] = useState(false);
 
     const navigate = useNavigate();
-    const ref = useRef;
 
 
 async function sim(){
@@ -30,8 +28,7 @@ async function sim(){
     
     
         catch (err){
-           
-            alert('deu erro') 
+            alert('deu erro')
         }
 }
 

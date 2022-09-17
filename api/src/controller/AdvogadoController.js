@@ -10,14 +10,8 @@ server.post('/advogado/login', async (req, resp) => {
         const resposta = await LoginAdvogado(email, senha)
         if (!resposta) {
 
-            resp.status(401).send({
-                erro: 'Credencias Inválidas'
-            })
-
-        }
-
         resp.send(resposta)
-    }
+    }}
     catch (err) {
         resp.status(401).send({
             erro: err.message
