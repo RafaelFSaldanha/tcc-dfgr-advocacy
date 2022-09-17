@@ -16,6 +16,7 @@ export default function LoginPage() {
     const navigate = useNavigate();
     const ref = useRef;
 
+
 async function sim(){
     try{
         const r = await AdvogadoLogin(email, senha);
@@ -60,9 +61,11 @@ async function sim(){
             }
         
     }
+
+
     return(
         <main className='Login-main'>
-            <LoadingBar color='#000000'/>
+            <LoadingBar color='#000000' />
             <div className='div-bg-main'>
                 <img className='logo' src={logoDourada}/>
                 <div className='div-bg-input'>
@@ -74,9 +77,15 @@ async function sim(){
                     <p>Senha <span> *</span></p>
                     <input value={senha} type='password' onChange={e => setSenha(e.target.value)}/>
                     </div>
+                    <div className='error'>
+                        {erro}
+                        </div>
                 </div>
                 <div className='div-bg-button'>
+
                     <button onClick={sim} className='entrar-button'>Entrar</button>
+               <button onClick={Entrar} disabled={carr} className='entrar-button'>Entrar</button>
+
                     
                 </div>
                 <p></p>
