@@ -28,7 +28,9 @@ async function sim(){
     
     
         catch (err){
-            alert('deu erro')
+            if (err.response.status === 401) {
+                setErro(err.response.data.erro)
+            }
         }
 }
 
