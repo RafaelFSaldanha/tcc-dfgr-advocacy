@@ -16,32 +16,10 @@ export default function LoginPage() {
     const navigate = useNavigate();
     const ref = useRef;
 
-    async function Entrar(){
-        ref.current.continuousStart()
-        setCarr(true)
-        try{
-            const r = await AdvogadoLogin(email, senha);
-            Storage('usuario-logado', r)
-            
-            
-            setTimeout(() => {
-                navigate('/');
-            }, 1000);
-            }
-        
-        
-            catch (err){
-                setCarr(false)
-                ref.current.complete()
-                if(err.response.status === 401){
-                    setErro(err.response.data.erro);
-                } 
-            }
-        
-    }
+    
     return(
         <main className='Login-main'>
-            <LoadingBar color='#000000'/>
+            <LoadingBar color='#000000' />
             <div className='div-bg-main'>
                 <img className='logo' src={logoDourada}/>
                 <div className='div-bg-input'>
@@ -53,9 +31,12 @@ export default function LoginPage() {
                     <p>Senha <span> *</span></p>
                     <input value={senha} type='password' onChange={e => setSenha(e.target.value)}/>
                     </div>
+                    <div className='error'>
+                        {erro}
+                        </div>
                 </div>
                 <div className='div-bg-button'>
-                    <button onClick={Entrar} disabled={carr}className='entrar-button'>Entrar</button>
+                    <button onClick={Entrar} disabled={carr} className='entrar-button'>Entrar</button>
                     
                 </div>
                 <p></p>
