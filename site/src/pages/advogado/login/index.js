@@ -16,17 +16,38 @@ export default function LoginPage() {
     const navigate = useNavigate();
     const ref = useRef;
 
+async function sim(){
+    try{
+        const r = await AdvogadoLogin(email, senha);
+        Storage('usuario-logado', r)
+        alert('deu certo')
+        setTimeout(() => {
+            navigate('/');
+        }, 1000);
+        
+        }
+    
+    
+        catch (err){
+            alert('deu erro')
+        }
+}
+
+    
+
     async function Entrar(){
         ref.current.continuousStart()
         setCarr(true)
         try{
             const r = await AdvogadoLogin(email, senha);
             Storage('usuario-logado', r)
+           alert("deu");
             
             
             setTimeout(() => {
                 navigate('/');
             }, 1000);
+            
             }
         
         
@@ -55,7 +76,7 @@ export default function LoginPage() {
                     </div>
                 </div>
                 <div className='div-bg-button'>
-                    <button onClick={Entrar} disabled={carr}className='entrar-button'>Entrar</button>
+                    <button onClick={sim} className='entrar-button'>Entrar</button>
                     
                 </div>
                 <p></p>

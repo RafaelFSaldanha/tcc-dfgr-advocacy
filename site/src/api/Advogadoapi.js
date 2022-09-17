@@ -7,7 +7,7 @@ const api = axios.create({
 export async function AdvogadoLogin(email,senha){
     const r = await api.post('/advogado/login', {
         email: email,
-        password: senha
+        senha: senha
     })
     return r.data
 
