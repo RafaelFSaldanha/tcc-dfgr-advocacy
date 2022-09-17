@@ -28,22 +28,13 @@ async function entrarClick(){
         }, 3000);
         
         }
-<<<<<<< HEAD
+
     catch (err){
             ref.current.complete();
             if(err.response.status === 401){
                 setErro(err.response.data.erro);
             } 
-=======
-    
-    
-        catch (err){
-            if (err.response.status === 401) {
-                setErro(err.response.data.erro)
-            }
->>>>>>> 5251dd1ba714cb2240b44220eb6c48dde893896d
-        }
-}
+
     async function cadastrarClick(){
         ref.current.continuousStart();
 
