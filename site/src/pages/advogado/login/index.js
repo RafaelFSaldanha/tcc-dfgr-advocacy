@@ -1,7 +1,7 @@
 import './index.scss'
 import '../../common/common.scss'
 import logoDourada from '../../../assets/logodourada.svg'
-import logoGoogle from '../../../assets/logogoogle.svg'
+import logoGoogle from '../../../assets/google.svg'
 
 export default function LoginPage() {
     return(
