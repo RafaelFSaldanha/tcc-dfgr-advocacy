@@ -1,3 +1,4 @@
+
 .Login-main{
     height: 100vh;
     background-color: #0D263E;
@@ -9,6 +10,7 @@
         width: 20vw;
         height: 13vh;
         user-select: none;
+        margin-bottom: 1em;
     }
 
     .div-bg-main{
@@ -24,7 +26,9 @@
         .div-bg-input{
             display: flex;
             flex-direction: column;
-
+            justify-content: space-evenly;
+            height: 13em;
+            
             input{
                 width: 35vw;
                 height: 8vh;
@@ -34,6 +38,13 @@
                 border: 2px solid #AD8217;
                 box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
                 padding:  1em 1em 1em 1em;
+                font-family: 'Open-Sans-SemiBold';
+            }
+            p{
+                font-family: 'Open-Sans-SemiBold';
+                span{
+                    color: red;
+                }
             }
         }
         .div-bg-button{
@@ -45,22 +56,14 @@
             .entrar-button{
                 background-color: #0D263E;
                 width: 35vw;
-                height: 6vh;
+                height: 7vh;
                 color: #FFFFFF;
                 border-radius: 3.1em;
                 cursor: pointer;
+                box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+                font-family: 'Open-Sans-SemiBold';
             }
 
-            .google-button{
-                background-color: #FFFFFF;
-                width: 35vw;
-                height: 6vh;
-                color: #000000;
-                border-radius: 3.1em;
-                border: 1px solid #E0E0E0;
-                box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
-                cursor: pointer;
-            }
 
         }
 
