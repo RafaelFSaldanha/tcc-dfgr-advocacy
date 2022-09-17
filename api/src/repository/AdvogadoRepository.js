@@ -2,8 +2,8 @@ import { con } from "./connection.js";
 
 export async function LoginAdvogado(email, senha){
     const comando = 
-        `Select id_advogado    id,
-                nm_advogado    nome
+        `Select ds_email    email,
+                ds_senha    password
          from   tb_advogado
          where  ds_email    =   ?
          and    ds_senha    =   ?         `
