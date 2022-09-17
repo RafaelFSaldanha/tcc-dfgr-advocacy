@@ -23,7 +23,7 @@ async function sim(){
         Storage('usuario-logado', r)
         alert('deu certo')
         setTimeout(() => {
-            navigate('/');
+            navigate('/consultoria');
         }, 1000);
         
         }
@@ -34,33 +34,7 @@ async function sim(){
         }
 }
 
-    
 
-    async function Entrar(){
-        ref.current.continuousStart()
-        setCarr(true)
-        try{
-            const r = await AdvogadoLogin(email, senha);
-            Storage('usuario-logado', r)
-           alert("deu");
-            
-            
-            setTimeout(() => {
-                navigate('/');
-            }, 1000);
-            
-            }
-        
-        
-            catch (err){
-                setCarr(false)
-                ref.current.complete()
-                if(err.response.status === 401){
-                    setErro(err.response.data.erro);
-                } 
-            }
-        
-    }
 
 
     return(
@@ -84,7 +58,6 @@ async function sim(){
                 <div className='div-bg-button'>
 
                     <button onClick={sim} className='entrar-button'>Entrar</button>
-               <button onClick={Entrar} disabled={carr} className='entrar-button'>Entrar</button>
 
                     
                 </div>
