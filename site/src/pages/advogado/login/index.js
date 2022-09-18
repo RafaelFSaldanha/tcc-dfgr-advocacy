@@ -73,7 +73,7 @@ export default function LoginPage() {
 
                     
                 </div>
-                <p className='cadastro-con'>Não tem uma conta ainda? <a onClick={cadastrarClick} > Cadastre-se </a></p>
+                <p className='cadastro-con'>Não tem uma conta ainda? <a href='/advogado/cadastro' > Cadastre-se </a></p>
             </div>
         </main>
     );
