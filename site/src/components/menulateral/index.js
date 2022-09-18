@@ -1,11 +1,22 @@
 import './index.scss'
 import logodourada from '../../assets/images/logodourada.svg'
 import Chat from '../../assets/images/chat.svg'
+import { useNavigate } from 'react-router-dom'
 import Calendar from '../../assets/images/calendar.svg'
 import CalendarPlus from '../../assets/images/calendarplus.svg'
 import Sair from '../../assets/images/sair.svg'
 
 export default function Menulateral(){
+
+    const navigate = useNavigate();
+
+    async function sairClick(){
+
+        setTimeout(() => {
+            navigate('/advogado/login');
+        }, 3500)
+    }
+
     return(
         <nav className="main-menu-lateral">
             <div className='logo'>
@@ -28,7 +39,7 @@ export default function Menulateral(){
             </div>
             <div className='menu-lateral-sair'>
                 <img src={Sair} />
-                <p>Sair</p>
+                <p onClick={sairClick}>Sair</p>
             </div>
         </nav>
     );

@@ -15,7 +15,7 @@ export default function LoginPage() {
     const navigate = useNavigate();
     const ref = useRef();
 
-async function entrarClick(){
+    async function entrarClick(){
     ref.current.continuousStart();
 
     try{
@@ -24,7 +24,7 @@ async function entrarClick(){
         Storage('usuario-logado', r)
 
         setTimeout(() => {
-            navigate('/advogado/consultoria');
+            navigate('/advogado/admin');
         }, 3000);
         
         }
@@ -34,6 +34,8 @@ async function entrarClick(){
             if(err.response.status === 401){
                 setErro(err.response.data.erro);
             } 
+        }
+    }
 
     async function cadastrarClick(){
         ref.current.continuousStart();
@@ -71,10 +73,8 @@ async function entrarClick(){
 
                     
                 </div>
-                <p className='cadastro-con'>Não tem uma conta ainda? <a onClick={cadastrarClick} > Cadastre-se </a></p>
+                <p className='cadastro-con'>Não tem uma conta ainda? <a href='/advogado/cadastro' > Cadastre-se </a></p>
             </div>
         </main>
     );
     }
-}
-}
