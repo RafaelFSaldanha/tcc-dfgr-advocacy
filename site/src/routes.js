@@ -3,6 +3,7 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import  Cadastro  from './pages/advogado/cadastro/index.js';
 import Login from './pages/advogado/login/index.js'
 import Admin from './pages/advogado/admin/index.js';
+import AgendarConsultoria from './pages/advogado/agendar/index.js';
 
 
 export default function Index() {
@@ -12,6 +13,7 @@ export default function Index() {
         <Route path="/advogado/cadastro" element={<Cadastro />} />
         <Route path="/advogado/login" element={<Login />} />
         <Route path="/advogado/admin" element={<Admin />} />
+        <Route path="/advogado/admin/agendarconsultoria" element={<AgendarConsultoria />} />
     </Routes>
     </BrowserRouter>
     )

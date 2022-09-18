@@ -6,6 +6,7 @@
     flex-direction: column;
     justify-content: space-around;
     border-right: #AD8217 3px solid;
+    background-attachment: fixed;
 
     .logo{
         display: flex;
@@ -39,7 +40,7 @@
     
     .menu-lateral-items > div:hover {
         background-color: #0D263E;
-        }
+    }
 
     .menu-lateral-sair{
         display: flex;

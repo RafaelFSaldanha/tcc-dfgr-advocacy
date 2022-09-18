@@ -1,11 +1,11 @@
 import './index.scss';
 import '../../common/common.scss';
-import {useState, useRef} from 'react';
+import {useState, useRef, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom'
 import logoDourada from '../../../assets/images/logodourada.svg'
 import LoadingBar from 'react-top-loading-bar'
 import { AdvogadoLogin } from '../../../api/Advogadoapi';
-import Storage from 'local-storage'
+import storage from 'local-storage'
 
 export default function LoginPage() {
     const [email, setEmail] = useState('')
@@ -15,13 +15,18 @@ export default function LoginPage() {
     const navigate = useNavigate();
     const ref = useRef();
 
+    useEffect(() =>{
+        if(storage('usuario-logado')){
+            navigate('/advogado/admin')
+        }
+    }, [])
     async function entrarClick(){
     ref.current.continuousStart();
 
     try{
         
         const r = await AdvogadoLogin(email, senha);
-        Storage('usuario-logado', r)
+        storage('usuario-logado', r)
 
         setTimeout(() => {
             navigate('/advogado/admin');
@@ -73,7 +78,7 @@ export default function LoginPage() {
 
                     
                 </div>
-                <p className='cadastro-con'>Não tem uma conta ainda? <a href='/advogado/cadastro' > Cadastre-se </a></p>
+                <p className='cadastro-con'>Não tem uma conta ainda? <a onClick={cadastrarClick} > Cadastre-se </a></p>
             </div>
         </main>
     );
