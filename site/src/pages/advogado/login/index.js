@@ -2,7 +2,7 @@ import './index.scss';
 import '../../common/common.scss';
 import {useState, useRef} from 'react';
 import { useNavigate } from 'react-router-dom'
-import logoDourada from '../../../assets/logodourada.svg'
+import logoDourada from '../../../assets/images/logodourada.svg'
 import LoadingBar from 'react-top-loading-bar'
 import { AdvogadoLogin } from '../../../api/Advogadoapi';
 import Storage from 'local-storage'
@@ -24,7 +24,7 @@ async function entrarClick(){
         Storage('usuario-logado', r)
 
         setTimeout(() => {
-            navigate('/consultoria');
+            navigate('/advogado/consultoria');
         }, 3000);
         
         }
@@ -39,7 +39,7 @@ async function entrarClick(){
         ref.current.continuousStart();
 
         setTimeout(() => {
-            navigate('/cadastro');
+            navigate('/advogado/cadastro');
         }, 3500)
     }
 
@@ -75,4 +75,6 @@ async function entrarClick(){
             </div>
         </main>
     );
+    }
+}
 }
