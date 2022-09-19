@@ -36,13 +36,13 @@ create table tb_advogado(
 
 create table tb_consultoria(
 		id_consultoria	int primary key auto_increment,
-        id_advogado		int,
-        id_cliente		int,
-        ds_atuacao		varchar(30),
-        dt_consultoria	date,
-        hr_consultoria	datetime,
-        ds_consultoria	varchar(200),
-        nm_cliente		varchar(50),
+        id_advogado		int not null,
+        id_cliente		int not null,
+        ds_atuacao		varchar(30) not null,
+        dt_consultoria	date not null,
+        hr_consultoria	datetime not null,
+        ds_consultoria	varchar(200) not null,
+        nm_cliente		varchar(50) not null,
         foreign key (id_advogado) references tb_advogado(id_advogado),
         foreign key (id_cliente) references	tb_cliente(id_cliente)
         
