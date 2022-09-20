@@ -38,7 +38,7 @@ export async function ListarAreas() {
             nm_area         as area
           from tb_area_atuacao`
     
-    const [resposta] = await con.query(comando)
+    const [resposta] = await con.query(comando);
 
     return resposta
 }
