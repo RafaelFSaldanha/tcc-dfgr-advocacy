@@ -34,9 +34,9 @@ export async function CadastroAdvogado(advogado){
 }
 export async function ListarAreas() {
     const comando = `
-    Select  id_area     id,
-            nm_area     nome
-    from  tb_area_atuacao`
+    select id_area         as id,
+            nm_area         as area
+          from tb_area_atuacao`
     
     const [resposta] = await con.query(comando)
 

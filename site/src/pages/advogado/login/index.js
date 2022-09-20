@@ -29,7 +29,7 @@ export default function LoginPage() {
         storage('usuario-logado', r)
 
         setTimeout(() => {
-            navigate('/advogado/admin');
+            navigate('/advogado/home');
         }, 3000);
         
         }

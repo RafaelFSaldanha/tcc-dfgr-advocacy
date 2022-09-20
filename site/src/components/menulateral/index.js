@@ -18,7 +18,7 @@ export default function Menulateral(){
     }
     async function agendarClick(){
         
-            navigate('/advogado/admin/agendarconsultoria');
+            navigate('/advogado/agendarconsultoria');
         
     }
 
