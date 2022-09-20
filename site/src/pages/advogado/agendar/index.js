@@ -3,21 +3,21 @@ import Cabecalho from '../../../components/cabecalho/index.js';
 import './index.scss'
 import { useEffect, useState } from 'react'
 import { ListarAreas } from '../../../api/Advogadoapi.js';
-import { Agendar } from '../../../api/Advogadoapi.js';
 
 
 export default function AgendarConsultoria(){
     const [nome, setNome] = useState('')
-    const [idArea, setIdArea] = useState('')
-    const [area, setArea] = useState('')
+    const [idArea, setIdArea] = useState()
+    const [areas, setAreas] = useState([])
     const [data, setData] = useState('')
     const [hora, setHora] = useState('')
     const [desc, setDesc] = useState('')
 
     async function listarAreas(){
         const r = await ListarAreas();
-        setArea(r)
+        setAreas(r)
     }
+
         useEffect(() =>{
             listarAreas();
         }, [])
@@ -32,13 +32,16 @@ export default function AgendarConsultoria(){
                     <div className="conteudo-div-principal">
                         <div>
                             <p>Nome do Cliente</p>
-                            <input value={nome} onChange={e => setNome(e.target.value)}></input>
+                            <input value={nome} onChange={e => setNome(e.target.value)} placeholder="Insira o nome do cliente"></input>
                         </div>
                         <div>
                             <p>Tipo de Consultoria</p>
                             <select value={idArea} onChange={e => setIdArea(e.target.value)}>
                             <option selected disabled hidden> Selecione</option>
+
                                 
+                            {areas.map(item =>
+                            <option value={item.id}> {item.area} </option> )}
                             </select>
                         </div>
                         <div>

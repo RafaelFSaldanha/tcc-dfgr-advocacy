@@ -26,6 +26,6 @@ export async function Agendar(advogado, cliente, area, nome, data, hora, descric
 
 }
 export async function ListarAreas(){
-    const r = await api.get('/advogado/admin/listarareas');
+    const r = await api.get('/advogado/listarareas');
     return r.data
 }
