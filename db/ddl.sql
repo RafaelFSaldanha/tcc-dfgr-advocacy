@@ -23,27 +23,29 @@ create table tb_area_atuacao(
 
 create table tb_advogado(
 		id_advogado		int primary key auto_increment,
-        id_area			int,
         nm_advogado		varchar(50) not null,
-        ds_email		varchar(100) not null,
-        ds_senha 		varchar(30) not null,
         ds_localizacao	varchar(100) not null,
         ds_oab			varchar(8) not null,
+        id_area			int not null,
         nr_telefone		varchar(20) not null,
-        foreign key	(id_area) references tb_area_atuacao (id_area)
+        ds_email		varchar(100) not null,
+        ds_senha 		varchar(30) not null,
+        foreign key	(id_area) references tb_area_atuacao(id_area)
         
 );
 
 create table tb_consultoria(
 		id_consultoria	int primary key auto_increment,
         id_advogado		int not null,
-        id_area         int not null,
+        id_cliente		int not null,
+        id_area			int not null,
         dt_consultoria	date not null,
         hr_consultoria	time not null,
-        ds_consultoria	varchar(500) not null,
+        ds_consultoria	varchar(200) not null,
         nm_cliente		varchar(50) not null,
+        foreign key (id_area) references tb_area_atuacao(id_area),
         foreign key (id_advogado) references tb_advogado(id_advogado),
-        foreign key (id_area) references tb_area_atuacao(id_area)
+        foreign key (id_cliente) references	tb_cliente(id_cliente)
         
 );
 
