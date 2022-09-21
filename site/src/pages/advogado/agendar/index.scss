@@ -72,57 +72,57 @@
             width: 30vw;
         }
 
-        button {
-            color: #090909;
-            padding: 0.5em 1.2em;
-            font-size: 18px;
-            border-radius: 0.5em;
-            background: #e8e8e8;
-            border: 1px solid #e8e8e8;
-            text-transform: uppercase;
-            transition: all .1s;
-            box-shadow: 3px 3px 6px #AD8217,
-                        -3px -3px 6px #AD8217;
-           }
-           
-           button:hover {
-            border: 1px solid #AD8217;
-           }
-           
-           button:active {
-            box-shadow: 2px 2px 6px #c5c5c5,
-                        -2px -2px 6px #c5c5c5;
-           }
-        
-        // button{
-        //     background: transparent;
-        //     color: #ffffff;
-        //     font-weight: 400;
-        //     font-size: 15px;
-        //     font-family: 'Open-Sans-SemiBold';
+        // button {
+        //     color: #090909;
+        //     padding: 0.5em 1.2em;
+        //     font-size: 18px;
+        //     border-radius: 0.5em;
+        //     background: #e8e8e8;
+        //     border: 1px solid #e8e8e8;
         //     text-transform: uppercase;
-        //     padding: 5px 20px;
-        //     border: 2px solid #AD8217;
-        //     border-radius: 32px;
-        //     transform: translate(0);
-        //     overflow: hidden;
-        //     cursor: pointer;
-        // }
-        // button:before{
-        //     content: '';
-        //     position: absolute;
-        //     background: #ffffff;
-        //     width: 8px;
-        //     top: 0;
-        //     bottom: 0;
-        //     left: -32px;
-        //     transform: rotate(-16deg);
-        //     filter: blur(6px);
-        // }
-        // button:hover::before{
-        //     left: calc(100% + 32px);
-        //     transition: 0.75s;
-        // }
+        //     transition: all .1s;
+        //     box-shadow: 3px 3px 6px #AD8217,
+        //                 -3px -3px 6px #AD8217;
+        //    }
+           
+        //    button:hover {
+        //     border: 1px solid #AD8217;
+        //    }
+           
+        //    button:active {
+        //     box-shadow: 2px 2px 6px #c5c5c5,
+        //                 -2px -2px 6px #c5c5c5;
+        //    }
+        
+        button{
+            background: transparent;
+            color: #ffffff;
+            font-weight: 400;
+            font-size: 15px;
+            font-family: 'Open-Sans-SemiBold';
+            text-transform: uppercase;
+            padding: 5px 20px;
+            border: 2px solid #AD8217;
+            border-radius: 32px;
+            transform: translate(0);
+            overflow: hidden;
+            cursor: pointer;
+        }
+        button:before{
+            content: '';
+            position: absolute;
+            background: #ffffff;
+            width: 8px;
+            top: 0;
+            bottom: 0;
+            left: -32px;
+            transform: rotate(-16deg);
+            filter: blur(6px);
+        }
+        button:hover::before{
+            left: calc(100% + 32px);
+            transition: 0.75s;
+        }
      
         
         // button{
