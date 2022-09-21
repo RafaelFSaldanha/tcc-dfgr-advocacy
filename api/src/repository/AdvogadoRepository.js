@@ -24,10 +24,10 @@ export async function AgendarConsultoria(consultoria) {
 }
 
 export async function CadastroAdvogado(advogado){
-    const comando=` insert into tb_advogado(id_area, nm_advogado, ds_email, ds_senha, ds_localizacao, ds_oab, nr_telefone)
+    const comando=` insert into tb_advogado (nm_advogado, ds_localizacao, ds_oab, id_area, nr_telefone, ds_email, ds_senha)
     values (?, ?, ?, ?, ?, ?, ?)`
 
-    const[resposta]= await con.query(comando, [advogado.area, advogado.nome, advogado.email, advogado.senha, advogado.localizacao, advogado.oab, advogado.telefone])
+    const[resposta]= await con.query(comando, [advogado.nome, advogado.localizacao, advogado.oab, advogado.area, advogado.telefone, advogado.email, advogado.senha])
     advogado.id = resposta.insertId;
 
     return advogado;

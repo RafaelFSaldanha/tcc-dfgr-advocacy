@@ -52,6 +52,7 @@
             padding: .5em;
             font-family: 'Open-Sans-SemiBold';
             color: #000000;
+        
         }
         .data-hora{
             width: 30vw;
@@ -97,6 +98,11 @@
             padding: .5em;
             font-family: 'Open-Sans-SemiBold';
             resize: none;
+        }
+        .areas{
+            font-family: 'Open-Sans-SemiBold';
+            font-size: 1.1em;
+            box-shadow: 0 12px 16px 0 rgb(0, 0, 0), 0 17px 50px 0 rgb(0, 0, 0);
         }
     }
     

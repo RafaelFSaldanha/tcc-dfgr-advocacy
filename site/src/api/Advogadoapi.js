@@ -12,6 +12,20 @@ export async function AdvogadoLogin(email,senha){
     return r.data
 
 }
+export async function AdvogadoCadastro(nome, localizacao, oab, area, telefone, email, senha,){
+    const r = await api.post('/advogado/cadastro' , {
+        nome: nome,
+        localizacao: localizacao,
+        oab: oab,
+        area: area,
+        telefone: telefone,
+        email: email,
+        senha: senha
+
+
+    })
+    return r.data
+}
 export async function Agendar(advogado, cliente, area, nome, data, hora, descricao){
     const r = await api.post('/advogado/admin/consultoria', {
         advogado: advogado,

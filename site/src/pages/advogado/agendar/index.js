@@ -41,7 +41,7 @@ export default function AgendarConsultoria(){
 
                                 
                             {areas.map(item =>
-                            <option value={item.id}> {item.area} </option> )}
+                            <option className="areas" value={item.id}> {item.area} </option> )}
                             </select>
                         </div>
                         <div>
