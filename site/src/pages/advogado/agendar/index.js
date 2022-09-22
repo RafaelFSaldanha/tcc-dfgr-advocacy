@@ -2,11 +2,14 @@ import MenuLateral from '../../../components/menulateral/index.js';
 import Cabecalho from '../../../components/cabecalho/index.js';
 import './index.scss'
 import { useEffect, useState } from 'react'
-import { ListarAreas } from '../../../api/Advogadoapi.js';
+import { ListarAreas, Agendar, ListarClientes } from '../../../api/Advogadoapi.js';
+import storage from 'local-storage'
 
 
 export default function AgendarConsultoria(){
-    const [nome, setNome] = useState('')
+    const [idAdmin, setidAdmin] = useState('');
+    const [clientes, setCliente] = useState([])
+    const [idCliente, setIdCliente] = useState('')
     const [idArea, setIdArea] = useState()
     const [areas, setAreas] = useState([])
     const [data, setData] = useState('')
@@ -17,11 +20,30 @@ export default function AgendarConsultoria(){
         const r = await ListarAreas();
         setAreas(r)
     }
+    async function listarClientes() {
+        const r = await ListarClientes();
+        setCliente(r)
+    }
 
         useEffect(() =>{
             listarAreas();
+            listarClientes();
+            const Admin = storage('usuario-logado')
+            setidAdmin(Admin.id)
         }, [])
-    
+        
+        async function salvar() {
+            try {
+                const r = await Agendar(idAdmin, idCliente, idArea, data, hora, desc);
+                alert('Produto cadastrado com sucesso');
+                
+            }
+            catch (err) {
+                alert(err.response.data.erro);
+                
+            }
+        }
+
 
     return(
         <main className="main-agendar">
@@ -32,7 +54,12 @@ export default function AgendarConsultoria(){
                     <div className="conteudo-div-principal">
                         <div>
                             <p>Nome do Cliente</p>
-                            <input value={nome} onChange={e => setNome(e.target.value)} placeholder="Insira o nome do cliente"></input>
+                            <select value={idCliente} onChange={e => setIdCliente(e.target.value)}>
+                            <option selected disabled hidden> asd</option>
+
+                            {clientes.map(item =>
+                            <option className="areas" value={item.id}> {item.cliente} </option> )}
+                            </select>
                         </div>
                         <div>
                             <p>Tipo de Consultoria</p>
@@ -55,7 +82,8 @@ export default function AgendarConsultoria(){
                             <p>Descrição</p>
                             <textarea value={desc} onChange={e => setDesc(e.target.value)} />
                         </div>
-                        <button> Agendar </button>
+                        <button onClick={salvar}> Agendar </button>
+                        <p>{idAdmin}</p>
                     </div>
                     
                 </div>
