@@ -7,7 +7,7 @@ import storage from 'local-storage'
 
 
 export default function AgendarConsultoria(){
-    const [idAdvogado, setidAdvogado] = useState('');
+    const [idAdvogado, setidAdvogado] = useState();
     const [clientes, setCliente] = useState([])
     const [idCliente, setIdCliente] = useState('')
     const [idArea, setIdArea] = useState()

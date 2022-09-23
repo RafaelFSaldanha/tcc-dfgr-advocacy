@@ -11,6 +11,10 @@ server.post('/advogado/login', async (req, resp) => {
         if (!resposta) {
             throw new Error('Email ou senha inválidos!')
         }
+        if(resposta.length < 9)
+        {
+            throw new Error('Senha deve possuir 8 caracteres')
+        }
         resp.send(resposta)
     }
     catch (err) {
@@ -44,6 +48,7 @@ server.post('/advogado/admin/agendar', async (req, resp) => {
         if (!novaconsul.descricao) {
             throw new Error("Insira uma descrição")
         }
+        
     
         else{
         const consultoria = await AgendarConsultoria(novaconsul);
@@ -62,6 +67,8 @@ server.post('/advogado/cadastro', async (req, resp) => {
     try {
         const novoadvo = req.body;
         const advogado = await CadastroAdvogado(novoadvo)
+
+        
 
         resp.send(advogado)
     } catch (err) {
