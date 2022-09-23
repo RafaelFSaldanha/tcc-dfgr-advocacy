@@ -17,7 +17,7 @@ export default function LoginPage() {
 
     useEffect(() =>{
         if(storage('usuario-logado')){
-            navigate('/advogado/admin')
+            navigate('/advogado/home')
         }
     }, [])
     async function entrarClick(){

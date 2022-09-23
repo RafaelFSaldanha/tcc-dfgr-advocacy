@@ -42,7 +42,6 @@ create table tb_consultoria(
         dt_consultoria	date not null,
         hr_consultoria	time not null,
         ds_consultoria	varchar(200) not null,
-        nm_cliente		varchar(50) not null,
         foreign key (id_area) references tb_area_atuacao(id_area),
         foreign key (id_advogado) references tb_advogado(id_advogado),
         foreign key (id_cliente) references	tb_cliente(id_cliente)

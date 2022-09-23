@@ -25,7 +25,7 @@ server.post('/advogado/admin/agendar', async (req, resp) => {
     try {
         const novaconsul = req.body;
 
-        if (novaconsul.idAdvogado==0) {
+        if (novaconsul.idAdvogado == 0) {
             throw new Error("Id admin nulo")
         }
         
