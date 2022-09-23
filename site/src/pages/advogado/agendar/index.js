@@ -35,7 +35,7 @@ export default function AgendarConsultoria(){
         async function salvar() {
             try {
                 const r = await Agendar(idadvogado, idCliente, idArea, data, hora, desc);
-                alert('Produto cadastrado com sucesso');
+                alert('Agendado com sucesso');
                 
             }
             catch (err) {
