@@ -15,7 +15,7 @@ export async function LoginAdvogado(email, senha){
 
 export async function AgendarConsultoria(consultoria) {
     const comando = `insert into tb_consultoria (id_advogado, id_cliente, id_area, dt_consultoria, hr_consultoria, ds_consultoria)
-    values (?, ?, ?, ?, ?, ?)`
+    values (?, ?, ?, ?, ?, ?)` 
 
     const[resposta]= await con.query(comando, [consultoria.idAdvogado, consultoria.idCliente, consultoria.area, consultoria.data, consultoria.hora, consultoria.descricao])
     consultoria.id = resposta.insertId;
