@@ -24,11 +24,32 @@ server.post('/advogado/login', async (req, resp) => {
 server.post('/advogado/admin/agendar', async (req, resp) => {
     try {
         const novaconsul = req.body;
-    
-        
-        const consultoria = await AgendarConsultoria(novaconsul);
 
+        if (novaconsul.idAdvogado==0) {
+            throw new Error("Id admin nulo")
+        }
+        
+        if (!novaconsul.area) {
+            throw new Error("Selecione uma área")
+        }
+        
+        if (!novaconsul.hora ) {
+            throw new Error("Horário inválido")
+        }
+        
+        if (!novaconsul.data) {
+            throw new Error("Data inválida")
+        }
+        
+        if (!novaconsul.descricao) {
+            throw new Error("Insira uma descrição")
+        }
+    
+        else{
+        const consultoria = await AgendarConsultoria(novaconsul);
         resp.send(consultoria)
+        }
+
     }
     catch (err) {
         resp.status(401).send({

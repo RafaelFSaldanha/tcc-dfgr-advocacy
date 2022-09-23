@@ -26,17 +26,19 @@ export async function AdvogadoCadastro(nome, localizacao, oab, area, telefone, e
     })
     return r.data
 }
-export async function Agendar(advogado, cliente, area, nome, data, hora, descricao){
-    const r = await api.post('/advogado/admin/agendar', {
-        advogado: advogado,
-        cliente: cliente,
-        area: area,
-        nome: nome,
-        data: data,
-        hora: hora,
-        descricao: descricao
-    })
-    return r.data
+
+
+    export async function Agendar(idAdvogado, idCliente, area, data, hora, descricao){
+        const r = await api.post('/advogado/admin/agendar', {
+            idAdvogado,
+            idCliente,
+            area,
+            data,
+            hora,
+            descricao
+            
+        })
+        return r.data
 
 }
 export async function ListarAreas(){

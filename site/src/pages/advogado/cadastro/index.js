@@ -64,8 +64,8 @@ export default function CadastroAdvogado(){
                     <input value={oab} type='text' placeholder='Insira o número do seu OAB' onChange={e => setOab(e.target.value)}/>
                     </div>
 
-                    <div>
-                            <p>Tipo de Consultoria</p>
+                    <div className='sla'>
+                            <p className='lado'>Área de atuação<span> *</span></p>
                             <select value={idArea} onChange={e => setIdArea(e.target.value)}>
                             <option selected disabled hidden> Selecione</option>
 
