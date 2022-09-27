@@ -11,10 +11,7 @@ server.post('/advogado/login', async (req, resp) => {
         if (!resposta) {
             throw new Error('Email ou senha inválidos!')
         }
-        if(resposta.length < 9)
-        {
-            throw new Error('Senha deve possuir 8 caracteres')
-        }
+            
         resp.send(resposta)
     }
     catch (err) {

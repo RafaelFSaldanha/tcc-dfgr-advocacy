@@ -18,6 +18,7 @@
     .menu-lateral-items{
         display: flex;
         flex-direction: column;
+        align-items: center;
         justify-content: space-evenly;
         padding-bottom: 6em;
         p{
@@ -36,10 +37,14 @@
         transition: .3s;
         cursor: pointer;
         padding-left: 2em;
+        width: 14em;
+        height: 3em;
     }
     
     .menu-lateral-items > div:hover {
-        background-color: #0d263e;
+        background-color: #dfe6e9;
+        width: 13.1em;
+        border-radius: .5em;
     }
 
     .menu-lateral-sair{
