@@ -71,22 +71,6 @@ create table tb_mensagem(
         foreign key (id_cliente) references	tb_cliente(id_cliente)
 );
 
-
-
-insert into tb_cliente(nm_cliente, ds_email, ds_senha)
-	values('Diego', 'fred', '123');
-    
-insert into tb_area_atuacao(nm_area)
-	values("Familiar");	
-    
-insert into tb_advogado(id_area, nm_advogado, ds_email, ds_senha, ds_localizacao, ds_oab, nr_telefone)
-	values(1, "fred", "fred1", "1234", "SÃo Paulo", "SP123456", "(11)982776312");
-    
 select*from tb_advogado;
-select*from tb_consultoria;
 
-select id_cliente         as id,
-            nm_cliente         as cliente,
-            ds_email          as email
-          from tb_cliente;
-          
+select*from tb_consultoria;
