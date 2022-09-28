@@ -7,6 +7,7 @@ import AgendarConsultoria from './pages/advogado/agendar/index.js';
 import LandingPage from './pages/advogado/landingpage/index.js';
 import LoginUsuario from './pages/cliente/login/index.js';
 import CadastroUsuario from './pages/cliente/cadastro/index.js';
+import ConsultoriasAgendadas from './pages/advogado/agendadas/index.js';
 
 export default function Index() {
     return(
@@ -16,9 +17,8 @@ export default function Index() {
         <Route path="/login/advogado" element={<LoginAdvogado />} />
         <Route path="/advogado/home" element={<Admin />} />
         <Route path="/advogado/agendarconsultoria" element={<AgendarConsultoria />} />
-        
+        <Route path='/advogado/consultoriasagendadas' element={<ConsultoriasAgendadas />} />
         <Route path="/landingpage" element={<LandingPage />} />
-
         <Route path='/cadastro/usuario' element={<CadastroUsuario />} />
         <Route path='/login/usuario' element={<LoginUsuario />} />
     </Routes>
