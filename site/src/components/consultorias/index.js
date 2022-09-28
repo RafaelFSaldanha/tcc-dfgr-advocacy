@@ -30,7 +30,7 @@ export default function Index () {
                     </div>
                 </div>
                 <div className='dado-desc'>
-                    <p> Nome do Cliente </p>
+                    <p> Descrição </p>
                     <div className='dado'>
 
                     </div>

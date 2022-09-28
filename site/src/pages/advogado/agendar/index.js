@@ -39,7 +39,7 @@ export default function AgendarConsultoria(){
                 
             }
             catch (err) {
-                alert(err.message)
+                alert(err.response.data.erro)
                 
             }
         }
@@ -50,7 +50,6 @@ export default function AgendarConsultoria(){
             <MenuLateral />
             <div className='container'>
                 <Cabecalho />
-                <div className='conteudo'>
                     <div className="conteudo-div-principal">
                         <div>
                             <p>Nome do Cliente</p>
@@ -84,8 +83,6 @@ export default function AgendarConsultoria(){
                         </div>
                         <button onClick={salvar}> Agendar </button> 
                     </div>
-                    
-                </div>
             </div>
         </main>
     );
