@@ -4,7 +4,7 @@ import { LoginAdvogado, AgendarConsultoria, CadastroAdvogado } from '../reposito
 
 const server = Router();
 
-server.post('/advogado/login', async (req, resp) => {
+server.post('/login/advogado', async (req, resp) => {
     try {
         const { email, senha } = req.body;
         const resposta = await LoginAdvogado(email, senha)

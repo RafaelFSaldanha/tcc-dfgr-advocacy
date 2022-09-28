@@ -13,7 +13,7 @@ export default function Menulateral(){
 
     async function sairClick(){
         storage.remove('usuario-logado');
-        navigate('/advogado/login');
+        navigate('/login/advogado');
         
     }
     async function agendarClick(){
