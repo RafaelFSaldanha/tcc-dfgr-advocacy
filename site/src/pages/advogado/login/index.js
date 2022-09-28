@@ -46,7 +46,7 @@ export default function LoginPage() {
         ref.current.continuousStart();
 
         setTimeout(() => {
-            navigate('/advogado/cadastro');
+            navigate('/cadastro/advogado');
         }, 3500)
     }
 

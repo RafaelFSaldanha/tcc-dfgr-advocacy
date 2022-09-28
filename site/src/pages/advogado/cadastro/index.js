@@ -22,7 +22,7 @@ export default function CadastroAdvogado(){
 
     const navigate =useNavigate();
     async function voltar(){
-        navigate('/advogado/login');
+        navigate('/login/advogado');
     }
 
     async function listarAreas() {

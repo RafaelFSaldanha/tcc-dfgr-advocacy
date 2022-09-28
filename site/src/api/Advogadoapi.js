@@ -5,7 +5,7 @@ const api = axios.create({
 })
 
 export async function AdvogadoLogin(email,senha){
-    const r = await api.post('/advogado/login', {
+    const r = await api.post('/login/advogado', {
         email: email,
         senha: senha
     })
@@ -13,7 +13,7 @@ export async function AdvogadoLogin(email,senha){
 
 }
 export async function AdvogadoCadastro(nome, localizacao, oab, area, telefone, email, senha,){
-    const r = await api.post('/advogado/cadastro' , {
+    const r = await api.post('/cadastro/advogado' , {
         nome: nome,
         localizacao: localizacao,
         oab: oab,
