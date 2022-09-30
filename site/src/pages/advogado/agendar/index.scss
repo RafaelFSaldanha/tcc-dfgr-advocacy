@@ -102,7 +102,7 @@
             font-family: 'Open-Sans-SemiBold';
             padding: 5px 20px;
             border: 2px solid #AD8217;
-            border-radius: 32px;
+            border-radius: .5em;
             transform: translate(0);
             overflow: hidden;
             cursor: pointer;
@@ -110,7 +110,7 @@
         button:before{
             content: '';
             position: absolute;
-            background: #ffffff;
+            background: #AD8217;
             width: 8px;
             top: 0;
             bottom: 0;
