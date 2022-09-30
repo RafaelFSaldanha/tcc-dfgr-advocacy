@@ -14,6 +14,7 @@ create table tb_admin(
 		id_admin 	int primary key auto_increment,
         ds_email	varchar(100) not null,
         ds_senha 	varchar(30) not null
+        
 );
 
 create table tb_area_atuacao(
@@ -69,3 +70,7 @@ create table tb_mensagem(
         foreign key (id_advogado) references tb_advogado(id_advogado),
         foreign key (id_cliente) references	tb_cliente(id_cliente)
 );
+
+select*from tb_advogado;
+
+select*from tb_consultoria;
