@@ -83,7 +83,7 @@ export default function AgendarConsultoria(){
                             <textarea value={desc} onChange={e => setDesc(e.target.value)} />
                         </div>
                         <button onClick={salvar}> Agendar </button>
-                        <p>{idadvogado}</p>
+                        
                     </div>
                     
                 </div>
