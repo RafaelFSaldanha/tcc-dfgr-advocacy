@@ -5,7 +5,6 @@
     .container{
         display: flex;
         flex-direction: column;
-        flex-grow: 1;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
     .conteudo {
@@ -14,7 +13,11 @@
         align-items: center;
         justify-content: center;
         background-color: #0D263E;
+        width: 82vw;
         flex-grow: 1;
+        border: 0;
+        margin: 0;
+        border-radius: 0;
         
         p{
             font-size: 2em;

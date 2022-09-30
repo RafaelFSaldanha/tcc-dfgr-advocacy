@@ -60,7 +60,7 @@ server.post('/advogado/admin/agendar', async (req, resp) => {
     }
 })
 
-server.post('/advogado/cadastro', async (req, resp) => {
+server.post('/cadastro/advogado', async (req, resp) => {
     try {
         const novoadvo = req.body;
         const advogado = await CadastroAdvogado(novoadvo)
