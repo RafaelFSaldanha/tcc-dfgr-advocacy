@@ -4,6 +4,7 @@ import './index.scss';
 import CardConsultoria from '../../../components/consultorias/index.js'
 
 export default function Index() {
+    
     return (
         <main className='consultorias-agendadas'>
             <MenuLateral />
@@ -11,16 +12,8 @@ export default function Index() {
                 <Cabecalho />
                 <div className='div-conteudos'>
                     <CardConsultoria />
-                    <CardConsultoria />
-                    <CardConsultoria />
-                    <CardConsultoria />
-                    <CardConsultoria />
-                    <CardConsultoria />
-                    <CardConsultoria />                    
-                    <CardConsultoria />
-                    <CardConsultoria />
                 </div>    
             </div>
         </main>
-    )
+    );
 }

@@ -70,7 +70,3 @@ create table tb_mensagem(
         foreign key (id_advogado) references tb_advogado(id_advogado),
         foreign key (id_cliente) references	tb_cliente(id_cliente)
 );
-
-select*from tb_advogado;
-
-select*from tb_consultoria;
