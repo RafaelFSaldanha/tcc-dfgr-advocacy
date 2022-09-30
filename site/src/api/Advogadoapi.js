@@ -50,3 +50,8 @@ export async function ListarClientes(){
     const r = await api.get('/advogado/listarclientes');
     return r.data
 }
+
+export async function ListarConsultorias(id) {
+    const r = await api.get(`/advogado/listarconsultoriasid/${id}`)
+    return r.data
+}

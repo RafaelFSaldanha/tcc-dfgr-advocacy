@@ -5,7 +5,7 @@ export async function ListarAreas() {
     select id_area         as id,
             nm_area         as area
           from tb_area_atuacao`
-    
+
     const [resposta] = await con.query(comando);
 
     return resposta
@@ -44,9 +44,24 @@ export async function ListarClientes() {
             nm_cliente         as cliente,
             ds_email          as email
           from tb_cliente`
-    
-    const [resposta] = await con.query(comando);
+
+    const [resposta] = await con.query(comando,[]);
 
     return resposta
 }
 
+export async function buscarConsultoriaPorId(id) {
+    const comando = `
+    select id_advogado        as advogado,
+        id_consultoria          as id,
+        id_area            as area,
+        id_cliente		  as cliente,
+        dt_consultoria     as dia,
+        hr_consultoria	  as hora
+        from tb_consultoria
+        where id_advogado = ?
+    `
+
+    const [linhas] = await con.query(comando, [id]);
+    return linhas;
+}
