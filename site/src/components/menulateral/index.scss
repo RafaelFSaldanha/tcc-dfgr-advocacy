@@ -1,33 +1,34 @@
 .main-menu-lateral{
     background-color: white;
     height: 100vh;
-    width: 25vw;
+    width: 18vw;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    border-right: #AD8217 0.5px solid;
-    background-attachment: fixed;
+    justify-content: space-evenly;
 
     .logo{
         display: flex;
         flex-direction: column;
         align-items: center;
         img{
-            width: 14em;
+            width: 12em;
             user-select: none;
         }
     }
     .menu-lateral-items{
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
         padding-bottom: 6em;
         p{
             color: #AD8217;
             font-family: 'Open-Sans-SemiBold';
             padding: 1.5em 1em;
+            font-size: .7em;
         }
         img{
-            width: 1.8em;
+            width: 1.5em;
         }
     }
     .menu-lateral-items > div {
@@ -36,10 +37,14 @@
         transition: .3s;
         cursor: pointer;
         padding-left: 2em;
+        width: 14em;
+        height: 3em;
     }
     
     .menu-lateral-items > div:hover {
-        background-color: #0D263E;
+        background-color: #dfe6e9;
+        width: 13.1em;
+        border-radius: .5em;
     }
 
     .menu-lateral-sair{
@@ -49,7 +54,7 @@
         align-items: center;   
 
         img{
-            width: 2.5em;
+            width: 1.8em;
             cursor: pointer;
         }
         p{

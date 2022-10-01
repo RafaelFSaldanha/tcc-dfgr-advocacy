@@ -1,0 +1,93 @@
+.conteudo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background: #0D263E;
+    border: 2px solid #000000;
+    border-radius: 20px;
+    height: 13vh;
+    width: 60vw;
+    margin-top: 5vh;
+
+    .dados {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 10vh;
+        width: 10vw;
+
+        p {
+            font-family: 'Open-Sans-SemiBold';
+            font-size: 1.4vh;
+            color: #e4e4e4;
+        }
+
+        .dado {
+            height: 2.5vh;
+            width: 10vw;
+            background: #FFFFFF;
+            border: 1px solid #AD8217;
+            border-radius: 5px;
+            margin-top: 2vh;
+        }
+
+        .data-hora {
+            display: flex;
+            margin-top: 2vh;
+
+            .data {
+                height: 2.5vh;
+                width: 5vw;
+                background: #FFFFFF;
+                border: 1px solid #AD8217;
+                border-radius: 5px;
+            }
+
+            .hora {
+                height: 2.5vh;
+                width: 4vw;
+                background: #FFFFFF;
+                border: 1px solid #AD8217;
+                border-radius: 5px;
+                margin-left: 1vw;
+            }
+        }
+    }
+
+    .dado-desc {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 10vh;
+        width: 15vw;
+
+        p {
+            font-family: 'Open-Sans-SemiBold';
+            font-size: 1.4vh;
+            color: #e4e4e4;
+        }
+
+        .dado {
+            height: 8vh;
+            width: 15vw;
+            background: #FFFFFF;
+            border: 1px solid #AD8217;
+            border-radius: 5px;
+        }
+    }
+
+    .icones {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 10vh;
+        width: 2vw;
+
+        .icone {
+            height: 2vh;
+            width: 2vh;
+        }
+    }
+}

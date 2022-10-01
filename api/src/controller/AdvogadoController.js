@@ -4,13 +4,14 @@ import { LoginAdvogado, AgendarConsultoria, CadastroAdvogado } from '../reposito
 
 const server = Router();
 
-server.post('/advogado/login', async (req, resp) => {
+server.post('/login/advogado', async (req, resp) => {
     try {
         const { email, senha } = req.body;
         const resposta = await LoginAdvogado(email, senha)
         if (!resposta) {
             throw new Error('Email ou senha inválidos!')
         }
+            
         resp.send(resposta)
     }
     catch (err) {
@@ -25,7 +26,7 @@ server.post('/advogado/admin/agendar', async (req, resp) => {
     try {
         const novaconsul = req.body;
 
-        if (novaconsul.idAdvogado==0) {
+        if (novaconsul.idAdvogado == 0) {
             throw new Error("Id admin nulo")
         }
         
@@ -44,6 +45,7 @@ server.post('/advogado/admin/agendar', async (req, resp) => {
         if (!novaconsul.descricao) {
             throw new Error("Insira uma descrição")
         }
+        
     
         else{
         const consultoria = await AgendarConsultoria(novaconsul);
@@ -58,10 +60,12 @@ server.post('/advogado/admin/agendar', async (req, resp) => {
     }
 })
 
-server.post('/advogado/cadastro', async (req, resp) => {
+server.post('/cadastro/advogado', async (req, resp) => {
     try {
         const novoadvo = req.body;
         const advogado = await CadastroAdvogado(novoadvo)
+
+        
 
         resp.send(advogado)
     } catch (err) {

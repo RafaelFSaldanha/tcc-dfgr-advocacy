@@ -61,6 +61,7 @@
                 margin-left: 0.3em;
                 
             }
+        
 
             .lado{
                 margin-left: 0.3em;
@@ -85,12 +86,22 @@
                 width: 35vw;
                 height: 7vh;
                 color: #FFFFFF;
-                border-radius: 3.1em;
+                border-radius: .4em;
                 cursor: pointer;
                 box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
                 font-family: 'Open-Sans-SemiBold';
             }
             
+        }
+        .sla{
+            select{
+                font-size: .8em;
+                color: #636364;
+
+                option{
+                    text-transform: capitalize;
+                }
+            }
         }
             .entrar-con{
                 font-family: 'Open-Sans-SemiBold';

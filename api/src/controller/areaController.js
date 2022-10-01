@@ -1,4 +1,4 @@
-import { buscarAdvogadoPorId, ListarAreas, ListarClientes } from "../repository/areaRepository.js";
+import { buscarAdvogadoPorId, ListarAreas, ListarClientes, buscarConsultoriaPorId } from "../repository/areaRepository.js";
 
 import { Router } from "express";
 const server = Router();
@@ -46,5 +46,25 @@ server.get('/advogado/listarclientes', async (req, resp) => {
         })
     }
 })
+
+server.get('/advogado/listarconsultoriasid/:id', async (req, resp) => {
+    try {
+        const id = Number(req.params.id);
+        
+        const resposta = await buscarConsultoriaPorId(id)
+        if(!resposta){
+            resp.status(404).send('Nenhuma comanda correspondente foi encontrada')
+        }
+        else {
+            resp.send(resposta)
+        }
+    }
+    catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
 
 export default server;

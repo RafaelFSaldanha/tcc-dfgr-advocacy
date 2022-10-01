@@ -13,11 +13,11 @@ export default function LoginPage() {
     const [erro, setErro] = useState('');
 
     const navigate = useNavigate();
-    const ref = useRef();
+    const ref = useRef(); 
 
     useEffect(() =>{
         if(storage('usuario-logado')){
-            navigate('/advogado/admin')
+            navigate('/advogado/home')
         }
     }, [])
     async function entrarClick(){
@@ -46,7 +46,7 @@ export default function LoginPage() {
         ref.current.continuousStart();
 
         setTimeout(() => {
-            navigate('/advogado/cadastro');
+            navigate('/cadastro/advogado');
         }, 3500)
     }
 

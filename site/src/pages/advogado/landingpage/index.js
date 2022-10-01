@@ -2,10 +2,10 @@ import './index.scss';
 import '../../common/common.scss';
 import logoDourada from '../../../assets/images/logodourada.svg'
 import primeiraImagem from '../../../assets/images/landingpage-img1.png'
+import CardsLandingPage from '../../../components/cards-landingpage';
 
 
 export default function LandingPage() {
-
 
 
     return (
@@ -30,6 +30,8 @@ export default function LandingPage() {
                 </div>
                 <img className='img-1' src={primeiraImagem} />
             </div>
+
+            <CardsLandingPage/>
         </main>
     )
 }

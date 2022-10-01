@@ -7,7 +7,7 @@ import storage from 'local-storage'
 
 
 export default function AgendarConsultoria(){
-    const [idadvogado, setidAdvogado] = useState('');
+    const [idAdvogado, setidAdvogado] = useState();
     const [clientes, setCliente] = useState([])
     const [idCliente, setIdCliente] = useState('')
     const [idArea, setIdArea] = useState()
@@ -34,12 +34,12 @@ export default function AgendarConsultoria(){
         
         async function salvar() {
             try {
-                const r = await Agendar(idadvogado, idCliente, idArea, data, hora, desc);
+                const r = await Agendar(idAdvogado, idCliente, idArea, data, hora, desc);
                 alert('Agendado com sucesso');
                 
             }
             catch (err) {
-                alert(err.message)
+                alert(err.response.data.erro)
                 
             }
         }
@@ -50,12 +50,11 @@ export default function AgendarConsultoria(){
             <MenuLateral />
             <div className='container'>
                 <Cabecalho />
-                <div className='conteudo'>
                     <div className="conteudo-div-principal">
                         <div>
                             <p>Nome do Cliente</p>
                             <select value={idCliente} onChange={e => setIdCliente(e.target.value)}>
-                            <option selected disabled hidden> Selecione</option>
+                            <option> Selecione</option>
 
                             {clientes.map(item =>
                             <option className="areas" value={item.id}> {item.cliente} </option> )}
@@ -82,11 +81,10 @@ export default function AgendarConsultoria(){
                             <p>Descrição</p>
                             <textarea value={desc} onChange={e => setDesc(e.target.value)} />
                         </div>
+                        
                         <button onClick={salvar}> Agendar </button>
                         
                     </div>
-                    
-                </div>
             </div>
         </main>
     );
