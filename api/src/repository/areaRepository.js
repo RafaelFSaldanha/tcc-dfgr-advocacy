@@ -57,7 +57,8 @@ export async function buscarConsultoriaPorId(id) {
         id_area            as area,
         id_cliente		  as cliente,
         dt_consultoria     as dia,
-        hr_consultoria	  as hora
+        hr_consultoria	  as hora,
+        ds_consultoria        as descricao
         from tb_consultoria
         where id_advogado = ?
     `

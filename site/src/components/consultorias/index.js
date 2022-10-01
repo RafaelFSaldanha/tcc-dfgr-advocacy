@@ -9,14 +9,17 @@ export default function Index () {
 
     const [card, setCard] = useState([]);
 
-    async function bagulhos(){
+   
+
+    async function Listar(){
         const Advogado = storage('usuario-logado');
-        setCard(ListarConsultorias(Advogado.id));
-        console.log(card)
+        const r = await ListarConsultorias(Advogado.id);
+        setCard(r)
+        console.log(r)
     }
 
     useEffect(() =>{
-        bagulhos();
+        Listar()
     }, [])
 
 
@@ -28,30 +31,35 @@ export default function Index () {
             <div className='dados'>
                 <p> Tipo de Consultoria </p>
                 <div className='dado'>
-                    
+                {card.map(item =>
+                            <p className="areas" value={item.id}> {item.area} </p> )}
                 </div>
             </div>
             <div className='dados'>
                 <p> Nome do Cliente </p>
                 <div className='dado'>
-
+                {card.map(item =>
+                            <p className="areas" value={item.id}> {item.cliente} </p> )}
                 </div>
             </div>
             <div className='dados'>
                 <p> Data e Hora </p>
                 <div className='data-hora'>
                     <div className='data'>
-
+                    {card.map(item =>
+                            <p className="areas" value={item.id}> {item.dia} </p> )}
                     </div>
                     <div className='hora'>
-
+                    {card.map(item =>
+                            <p className="areas" value={item.id}> {item.hora} </p> )}
                     </div>
                 </div>
             </div>
             <div className='dado-desc'>
                 <p> Descrição </p>
                 <div className='dado'>
-
+                {card.map(item =>
+                            <p className="areas" value={item.id}> {item.descricao} </p> )}
                 </div>
             </div>
             <div className='icones'>
