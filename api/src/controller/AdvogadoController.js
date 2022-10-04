@@ -29,6 +29,10 @@ server.post('/advogado/admin/agendar', async (req, resp) => {
         if (novaconsul.idAdvogado == 0) {
             throw new Error("Id admin nulo")
         }
+
+        if (novaconsul.idCliente == 0) {
+            throw new Error("Selecione um cliente")
+        }
         
         if (!novaconsul.area) {
             throw new Error("Selecione uma área")

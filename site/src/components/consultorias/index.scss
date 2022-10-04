@@ -5,7 +5,7 @@
     justify-content: space-evenly;
     background: #0D263E;
     border: 2px solid #000000;
-    border-radius: 20px;
+    border-radius: 10px;
     height: 13vh;
     width: 60vw;
     margin-top: 5vh;
@@ -25,6 +25,8 @@
 
         .areas{
             color:#000000;
+            display: flex;
+            justify-content: center;
         }
 
         .dado {
@@ -79,6 +81,10 @@
             background: #FFFFFF;
             border: 1px solid #AD8217;
             border-radius: 5px;
+        }
+
+        .areas{
+            color:#000000;
         }
     }
 

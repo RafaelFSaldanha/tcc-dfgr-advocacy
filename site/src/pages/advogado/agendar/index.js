@@ -54,7 +54,7 @@ export default function AgendarConsultoria(){
                         <div>
                             <p>Nome do Cliente</p>
                             <select value={idCliente} onChange={e => setIdCliente(e.target.value)}>
-                            <option> Selecione</option>
+                            <option selected disabled hidden> Selecione</option>
 
                             {clientes.map(item =>
                             <option className="areas" value={item.id}> {item.cliente} </option> )}

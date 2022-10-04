@@ -1,32 +1,47 @@
 import '../../common/common.scss'
 import './index.scss'
 import LogoDourada from '../../../assets/images/logodourada.svg'
-import LogoGoogle from '../../../assets/images/google.svg'
+import { CadastrarCliente } from '../../../api/Advogadoapi'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function Index() {
+    
+    const [nome,setNome] = useState('')
+    const [email,setEmail] = useState('')
+    const [senha,setSenha] = useState('')
+
+    const navigate= useNavigate();
+    
+    async function cadastrar(){
+        try {
+            const r = await CadastrarCliente(nome, email, senha);
+            alert('deu certo')
+        } catch (err) {
+            alert(err.response.data.erro)
+        }
+    }
+    
+    async function navegar(){
+        navigate('/login/usuario')
+    }
+    
+    
     return (
         <main className='tela-cadastro'>
             <div className='div-cadastro'>
                 <img className='logo' src={LogoDourada} alt='logo' />
                 <div className='div-inputs'>
                     <p className='nome-input'> Nome </p>
-                    <input type='text' className='input' placeholder='Insira seu nome'/>
+                    <input value={nome} type='text' className='input' placeholder='Insira seu nome' onChange={e => setNome(e.target.value)}/>
                     <p className='nome-input'> Email </p>
-                    <input type='text' className='input' placeholder='Insira seu email'/>
+                    <input value={email} type='text' className='input' placeholder='Insira seu email' onChange={e => setEmail(e.target.value)}/>
                     <p className='nome-input'> Senha </p> 
-                    <input type='text' className='input' placeholder='****' />
-                    <div className='div-lembrar'>
-                        <input type='checkbox' className='input-check' />
-                        <p className='nome-lembrar'> Lembrar de mim </p>
-                    </div>
-                    <button className='botao-entrar'>
+                    <input value={senha} type='text' className='input' placeholder='****' onChange={e => setSenha(e.target.value)} />
+                    <button onClick={cadastrar} className='botao-entrar'>
                         Entrar
                     </button>
-                    <button className='botao-google'>
-                        <img className='logo-google' src={LogoGoogle} alt='logo google' />
-                        Entrar com Google
-                    </button>
-                    <p className='frase-final'> Já possue uma conta? <span className='span-final'> Entrar </span></p>
+                    <p className='frase-final'> Já possue uma conta? <span onClick={navegar} className='span-final'> Entrar </span></p>
                 </div>
             </div>
         </main>

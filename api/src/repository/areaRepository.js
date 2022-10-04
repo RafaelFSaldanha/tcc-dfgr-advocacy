@@ -53,11 +53,11 @@ export async function ListarClientes() {
 export async function buscarConsultoriaPorId(id) {
     const comando = `
     select id_advogado        as advogado,
-        id_consultoria          as id,
-        id_area            as area,
-        id_cliente		  as cliente,
-        dt_consultoria     as dia,
-        hr_consultoria	  as hora,
+        id_consultoria        as id,
+        id_area               as area,
+        id_cliente		      as cliente,
+        dt_consultoria        as dia,
+        hr_consultoria	      as hora,
         ds_consultoria        as descricao
         from tb_consultoria
         where id_advogado = ?

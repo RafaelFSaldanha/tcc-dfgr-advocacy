@@ -42,6 +42,17 @@
                 outline: none;
             }
 
+            .error{
+                height: 3vh;
+                color: red;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: 'Open-Sans-SemiBold';
+                font-size: .7em;
+                margin-top: 1em;
+            }
+
             .div-lembrar {
                 display: flex;
                 flex-direction: row;
@@ -60,6 +71,8 @@
                     margin-left: 1vw;
                 }
             }
+
+
 
             .botao-entrar {
                 font-family: 'Open-Sans-SemiBold';
@@ -110,6 +123,9 @@
         .span-final {
             color: #AD8217;
             text-decoration: underline;
+        }
+        .span-final:hover {
+            cursor: pointer;
         }
     }
 }
