@@ -31,7 +31,15 @@ export default function LandingPage() {
                 <img className='img-1' src={primeiraImagem} />
             </div>
 
-            <CardsLandingPage/>
+            <section className="section-card">
+                
+                <div className='div-titulo'>
+                    <p className='faixa2-titulo'>Áreas de Atuação</p>
+                </div>
+
+                <CardsLandingPage/>
+            </section>
+            
         </main>
     )
 }

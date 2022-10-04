@@ -73,4 +73,24 @@
             height: 55vh;
         }
     }
+
+    .faixa2-titulo{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: #AD8217;
+        font-size: 60px;
+    }
+    .div-titulo{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+    }
+    .section-card{
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       text-align: center;
+    }
 }
