@@ -56,6 +56,9 @@
                 font-family: 'Open-Sans-SemiBold';
                 width: 40vw;
             }
+            .tagp{
+                margin-top: -10em;
+            }
         }
         
         .button-faixa1 {
@@ -79,7 +82,8 @@
         flex-direction: row;
         align-items: center;
         color: #AD8217;
-        font-size: 60px;
+        font-size: 3em;
+        font-family: 'Open-Sans-SemiBold'
     }
     .div-titulo{
         display: flex;
@@ -93,5 +97,28 @@
        flex-direction: column;
        justify-content: center;
        text-align: center;
+    }
+    .button-faixa2{
+        margin: 3em;
+        font-family: 'Open-Sans-SemiBold';
+        color: #FFFFFF;
+        background-color: #0D263E;
+        padding: 1em 5em;
+        border-radius: 5em;
+        font-size: 15px;
+        cursor: pointer;
+    }
+    hr{
+        background-color: #0D263E;
+        width: 100px;
+        height: 2px;
+        margin-top: -2em ;
+        margin-bottom: 3em;
+    }
+    .div-hr{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
     }
 }

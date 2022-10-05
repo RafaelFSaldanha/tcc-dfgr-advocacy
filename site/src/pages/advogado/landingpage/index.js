@@ -20,11 +20,11 @@ export default function LandingPage() {
                 <div className='div-1'>
                     <h1 className='titulo'> Consultorias </h1>
                     <div className='f-faixa1'>
-                        <p>
+                        <p className="tagp">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
                         </p>
                     </div>
-                    <button className='button-faixa1'> Agende já </button>
+
                 </div>
                 <img className='img-1' src='../../../assets/images/landingpage-img1.png' />
             </div>
@@ -34,8 +34,14 @@ export default function LandingPage() {
                 <div className='div-titulo'>
                     <p className='faixa2-titulo'>Áreas de Atuação</p>
                 </div>
+                <div className="div-hr"> 
+                    <hr/>
+                 </div>
 
                 <CardsLandingPage/>
+                <div>
+                    <button className="button-faixa2">Conhecer todas as Áreas</button>
+                </div>
             </section>
             
         </main>
