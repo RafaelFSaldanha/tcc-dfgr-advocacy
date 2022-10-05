@@ -18,7 +18,7 @@ export default function Index() {
         <Route path="/advogado/home" element={<Admin />} />
         <Route path="/advogado/agendarconsultoria" element={<AgendarConsultoria />} />
         <Route path='/advogado/consultoriasagendadas' element={<ConsultoriasAgendadas />} />
-        <Route path="/landingpage" element={<LandingPage />} />
+        <Route path="/" element={<LandingPage />} />
         <Route path='/cadastro/usuario' element={<CadastroUsuario />} />
         <Route path='/login/usuario' element={<LoginUsuario />} />
     </Routes>

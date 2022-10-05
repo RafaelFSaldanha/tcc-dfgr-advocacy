@@ -73,3 +73,8 @@ export async function ClienteLogin(email,senha){
     })
     return r.data
 }
+
+export async function Deletar(id){
+    const resposta = await api.delete(`/advogado/consultoria/${id}`);
+    return resposta.status
+}

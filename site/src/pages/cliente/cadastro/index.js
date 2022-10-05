@@ -1,6 +1,5 @@
 import '../../common/common.scss'
 import './index.scss'
-import LogoDourada from '../../../assets/images/logodourada.svg'
 import { CadastrarCliente } from '../../../api/Advogadoapi'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -30,7 +29,7 @@ export default function Index() {
     return (
         <main className='tela-cadastro'>
             <div className='div-cadastro'>
-                <img className='logo' src={LogoDourada} alt='logo' />
+                <img className='logo' src='../../../public/assets/images/logodourada.svg' />
                 <div className='div-inputs'>
                     <p className='nome-input'> Nome </p>
                     <input value={nome} type='text' className='input' placeholder='Insira seu nome' onChange={e => setNome(e.target.value)}/>

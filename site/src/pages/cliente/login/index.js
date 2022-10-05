@@ -1,7 +1,5 @@
 import '../../common/common.scss'
 import './index.scss'
-import LogoDourada from '../../../assets/images/logodourada.svg'
-import LogoGoogle from '../../../assets/images/google.svg'
 import { ClienteLogin } from '../../../api/Advogadoapi'
 import { useState, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -45,7 +43,7 @@ export default function Index() {
     return (
         <main className='tela-login'>
             <div className='div-login'>
-                <img className='logo' src={LogoDourada} alt='logo' />
+                <img className='logo' src='../../../public/assets/images/logodourada.svg' alt='logo' />
                 <div className='div-inputs'>
                     <p className='nome-input'> Email </p>
                     <input value={email} type='text' className='input' placeholder='Insira seu email' onChange={e => setEmail(e.target.value)}/>

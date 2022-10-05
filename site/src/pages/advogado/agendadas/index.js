@@ -11,6 +11,14 @@ export default function Index() {
             <div className='div-principal'>
                 <Cabecalho />
                 <div className='div-conteudos'>
+                    
+                    <thead className='thead'>
+                        <th>Área de atuação</th>
+                        <th>Nome do Cliente</th>
+                        <th>Data</th>
+                        <th>Hora</th>
+                        <th>Descrição</th>
+                    </thead>
                     <CardConsultoria />
                 </div>    
             </div>

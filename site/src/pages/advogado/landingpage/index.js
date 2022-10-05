@@ -1,7 +1,5 @@
 import './index.scss';
 import '../../common/common.scss';
-import logoDourada from '../../../assets/images/logodourada.svg'
-import primeiraImagem from '../../../assets/images/landingpage-img1.png'
 import CardsLandingPage from '../../../components/cards-landingpage';
 
 
@@ -11,7 +9,7 @@ export default function LandingPage() {
     return (
         <main className='landingpage'>
             <div className='cabecalho'>
-               <img className='logo' src={logoDourada} />
+               <img className='logo' src='../../../../public/assets/images/logodourada.svg' />
                 <div className='div-links'>
                    <a className='links' href=''> Áreas de Atuação </a>
                    <a className='links' href=''> Sobre Nós </a>
@@ -28,7 +26,7 @@ export default function LandingPage() {
                     </div>
                     <button className='button-faixa1'> Agende já </button>
                 </div>
-                <img className='img-1' src={primeiraImagem} />
+                <img className='img-1' src='../../../public/assets/images/landingpage-img1.png' />
             </div>
 
             <section className="section-card">

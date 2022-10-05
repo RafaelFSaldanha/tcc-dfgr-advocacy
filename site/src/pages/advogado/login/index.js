@@ -2,7 +2,6 @@ import './index.scss';
 import '../../common/common.scss';
 import {useState, useRef, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom'
-import logoDourada from '../../../assets/images/logodourada.svg'
 import LoadingBar from 'react-top-loading-bar'
 import { AdvogadoLogin } from '../../../api/Advogadoapi';
 import storage from 'local-storage'
@@ -57,7 +56,7 @@ export default function LoginPage() {
         <main className='Login-main'>
             <LoadingBar color='#AD8217' ref={ref} />
             <div className='div-bg-main'>
-                <img className='logo' src={logoDourada}/>
+                <img className='logo' src='../../../public/assets/images/logodourada.svg'/>
                 <div className='div-bg-input'>
                    <div className='input-email'>
                     <p>Email<span> *</span></p>

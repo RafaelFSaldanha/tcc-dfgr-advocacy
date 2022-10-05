@@ -1,6 +1,5 @@
 import './index.scss';
 import '../../common/common.scss';
-import logoDourada from '../../../assets/images/logodourada.svg'
 import {useState, useRef, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom'
 import LoadingBar from 'react-top-loading-bar'
@@ -47,7 +46,7 @@ export default function CadastroAdvogado(){
     return(
        <main className='cadastro-advogado'>
         <div className='div-bg-main'>
-               <img className='logo' src={logoDourada} />
+               <img className='logo' src='../../../public/assets/images/logodourada.svg' />
                 <div className='div-bg-input'>
                    <div className='input'>
                     <p>Nome<span> *</span></p>
