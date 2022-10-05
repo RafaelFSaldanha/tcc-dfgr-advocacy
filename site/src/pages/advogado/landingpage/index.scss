@@ -84,7 +84,8 @@
     .div-titulo{
         display: flex;
         flex-direction: row;
-        align-items: center;
+        justify-content: center;
+        padding: 6vh;
 
     }
     .section-card{

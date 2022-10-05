@@ -16,7 +16,19 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-
+        margin-bottom: 5vh;
+        
+        
+        .div{
+            height: 50%;
+            .folha{
+                width: 10em;
+            }
+        }
+        img{
+            width: 7em;
+            margin: .5em;
+        }
         p{
             color: #fff;
             font-family: 'Open-Sans-SemiBold';
