@@ -51,6 +51,7 @@ export default function AgendarConsultoria(){
             <div className='container'>
                 <Cabecalho />
                     <div className="conteudo-div-principal">
+                        <h1> Agendar Consultoria</h1>
                         <div>
                             <p>Nome do Cliente</p>
                             <select value={idCliente} onChange={e => setIdCliente(e.target.value)}>
