@@ -8,7 +8,7 @@ export default function Menulateral(){
 
     async function sairClick(){
         storage.remove('usuario-logado');
-        navigate('/login/advogado');
+        navigate('/advogado/login');
         
     }
     async function agendarClick(){
@@ -26,25 +26,25 @@ export default function Menulateral(){
     return(
         <nav className="main-menu-lateral">
             <div className='logo'>
-                <img src='../../../public/assets/images/logodourada.svg'/>
+                <img src='../../../assets/images/logodourada.svg'/>
             </div>
 
             <div className='menu-lateral-items'>
                 <div >
-                    <img src='../../../public/assets/images/chat.svg'/>
-                    <p> Conversas </p>
+                    <img src='../../../assets/images/chat.svg'/>
+                    <p> Minhas Conversas </p>
                 </div>
                 <div onClick={agendadasClick}>
-                    <img src='../../../public/assets/images/calendar.svg'/>
+                    <img src='../../../assets/images/calendar.svg'/>
                     <p>Consultorias Agendadas</p>
                 </div>
                 <div onClick={agendarClick}>
-                    <img src='../../../public/assets/images/calendarplus.svg' />
+                    <img src='../../../assets/images/calendarplus.svg' />
                     <p>Agendar Consultoria</p>
                 </div>
             </div>
             <div onClick={sairClick} className='menu-lateral-sair'>
-                <img src='../../../public/assets/images/sair.svg' />
+                <img src='../../../assets/images/sair.svg' />
                 <p >Sair</p>
             </div>
         </nav>

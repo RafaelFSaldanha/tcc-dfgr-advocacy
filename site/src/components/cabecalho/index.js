@@ -20,7 +20,7 @@ export default function Cabecalho() {
         <header className='header-main'>
             <div className='main-bem-vindo'>Olá, seja bem-vindo Dr. {usuario} </div>
                 <div className='main-perfil'>
-                    <img src='../../../public/assets/images/perfil.svg'/>
+                    <img src='../../../assets/images/perfil.svg'/>
                 </div>
         </header>
     )

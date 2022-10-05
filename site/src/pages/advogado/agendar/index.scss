@@ -14,13 +14,13 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background-color: #FFFFFF;
+        background-color: #ecf0f1;
         flex-grow: 1;
         
     }
     .conteudo-div-principal{
-        background-color: #0D263E;
-        width: 60vw;
+        background-color: #f1f2f6;
+        width: 70vw;
         height: 80vh;
         border-radius: 2em;
         display: flex;
@@ -35,7 +35,7 @@
         p{
             font-size: 1em;
             font-family: 'Open-Sans-SemiBold';
-            color: #FFFFFF;
+            color: #1e272e;
         }
 
         input{
@@ -97,7 +97,7 @@
         
         button{
             background: transparent;
-            color: #ffffff;
+            color: #1e272e;
             font-weight: 400;
             font-size: 15px;
             font-family: 'Open-Sans-SemiBold';

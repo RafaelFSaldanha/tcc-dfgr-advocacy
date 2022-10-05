@@ -19,9 +19,9 @@ export default function CadastroAdvogado(){
     const [areas, setAreas] = useState([])
     const [idArea, setIdArea] = useState()
 
-    const navigate =useNavigate();
+    const navigate = useNavigate();
     async function voltar(){
-        navigate('/login/advogado');
+        navigate('/advogado/login');
     }
 
     async function listarAreas() {
