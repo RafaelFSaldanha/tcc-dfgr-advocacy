@@ -13,14 +13,14 @@ export default function Index() {
     return(
     <BrowserRouter>
     <Routes>
-        <Route path="/cadastro/advogado" element={<CadastroAdvogado />} />
-        <Route path="/login/advogado" element={<LoginAdvogado />} />
+        <Route path="/advogado/cadastro" element={<CadastroAdvogado />} />
+        <Route path="/advogado/login" element={<LoginAdvogado />} />
         <Route path="/advogado/home" element={<Admin />} />
         <Route path="/advogado/agendarconsultoria" element={<AgendarConsultoria />} />
         <Route path='/advogado/consultoriasagendadas' element={<ConsultoriasAgendadas />} />
         <Route path="/" element={<LandingPage />} />
-        <Route path='/cadastro/usuario' element={<CadastroUsuario />} />
-        <Route path='/login/usuario' element={<LoginUsuario />} />
+        <Route path='/cadastro' element={<CadastroUsuario />} />
+        <Route path='/login' element={<LoginUsuario />} />
     </Routes>
     </BrowserRouter>
     )

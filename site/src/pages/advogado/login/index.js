@@ -56,7 +56,7 @@ export default function LoginPage() {
         <main className='Login-main'>
             <LoadingBar color='#AD8217' ref={ref} />
             <div className='div-bg-main'>
-                <img className='logo' src='../../../public/assets/images/logodourada.svg'/>
+                <img className='logo' src='../../../assets/images/logodourada.svg'/>
                 <div className='div-bg-input'>
                    <div className='input-email'>
                     <p>Email<span> *</span></p>
@@ -74,10 +74,11 @@ export default function LoginPage() {
                 <div className='div-bg-button'>
 
                     <button onClick={entrarClick}  className='entrar-button' >Entrar</button>
+                    <p className='cadastro-con'>Não tem uma conta ainda? <a onClick={cadastrarClick} > Cadastre-se </a></p>
 
                     
                 </div>
-                <p className='cadastro-con'>Não tem uma conta ainda? <a onClick={cadastrarClick} > Cadastre-se </a></p>
+               
             </div>
         </main>
     );
