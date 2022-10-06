@@ -78,3 +78,8 @@ export async function Deletar(id){
     const resposta = await api.delete(`/advogado/consultoria/${id}`);
     return resposta.status
 }
+
+export async function Informaçoes(id) {
+    const r = await api.get(`/advogado/id/${id}`)
+    return r.data
+}

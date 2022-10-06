@@ -25,15 +25,20 @@
         align-items: center;
         justify-content: space-evenly;
         background: #0D263E;
-        border: 2px solid #000000;
         border-radius: 10px;
         height: 9vh;
-        width: 60vw;
+        width: 70vw;
         margin-top: 5vh;
         color: white;
         font-family: 'Open-Sans-SemiBold';
-    }
 
+            .container{
+                width:65vw;
+                display: flex;
+                justify-content: space-around;
+            }
+
+    }
 
     }
 }

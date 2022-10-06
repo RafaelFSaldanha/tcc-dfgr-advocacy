@@ -9,6 +9,8 @@ import LoginUsuario from './pages/cliente/login/index.js';
 import CadastroUsuario from './pages/cliente/cadastro/index.js';
 import ConsultoriasAgendadas from './pages/advogado/agendadas/index.js';
 import SobreNos from './pages/advogado/sobrenos/index.js';
+import Informaçoes from './pages/advogado/detalhe/index.js';
+
 
 export default function Index() {
     return(
@@ -23,6 +25,7 @@ export default function Index() {
         <Route path="/sobrenos" element={< SobreNos/>} />
         <Route path='/cadastro' element={<CadastroUsuario />} />
         <Route path='/login' element={<LoginUsuario />} />
+        <Route path='/advogado/informacoes/:idParam' element={<Informaçoes />} />
     </Routes>
     </BrowserRouter>
     )

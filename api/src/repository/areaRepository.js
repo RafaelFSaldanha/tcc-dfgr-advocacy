@@ -68,3 +68,21 @@ export async function buscarConsultoriaPorId(id) {
     const [linhas] = await con.query(comando, [id]);
     return linhas;
 }
+
+export async function buscarId(id) {
+    const comando = 
+    `select id_consultoria        as id,
+            nm_area                  as area,    
+            nm_cliente              as cliente,
+            dt_consultoria        as dia,
+            hr_consultoria          as hora,
+            ds_consultoria        as descricao
+            from tb_consultoria
+            inner join tb_cliente on tb_cliente.id_cliente = tb_consultoria.id_cliente
+            inner join tb_area_atuacao on tb_area_atuacao.id_area = tb_consultoria.id_area
+            where id_consultoria = ?`
+    
+
+    const [linhas] = await con.query(comando, [id]);
+    return linhas[0];
+}
