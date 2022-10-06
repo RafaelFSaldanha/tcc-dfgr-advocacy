@@ -11,21 +11,21 @@ export default function CardsLandingPage() {
             <div className="div-2">
                 <div className='card-fileira1'>
                     <div className="div">
-                        <img src='../../../assets/images/folinha.png' alt="logo folhinha" />
+                        <img src='../../../assets/images/folinha.png' alt="" />
                     </div>
                     <h2 className="titulo-card">Ambiental</h2>
                     <p>Nossos profissionas tem a competência de entender e defender as leis fundamentais do meio ambiente.</p>
                 </div>
                 <div className='card-fileira1'>
                     <div className="div">
-                        <img src='../../../assets/images/civel.png' alt="logo folhinha" />
+                        <img src='../../../assets/images/civel.png' alt="" />
                     </div>
                     <h2 className="titulo-card">Cível</h2>
                     <p>A DFGR está altamente preparada para defender a sua relação com pessoas, objetos e materiais com os melhores profissionais do mercado.</p>
                 </div>
                 <div className='card-fileira1'>
                     <div className="div">
-                        <img src='../../../assets/images/criminalista.png' alt="logo folhinha" />
+                        <img src='../../../assets/images/criminalista.png' alt="" />
                     </div>
                     <h2 className="titulo-card">Criminalista</h2>
                     <p>Nosso escritório é extremamente especializado em defender as atividades econômicas do fornecimento de bens e serviços de nossos clientes. </p>
