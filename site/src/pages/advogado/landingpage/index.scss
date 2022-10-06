@@ -93,6 +93,7 @@
 
     }
     .section-card{
+       background-color: #F5F5F5;
        display: flex;
        flex-direction: column;
        justify-content: center;
@@ -120,5 +121,65 @@
         align-items: center;
         flex-direction: row;
         justify-content: center;
+    }
+
+
+    .section-sobrenos{
+        display: flex;
+        flex-direction: row;
+    }
+    .column-div{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        max-width: 30em;
+    }
+    .div-img-sobrenos{
+
+    }
+    .img-sobrenos{
+        margin-left: 4em;
+        width: 70em;
+        height: 50em;
+    }
+    .div-titulo-sobrenos{
+        margin-top: 5em;
+        margin-right: 9em;
+        
+    }
+    .titulo-sobrenos{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: #AD8217;
+        font-size: 3em;
+        font-family: 'Open-Sans-SemiBold'
+        
+    }
+    .div-texto-sobrenos{
+        margin-top: 3em;
+        width: 30em;
+    }
+    .texto-sobrenos{
+        padding: 1em;
+        font-family: 'Open-Sans-Light';
+        font-size: 24px;
+   
+    }
+
+    .div-button-sobrenos{
+        margin-top: 9em;
+        margin-right: 3em;
+    }
+
+    .button-sobrenos{
+
+        font-family: 'Open-Sans-SemiBold';
+        color: #FFFFFF;
+        background-color: #0D263E;
+        padding: 1em 3em;
+        border-radius: 3em;
+        font-size: 18px;
+        cursor: pointer;
     }
 }
