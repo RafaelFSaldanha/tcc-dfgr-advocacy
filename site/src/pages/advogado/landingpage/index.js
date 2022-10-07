@@ -10,7 +10,7 @@ export default function LandingPage() {
     return (
         <main className='landingpage'>
             <div className='cabecalho'>
-                <img className='logo' src='../../../../assets/images/logodourada.svg' />
+                <img className='logo' src='/assets/images/logodourada.svg' alt='logo' />
                 <div className='div-links'>
                     <a className='links' href=''> Áreas de Atuação </a>
                     <a className='links' href=''> Sobre Nós </a>
@@ -25,53 +25,42 @@ export default function LandingPage() {
                     <p className="tagp">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
                     </p>
+                    <button className='botao'> Agende já </button>
                 </div>
-                <img className='img-1' src='../../../assets/images/landingpage-img1.png' />
+                <img className='img-1' src='/assets/images/landingpage-img1.png' alt='img1' />
             </div>
 
             <section className="section-card">
 
                 <div className='div-titulo'>
                     <p className='faixa2-titulo'>Áreas de Atuação</p>
-                </div>
-                <div className="div-hr">
                     <hr />
                 </div>
 
                 <div className="div-cards">
                     <CardsLandingPage />
                 </div>
-                <div>
-                    <button className="button-faixa2">Conhecer todas as Áreas</button>
-                </div>
+                <button className="button-faixa2">Conhecer todas as Áreas</button>
             </section>
 
             <section className="section-sobrenos">
                 <div className="div-img-sobrenos">
-                    <img className="img-sobrenos" src="../../../assets/images/sobrenos.svg" alt="" />
+                    <img className="img-sobrenos" src="./assets/images/sobrenos.svg" alt="" />
                 </div>
                 <div className="column-div">
-                    <div className="div-titulo-sobrenos">
-                        <h1 className="titulo-sobrenos">Sobre Nós</h1>
-                    </div>
-                    <div className="div-texto-sobrenos">
-                        <p className="texto-sobrenos">​Fundado em 1982, DFGR Advogados é um escritório brasileiro que pratica a advocacia com visão de negócios e foco em resultados, desenvolvendo soluções customizadas para empresas multinacionais que operam em setores estratégicos da economia.</p>
-                    </div>
-                    <div className="div-button-sobrenos">
-                        <button className="button-sobrenos">Saiba Mais</button>
-                    </div>
+                    <h1 className="titulo-sobrenos">Sobre Nós</h1>
+                    <p className="texto-sobrenos">Fundado em 1982, DFGR Advogados é um escritório brasileiro que pratica a advocacia com visão de negócios e foco em resultados, desenvolvendo soluções customizadas para empresas multinacionais que operam em setores estratégicos da economia.</p>
+                    <button className="button-sobrenos">Saiba Mais</button>
                 </div>
             </section>
 
             <section className="section-associados">
-                <div className="div-titulo-associados">
-                <p className="titulo-associados">Associados</p>
-                </div>
-                <div className="div-hr">
+                <div className='div-titulo'>
+                    <p className='faixa2-titulo'>Associados</p>
                     <hr />
                 </div>
 
-                <div>
+                <div className='div-associados'>
                     <Associados/>
                 </div>
 

@@ -1,45 +1,47 @@
 .div-mae{
     margin: 0;
-    margin-right: 46em;
 
     .div-2{
         display: flex;
-        flex-direction: row;
         justify-content: space-evenly;
-}
+    }
     .card-fileira1{
-        width: 25vh;
-        height: 25vh;
-        padding: 3vh;
-        border-radius: 20px;
-        background-color: #0D263E;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
+        text-align: center;
+        padding: 3vh;
+        width: 20%;
+        height: 40vh;
+        border-radius: 20px;
+        background-color: #0D263E;
         margin-bottom: 5vh;
         
-        
         .div{
-            height: 50%;
-            .folha{
-                width: 10em;
+            height: auto;
+            width: auto;
+
+            .img {
+                width: 70%;
             }
         }
-        img{
-            width: 7em;
-            margin: .5em;
-        }
-        p{
-            color: #fff;
-            font-family: 'Open-Sans-SemiBold';
-            font-size: 12px;
 
-        }
-}
+        .escrita {
+            display: flex;
+            flex-direction: column;
+            height: auto;
     
-    .titulo-card{
-        color: #fff;
-        font-family: 'Open-Sans-SemiBold';
-}
+            .titulo-card{
+                color: #fff;
+                font-family: 'Open-Sans-SemiBold';
+            }
+
+            p{
+                color: #fff;
+                font-family: 'Open-Sans-SemiBold';
+                font-size: 12px;
+            }
+        }
+    }
 }
