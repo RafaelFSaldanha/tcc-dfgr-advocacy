@@ -1,6 +1,7 @@
 import './index.scss';
 import '../../common/common.scss';
 import CardsLandingPage from '../../../components/cards-landingpage';
+import Associados from '../../../components/associados';
 
 
 export default function LandingPage() {
@@ -18,13 +19,12 @@ export default function LandingPage() {
             </div>
             <div className='faixa-1'>
                 <div className='div-1'>
-                    <h1 className='titulo'> Consultorias </h1>
-                    <div className='f-faixa1'>
-                        <p className="tagp">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                        </p>
+                    <div className="div-titulo-f1">
+                        <h1 className='titulo'> Consultorias </h1>
                     </div>
-
+                    <p className="tagp">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                    </p>
                 </div>
                 <img className='img-1' src='../../../assets/images/landingpage-img1.png' />
             </div>
@@ -38,7 +38,9 @@ export default function LandingPage() {
                     <hr />
                 </div>
 
-                <CardsLandingPage />
+                <div className="div-cards">
+                    <CardsLandingPage />
+                </div>
                 <div>
                     <button className="button-faixa2">Conhecer todas as Áreas</button>
                 </div>
@@ -59,9 +61,25 @@ export default function LandingPage() {
                         <button className="button-sobrenos">Saiba Mais</button>
                     </div>
                 </div>
-
-
             </section>
+
+            <section className="section-associados">
+                <div className="div-titulo-associados">
+                <p className="titulo-associados">Associados</p>
+                </div>
+                <div className="div-hr">
+                    <hr />
+                </div>
+
+                <div>
+                    <Associados/>
+                </div>
+
+                <div className="div-button-associados">
+                <button className="button-associados">Conhecer Todos os Associados</button>
+                </div>
+            </section>
+
 
         </main>
     )
