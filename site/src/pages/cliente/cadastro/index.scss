@@ -31,15 +31,15 @@
             }
 
             .input {
-                font-family: 'Open-Sans-SemiBold';
-                box-sizing: border-box;
                 width: 30vw;
                 height: 5vh;
-                background: #FFFFFF;
-                border: 2px solid #AD8217;
+                font-size: 1em;
+                border: 0;
+                outline: 1px solid #dadada;
+                border-radius: .4em;
                 box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
-                border-radius: 10px;
-                outline: none;
+                padding:  1em 1em 1em 1em;
+                font-family: 'Open-Sans-SemiBold';
             }
 
             .div-lembrar {
@@ -69,12 +69,13 @@
                 width: 30vw;
                 height: 5vh;
                 background: #0D263E;
-                border: 2px solid #AD8217;
+                border: none;
                 box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
-                border-radius: 5vh;
+                border-radius: 1vh;
                 margin-top: 4vh;
                 color: #C0C0C0;
                 font-size: 2.5vh;
+                margin-top: 5em;
             }
 
             .botao-google {
@@ -107,7 +108,6 @@
 
         .span-final {
             color: #AD8217;
-            text-decoration: underline;
         }
 
         .span-final:hover {

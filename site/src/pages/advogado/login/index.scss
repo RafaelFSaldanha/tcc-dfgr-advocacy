@@ -1,102 +1,4 @@
-// .Login-main{
-//     height: 100vh;
-//     background-color: #0D263E;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
 
-//     .logo{
-//         height: 10vh;
-//         user-select: none;
-//     }
-
-//     .div-bg-main{
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: center;
-//         align-items: center;
-//         height: 80%;
-//         width: 40%;
-//         background-color: #FFFFFF;
-//         border-radius: 2em;
-        
-//         .div-bg-input{
-//             display: flex;
-//             flex-direction: column;
-//             justify-content: space-evenly;
-//             height: 25vh;
-            
-//             input{
-//                 width: 35vw;
-//                 height: 5vh;
-//                 font-size: 1em;
-//                 border: 0;
-//                 outline: 1px solid #dadada;
-//                 border-radius: .4em;
-//                 box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
-//                 padding:  1em 1em 1em 1em;
-//                 font-family: 'Open-Sans-SemiBold';
-                
-//             }
-//             input::placeholder{
-//                 color: #bcbcbc;
-//             }
-//             p{
-//                 padding-bottom: .5em;
-//                 font-family: 'Open-Sans-SemiBold';
-//                 span{
-//                     color: red;
-//                 }
-//             }
-//         }
-//         .div-bg-button{
-//             display: flex;
-//             flex-direction: column;
-//             justify-content: space-around;
-//             margin-top: 1em;
-
-//             .entrar-button{
-//                 background-color: #0D263E;
-//                 width: 35vw;
-//                 height: 6vh;
-//                 color: #FFFFFF;
-//                 border-radius: .4em;
-//                 border: 0;
-//                 cursor: pointer;
-//                 box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
-//                 font-family: 'Open-Sans-SemiBold';
-//                 font-size: 1.2em;
-//             }
-
-
-//         }
-//         .error{
-//             height: 3vh;
-//             color: red;
-//             display: flex;
-//             justify-content: center;
-//             align-items: center;
-//             font-family: 'Open-Sans-SemiBold';
-//             font-size: .7em;
-//             margin-top: 1em;
-//         }
-        
-//     }
-//     .cadastro-con{
-//         font-family: 'Open-Sans-SemiBold';
-//         font-size: 1em;
-//         margin-top: 1em;
-//         display: flex;
-//         justify-content: center;
-//         a{
-//             padding-left: .3em;
-//             color: #AD8217;
-//             cursor: pointer;
-//         }
-//     }
-
-    
-// }
 
 .tela-login {
     display: flex;
@@ -123,31 +25,7 @@
         .div-inputs {
             display: flex;
             flex-direction: column;
-<<<<<<< HEAD
-            justify-content: space-evenly;
-            height: 13em;
-            
-            input{
-                width: 35vw;
-                height: 8vh;
-                font-size: 1em;
-                border: 0;
-                outline: 1px solid #192a56;
-                border-radius: .4em;
-                box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
-                padding:  1em 1em 1em 1em;
-                font-family: 'Open-Sans-SemiBold';
-                
-            }
-            input::placeholder{
-                color: #bcbcbc;
-            }
-            p{
-                
-                font-family: 'Open-Sans-SemiBold';
-                span{
-                    color: red;
-=======
+
             justify-content: space-between;
             height: 20%;
             width: 80%;
@@ -176,7 +54,7 @@
                     box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
                     padding:  1em 1em 1em 1em;
                     font-family: 'Open-Sans-SemiBold';
->>>>>>> 22cf5f85eb41627e69af07a3a79de785f24caa97
+
                 }
             }
         }
