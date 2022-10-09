@@ -53,33 +53,54 @@ export default function LoginPage() {
 
 
     return(
-        <main className='Login-main'>
-            <LoadingBar color='#AD8217' ref={ref} />
-            <div className='div-bg-main'>
-                <img className='logo' src='../../../assets/images/logodourada.svg'/>
-                <div className='div-bg-input'>
-                   <div className='input-email'>
-                    <p>Email<span> *</span></p>
-                    <input value={email} type='email'placeholder='Insira seu email' onChange={e => setEmail(e.target.value)} />
-                    </div>
-                    <div className='input-senha'>
-                    <p>Senha <span> *</span></p>
-                    <input value={senha} type='password' placeholder='*********' onChange={e => setSenha(e.target.value)}/>
-                    </div>
+        // <main className='Login-main'>
+        //     <LoadingBar color='#AD8217' ref={ref} />
+        //     <div className='div-bg-main'>
+        //         <img className='logo' src='/assets/images/logodourada.svg'/>
+        //         <div className='div-bg-input'>
+        //            <div className='input-email'>
+        //             <p>Email<span> *</span></p>
+        //             <input value={email} type='email'placeholder='Insira seu email' onChange={e => setEmail(e.target.value)} />
+        //             </div>
+        //             <div className='input-senha'>
+        //             <p>Senha <span> *</span></p>
+        //             <input value={senha} type='password' placeholder='*********' onChange={e => setSenha(e.target.value)}/>
+        //             </div>
                 
-                </div>
-                <div className='error'>
-                        {erro}
-                        </div>
-                <div className='div-bg-button'>
+        //         </div>
+        //         <div className='error'>
+        //                 {erro}
+        //                 </div>
+        //         <div className='div-bg-button'>
 
-                    <button onClick={entrarClick}  className='entrar-button' >Entrar</button>
-                    <p className='cadastro-con'>Não tem uma conta ainda? <a onClick={cadastrarClick} > Cadastre-se </a></p>
+        //             <button onClick={entrarClick}  className='entrar-button' >Entrar</button>
+        //             <p className='cadastro-con'>Não tem uma conta ainda? <a onClick={cadastrarClick} > Cadastre-se </a></p>
 
                     
-                </div>
+        //         </div>
                
+        //     </div>
+        // </main>
+
+        <main className='tela-login'>
+            <LoadingBar color='#AD8217' ref={ref} />
+            <div className='div-principal'>
+                <img src='/assets/images/logodourada.svg'/>
+                <div className='div-inputs'>
+                    <div className='div-input'>
+                        <p>Email<span> *</span></p>
+                        <input value={email} type='email'placeholder='Insira seu email' onChange={e => setEmail(e.target.value)} />
+                    </div>
+                    <div className='div-input'>
+                        <p>Senha <span> *</span></p>
+                        <input value={senha} type='password' placeholder='*********' onChange={e => setSenha(e.target.value)}/>
+                    </div>
+                </div>
+                <div className='error'>
+                    {erro}
+                </div>
+                <button onClick={entrarClick}  className='entrar-button' >Entrar</button>
+                <p className='cadastro-con'>Não tem uma conta ainda? <a onClick={cadastrarClick} > Cadastre-se </a></p>
             </div>
         </main>
-    );
-    }
+)}

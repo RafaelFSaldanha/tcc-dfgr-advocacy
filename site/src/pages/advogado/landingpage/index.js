@@ -2,6 +2,7 @@ import './index.scss';
 import '../../common/common.scss';
 import CardsLandingPage from '../../../components/cards-landingpage';
 import Associados from '../../../components/associados';
+import Rodape from '../../../components/rodape'
 
 
 export default function LandingPage() {
@@ -68,8 +69,7 @@ export default function LandingPage() {
                 <button className="button-associados">Conhecer Todos os Associados</button>
                 </div>
             </section>
-
-
+            <Rodape />
         </main>
     )
 }
