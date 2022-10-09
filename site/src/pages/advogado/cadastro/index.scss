@@ -1,116 +1,87 @@
-.cadastro-advogado {
-    height: 150vh;
-    background-color: #0D263E;
+.tela-cadastro {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #0D263E;
 
-    
-    .div-bg-main{
+    .div-principal {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
-        height: 120vh;
-        width: 50vw;
-        background-color: #FFFFFF;
+        height: 90%;
+        width: 35%;
+        background-color: #ffffff;
         border-radius: 2em;
-        
 
-        .logo{
-            width: 15em;
+        img {
+            height: 10vh;
         }
-        
-        .div-bg-input{
+
+        .div-inputs {
             display: flex;
             flex-direction: column;
-            justify-content: space-evenly;
-            height: 38em;
-            
-            input{
-                width: 35vw;
-                height: 8vh;
-                font-size: 1em;
-                outline: none;
-                border-radius: .4em;
-                border: 2px solid #AD8217;
-                box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
-                padding:  1em 1em 1em 1em;
-                font-family: 'Open-Sans-SemiBold';
-                
-            }
-            .input{
-                margin: .3em;
-            }
-            input::placeholder{
-                color: #636364;
-                font-size: .8em;
-            }
+            justify-content: space-between;
+            height: 70%;
+            width: 80%;
 
+            .div-input {
+                display: flex;
+                flex-direction: column;
+                height: 12%;
+                width: 100%;
 
-            select{
-                width: 35vw;
-                height: 8vh;
-                font-size: 1em;
-                outline: none;
-                border-radius: .4em;
-                border: 2px solid #AD8217;
-                box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
-                padding:  1em 1em 0.9em 1em;
-                font-family: 'Open-Sans-SemiBold';
-                margin-left: 0.3em;
-                
-            }
-        
+                p{
+                    font-family: 'Open-Sans-SemiBold';
+                    span{
+                        color: red;
+                    }
+                }
 
-            .lado{
-                margin-left: 0.3em;
-            }
-            
-            p{
-                
-                font-family: 'Open-Sans-SemiBold';
-                span{
-                    color: red;
+                input {
+                    width: 100%;
+                    height: 0;
+                    font-size: 1em;
+                    outline: none;
+                    border-radius: .4em;
+                    border: 2px solid #AD8217;
+                    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+                    padding:  1em 1em 1em 1em;
+                    font-family: 'Open-Sans-SemiBold';
+                }
+
+                 select {
+                    width: 100%;
+                    height: 100%;
+                    font-size: 1em;
+                    outline: none;
+                    border-radius: .4em;
+                    border: 2px solid #AD8217;
+                    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+                    font-family: 'Open-Sans-SemiBold';
+                    color: #8d8d8d;
                 }
             }
         }
-        .div-bg-button{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            margin-top: 1em;
 
-            .cadastrar-button{
-                background-color: #0D263E;
-                width: 35vw;
-                height: 7vh;
-                color: #FFFFFF;
-                border-radius: .4em;
+        button {
+            background-color: #0D263E;
+            width: 50%;
+            height: 7%;
+            color: #FFFFFF;
+            border-radius: 1em;
+            cursor: pointer;
+            box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+            font-family: 'Open-Sans-SemiBold';
+        }
+
+        .entrar-con{
+            font-family: 'Open-Sans-SemiBold';
+            a{
+                color: #AD8217;
                 cursor: pointer;
-                box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
-                font-family: 'Open-Sans-SemiBold';
-            }
-            
-        }
-        .sla{
-            select{
-                font-size: .8em;
-                color: #636364;
-
-                option{
-                    text-transform: capitalize;
-                }
             }
         }
-            .entrar-con{
-                font-family: 'Open-Sans-SemiBold';
-                font-size: .7em;
-                margin-top: 1.3em;
-                a{
-                    color: #AD8217;
-                    cursor: pointer;
-                }
-        }   
     }
 }

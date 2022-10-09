@@ -1,93 +1,40 @@
-.conteudo {
+.conteudos {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
     background: #0D263E;
-    border: 2px solid #000000;
-    border-radius: 20px;
-    height: 13vh;
-    width: 60vw;
+    border-radius: 10px;
+    height: 9vh;
+    width: 70vw;
     margin-top: 5vh;
+    
 
-    .dados {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: 10vh;
-        width: 10vw;
+    .info{
+        color:white;
+        font-family: 'Open-Sans-SemiBold';
+    }
+    .botao{
+        height: 15px;
 
-        p {
-            font-family: 'Open-Sans-SemiBold';
-            font-size: 1.4vh;
-            color: #e4e4e4;
+
+        .foto{
+            width: 1em;
         }
-
-        .dado {
-            height: 2.5vh;
-            width: 10vw;
-            background: #FFFFFF;
-            border: 1px solid #AD8217;
-            border-radius: 5px;
-            margin-top: 2vh;
-        }
-
-        .data-hora {
-            display: flex;
-            margin-top: 2vh;
-
-            .data {
-                height: 2.5vh;
-                width: 5vw;
-                background: #FFFFFF;
-                border: 1px solid #AD8217;
-                border-radius: 5px;
-            }
-
-            .hora {
-                height: 2.5vh;
-                width: 4vw;
-                background: #FFFFFF;
-                border: 1px solid #AD8217;
-                border-radius: 5px;
-                margin-left: 1vw;
-            }
+        .foto:hover {
+            visibility: visible;
+            cursor: alias;
         }
     }
-
-    .dado-desc {
+    .container{
+        width: 68vw;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 10vh;
-        width: 15vw;
-
-        p {
-            font-family: 'Open-Sans-SemiBold';
-            font-size: 1.4vh;
-            color: #e4e4e4;
-        }
-
-        .dado {
-            height: 8vh;
-            width: 15vw;
-            background: #FFFFFF;
-            border: 1px solid #AD8217;
-            border-radius: 5px;
-        }
+        justify-content: space-around;
     }
+    
 
-    .icones {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        height: 10vh;
-        width: 2vw;
-
-        .icone {
-            height: 2vh;
-            width: 2vh;
-        }
-    }
+}
+.conteudos:hover{
+    cursor: pointer;
+    opacity: (0.8);
 }

@@ -51,10 +51,11 @@ export default function AgendarConsultoria(){
             <div className='container'>
                 <Cabecalho />
                     <div className="conteudo-div-principal">
+                        <h1> Agendar Consultoria</h1>
                         <div>
                             <p>Nome do Cliente</p>
                             <select value={idCliente} onChange={e => setIdCliente(e.target.value)}>
-                            <option> Selecione</option>
+                            <option selected disabled hidden> Selecione</option>
 
                             {clientes.map(item =>
                             <option className="areas" value={item.id}> {item.cliente} </option> )}
@@ -81,7 +82,9 @@ export default function AgendarConsultoria(){
                             <p>Descrição</p>
                             <textarea value={desc} onChange={e => setDesc(e.target.value)} />
                         </div>
-                        <button onClick={salvar}> Agendar </button> 
+                        
+                        <button onClick={salvar}> Agendar </button>
+                        
                     </div>
             </div>
         </main>

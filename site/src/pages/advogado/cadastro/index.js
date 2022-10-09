@@ -1,6 +1,5 @@
 import './index.scss';
 import '../../common/common.scss';
-import logoDourada from '../../../assets/images/logodourada.svg'
 import {useState, useRef, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom'
 import LoadingBar from 'react-top-loading-bar'
@@ -20,9 +19,9 @@ export default function CadastroAdvogado(){
     const [areas, setAreas] = useState([])
     const [idArea, setIdArea] = useState()
 
-    const navigate =useNavigate();
+    const navigate = useNavigate();
     async function voltar(){
-        navigate('/login/advogado');
+        navigate('/advogado/login');
     }
 
     async function listarAreas() {
@@ -45,56 +44,52 @@ export default function CadastroAdvogado(){
 
 
     return(
-       <main className='cadastro-advogado'>
-        <div className='div-bg-main'>
-               <img className='logo' src={logoDourada} />
-                <div className='div-bg-input'>
-                   <div className='input'>
-                    <p>Nome<span> *</span></p>
-                    <input value={nome} type='text'placeholder='Insira seu nome completo' onChange={e => setNome(e.target.value)} />
+       <main className='tela-cadastro'>
+            <div className='div-principal'>
+                <img className='logo' src='/assets/images/logodourada.svg' alt='logo' />
+                <div className='div-inputs'>
+                    <div className='div-input'>
+                        <p>Nome <span>*</span> </p>
+                        <input value={nome} type='text'placeholder='Insira seu nome completo' onChange={e => setNome(e.target.value)} />
+                    </div>
+                    
+                    <div className='div-input'>
+                        <p>Estado de Atuação <span>*</span></p>
+                        <input value={estado} type='text' placeholder='Insira o seu estado de atuação' onChange={e => setEstado(e.target.value)}/>
                     </div>
 
-                    <div className='input'>
-                    <p> Estado de Atuação <span> *</span></p>
-                    <input value={estado} type='text' placeholder='Insira o seu estado de atuação' onChange={e => setEstado(e.target.value)}/>
+                    <div className='div-input'>
+                        <p>Número do OAB <span> *</span></p>
+                        <input value={oab} type='text' placeholder='Insira o número do seu OAB' onChange={e => setOab(e.target.value)}/>
                     </div>
 
-                    <div className='input'>
-                    <p>Número do OAB <span> *</span></p>
-                    <input value={oab} type='text' placeholder='Insira o número do seu OAB' onChange={e => setOab(e.target.value)}/>
+                    <div className='div-input'>
+                        <p> Telefone <span> *</span></p>
+                        <input value={telefone} type='text' placeholder='Insira seu telefone' onChange={e => setTelefone(e.target.value)}/>
                     </div>
 
-                    <div className='sla'>
-                            <p className='lado'>Área de atuação<span> *</span></p>
-                            <select value={idArea} onChange={e => setIdArea(e.target.value)}>
-                            <option selected disabled hidden> Selecione</option>
+                    <div className='div-input'>
+                        <p> Email <span> *</span></p>
+                        <input value={email} type='email' placeholder='Insira seu email' onChange={e => setEmail(e.target.value)}/>
+                    </div>
 
-                                
+                    <div className='div-input'>
+                        <p>Senha <span> *</span></p>
+                        <input value={senha} type='password' placeholder='*********' onChange={e => setSenha(e.target.value)}/>
+                    </div>
+
+                    <div className='div-input'>
+                        <p>Área de atuação<span> *</span></p>
+                        <select value={idArea} onChange={e => setIdArea(e.target.value)}>
+                            <option selected disabled hidden> Selecione </option>
+                            
                             {areas.map(item =>
-                            <option className="areas" value={item.id}> {item.area} </option> )}
-                            </select>
-                        </div>
-
-                    <div className='input'>
-                    <p> Telefone <span> *</span></p>
-                    <input value={telefone} type='text' placeholder='Insira seu telefone' onChange={e => setTelefone(e.target.value)}/>
+                            <option value={item.id}> {item.area} </option> )}
+                        </select>
                     </div>
-
-                    <div className='input'>
-                    <p> Email <span> *</span></p>
-                    <input value={email} type='email' placeholder='Insira seu email' onChange={e => setEmail(e.target.value)}/>
-                    </div>
-
-                    <div className='input'>
-                    <p>Senha <span> *</span></p>
-                    <input value={senha} type='password' placeholder='*********' onChange={e => setSenha(e.target.value)}/>
-                    </div>
-                   
                 </div>
-                <div className='div-bg-button'>
-                        <button onClick={cadastrar} className='cadastrar-button'> Cadastrar-se </button>
-                    </div>
-                    <p className='entrar-con'>Já possui uma conta? <a onClick={voltar}> Entrar </a></p>
-                </div>
+                <button onClick={cadastrar}> Cadastrar-se </button>
+                <p className='entrar-con'>Já possui uma conta? <a onClick={voltar}> Entrar </a></p>
+            </div>
        </main>
 )}

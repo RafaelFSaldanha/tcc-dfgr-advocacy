@@ -44,3 +44,12 @@ export async function ListarAreas() {
 }
 
 
+export async function Remover (id){
+    const comando = 
+    `
+    delete from tb_consultoria
+      where id_consultoria = ?
+    `
+    const [resposta] = await con.query (comando, [id]);
+    return resposta.affectedRows
+}

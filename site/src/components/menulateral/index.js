@@ -1,10 +1,5 @@
 import './index.scss'
-import logodourada from '../../assets/images/logodourada.svg'
-import Chat from '../../assets/images/chat.svg'
 import { useNavigate } from 'react-router-dom'
-import Calendar from '../../assets/images/calendar.svg'
-import CalendarPlus from '../../assets/images/calendarplus.svg'
-import Sair from '../../assets/images/sair.svg'
 import storage from 'local-storage'
 
 export default function Menulateral(){
@@ -13,37 +8,43 @@ export default function Menulateral(){
 
     async function sairClick(){
         storage.remove('usuario-logado');
-        navigate('/login/advogado');
+        navigate('/advogado/login');
         
     }
     async function agendarClick(){
         
-            navigate('/advogado/agendarconsultoria');
+        navigate('/advogado/agendarconsultoria');
         
     }
+
+    async function agendadasClick(){
+        
+        navigate('/advogado/consultoriasagendadas');
+    
+}
 
     return(
         <nav className="main-menu-lateral">
             <div className='logo'>
-                <img src={logodourada}/>
+                <img src='../../../assets/images/logodourada.svg'/>
             </div>
 
             <div className='menu-lateral-items'>
                 <div >
-                    <img src={Chat}/>
-                    <p> Conversas </p>
+                    <img src='../../../assets/images/chat.svg'/>
+                    <p> Minhas Conversas </p>
                 </div>
-                <div>
-                    <img src={Calendar}/>
+                <div onClick={agendadasClick}>
+                    <img src='../../../assets/images/calendar.svg'/>
                     <p>Consultorias Agendadas</p>
                 </div>
                 <div onClick={agendarClick}>
-                    <img src={CalendarPlus} />
+                    <img src='../../../assets/images/calendarplus.svg' />
                     <p>Agendar Consultoria</p>
                 </div>
             </div>
             <div onClick={sairClick} className='menu-lateral-sair'>
-                <img src={Sair} />
+                <img src='../../../assets/images/sair.svg' />
                 <p >Sair</p>
             </div>
         </nav>

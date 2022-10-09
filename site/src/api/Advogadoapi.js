@@ -55,3 +55,31 @@ export async function ListarConsultorias(id) {
     const r = await api.get(`/advogado/listarconsultoriasid/${id}`)
     return r.data
 }
+
+export async function CadastrarCliente(nome, email, senha) {
+    const r = await api.post('/cliente/cadastro' ,{
+        nome,
+        email,
+        senha
+    })
+
+    return r.data
+}
+
+export async function ClienteLogin(email,senha){
+    const r = await api.post('/login/cliente', {
+        email: email,
+        senha: senha
+    })
+    return r.data
+}
+
+export async function Deletar(id){
+    const resposta = await api.delete(`/advogado/consultoria/${id}`);
+    return resposta.status
+}
+
+export async function Informaçoes(id) {
+    const r = await api.get(`/advogado/id/${id}`)
+    return r.data
+}

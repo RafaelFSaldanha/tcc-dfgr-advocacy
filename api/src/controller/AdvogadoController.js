@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import { LoginAdvogado, AgendarConsultoria, CadastroAdvogado } from '../repository/AdvogadoRepository.js';
+import { LoginAdvogado, AgendarConsultoria, CadastroAdvogado, Remover } from '../repository/AdvogadoRepository.js';
 
 const server = Router();
 
@@ -32,6 +32,10 @@ server.post('/advogado/admin/agendar', async (req, resp) => {
 
         if (novaconsul.idAdvogado == 0) {
             throw new Error("Id admin nulo")
+        }
+
+        if (novaconsul.idCliente == 0) {
+            throw new Error("Selecione um cliente")
         }
         
         if (!novaconsul.area) {
@@ -80,5 +84,22 @@ server.post('/cadastro/advogado', async (req, resp) => {
     }
 })
 
+server.delete('/advogado/consultoria/:id', async (req, resp) =>{
+    try {
+        const {id} = req.params;
+        const resposta = await Remover(id)
+
+        if(resposta != 1){
+            throw new Error('Não foi possivel deletar a consultoria')
+        }
+        else{
+        resp.status(204).send();
+        }
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
 
 export default server;

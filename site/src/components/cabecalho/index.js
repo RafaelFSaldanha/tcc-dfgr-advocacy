@@ -1,5 +1,4 @@
 import './index.scss'
-import Perfil from '../../assets/images/perfil.svg'
 import storage from 'local-storage'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -21,7 +20,7 @@ export default function Cabecalho() {
         <header className='header-main'>
             <div className='main-bem-vindo'>Olá, seja bem-vindo Dr. {usuario} </div>
                 <div className='main-perfil'>
-                    <img src={Perfil}/>
+                    <img src='../../../assets/images/perfil.svg'/>
                 </div>
         </header>
     )

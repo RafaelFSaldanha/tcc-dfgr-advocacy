@@ -8,19 +8,24 @@ import LandingPage from './pages/advogado/landingpage/index.js';
 import LoginUsuario from './pages/cliente/login/index.js';
 import CadastroUsuario from './pages/cliente/cadastro/index.js';
 import ConsultoriasAgendadas from './pages/advogado/agendadas/index.js';
+import SobreNos from './pages/advogado/sobrenos/index.js';
+import Informaçoes from './pages/advogado/detalhe/index.js';
+
 
 export default function Index() {
     return(
     <BrowserRouter>
     <Routes>
-        <Route path="/cadastro/advogado" element={<CadastroAdvogado />} />
-        <Route path="/login/advogado" element={<LoginAdvogado />} />
+        <Route path="/advogado/cadastro" element={<CadastroAdvogado />} />
+        <Route path="/advogado/login" element={<LoginAdvogado />} />
         <Route path="/advogado/home" element={<Admin />} />
         <Route path="/advogado/agendarconsultoria" element={<AgendarConsultoria />} />
         <Route path='/advogado/consultoriasagendadas' element={<ConsultoriasAgendadas />} />
-        <Route path="/landingpage" element={<LandingPage />} />
-        <Route path='/cadastro/usuario' element={<CadastroUsuario />} />
-        <Route path='/login/usuario' element={<LoginUsuario />} />
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/sobrenos" element={< SobreNos/>} />
+        <Route path='/cadastro' element={<CadastroUsuario />} />
+        <Route path='/login' element={<LoginUsuario />} />
+        <Route path='/advogado/informacoes/:idParam' element={<Informaçoes />} />
     </Routes>
     </BrowserRouter>
     )

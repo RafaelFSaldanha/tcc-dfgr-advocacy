@@ -1,67 +1,61 @@
 import './index.scss';
-import Deletar from '../../assets/images/deletar.png'
-import Alterar from '../../assets/images/editar.png'
 import { useState, useEffect } from 'react';
 import storage from 'local-storage';
-import { ListarConsultorias } from '../../api/Advogadoapi';
+import { ListarConsultorias, Deletar } from '../../api/Advogadoapi';
+import { useNavigate } from 'react-router-dom';
+
 
 export default function Index () {
 
     const [card, setCard] = useState([]);
+    const [id, setId] = useState(0);
+    const [modal, setModal] = useState(false);
 
-    async function bagulhos(){
+    const navigate = useNavigate();
+
+    async function Listar(){
         const Advogado = storage('usuario-logado');
-        setCard(ListarConsultorias(Advogado.id));
+        const r = await ListarConsultorias(Advogado.id);
+        setCard(r)
         console.log(card)
+
+    }
+
+    async function remover(id) {
+        const resp = await Deletar(id);
+        Listar();
+    }
+
+    function informacoes(id) {
+        navigate(`/advogado/informacoes/${id}`)
     }
 
     useEffect(() =>{
-        bagulhos();
+        Listar();
+        console.log(id)
+    
     }, [])
+    
 
 
     
     return (
-        <main>
+       <tbody>
+        {card.map(item =>
+            <tr onClick={()=> informacoes(item.id)} className='conteudos'>
+                <div className='container'>
+                    <td className='info'>{item.area}</td>
+                    <td className='info'>{item.cliente}</td>
+                    <td className='info'>{item.dia.substr(0, 10)}</td>
+                    <td className='info'>{item.hora.substr(0, 5)}</td>
+                </div>
+            </tr>
             
-            <div className='conteudo'>
-            <div className='dados'>
-                <p> Tipo de Consultoria </p>
-                <div className='dado'>
-                    
-                </div>
-            </div>
-            <div className='dados'>
-                <p> Nome do Cliente </p>
-                <div className='dado'>
+            )}
 
-                </div>
-            </div>
-            <div className='dados'>
-                <p> Data e Hora </p>
-                <div className='data-hora'>
-                    <div className='data'>
+    
+        
 
-                    </div>
-                    <div className='hora'>
-
-                    </div>
-                </div>
-            </div>
-            <div className='dado-desc'>
-                <p> Descrição </p>
-                <div className='dado'>
-
-                </div>
-            </div>
-            <div className='icones'>
-                <img className='icone' src={Deletar} alt='deletar' />
-                <img className='icone' src={Alterar} alt='editar' />
-            </div>
-        </div>
-            
-     
-            
-        </main>
+       </tbody>
     )
 }
