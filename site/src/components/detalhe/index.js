@@ -2,7 +2,6 @@ import './index.scss'
 
 export default function Index(props) {
     
-    console.log(props.consultoria.hora)
     return(
         <div className='conteudo-detalhe'>
             <div className='container'>

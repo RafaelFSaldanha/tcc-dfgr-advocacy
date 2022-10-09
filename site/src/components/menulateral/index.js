@@ -7,7 +7,7 @@ export default function Menulateral(){
     const navigate = useNavigate();
 
     async function sairClick(){
-        storage.remove('usuario-logado');
+        storage.remove('advogado-logado');
         navigate('/advogado/login');
         
     }

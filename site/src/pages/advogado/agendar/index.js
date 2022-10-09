@@ -28,7 +28,7 @@ export default function AgendarConsultoria(){
         useEffect(() =>{
             listarAreas();
             listarClientes();
-            const Advogado = storage('usuario-logado')
+            const Advogado = storage('advogado-logado')
             setidAdvogado(Advogado.id)
         }, [])
         
@@ -55,7 +55,7 @@ export default function AgendarConsultoria(){
                         <div>
                             <p>Nome do Cliente</p>
                             <select value={idCliente} onChange={e => setIdCliente(e.target.value)}>
-                            <option selected disabled hidden> Selecione</option>
+                            <option selected hidden> Selecione</option>
 
                             {clientes.map(item =>
                             <option className="areas" value={item.id}> {item.cliente} </option> )}
