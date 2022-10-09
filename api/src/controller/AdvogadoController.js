@@ -8,8 +8,12 @@ server.post('/login/advogado', async (req, resp) => {
     try {
         const { email, senha } = req.body;
         const resposta = await LoginAdvogado(email, senha)
-        if (!resposta) {
-            throw new Error('Email ou senha inválidos!')
+
+        if (!email) {
+            throw new Error('Senha ou E-mail incorretos.')
+        }
+        if (!senha) {
+            throw new Error('Senha ou E-mail incorretos.')
         }
             
         resp.send(resposta)

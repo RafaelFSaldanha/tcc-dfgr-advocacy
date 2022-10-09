@@ -25,6 +25,7 @@ export default function LoginPage() {
 
     try{
         
+
         const r = await AdvogadoLogin(email, senha);
         storage('usuario-logado', r)
 
@@ -36,9 +37,12 @@ export default function LoginPage() {
 
     catch (err){
             ref.current.complete();
-            if(err.response.status === 401){
+
+            if (err.response.status === 401 ) {
+                if (err.response.data.erro === "Senha ou E-mail incorretos.") {
                 setErro(err.response.data.erro);
-            } 
+            }
+        }
         }
     }
 
@@ -71,10 +75,10 @@ export default function LoginPage() {
                 </div>
                 <div className='error'>
                         {erro}
-                        </div>
+                </div>
                 <div className='div-bg-button'>
 
-                    <button onClick={entrarClick}  className='entrar-button' >Entrar</button>
+                    <button onClick={entrarClick}  className='entrar-button'>Entrar</button>
 
                     
                 </div>
