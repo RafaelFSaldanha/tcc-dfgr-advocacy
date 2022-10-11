@@ -52,23 +52,24 @@
 
         .titulo{
             font-family: 'Open-Sans-SemiBold';
-            font-size: 10vh;
+            font-size: 3em;
             color: #AD8217;
         }
         .tagp{
-            font-size: 2.7vh;
+            font-size: 3vh;
             color: #7d7d7d;
-            font-family: 'Open-Sans-SemiBold';
+            font-family: 'Open-Sans-Light';
             width: 65%;
         }
 
         .botao {
             color: #cdcdcd;
             height: 7%;
-            width: 13%;
+            width: 20%;
             background: #0D263E;
-            box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25);
-            border-radius: 15px;
+            box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.25);
+            border-radius: .5em;
+            border: none;
         }
     
         .img-1 {
@@ -110,8 +111,9 @@
            color: #FFFFFF;
            background-color: #0D263E;
            padding: 1em 5em;
-           border-radius: 5em;
+           border-radius: .5em;
            font-size: 15px;
+           border: none;
            cursor: pointer;
        }
     }
@@ -147,7 +149,8 @@
             color: #cdcdcd;
             background-color: #0D263E;
             padding: 1em 3em;
-            border-radius: 3em;
+            border-radius: .5em;
+            border: none;
             font-size: 2vh;
             cursor: pointer;
         }
@@ -188,9 +191,10 @@
             color: #FFFFFF;
             background-color: #0D263E;
             padding: 1em 5em;
-            border-radius: 5em;
+            border-radius: .5em;
             font-size: 15px;
             cursor: pointer;
+            border: none;
         }
     }
     .div-titulo-associados{
