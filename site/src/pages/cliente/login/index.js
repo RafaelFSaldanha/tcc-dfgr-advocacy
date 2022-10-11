@@ -15,8 +15,8 @@ export default function Index() {
     const ref = useRef(); 
 
     useEffect(() =>{
-        if(storage('usuario-logado')){
-            navigate('/advogado/home')
+        if(storage('cliente-logado')){
+            navigate('/')
         }
     }, [])
     async function entrarClick(){
@@ -25,10 +25,10 @@ export default function Index() {
     try{
         
         const r = await ClienteLogin(email, senha);
-        storage('usuario-logado', r)
+        storage('cliente-logado', r)
 
         setTimeout(() => {
-            navigate('/home');
+            navigate('/');
         }, 3000);
         
         }
@@ -46,7 +46,7 @@ export default function Index() {
 
         setTimeout(() => {
             navigate('/cadastro');
-        }, 3500)
+        }, 500)
     }
 
     

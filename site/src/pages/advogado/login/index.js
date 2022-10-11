@@ -15,7 +15,7 @@ export default function LoginPage() {
     const ref = useRef(); 
 
     useEffect(() =>{
-        if(storage('usuario-logado')){
+        if(storage('advogado-logado')){
             navigate('/advogado/home')
         }
     }, [])
@@ -26,7 +26,7 @@ export default function LoginPage() {
         
 
         const r = await AdvogadoLogin(email, senha);
-        storage('usuario-logado', r)
+        storage('advogado-logado', r)
 
         setTimeout(() => {
             navigate('/advogado/home');
@@ -49,7 +49,7 @@ export default function LoginPage() {
         ref.current.continuousStart();
 
         setTimeout(() => {
-            navigate('/cadastro/advogado');
+            navigate('/advogado/cadastro');
         }, 3500)
     }
 

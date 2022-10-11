@@ -8,11 +8,11 @@ export default function Cabecalho() {
 
     const navigate = useNavigate();
     useEffect(() => {
-        if(!storage('usuario-logado')){
+        if(!storage('advogado-logado')){
             navigate('/advogado/login')
         }
         else{
-            const usuarioLogado = storage('usuario-logado')
+            const usuarioLogado = storage('advogado-logado')
             setUsuario(usuarioLogado.nome)
         }
     }, [])
