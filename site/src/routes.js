@@ -10,6 +10,7 @@ import CadastroUsuario from './pages/cliente/cadastro/index.js';
 import ConsultoriasAgendadas from './pages/advogado/agendadas/index.js';
 import SobreNos from './pages/advogado/sobrenos/index.js';
 import Informaçoes from './pages/advogado/detalhe/index.js';
+import AreaAtuacao from './pages/advogado/atuacao/index.js';
 
 
 export default function Index() {
@@ -23,6 +24,7 @@ export default function Index() {
         <Route path='/advogado/consultoriasagendadas' element={<ConsultoriasAgendadas />} />
         <Route path="/" element={<LandingPage />} />
         <Route path="/sobrenos" element={< SobreNos/>} />
+        <Route path='/atuacao'  element={<AreaAtuacao/>} />
         <Route path='/cadastro' element={<CadastroUsuario />} />
         <Route path='/login' element={<LoginUsuario />} />
         <Route path='/advogado/informacoes/:idParam' element={<Informaçoes />} />

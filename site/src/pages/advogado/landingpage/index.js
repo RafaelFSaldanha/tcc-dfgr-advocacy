@@ -1,5 +1,6 @@
 import './index.scss';
 import '../../common/common.scss';
+import { useNavigate } from 'react-router-dom'
 import CardsLandingPage from '../../../components/cards-landingpage';
 import Associados from '../../../components/associados';
 import Rodape from '../../../components/rodape'
@@ -7,14 +8,23 @@ import Rodape from '../../../components/rodape'
 
 export default function LandingPage() {
 
+    const navigate = useNavigate();
+
+    async function AtuacaoClick(){
+        navigate('/atuacao');
+    }
+
+    async function SobrenosClick(){
+        navigate('/sobrenos');
+    }
 
     return (
         <main className='landingpage'>
             <div className='cabecalho'>
                 <img className='logo' src='/assets/images/logodourada.svg' alt='logo' />
                 <div className='div-links'>
-                    <a className='links' href=''> Áreas de Atuação </a>
-                    <a className='links' href=''> Sobre Nós </a>
+                    <a className='links' href='' onClick={AtuacaoClick}> Áreas de Atuação </a>
+                    <a className='links' href='' onClick={SobrenosClick}> Sobre Nós </a>
                     <a className='links' href=''> Associados </a>
                 </div>
             </div>
