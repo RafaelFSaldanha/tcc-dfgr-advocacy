@@ -1,8 +1,9 @@
 import { Router } from 'express';
-
-import { CadastroCliente, LoginCliente } from '../repository/ClienteRepository.js';
+import multer from 'multer';
+import { alterarimgcliente, CadastroCliente, LoginCliente } from '../repository/ClienteRepository.js';
 
 const server = Router();
+const upload = multer({dest: 'storage/FotoCliente'})
 
 
 server.post('/cliente/cadastro', async (req,resp) => {
@@ -48,6 +49,23 @@ server.post('/login/cliente', async (req, resp) => {
             erro: err.message
         })
 
+    }
+})
+
+server.put('/cliente/:id/foto', upload.single('foto')  ,async (req, resp) => {
+    try {
+        const { id } = req.params;
+        const img = req.file.path;
+
+        const resposta = await alterarimgcliente(img, id)
+        if (resposta != 1) {
+            throw new Error('A imagem não pode ser salva')
+        }
+        resp.status(204).send()
+    } catch (err) {
+        resp.status(400).send({
+            erro:err.message
+        })
     }
 })
 

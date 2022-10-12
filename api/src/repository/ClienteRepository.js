@@ -22,3 +22,13 @@ export async function LoginCliente(email, senha){
     const [linhas] = await con.query(comando, [email, senha]);
     return linhas[0];
 }
+
+export async function alterarimgcliente(imagem, id){
+    const comando=`
+        update tb_cliente
+            set img_cliente = ?
+            where id_cliente = ?`
+
+    const [resposta] = await con.query(comando, [imagem, id]);
+    return resposta.affectedRows  
+}

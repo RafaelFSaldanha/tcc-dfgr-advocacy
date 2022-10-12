@@ -7,7 +7,7 @@ create table tb_cliente(
         nm_cliente		varchar(50) not null,
         ds_email		varchar(100) not null,
         ds_senha		varchar(30) not null,
-        img_cliente		blob
+        img_cliente		varchar(800)
 );
 
 create table tb_admin(
@@ -31,6 +31,7 @@ create table tb_advogado(
         nr_telefone		varchar(20) not null,
         ds_email		varchar(100) not null,
         ds_senha 		varchar(30) not null,
+        img_advogado	varchar(800),
         foreign key	(id_area) references tb_area_atuacao(id_area)
         
 );

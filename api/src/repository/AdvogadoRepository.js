@@ -53,3 +53,13 @@ export async function Remover (id){
     const [resposta] = await con.query (comando, [id]);
     return resposta.affectedRows
 }
+
+export async function alterarimgadvogado(imagem, id){
+    const comando=`
+        update tb_advogado
+            set img_advogado = ?
+            where id_advogado = ?`
+
+    const [resposta] = await con.query(comando, [imagem, id]);
+    return resposta.affectedRows  
+}

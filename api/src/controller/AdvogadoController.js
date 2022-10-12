@@ -1,8 +1,9 @@
 import { Router } from 'express';
-
-import { LoginAdvogado, AgendarConsultoria, CadastroAdvogado, Remover } from '../repository/AdvogadoRepository.js';
+import multer from 'multer'
+import { LoginAdvogado, AgendarConsultoria, CadastroAdvogado, Remover, alterarimgadvogado } from '../repository/AdvogadoRepository.js';
 
 const server = Router();
+const upload = multer({dest: 'storage/FotoAdvogado'})
 
 server.post('/login/advogado', async (req, resp) => {
     try {
@@ -98,6 +99,23 @@ server.delete('/advogado/consultoria/:id', async (req, resp) =>{
     } catch (err) {
         resp.status(400).send({
             erro: err.message
+        })
+    }
+})
+
+server.put('/advogado/:id/foto', upload.single('foto')  ,async (req, resp) => {
+    try {
+        const { id } = req.params;
+        const img = req.file.path;
+
+        const resposta = await alterarimgadvogado(img, id)
+        if (resposta != 1) {
+            throw new Error('A imagem não pode ser salva')
+        }
+        resp.status(204).send();
+    } catch (err) {
+        resp.status(400).send({
+            erro:err.message
         })
     }
 })
