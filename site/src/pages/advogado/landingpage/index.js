@@ -61,7 +61,7 @@ export default function LandingPage() {
                 <div className="column-div">
                     <h1 className="titulo-sobrenos">Sobre Nós</h1>
                     <p className="texto-sobrenos">Fundado em 1982, DFGR Advogados é um escritório brasileiro que pratica a advocacia com visão de negócios e foco em resultados, desenvolvendo soluções customizadas para empresas multinacionais que operam em setores estratégicos da economia.</p>
-                    <button className="button-sobrenos">Saiba Mais</button>
+                    <button className="button-sobrenos" onClick={SobrenosClick}>Saiba Mais</button>
                 </div>
             </section>
 
