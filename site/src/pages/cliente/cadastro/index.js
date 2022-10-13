@@ -29,14 +29,22 @@ export default function Index() {
     return (
         <main className='tela-cadastro'>
             <div className='div-cadastro'>
-                <img className='logo' src='../../../assets/images/logodourada.svg' />
+                <img className='logo' src='/assets/images/logodourada.svg' alt=''/>
                 <div className='div-inputs'>
-                    <p className='nome-input'> Nome </p>
-                    <input value={nome} type='text' className='input' placeholder='Insira seu nome' onChange={e => setNome(e.target.value)}/>
-                    <p className='nome-input'> Email </p>
-                    <input value={email} type='text' className='input' placeholder='Insira seu email' onChange={e => setEmail(e.target.value)}/>
-                    <p className='nome-input'> Senha </p> 
-                    <input value={senha} type='text' className='input' placeholder='********' onChange={e => setSenha(e.target.value)} />
+                    <div className='individual'>
+                        <p className='nome-input'> Nome </p>
+                        <input value={nome} type='text' className='input' placeholder='Insira seu nome' onChange={e => setNome(e.target.value)}/>
+                    </div>
+                    <div className='individual'>
+                        <p className='nome-input'> Email </p>
+                        <input value={email} type='text' className='input' placeholder='Insira seu email' onChange={e => setEmail(e.target.value)}/>
+                    </div>
+                    <div className='individual'>
+                        <p className='nome-input'> Senha </p> 
+                        <input value={senha} type='text' className='input' placeholder='********' onChange={e => setSenha(e.target.value)} />
+                    </div>
+                </div>
+                <div className='final'>
                     <button onClick={cadastrar} className='botao-entrar'>
                         Cadastrar
                     </button>

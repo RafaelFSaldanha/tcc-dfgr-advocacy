@@ -49,12 +49,11 @@ export default function Index() {
         }, 500)
     }
 
-    
     return (
         <main className='Login-main'>
         <LoadingBar color='#AD8217' ref={ref} />
         <div className='div-bg-main'>
-            <img className='logo' src='../../../assets/images/logodourada.svg'/>
+            <img className='logo' src='/assets/images/logodourada.svg' alt=''/>
             <div className='div-bg-input'>
                <div className='input-email'>
                 <p>Email<span> *</span></p>
@@ -64,19 +63,14 @@ export default function Index() {
                 <p>Senha <span> *</span></p>
                 <input value={senha} type='password' placeholder='*********' onChange={e => setSenha(e.target.value)}/>
                 </div>
-            
             </div>
             <div className='error'>
                     {erro}
                     </div>
             <div className='div-bg-button'>
-
                 <button  onClick={entrarClick} className='entrar-button' >Entrar</button>
                 <p className='cadastro-con'>Não tem uma conta ainda? <a onClick={cadastrarClick}> Cadastre-se </a></p>
-
-                
             </div>
-           
         </div>
     </main>
     )

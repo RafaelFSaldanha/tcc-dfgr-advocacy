@@ -12,7 +12,7 @@ export default function Admin(){
                 <Cabecalho />
                 <div className='conteudo'>
                     <p> Área do Advogado</p>
-                    <img src='../../../assets/images/logoapagada.svg' />
+                    <img src='/assets/images/logoapagada.svg' alt='logo' />
                 </div>
             </div>
         </main>

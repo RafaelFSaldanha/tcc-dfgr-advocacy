@@ -50,9 +50,10 @@ export default function AgendarConsultoria(){
             <MenuLateral />
             <div className='container'>
                 <Cabecalho />
+                <div className='conteudo'>
                     <div className="conteudo-div-principal">
                         <h1> Agendar Consultoria</h1>
-                        <div>
+                        <div >
                             <p>Nome do Cliente</p>
                             <select value={idCliente} onChange={e => setIdCliente(e.target.value)}>
                             <option selected hidden> Selecione</option>
@@ -84,8 +85,8 @@ export default function AgendarConsultoria(){
                         </div>
                         
                         <button onClick={salvar}> Agendar </button>
-                        
                     </div>
+                </div>
             </div>
         </main>
     );

@@ -9,41 +9,43 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 90vh;
-        width: 50vw;
+        justify-content: space-evenly;
+        height: 80%;
+        width: 43%;
         background: linear-gradient(115.7deg, #FFFFFF 101.91%, rgba(255, 255, 255, 0) 101.91%);
         border-radius: 1em;
 
         .logo {
-            width: 18vw;
-            margin-top: 3em;
+            width: 15vw;
         }
 
         .div-inputs {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            width: 30vw;
             margin-top: 3vh;
+            height: 35%;
 
-            .nome-input {
-                padding-right: 24em;
-                font-family: 'Open-Sans-SemiBold';
-                margin-top: 2vh;
+            .individual {
+
+                .nome-input {
+                    font-family: 'Open-Sans-SemiBold';
+                }
+    
+                .input {
+                    width: 35vw;
+                    height: 12%;
+                    font-size: 1em;
+                    border: 0;
+                    outline: 1px solid #dadada;
+                    border-radius: .4em;
+                    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+                    padding:  1em 1em 1em 1em;
+                    font-family: 'Open-Sans-SemiBold';
+                }
             }
 
-            .input {
-                width: 35vw;
-                height: 7vh;
-                font-size: 1em;
-                border: 0;
-                outline: 1px solid #dadada;
-                border-radius: .4em;
-                box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
-                padding:  1em 1em 1em 1em;
-                font-family: 'Open-Sans-SemiBold';
-            }
             input::placeholder{
                 color: #bcbcbc;
             }
@@ -67,6 +69,10 @@
                 }
             }
 
+        }
+
+        .final {
+
             .botao-entrar {
                 display: flex;
                 align-items: center;
@@ -84,41 +90,23 @@
                 margin-top: 5em;
                 cursor: pointer;
             }
-
-            .botao-google {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                box-sizing: border-box;
-                width: 30vw;
-                height: 5vh;
-                border: 2px solid #AD8217;
-                box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
-                border-radius: 5vh;
+    
+            .frase-final {
+                font-family: 'Open-Sans-SemiBold';
+                font-size: 2vh;
+                color: #343434;
+                text-align: center;
                 margin-top: 2vh;
-                font-size: 2.5vh;
-
-                .logo-google {
-                    height: 4vh;
-                    margin-right: 1vw;
-                }
+            }
+    
+            .span-final {
+                color: #AD8217;
+            }
+    
+            .span-final:hover {
+                cursor: pointer;
             }
         }
 
-        .frase-final {
-            font-family: 'Open-Sans-SemiBold';
-            font-size: 2vh;
-            color: #343434;
-            text-align: center;
-            margin-top: 2vh;
-        }
-
-        .span-final {
-            color: #AD8217;
-        }
-
-        .span-final:hover {
-            cursor: pointer;
-        }
     }
 }

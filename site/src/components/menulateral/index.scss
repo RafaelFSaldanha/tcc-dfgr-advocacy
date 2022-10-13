@@ -2,7 +2,7 @@
 .main-menu-lateral{
     background-color: #ffffff;
     height: 100vh;
-    width: 20vw;
+    width: 20%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -11,18 +11,22 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-top: 2em;
+        justify-content: center;
+        height: 20%;
+        
         img{
-            width: 18em;
+            width: 15em;
             user-select: none;
         }
     }
+    
     .menu-lateral-items{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
-        padding-bottom: 6em;
+        margin-bottom: 15vh;
+       
         p{
             color: #AD8217;
             font-family: 'Open-Sans-SemiBold';
@@ -30,23 +34,25 @@
             text-align: center;
             width: 20vw;
         }
+        
         img{
             width: 3em;
         }
     }
+    
     .menu-lateral-items > div {
         display: flex;
         align-items: center;
         transition: .3s;
         cursor: pointer;
         padding-left: 2em;
-        width: 20vw;
+        width: 100%;
         height: 10vh;
     }
     
     .menu-lateral-items > div:hover {
         background-color: #dfe6e9;
-        width: 20vw;
+        width: 100%;
         border-radius: .5em;
     }
 
@@ -61,6 +67,7 @@
             width: 3em;
             cursor: pointer;
         }
+
         p{
             padding-left: .5em;
             color: #AD8217;

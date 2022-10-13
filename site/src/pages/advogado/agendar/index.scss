@@ -1,12 +1,14 @@
 
 .main-agendar{
     display: flex;
+    height: 100vh;
 
     .container{
         display: flex;
         flex-direction: column;
         align-items: center;
         flex-grow: 1;
+        height: 100vh;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
     .conteudo {
@@ -14,51 +16,49 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background-color: #ecf0f1;
+        background-color: #ffffff;
+        height: 80vh;
+        width: 100%;
         flex-grow: 1;
         
     }
     .conteudo-div-principal{
         background-color: #f1f2f6;
-        width: 70vw;
-        height: 80vh;
+        width: 70%;
+        height: 80%;
         border-radius: 2em;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: 4em;
 
         h1{
             display: flex;
             justify-content: flex-start;
-            width: 60vw;
-            font-size: 3em;
+            font-size: 1.7em;
             font-family: 'Open-Sans-SemiBold' ;
             color: #AD8217;
-            padding-bottom: 1em;
-            padding-left: 2em;
         }
+
         div{
             margin: .4em;
         }
 
         p{
-            font-size: 1.4em;
-            padding-bottom: .5em;
+            font-size: 1em;
             font-family: 'Open-Sans-SemiBold';
             color: #1e272e;
         }
 
         input{
-            width: 50vw;
             border-radius: .35em;
             border: 2px solid #AD8217;
             outline: none;
-            font-size: 1.4em;
+            font-size: 1em;
             padding: .5em;
             color: #808e9b;
         }
+
         select{
             width: 50vw;
             height: 5vh;
@@ -66,28 +66,31 @@
             border: 2px solid #AD8217;
             outline: none;
             padding: .5em;
-            font-size: 1.4em;
+            font-size: .9em;
             font-family: 'Open-Sans-SemiBold';
             color: #808e9b;
+            
             option{
-                font-size: 1.5em;
+                font-size: 1em;
             }
         
         }
         
         .data-hora{
             width: 50vw;
+            height: 5vh;
             display: flex;
             justify-content: flex-start;
+
             .data{
                 font-family: 'Open-Sans-SemiBold';
-                height: 5vh;
-                width: 12vw;
+                height: 100%;
+                width: 23%;
             }
             .hora{
                 font-family: 'Open-Sans-SemiBold';
-                width: 12vw;
-                height: 5vh;
+                height: 100%;
+                width: 23%;
                 margin-left: 1em;
             }
         }
@@ -95,8 +98,6 @@
             padding-left: .5em;
             width: 30vw;
         }
-
-       
         
         button{
             display: flex;
@@ -104,7 +105,7 @@
             background: transparent;
             color: #1e272e;
             font-weight: 400;
-            font-size: 1.5em;
+            font-size: 1em;
             font-family: 'Open-Sans-SemiBold';
             padding: 5px 20px;
             border: 2px solid #AD8217;
@@ -113,6 +114,7 @@
             overflow: hidden;
             cursor: pointer;
         }
+        
         button:before{
             content: '';
             position: absolute;
@@ -131,23 +133,21 @@
     
         textarea{
             width: 50vw;
-            height: 8vw;
+            height: 20vh;
             border-radius: .35em;
             border: 2px solid #AD8217;
             outline: none;
             padding: .5em;
             font-family: 'Open-Sans-SemiBold';
-            font-size: 1.5em;
+            font-size: .8em;
             resize: none;
             margin-bottom: 1em;
         }
-        
         
         .areas{
             font-family: 'Open-Sans-SemiBold';
             font-size: 1em;
             box-shadow: 0 12px 16px 0 rgb(0, 0, 0), 0 17px 50px 0 rgb(0, 0, 0);
-        
         }
     }
     

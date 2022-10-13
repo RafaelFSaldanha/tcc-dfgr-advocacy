@@ -16,11 +16,19 @@ export default function Cabecalho() {
             setUsuario(usuarioLogado.nome)
         }
     }, [])
+
+    function clickArrow() {
+        navigate('/advogado/home')
+    }
+    
     return (
         <header className='header-main'>
-            <div className='main-bem-vindo'>Olá, seja bem-vindo Dr. {usuario} </div>
+            <div className='img-text'>
+                <img src='/assets/images/arrowleft.png' alt='' onClick={clickArrow} />
+                <div className='main-bem-vindo'>Olá, seja bem-vindo Dr. {usuario} </div>
+            </div>
                 <div className='main-perfil'>
-                    <img src='../../../assets/images/perfil.svg'/>
+                    <img src='/assets/images/perfil.svg' alt=''/>
                 </div>
         </header>
     )
