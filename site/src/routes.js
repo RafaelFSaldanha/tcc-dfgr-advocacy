@@ -29,7 +29,7 @@ export default function Index() {
         <Route path='/cadastro' element={<CadastroUsuario />} />
         <Route path='/login' element={<LoginUsuario />} />
         <Route path='/advogado/informacoes/:idParam' element={<Informaçoes />} />
-        <Route path='/perfil/advogado' element={<PerfilAdvogado />} />
+        <Route path='/perfil/advogado/:idParam' element={<PerfilAdvogado />} />
         <Route path='/editarperfil/advogado' element={<EditarPerfil />} />
     </Routes>
     </BrowserRouter>
