@@ -83,3 +83,22 @@ export async function Informaçoes(id) {
     const r = await api.get(`/advogado/id/${id}`)
     return r.data
 }
+export async function AdvogadoId(id) {
+    const r = await api.get(`/advogado/advogadosid/${id}`)
+    return r.data
+}
+
+export async function enviarfotoadvogado(id, imagem){
+    const formData = new FormData();
+    formData.append('foto', imagem);
+
+    const resposta = await api.put(`/advogado/${id}/foto`, formData,{
+        headers:{
+            "Content-Type": "multipart/form-data"
+        },
+    })
+}
+
+export async function buscarfoto(imagem){
+    return `${api.getUri()}/${imagem}`
+}
