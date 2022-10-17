@@ -18,6 +18,10 @@ export default function LandingPage() {
         navigate('/sobrenos');
     }
 
+    async function CadastroClick(){
+        navigate('/advogado/cadastro')
+    }
+
     return (
         <main className='landingpage'>
             <div className='cabecalho'>
@@ -26,6 +30,7 @@ export default function LandingPage() {
                     <a className='links' href='' onClick={AtuacaoClick}> Áreas de Atuação </a>
                     <a className='links' href='' onClick={SobrenosClick}> Sobre Nós </a>
                     <a className='links' href=''> Associados </a>
+                    <img className='links' className="cadastro-image" onClick={CadastroClick} src="/assets/images/Account circle.png" alt="" />
                 </div>
             </div>
             <div className='faixa-1'>
@@ -36,7 +41,6 @@ export default function LandingPage() {
                     <p className="tagp">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
                     </p>
-                    <button className='botao'> Agende já </button>
                 </div>
                 <img className='img-1' src='/assets/images/landingpage-img1.png' alt='img1' />
             </div>
@@ -51,7 +55,7 @@ export default function LandingPage() {
                 <div className="div-cards">
                     <CardsLandingPage />
                 </div>
-                <button className="button-faixa2">Conhecer todas as Áreas</button>
+                <button className="button-faixa2" onClick={AtuacaoClick}>Conhecer todas as Áreas</button>
             </section>
 
             <section className="section-sobrenos">

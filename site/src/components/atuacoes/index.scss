@@ -1,0 +1,37 @@
+.main{
+    display: flex;
+    flex-direction: column;
+
+        .div-card{
+            flex-direction: row;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            text-align: center;
+        }
+        
+        .div-img{
+            flex-direction: column;
+            padding: 3vh;
+            width: 13%;
+            height: 20vh;
+            border-radius: 20px;
+            background-color: #0D263E;
+            margin-bottom: 5vh;
+            align-items: center;
+            border: solid red 1px;
+
+            .img{
+                align-self: center;
+            }
+
+
+        }
+
+        .div-texto{
+            font-family: 'Open-Sans-SemiBold'; 
+            font-size: 22px;
+            width: 60em;
+            margin-bottom: 1.5em;
+        }
+}
