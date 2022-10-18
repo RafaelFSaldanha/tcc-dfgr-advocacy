@@ -102,3 +102,14 @@ export async function enviarfotoadvogado(id, imagem){
 export async function buscarfoto(imagem){
     return `${api.getUri()}/${imagem}`
 }
+
+export async function EditPerfil(id, nome, area, email, localizacao, telefone){
+    const resposta = await api.put(`/advogado/editar/${id}`, {
+        nome,
+        area,
+        email,
+        localizacao,
+        telefone
+    });
+    return resposta.data
+}

@@ -1,7 +1,40 @@
 import '../../common/common.scss'
 import './index.scss'
+import { useParams } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { AdvogadoId, EditPerfil } from '../../../api/Advogadoapi'
 
 export default function EditarPerfil() {
+    const [nome,setNome]= useState('');
+    const [area,setArea]= useState(0);
+    const [email,setEmail]= useState('');
+    const [localizacao,setLocalizacao]= useState('');
+    const [telefone,setTelefone]= useState('');
+    const [id,setId]= useState(0);
+    const {idParam}= useParams()
+
+    useEffect(()=>{
+        if(idParam){
+            carregaradvogado();
+        }
+        
+    },[])
+
+    function carregaradvogado() {
+        const r= AdvogadoId(idParam);
+        setNome(r.nome)
+        setArea(r.area)
+        setEmail(r.email)
+        setLocalizacao(r.localizacao)
+        setTelefone(r.telefone)
+        setId(r.id)
+        console.log(id)
+        
+    }
+
+    async function Alterar() {
+        const r= await EditPerfil(id, nome, area, email,localizacao, telefone)
+    }
 
 
     return (
@@ -18,23 +51,23 @@ export default function EditarPerfil() {
                         <div className='div-info1'>
                             <div>
                                 <p> Nome: </p>
-                                <input type='text' />
+                                <input value={nome} type='text' />
                             </div>
                             <div>
                                 <p> Email: </p>
-                                <input type='email' />
+                                <input value={email} type='email' />
                             </div>
                             <div>
                                 <p> Telefone: </p>
-                                <input type='number' />
+                                <input value={telefone} type='number' />
                             </div>
                             <div>
                                 <p> Localização: </p>
-                                <input type='text' />
+                                <input value={localizacao} type='text' />
                             </div>
                             <div>
                                 <p> Áreas de atuação: </p>
-                                <input type='text' />
+                                <input value={area} type='text' />
                             </div>
                         </div>
                         <div className='div-info2'>
