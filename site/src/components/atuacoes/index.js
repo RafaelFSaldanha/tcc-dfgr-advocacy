@@ -7,7 +7,7 @@ export default function Atuacoes(){
         <main className='main'>
             <div className="div-card">
                 <div className='div-img'>
-                <img className='img' src="/assets/images/folinha.png" alt="" />
+                <img className='ambiental' src="/assets/images/ambiental.png" alt="" />
                 <p className='titulo-img'>Ambiental</p>
                 </div>
                 <div className='div-texto'>
@@ -17,7 +17,7 @@ export default function Atuacoes(){
             </div>
             <div className="div-card">
                 <div className='div-img'>
-                <img className='img' src="/assets/images/civel.png" alt="" />
+                <img className='civel' src="/assets/images/civel.png" alt="" />
                 <p className='titulo-img'>Cível</p>
                 </div>
                 <div className='div-texto'>
@@ -27,7 +27,7 @@ export default function Atuacoes(){
             </div>
             <div className="div-card">
                 <div className='div-img'>
-                <img className='img' src="/assets/images/criminalista.png" alt="" />
+                <img className='criminalista' src="/assets/images/criminalista.png" alt="" />
                 <p className='titulo-img'>Criminalista</p>
                 </div>
                 <div className='div-texto'>
@@ -37,7 +37,7 @@ export default function Atuacoes(){
             </div>
             <div className="div-card">
                 <div className='div-img'>
-                <img className='img' src="/assets/images/tributario.png" alt="" />
+                <img className='tributario' src="/assets/images/tributario.png" alt="" />
                 <p className='titulo-img'>Tributário</p>
                 </div>
                 <div className='div-texto'>
@@ -47,7 +47,7 @@ export default function Atuacoes(){
             </div>
             <div className="div-card">
                 <div className='div-img'>
-                <img className='img' src="/assets/images/imobiliario.png" alt="" />
+                <img className='imobiliario' src="/assets/images/imobiliario.png" alt="" />
                 <p className='titulo-img'>Imobiliario</p>
                 </div>
                 <div className='div-texto'>
@@ -56,7 +56,7 @@ export default function Atuacoes(){
             </div>
             <div className="div-card">
                 <div className='div-img'>
-                <img className='img' src="/assets/images/familiar.png" alt="" />
+                <img className='familiar' src="/assets/images/familiar.png" alt="" />
                 <p className='titulo-img'>Familiar</p>
                 </div>
                 <div className='div-texto'>
