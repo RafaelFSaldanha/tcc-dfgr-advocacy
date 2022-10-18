@@ -1,9 +1,16 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { buscarfoto } from "../../api/Advogadoapi"
 
 
 
 export default function Index(props){
+
+    const navigate=useNavigate()
+
+    function Editar() {
+        navigate('/editarperfil/advogado')
+    }
 
     return(
         <div className='div-principal'>
@@ -42,7 +49,7 @@ export default function Index(props){
                             </div>
                         </div>
                         <div className='div-lapis'>
-                            <img src='/assets/images/edit-perfil.png' alt='' />
+                            <img onClick={Editar} src='/assets/images/edit-perfil.png' alt='' />
                         </div>
                     </div>
                 </div>

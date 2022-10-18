@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import multer from 'multer'
-import { LoginAdvogado, AgendarConsultoria, CadastroAdvogado, Remover, alterarimgadvogado } from '../repository/AdvogadoRepository.js';
+import { LoginAdvogado, AgendarConsultoria, CadastroAdvogado, Remover, alterarimgadvogado, EditarPerfil } from '../repository/AdvogadoRepository.js';
 
 const server = Router();
 const upload = multer({dest: 'storage/FotoAdvogado'})
@@ -113,6 +113,45 @@ server.put('/advogado/:id/foto', upload.single('foto')  ,async (req, resp) => {
             throw new Error('A imagem não pode ser salva')
         }
         resp.status(204).send();
+    } catch (err) {
+        resp.status(400).send({
+            erro:err.message
+        })
+    }
+})
+
+server.put('/advogado/editar/:id', async (req, resp)=>{
+    try {
+        const { id } = req.params;
+        const advogado = req.body;
+
+        if (!advogado.nome) {
+            throw new Error("Insira um nome")
+        }
+
+        if (advogado.area == 0) {
+            throw new Error("Selecione uma área")
+        }
+        
+        if (!advogado.email) {
+            throw new Error("Insira um email")
+        }
+        
+        if (!advogado.localizacao ) {
+            throw new Error("Insira um Local")
+        }
+        
+        if (!advogado.telefone) {
+            throw new Error("Insira um telefone")
+        }
+    
+        const resposta = await EditarPerfil(id, advogado)
+        if(resposta!=1){
+            throw new Error('Não foi possivel editar')
+        }
+        else{
+            resp.status(204).send()
+        }
     } catch (err) {
         resp.status(400).send({
             erro:err.message

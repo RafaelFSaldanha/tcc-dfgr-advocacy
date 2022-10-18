@@ -17,6 +17,10 @@ export default function Cabecalho() {
         }
     }, [])
 
+    function navegar() {
+        navigate('/perfil/advogado')
+    }
+
     function clickArrow() {
         navigate('/advogado/home')
     }
@@ -28,7 +32,7 @@ export default function Cabecalho() {
                 <div className='main-bem-vindo'>Olá, seja bem-vindo Dr. {usuario} </div>
             </div>
                 <div className='main-perfil'>
-                    <img src='/assets/images/perfil.svg' alt=''/>
+                    <img onClick={navegar} src='/assets/images/perfil.svg' alt=''/>
                 </div>
         </header>
     )

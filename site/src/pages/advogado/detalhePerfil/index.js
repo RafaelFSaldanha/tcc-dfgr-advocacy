@@ -1,23 +1,27 @@
 import './index.scss';
 import '../../common/common.scss';
 import DetalhePerfil from '../../../components/detalheperfil/index'
-import { useParams } from 'react-router-dom';
+import storage from 'local-storage';
 import { useEffect, useState } from 'react';
 import { AdvogadoId } from '../../../api/Advogadoapi';
+import { useNavigate } from 'react-router-dom';
 
 export default function PerfilAdvogado() {
 
     const[advogado,setAdvogado]= useState({})
-    const {idParam}= useParams();
+    const navigate = useNavigate();
 
     async function carregar() {
-        const r = await AdvogadoId(idParam)
+        const Advogado = storage('advogado-logado')
+        const r = await AdvogadoId(Advogado.id)
         setAdvogado(r)
     }
 
     useEffect(() =>{
         carregar();
-        console.log(advogado)
+        if(!storage('advogado-logado')){
+            navigate('/advogado/login')
+        }
     },[])
 
     return (
