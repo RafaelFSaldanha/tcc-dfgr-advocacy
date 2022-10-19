@@ -28,7 +28,7 @@ export default function EditarPerfil() {
         setLocalizacao(r.localizacao)
         setTelefone(r.telefone)
         setId(r.id)
-        console.log(id)
+        
         
     }
 

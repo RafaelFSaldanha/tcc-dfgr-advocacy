@@ -1,4 +1,5 @@
 import Menulateral from '../../../components/menulateraladm'
+import Consultas from '../../../components/consultoriasadmin'
 import '../../common/common.scss'
 import './index.scss'
 
@@ -12,7 +13,18 @@ export default function Index() {
                 <Menulateral />
                 <div className='div-principal'>
                     <h1> Consultorias </h1>
-                    <img src="/assets/images/logoapagada.svg" alt="" />
+                    <thead className='thead'>
+                        <div className="container">
+                            <th>Indentificação</th>
+                            <th>Nome do Advogado</th>
+                            <th>Data</th>
+                            <th>Hora</th>
+                            <th>Nome do Cliente</th>
+                        </div>
+                        
+                    </thead>
+                    <Consultas/>
+                   
                 </div>
             </div>
         </main>

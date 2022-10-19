@@ -9,6 +9,7 @@
         height: 10%;
         width: 100%;
         background-color: #0D263E;
+        
 
         img {
             height: 90%;
@@ -25,13 +26,30 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             width: 100%;
 
             h1 {
                 font-family: 'Open-Sans-SemiBold';
                 color: #3d3d3d;
                 margin-bottom: 10vh;
+            }
+            .thead{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-evenly;
+                border-radius: 10px;
+                height: 9vh;
+                width: 70vw;
+                color: #0D263E;
+                font-family: 'Open-Sans-SemiBold';
+        
+                    .container{
+                        width:65vw;
+                        display: flex;
+                        justify-content: space-around;
+                    }
+        
             }
         }
     }

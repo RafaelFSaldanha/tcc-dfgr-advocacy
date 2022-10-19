@@ -7,6 +7,8 @@ create table tb_cliente(
         nm_cliente		varchar(50) not null,
         ds_email		varchar(100) not null,
         ds_senha		varchar(30) not null,
+        ds_telefone     varchar(20),
+        ds_localizacao  varchar(100),
         img_cliente		varchar(800)
 );
 
@@ -31,6 +33,8 @@ create table tb_advogado(
         nr_telefone		varchar(20) not null,
         ds_email		varchar(100) not null,
         ds_senha 		varchar(30) not null,
+        ds_advogado 	varchar(1000),
+        ds_situacao     varchar(50),
         img_advogado	varchar(800),
         foreign key	(id_area) references tb_area_atuacao(id_area)
         

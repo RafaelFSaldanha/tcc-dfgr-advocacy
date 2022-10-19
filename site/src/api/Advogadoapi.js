@@ -113,3 +113,35 @@ export async function EditPerfil(id, nome, area, email, localizacao, telefone){
     });
     return resposta.data
 }
+
+export async function AdminLogin(email,senha){
+    const r = await api.post('/login/admin', {
+        email: email,
+        senha: senha
+    })
+    return r.data
+}
+
+export async function ListarConsultasAdmin(){
+    const r = await api.get('/admin/listarconsultas');
+    return r.data
+}
+export async function ListarAdvAdmin(){
+    const r = await api.get('/admin/listaradvogado');
+    return r.data
+}
+
+export async function AlterarSit(id){
+    const r = await api.put(`/admin/alterar/${id}`);
+    return r.data
+}
+
+export async function ListarAdvAdmin2(){
+    const r = await api.get('/admin/listaradvogado2');
+    return r.data
+}
+
+export async function DeletarAdvogado(id){
+    const resposta = await api.delete(`/admin/advogado/${id}`);
+    return resposta.status
+}
