@@ -10,15 +10,15 @@ export default function LandingPage() {
 
     const navigate = useNavigate();
 
-    async function AtuacaoClick(){
+    async function AtuacaoClick() {
         navigate('/atuacao');
     }
 
-    async function SobrenosClick(){
+    async function SobrenosClick() {
         navigate('/sobrenos');
     }
 
-    async function CadastroClick(){
+    async function CadastroClick() {
         navigate('/advogado/cadastro')
     }
 
@@ -76,11 +76,11 @@ export default function LandingPage() {
                 </div>
 
                 <div className='div-associados'>
-                    <Associados/>
+                    <Associados />
                 </div>
 
                 <div className="div-button-associados">
-                <button className="button-associados">Conhecer Todos os Associados</button>
+                    <button className="button-associados">Conhecer Todos os Associados</button>
                 </div>
             </section>
             <Rodape />
