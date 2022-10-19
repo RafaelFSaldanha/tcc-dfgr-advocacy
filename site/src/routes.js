@@ -14,6 +14,11 @@ import AreaAtuacao from './pages/advogado/atuacao/index.js';
 import PerfilAdvogado from './pages/advogado/detalhePerfil/index.js';
 import EditarPerfil from './pages/advogado/editarPerfil/index.js'
 import AssociadosPage from './pages/advogado/associados/index.js';
+import AdminHome from './pages/admin/home/index.js';
+import AdminAssociados from './pages/admin/associados/index.js';
+import AdminConsultorias from './pages/admin/consultorias/index.js';
+import AdminLogin from './pages/admin/login/index.js';
+import AdminNovosAssociados from './pages/admin/novosAssociados/index.js';
 
 export default function Index() {
     return(
@@ -33,6 +38,11 @@ export default function Index() {
         <Route path='/advogado/informacoes/:idParam' element={<Informaçoes />} />
         <Route path='/perfil/advogado' element={<PerfilAdvogado />} />
         <Route path='/editarperfil/advogado/:idParam' element={<EditarPerfil />} />
+        <Route path='/admin/home' element={<AdminHome />} />
+        <Route path='/admin/associados' element={<AdminAssociados />} />
+        <Route path='/admin/consultorias' element={<AdminConsultorias />} />
+        <Route path='/admin/login' element={<AdminLogin />} />
+        <Route path='/admin/novosAssociados' element={<AdminNovosAssociados />} />
     </Routes>
     </BrowserRouter>
     )
