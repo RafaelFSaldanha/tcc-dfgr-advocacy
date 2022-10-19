@@ -30,9 +30,10 @@ export default function LandingPage() {
                     <a className='links' href='' onClick={AtuacaoClick}> Áreas de Atuação </a>
                     <a className='links' href='' onClick={SobrenosClick}> Sobre Nós </a>
                     <a className='links' href=''> Associados </a>
-                    <img className='links' className="cadastro-image" onClick={CadastroClick} src="/assets/images/Account circle.png" alt="" />
+                    <img className="cadastro-image links" onClick={CadastroClick} src="/assets/images/Account circle.png" alt="" />
                 </div>
-            </div>
+            </div> 
+            
             <div className='faixa-1'>
                 <div className='div-1'>
                     <div className="div-titulo-f1">
