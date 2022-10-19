@@ -10,12 +10,10 @@ server.post('/login/advogado', async (req, resp) => {
         const { email, senha } = req.body;
         const resposta = await LoginAdvogado(email, senha)
 
-        if (!email) {
+        if (!resposta) {
             throw new Error('Senha ou E-mail incorretos.')
         }
-        if (!senha) {
-            throw new Error('Senha ou E-mail incorretos.')
-        }
+    
             
         resp.send(resposta)
     }
@@ -76,7 +74,7 @@ server.post('/cadastro/advogado', async (req, resp) => {
 
         
 
-        resp.send(advogado)
+        resp.status(204).send()
     } catch (err) {
         console.log(err)
         resp.status(401).send({

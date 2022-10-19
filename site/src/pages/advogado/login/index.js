@@ -30,7 +30,9 @@ export default function LoginPage() {
 
         setTimeout(() => {
             navigate('/advogado/home');
+            ref.current.complete();
         }, 3000);
+        
         
         }
 

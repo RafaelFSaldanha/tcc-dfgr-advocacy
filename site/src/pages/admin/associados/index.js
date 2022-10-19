@@ -1,4 +1,5 @@
 import Menulateral from '../../../components/menulateraladm'
+import Advogados from '../../../components/advaceitos'
 import '../../common/common.scss'
 import './index.scss'
 
@@ -12,7 +13,17 @@ export default function Index() {
                 <Menulateral />
                 <div className='div-principal'>
                     <h1> Associados </h1>
-                    <img src="/assets/images/logoapagada.svg" alt="" />
+                    <thead className='thead'>
+                        <div className="container">
+                            <th>Indentificação</th>
+                            <th>Nome do Advogado</th>
+                            <th>Localização</th>
+                            <th>Área de atuação</th>
+                            <th>Telefone</th>
+                        </div>
+                        
+                    </thead>
+                    <Advogados/>
                 </div>
             </div>
         </main>

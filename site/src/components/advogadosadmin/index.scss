@@ -1,0 +1,36 @@
+.conteudos-advogado-admin {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background: #0D263E;
+    border-radius: 10px;
+    height: 9vh;
+    width: 70vw;
+    margin-top: 5vh;
+    
+
+    .info{
+        color:white;
+        font-family: 'Open-Sans-SemiBold';
+    }
+    .botao{
+        height: 15px;
+
+
+    }
+    .container{
+        width: 68vw;
+        display: flex;
+        justify-content: space-around;
+        .foto{
+            width: 1em;
+        }
+
+    }
+    
+
+}
+.conteudos-advogado-admin:hover{
+    cursor: pointer;
+}
