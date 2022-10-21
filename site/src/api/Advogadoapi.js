@@ -145,3 +145,13 @@ export async function DeletarAdvogado(id){
     const resposta = await api.delete(`/admin/advogado/${id}`);
     return resposta.status
 }
+
+export async function ListarAssociados(){
+    const r = await api.get('/listarassociados');
+    return r.data
+}
+
+export async function PesquisarAssociados(nome) {    
+    const resposta = await api.get(`/pesquisarassociados?nome=${nome}`);
+    return resposta.data
+}
