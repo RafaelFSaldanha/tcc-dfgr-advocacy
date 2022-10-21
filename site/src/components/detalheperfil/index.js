@@ -1,23 +1,41 @@
-import { useState } from "react"
+import { useState,useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { buscarfoto } from "../../api/Advogadoapi"
-
+import { API_URL } from '../../api/config.js'
 
 
 export default function Index(props){
 
     const navigate=useNavigate()
+    const[imagem,setImagem] = useState()
 
     function Editar() {
         navigate('/editarperfil/advogado')
     }
+
+    function MostrarImagem(){
+        if(typeof (imagem) === 'object'){
+            return URL.createObjectURL(imagem);
+        }
+
+        else if (typeof (imagem) === 'string'){
+            return `${API_URL}/${imagem}` 
+        }
+        else{
+            return buscarfoto(imagem);
+        }
+    }
+    useEffect(() =>{
+        setImagem(props.advogado.foto)
+        MostrarImagem()
+    })
 
     return(
         <div className='div-principal'>
                 <h1> Meu Perfil </h1>
                 <div className='conteudo'>
                     <div className='div-foto'>
-                        <img className='foto' src= {buscarfoto(props.advogado.foto)} alt='' />
+                        <img className='foto' src= {MostrarImagem()} alt='' />
                     </div>
                     <div className='principal-conteudo'>
                         <div className='conteudo-adv'>

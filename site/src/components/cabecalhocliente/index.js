@@ -4,32 +4,37 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 export default function CabecalhoCliente() {
-    const [usuario, setUsuario] = useState('');
+    const [cliente, setCliente] = useState('');
 
     const navigate = useNavigate();
     useEffect(() => {
-        if(!storage('usuario-logado')){
+        if(!storage('cliente-logado')){
             navigate('/login')
         }
         else{
-            const usuarioLogado = storage('usuario-logado')
-            setUsuario(usuarioLogado.nome)
+            const usuarioLogado = storage('cliente-logado')
+            setCliente(usuarioLogado.nome)
         }
     }, [])
+    
+    function nome() {
+        const r= storage('cliente-logado')
+        setCliente(r.nome)
+    }
 
     function navegar() {
-        navigate('/usuario/detalheperfil')
+        navigate('/detalheperfil')
     }
 
     function clickArrow() {
-        navigate('/usuario/home')
+        navigate('/home')
     }
     
     return (
         <header className='header-main'>
             <div className='img-text'>
                 <img src='/assets/images/arrowleft.png' alt='' onClick={clickArrow} />
-                <div className='main-bem-vindo'>Olá, seja bem-vindo Sr.{usuario} </div>
+                <div className='main-bem-vindo'>Olá, seja bem-vindo Sr. {cliente} </div>
             </div>
                 <div className='main-perfil'>
                     <img onClick={navegar} src='/assets/images/account-cog.png' alt=''/>

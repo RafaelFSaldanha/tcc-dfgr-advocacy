@@ -1,5 +1,5 @@
 import '../../common/common.scss'
-import './index.scss'
+import '../login/index.scss'
 import { ClienteLogin } from '../../../api/Advogadoapi'
 import { useState, useRef, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -14,10 +14,15 @@ export default function Index() {
     const navigate = useNavigate();
     const ref = useRef(); 
 
+
+    function AdvLogin(){
+        navigate('/advogado/login')
+    }
     useEffect(() =>{
         if(storage('cliente-logado')){
-            navigate('/usuario/home')
+            navigate('/home')
         }
+        
     }, [])
     async function entrarClick(){
     ref.current.continuousStart();
@@ -28,8 +33,8 @@ export default function Index() {
         storage('cliente-logado', r)
 
         setTimeout(() => {
-            navigate('/');
-        }, 3000);
+            navigate('/home');
+        }, 2000);
         
         }
 
@@ -70,6 +75,7 @@ export default function Index() {
             <div className='div-bg-button'>
                 <button  onClick={entrarClick} className='entrar-button' >Entrar</button>
                 <p className='cadastro-con'>Não tem uma conta ainda? <a onClick={cadastrarClick}> Cadastre-se </a></p>
+                <p className='cadastro-con'>Já trabalha conosco? <a onClick={AdvLogin}> Entrar </a></p>
             </div>
         </div>
     </main>

@@ -19,7 +19,7 @@ export default function MenulateralCliente(){
 
     async function agendadasClick(){
         
-        navigate('/cliente/consultoriasagendadas');
+        navigate('/agendadas');
     
 }
 

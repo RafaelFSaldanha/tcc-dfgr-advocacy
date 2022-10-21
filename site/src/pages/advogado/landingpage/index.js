@@ -19,7 +19,7 @@ export default function LandingPage() {
     }
 
     async function CadastroClick() {
-        navigate('/advogado/cadastro')
+        navigate('/login')
     }
 
     async function AssociadosClick() {
@@ -85,7 +85,7 @@ export default function LandingPage() {
                 </div>
 
                 <div className="div-button-associados">
-                    <button className="button-associados">Conhecer Todos os Associados</button>
+                    <button className="button-associados" onClick={AssociadosClick}>Conhecer Todos os Associados</button>
                 </div>
             </section>
             <Rodape />

@@ -103,6 +103,24 @@ server.get('/advogado/advogadosid/:id', async (req, resp) => {
         })
     }
 })
+server.get('/advogado/advogadosid/:id', async (req, resp) => {
+    try {
+        const id = Number(req.params.id);
+        
+        const resposta = await buscarIdAdvogado(id)
+        if(!resposta){
+            resp.status(404).send('Não foi possível localizar esse advogado')
+        }
+        else {
+            resp.send(resposta)
+        }
+    }
+    catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
 
 
 export default server;

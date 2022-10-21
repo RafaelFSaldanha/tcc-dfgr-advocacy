@@ -74,3 +74,40 @@ export async function PesquisaAssociado(nome){
     const [resposta] = await con.query(comando, [`%${nome}%`])
     return resposta
 }
+
+export async function buscarConsultoriaPorIdCliente(id) {
+    const comando = 
+    ` select
+    id_consultoria        as id,
+    nm_advogado				as advogado,
+    nm_area                  as area,
+    ds_email                as email,    
+    dt_consultoria        as dia,
+    hr_consultoria          as hora,
+    ds_consultoria        as descricao
+    from tb_consultoria
+    inner join tb_area_atuacao on tb_area_atuacao.id_area = tb_consultoria.id_area
+    inner join tb_advogado on tb_advogado.id_advogado = tb_consultoria.id_advogado
+    where id_cliente = ? `
+    
+
+    const [linhas] = await con.query(comando, [id]);
+    return linhas;
+}
+
+export async function buscarIdCliente(id) {
+    const comando = `
+        select id_cliente       as id,
+               nm_cliente       as nome,
+               ds_localizacao     as local,
+               ds_telefone        as tel,
+               ds_email           as email,
+               img_cliente       as foto     
+          from tb_cliente
+          where id_cliente = ?
+    `
+
+    const [linhas] = await con.query(comando, [id]);
+    return linhas[0];
+}
+

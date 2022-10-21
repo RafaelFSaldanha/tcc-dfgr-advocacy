@@ -99,7 +99,7 @@ export async function enviarfotoadvogado(id, imagem){
     })
 }
 
-export async function buscarfoto(imagem){
+export function buscarfoto(imagem){
     return `${api.getUri()}/${imagem}`
 }
 
@@ -154,4 +154,10 @@ export async function ListarAssociados(){
 export async function PesquisarAssociados(nome) {    
     const resposta = await api.get(`/pesquisarassociados?nome=${nome}`);
     return resposta.data
+}
+
+export async function ConsultoriasId(id) {
+
+    const r = await api.get(`/cliente/consultorias/${id}`)
+    return r.data
 }

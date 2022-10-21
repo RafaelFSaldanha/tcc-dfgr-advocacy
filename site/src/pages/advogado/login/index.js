@@ -31,7 +31,7 @@ export default function LoginPage() {
         setTimeout(() => {
             navigate('/advogado/home');
             ref.current.complete();
-        }, 3000);
+        }, 1000);
         
         
         }
@@ -52,32 +52,35 @@ export default function LoginPage() {
 
         setTimeout(() => {
             navigate('/advogado/cadastro');
-        }, 3500)
+        }, 1)
     }
 
 
 
 
     return(
-       <main className='tela-login'>
-            <LoadingBar color='#AD8217' ref={ref} />
-            <div className='div-principal'>
-                <img src='/assets/images/logodourada.svg'/>
-                <div className='div-inputs'>
-                    <div className='div-input'>
-                        <p>Email<span> *</span></p>
-                        <input value={email} type='email'placeholder='Insira seu email' onChange={e => setEmail(e.target.value)} />
-                    </div>
-                    <div className='div-input'>
-                        <p>Senha <span> *</span></p>
-                        <input value={senha} type='password' placeholder='*********' onChange={e => setSenha(e.target.value)}/>
-                    </div>
+        <main className='Login-main'>
+        <LoadingBar color='#AD8217' ref={ref} />
+        <div className='div-bg-main'>
+            <img className='logo' src='/assets/images/logodourada.svg' alt=''/>
+            <div className='div-bg-input'>
+               <div className='input-email'>
+                <p>Email<span> *</span></p>
+                <input value={email} type='email'placeholder='Insira seu email' onChange={e => setEmail(e.target.value)} />
                 </div>
-                <div className='error'>
-                    {erro}
+                <div className='input-senha'>
+                <p>Senha <span> *</span></p>
+                <input value={senha} type='password' placeholder='*********' onChange={e => setSenha(e.target.value)}/>
                 </div>
-                <button onClick={entrarClick}  className='entrar-button' >Entrar</button>
-                <p className='cadastro-con'>Não tem uma conta ainda? <a onClick={cadastrarClick} > Cadastre-se </a></p>
             </div>
-        </main>
+            <div className='error'>
+                    {erro}
+                    </div>
+            <div className='div-bg-button'>
+                <button  onClick={entrarClick} className='entrar-button' >Entrar</button>
+                <p className='cadastro-con'>Não tem uma conta ainda? <a onClick={cadastrarClick}> Cadastre-se </a></p>
+               
+            </div>
+        </div>
+    </main>
 )}

@@ -3,7 +3,7 @@ import '../../common/common.scss';
 import Rodape from '../../../components/rodape';
 import { useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react';
-import { PesquisarAssociados, ListarAssociados } from '../../../api/Advogadoapi';
+import { PesquisarAssociados, ListarAssociados, buscarfoto } from '../../../api/Advogadoapi';
 
 
 export default function AssociadosPage() {
@@ -23,10 +23,8 @@ export default function AssociadosPage() {
     }
     useEffect(()=>{
         Listar();
+        
     },[])
-
-    
-
 
 
     const navigate = useNavigate();
@@ -39,7 +37,7 @@ export default function AssociadosPage() {
     }
 
     async function CadastroClick() {
-        navigate('/advogado/cadastro')
+        navigate('/login')
     }
 
     async function VoltarClick() {
@@ -69,11 +67,12 @@ export default function AssociadosPage() {
             </div>
 
             <div>
+            
             {advogado.map(item =>
                 <div>
                     <div>
-                        {item.foto}
-                    </div>
+                        <img src={buscarfoto(item.foto)}/>
+                     </div>
                     <div className='div-nome'>
                         <img src="/assets/images/Account circle.png" />
                         <h3>{item.nome}</h3>

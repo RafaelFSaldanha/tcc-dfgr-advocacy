@@ -50,11 +50,11 @@ export default function Index() {
         <Route path='/admin/consultorias' element={<AdminConsultorias />} />
         <Route path='/admin/login' element={<AdminLogin />} />
         <Route path='/admin/novosAssociados' element={<AdminNovosAssociados />} />
-        <Route path='/usuario/infoadvogado' element={<InfoAdvogado />} />
-        <Route path='/usuario/consultoriaCliente' element={<ConsultoriaCliente />} />
-        <Route path='/usuario/detalheperfil' element={<DetalhePerfil />} />
-        <Route path='/usuario/editarperfil' element={<EditarPerfilUsuario />} />
-        <Route path='/usuario/home' element={<HomeCliente />} />
+        <Route path='/infoadvogado' element={<InfoAdvogado />} />
+        <Route path='/agendadas' element={<ConsultoriaCliente />} />
+        <Route path='/detalheperfil' element={<DetalhePerfil />} />
+        <Route path='/editarperfil' element={<EditarPerfilUsuario />} />
+        <Route path='/home' element={<HomeCliente />} />
     </Routes>
     </BrowserRouter>
     )

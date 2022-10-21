@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import multer from 'multer';
-import { alterarimgcliente, CadastroCliente, ListarAssociados, LoginCliente, PesquisaAssociado } from '../repository/ClienteRepository.js';
+import { alterarimgcliente, buscarConsultoriaPorIdCliente, buscarIdCliente, CadastroCliente, ListarAssociados, LoginCliente, PesquisaAssociado } from '../repository/ClienteRepository.js';
 
 const server = Router();
 const upload = multer({dest: 'storage/FotoCliente'})
@@ -98,6 +98,46 @@ server.get('/pesquisarassociados' , async (req, resp) => {
     })
 } 
 })
+
+server.get('/cliente/consultorias/:id', async (req, resp) => {
+    try {
+        const id = Number(req.params.id);
+        
+        const resposta = await buscarConsultoriaPorIdCliente(id)
+        if(resposta===[]){
+            resp.status(404).send('Nenhuma comanda correspondente foi encontrada')
+        }
+        else {
+            resp.send(resposta)
+        }
+    }
+    catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+server.get('/cliente/clienteid/:id', async (req, resp) => {
+    try {
+        const id = Number(req.params.id);
+        
+        const resposta = await buscarIdCliente(id)
+        if(!resposta){
+            resp.status(404).send('Não foi possível localizar esse advogado')
+        }
+        else {
+            resp.send(resposta)
+        }
+    }
+    catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+
 
 export default server;
 

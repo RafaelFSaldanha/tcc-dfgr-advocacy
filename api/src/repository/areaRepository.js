@@ -105,3 +105,4 @@ export async function buscarIdAdvogado(id) {
     const [linhas] = await con.query(comando, [id]);
     return linhas[0];
 }
+
