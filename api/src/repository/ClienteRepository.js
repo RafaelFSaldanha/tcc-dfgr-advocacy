@@ -32,3 +32,45 @@ export async function alterarimgcliente(imagem, id){
     const [resposta] = await con.query(comando, [imagem, id]);
     return resposta.affectedRows  
 }
+
+export async function ListarAssociados(){
+    const comando = 
+    ` 
+    SELECT
+    id_advogado      id,
+    nm_advogado	    nome,
+    nm_area          area,
+    ds_oab           oab,    
+    ds_localizacao   localizacao,
+    ds_email         email,
+    nr_telefone       telefone,  
+    ds_advogado      descricao,
+    img_advogado    foto
+    FROM tb_advogado
+    inner join tb_area_atuacao on tb_area_atuacao.id_area = tb_advogado.id_area
+    WHERE ds_situacao     = 'Aceito'
+    `
+    
+    const [resposta] = await con.query(comando)
+    return resposta
+}
+
+export async function PesquisaAssociado(nome){
+    const comando= `
+    SELECT id_advogado      id,
+    nm_advogado	    nome,
+    nm_area          area,
+    ds_oab           oab,    
+    ds_localizacao   localizacao,
+    ds_email         email,
+    nr_telefone       telefone,  
+    ds_advogado      descricao,
+    img_advogado    foto
+    FROM tb_advogado
+    inner join tb_area_atuacao on tb_area_atuacao.id_area = tb_advogado.id_area
+    WHERE nm_advogado		like ? and 
+    ds_situacao     = 'Aceito'
+        `
+    const [resposta] = await con.query(comando, [`%${nome}%`])
+    return resposta
+}

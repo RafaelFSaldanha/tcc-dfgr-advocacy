@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import multer from 'multer';
-import { alterarimgcliente, CadastroCliente, LoginCliente } from '../repository/ClienteRepository.js';
+import { alterarimgcliente, CadastroCliente, ListarAssociados, LoginCliente, PesquisaAssociado } from '../repository/ClienteRepository.js';
 
 const server = Router();
 const upload = multer({dest: 'storage/FotoCliente'})
@@ -69,4 +69,37 @@ server.put('/cliente/:id/foto', upload.single('foto')  ,async (req, resp) => {
     }
 })
 
+server.get('/listarassociados', async (req, resp) => {
+    try {
+        const resposta = await ListarAssociados()
+
+        resp.send(resposta)
+    }
+    catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+server.get('/pesquisarassociados' , async (req, resp) => {
+    try{
+    const {nome} = req.query;
+
+    const resposta = await PesquisaAssociado(nome);
+    if(!resposta){
+        resp.status(401).send('Nenhum Associado foi encontrado')
+    }
+    else {
+        resp.send(resposta)
+    }
+} catch(err){
+    resp.send({
+        erro: err.message 
+    })
+} 
+})
+
 export default server;
+
+
+
