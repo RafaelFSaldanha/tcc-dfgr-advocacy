@@ -22,6 +22,10 @@ export default function LandingPage() {
         navigate('/advogado/cadastro')
     }
 
+    async function AssociadosClick() {
+        navigate('/associados')
+    }
+
     return (
         <main className='landingpage'>
             <div className='cabecalho'>
@@ -29,7 +33,7 @@ export default function LandingPage() {
                 <div className='div-links'>
                     <a className='links' href='' onClick={AtuacaoClick}> Áreas de Atuação </a>
                     <a className='links' href='' onClick={SobrenosClick}> Sobre Nós </a>
-                    <a className='links' href=''> Associados </a>
+                    <a className='links' href='' onClick={AssociadosClick}> Associados </a>
                     <img className="cadastro-image links" onClick={CadastroClick} src="/assets/images/Account circle.png" alt="" />
                 </div>
             </div> 
