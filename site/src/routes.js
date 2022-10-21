@@ -19,11 +19,12 @@ import AdminAssociados from './pages/admin/associados/index.js';
 import AdminConsultorias from './pages/admin/consultorias/index.js';
 import AdminLogin from './pages/admin/login/index.js';
 import AdminNovosAssociados from './pages/admin/novosAssociados/index.js';
-import InfoAdvogado from './pages/advogado/infoadvogado/index.js';
+import InformaAdvogado from './pages/advogado/infoadvogado/index.js';
 import InfoAdvogado from './pages/cliente/InfoAdvogado/index.js';
 import ConsultoriaCliente from './pages/cliente/consultCliente/index.js';
 import DetalhePerfil from './pages/cliente/detalhePerfil/index.js';
 import EditarPerfilUsuario from './pages/cliente/editarPerfil/index.js';
+import HomeCliente from './pages/cliente/home/index.js';
 
 export default function Index() {
     return(
@@ -38,7 +39,7 @@ export default function Index() {
         <Route path="/sobrenos" element={< SobreNos/>} />
         <Route path='/atuacao'  element={<AreaAtuacao/>} />
         <Route path='/associados'  element={<AssociadosPage/>} />
-        <Route path='/infoadv'  element={<InfoAdvogado/>} />
+        <Route path='/infoadv'  element={<InformaAdvogado/>} />
         <Route path='/cadastro' element={<CadastroUsuario />} />
         <Route path='/login' element={<LoginUsuario />} />
         <Route path='/advogado/informacoes/:idParam' element={<Informaçoes />} />
@@ -53,6 +54,7 @@ export default function Index() {
         <Route path='/usuario/consultoriaCliente' element={<ConsultoriaCliente />} />
         <Route path='/usuario/detalheperfil' element={<DetalhePerfil />} />
         <Route path='/usuario/editarperfil' element={<EditarPerfilUsuario />} />
+        <Route path='/usuario/home' element={<HomeCliente />} />
     </Routes>
     </BrowserRouter>
     )

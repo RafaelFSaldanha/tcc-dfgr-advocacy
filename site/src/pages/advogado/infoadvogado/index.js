@@ -4,7 +4,7 @@ import InfoAdvComp from '../../../components/infoadv';
 import { useNavigate } from 'react-router-dom';
 
 
-export default function InfoAdvogado(){
+export default function InformaAdvogado(){
 
     const navigate = useNavigate();
 
@@ -33,7 +33,7 @@ export default function InfoAdvogado(){
             </div>
 
             <InfoAdvComp/>
-            
+
         </main>
     )
 }
