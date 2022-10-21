@@ -34,7 +34,7 @@ export default function AreaAtuacao() {
           <a className='links' href='' onClick={AssociadosClick}> Associados</a>
           <a className='links' href='' onClick={SobrenosClick}> Sobre Nós </a>
           <a className='links' href='' onClick={VoltarClick}> Inicio </a>
-          <img className='links' className="cadastro-image" onClick={CadastroClick} src="/assets/images/Account circle.png" alt="" />
+          <img className='links cadastro-image' onClick={CadastroClick} src="/assets/images/Account circle.png" alt="" />
         </div>
       </div>
 

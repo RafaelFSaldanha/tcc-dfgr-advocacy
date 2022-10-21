@@ -19,6 +19,7 @@ import AdminAssociados from './pages/admin/associados/index.js';
 import AdminConsultorias from './pages/admin/consultorias/index.js';
 import AdminLogin from './pages/admin/login/index.js';
 import AdminNovosAssociados from './pages/admin/novosAssociados/index.js';
+import InfoAdvogado from './pages/advogado/infoadvogado/index.js';
 
 export default function Index() {
     return(
@@ -33,6 +34,7 @@ export default function Index() {
         <Route path="/sobrenos" element={< SobreNos/>} />
         <Route path='/atuacao'  element={<AreaAtuacao/>} />
         <Route path='/associados'  element={<AssociadosPage/>} />
+        <Route path='/infoadv'  element={<InfoAdvogado/>} />
         <Route path='/cadastro' element={<CadastroUsuario />} />
         <Route path='/login' element={<LoginUsuario />} />
         <Route path='/advogado/informacoes/:idParam' element={<Informaçoes />} />
