@@ -1,0 +1,47 @@
+.header-main{
+    background-color: #0D263E;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 10vh;
+    width: 80vw;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    ps
+
+    .img-text {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 40%;
+    }
+
+    img {
+        height: 70%;
+        width: 10%;
+        cursor: pointer;
+        margin-left: 2vw;
+    }
+    
+    .main-bem-vindo{
+        font-family: 'Open-Sans-SemiBold';
+        color: #AD8217;
+        font-size: 1.1em;
+        display: flex;
+        align-items: center;
+        margin-left: 2em;
+    }
+    .main-perfil{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img{
+            width: 2.5em;
+            margin-right: 2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+    }
+}

@@ -1,5 +1,5 @@
-import MenuLateral from '../../../components/menulateral/index.js';
-import Cabecalho from '../../../components/cabecalho/index.js';
+import MenuLateralCliente from '../../../components/menulateralcliente/index.js';
+import CabecalhoCliente from '../../../components/cabecalhocliente/index.js';
 import './index.scss'
 import "../../common/common.scss"
 
@@ -7,9 +7,9 @@ import "../../common/common.scss"
 export default function HomeCliente(){
     return(
         <main className="main-admin">
-            <MenuLateral />
+            <MenuLateralCliente />
             <div className='container'>
-                <Cabecalho />
+                <CabecalhoCliente />
                 <div className='conteudo'>
                     <p> Área do Cliente</p>
                     <img src='/assets/images/logoapagada.svg' alt='logo' />

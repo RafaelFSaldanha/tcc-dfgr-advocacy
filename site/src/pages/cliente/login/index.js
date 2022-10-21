@@ -16,7 +16,7 @@ export default function Index() {
 
     useEffect(() =>{
         if(storage('cliente-logado')){
-            navigate('/')
+            navigate('/usuario/home')
         }
     }, [])
     async function entrarClick(){
