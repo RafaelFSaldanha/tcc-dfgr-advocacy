@@ -55,7 +55,7 @@ export default function Index() {
     }
 
     return (
-        <main className='Login-main'>
+        <main className='tela-login'>
         <LoadingBar color='#AD8217' ref={ref} />
         <div className='div-bg-main'>
             <img className='logo' src='/assets/images/logodourada.svg' alt=''/>

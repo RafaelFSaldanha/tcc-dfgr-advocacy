@@ -1,34 +1,30 @@
 .div-mae {
     margin-top: 5em;
     background-color: #092C4F;
-    width: 80em;
+    width: 70%;
+    height: 65%;
     display: flex;
     flex-direction: row;
     align-self: center;
     justify-self: center;
     border-radius: 2em;
     
-
     .div-img {
         display: flex;
         align-items: center;
         align-self: center;
         justify-content: flex-start;
-        width: 30em;
-        height: 30em;
+        width: 25%;
+        height: 90%;
         background-color: #092C4F;
 
         .img {
-            margin-top: 4em;
-            width: 20em;
-            height: 70em;
-
-
+            width: 100%;
+            height: 100%;
         }
     }
     
     .container{
-        
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
