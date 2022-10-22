@@ -24,12 +24,16 @@ export default function PerfilAdvogado() {
         }
     },[])
 
+    function Agendadas() {
+        navigate('/advogado/consultoriasagendadas')
+    }
+
     return (
         <main className='detalhe-perfil'>
             <header>
                 <img className='logo' src='/assets/images/logodourada.svg' alt=''/>
                 <div className='conteudo-header'>
-                    <a> Agendamentos </a>
+                    <a onClick={Agendadas}> Agendamentos </a>
                     <a> Conversas </a>
                     <img src='/assets/images/home.png' alt='' />
                 </div>

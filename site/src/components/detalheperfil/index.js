@@ -71,6 +71,11 @@ export default function Index(props){
                                     <p className='p-titulo'> Áreas de atuação: </p>
                                     <p> {props.advogado.area} </p>
                                 </div>
+
+                                <div className='individual'>
+                                    <p className='p-titulo'> Descriçao: </p>
+                                    <p> {props.advogado.desc} </p>
+                                </div>
                         
                             </div>
                         </div>
