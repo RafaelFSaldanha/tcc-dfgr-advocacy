@@ -1,40 +1,76 @@
 import './index.scss'
 import '../../common/common.scss'
+import {useEffect, useState} from 'react'
+import { ClienteId, buscarfoto } from '../../../api/Advogadoapi'
+import storage from 'local-storage'
+import { Navigate, useNavigate } from 'react-router-dom'
 
 
 export default function Index() {
+
+    const[info, setInfo]= useState([])
+
+    const navigate=useNavigate();
+
+    async function AA() {
+        const cliente=storage('cliente-logado')
+        const  r= await ClienteId(cliente.id)
+        setInfo([r])
+        console.log(r)
+        
+    }
+
+    useEffect(()=>{
+        AA()
+    },[])
+
+    function VoltarPerfil() {
+        navigate('/home')
+    }
+    function VoltarInicio() {
+        navigate('/')
+    }
+
+
     return (
         <main className='info-adv'>
             <header>
                 <img src="/assets/images/logodourada.svg" alt="" />
                 <div className='div-links'>
-                    <img src="/assets/images/Account circle.png" alt="" />
-                    <img src="/assets/images/home.png" alt="" />
+                    <img onClick={VoltarPerfil} src="/assets/images/Account circle.png" alt="" />
+                    <img onClick={VoltarInicio} src="/assets/images/home.png" alt="" />
                 </div>
             </header>
-            <div className='div-geral'>
+            
+            {info.map(item=>
+                <div className='div-geral'>
                 <div>
                     <div className='div-1'>
                         <div className='div-img'>
-                            <img src="/assets/images/fred.png" alt="" />
+                            {!item.foto &&
+                            <img src="/assets/images/semfoto.png" alt="" />
+                            }
+                            {item.foto &&
+                            <img src={buscarfoto(item.foto)} alt="" />
+                            }
                         </div>
                         <div className='div-cont'>
                             <div className='div-cont-1'>
                                 <div className='individual'>
                                     <p className='p-t'>Nome:</p>
-                                    <p className='p-p'>Fred Matheus</p>
+                                    <p className='p-p'>{item.nome}</p>
                                 </div>
                                 <div className='individual'>
                                     <p className='p-t'>Email:</p>
-                                    <p className='p-p'>emailgenerico@gmail.com</p>
+                                    <p className='p-p'>{item.email}</p>
                                 </div>
                                 <div className='individual'>
                                     <p className='p-t'>Telefone:</p>
-                                    <p className='p-p'>11 93207-7414</p>
+                                    <p className='p-p'>{item.tel}</p>
                                 </div>
                                 <div className='individual'>
                                     <p className='p-t'>Localização:</p>
-                                    <p className='p-p'>São Paulo</p>
+                                    <p className='p-p'>{item.localizacao}</p>
                                 </div>
                             </div>
                         </div>
@@ -44,6 +80,8 @@ export default function Index() {
                     </div>
                 </div>
             </div>
+                )}
+    
         </main>
     )
 }

@@ -23,6 +23,7 @@ export default function AssociadosPage() {
     }
     useEffect(()=>{
         Listar();
+        console.log(advogado)
         
     },[])
 

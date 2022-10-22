@@ -27,7 +27,10 @@ export default function Index(props){
     }
     useEffect(() =>{
         setImagem(props.advogado.foto)
+        if(imagem){
         MostrarImagem()
+        }
+        
     })
 
     return(
@@ -35,7 +38,12 @@ export default function Index(props){
                 <h1> Meu Perfil </h1>
                 <div className='conteudo'>
                     <div className='div-foto'>
-                        <img className='foto' src= {MostrarImagem()} alt='' />
+                        {!imagem &&
+                        <img className="foto" src="/assets/images/semfoto.png" alt="" />
+                        }
+                        {imagem &&
+                        <img className='foto' src= {MostrarImagem()} alt='' />    
+                        }
                     </div>
                     <div className='principal-conteudo'>
                         <div className='conteudo-adv'>
