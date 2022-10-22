@@ -18,7 +18,7 @@ export default function InformaAdvogado(){
 
     return(
         <main>
-            <div className='cabecalho'>
+            <div className='cabecalho-info'>
                 <img className='logo' src='/assets/images/logodourada.svg' alt='logo' />
                 <div className='div-links'>
                     <a className='links' href='' onClick={AssociadosClick}> Associados </a>

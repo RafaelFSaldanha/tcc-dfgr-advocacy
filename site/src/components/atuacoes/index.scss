@@ -20,47 +20,21 @@
             margin-bottom: 5vh;
             align-items: center;
             
-
-            .ambiental{
-                margin-top: -.5em;
-                margin-left: 1.5em;
-                width: 8em;
-                height: 8em;
-            }
-
-            .civel{
-                margin-top: 0.5em;
-            }
-
-            .criminalista{
-                margin-top: -1em;
-            }
-
-            .tributario{    
-                margin-top: -2em;
-            }
-
-            .imobiliario{
-                margin-top: -3em;
-                margin-left: -1em;
-            }
-
-            .familiar{
-                margin-top: -2em;
+            img {
+                height: 4em;
+                width: 4em;
             }
             
             .titulo-img{
                 font-family: 'Open-Sans-ExtraBold';
                 color: #fff;
-                font-size: 25px;
+                font-size: 17px;
             }
-
-
         }
 
         .div-texto{
             font-family: 'Open-Sans-SemiBold'; 
-            font-size: 22px;
+            font-size: 2.5vh;
             width: 60em;
             margin-bottom: 1.5em;
         }

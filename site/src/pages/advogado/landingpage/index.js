@@ -28,7 +28,7 @@ export default function LandingPage() {
 
     return (
         <main className='landingpage'>
-            <div className='cabecalho'>
+            <div className='cabecalho-land'>
                 <img className='logo' src='/assets/images/logodourada.svg' alt='logo' />
                 <div className='div-links'>
                     <a className='links' href='' onClick={AtuacaoClick}> Áreas de Atuação </a>
@@ -44,7 +44,7 @@ export default function LandingPage() {
                         <h1 className='titulo'> Consultorias </h1>
                     </div>
                     <p className="tagp">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                        A DFGR advocacia tem como principal objetivo ajudar nossos clientes na hora que eles mais precisam, buscamos estar sempre a disposição para ajudar e defender aqueles que mais necessitam.
                     </p>
                 </div>
                 <img className='img-1' src='/assets/images/landingpage-img1.png' alt='img1' />
@@ -57,9 +57,8 @@ export default function LandingPage() {
                     <hr />
                 </div>
 
-                <div className="div-cards">
-                    <CardsLandingPage />
-                </div>
+                <CardsLandingPage />
+
                 <button className="button-faixa2" onClick={AtuacaoClick}>Conhecer todas as Áreas</button>
             </section>
 

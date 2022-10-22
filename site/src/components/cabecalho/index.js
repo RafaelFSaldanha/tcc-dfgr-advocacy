@@ -31,9 +31,9 @@ export default function Cabecalho() {
                 <img src='/assets/images/arrowleft.png' alt='' onClick={clickArrow} />
                 <div className='main-bem-vindo'>Olá, seja bem-vindo Dr. {usuario} </div>
             </div>
-                <div className='main-perfil'>
-                    <img onClick={navegar} src='/assets/images/perfil.svg' alt=''/>
-                </div>
+            <div className='main-perfil'>
+                <img onClick={navegar} src='/assets/images/perfil.svg' alt=''/>
+            </div>
         </header>
     )
 }

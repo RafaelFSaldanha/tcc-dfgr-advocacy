@@ -49,7 +49,7 @@ export default function AssociadosPage() {
 
     return (
         <main className="main">
-            <div className='cabecalho'>
+            <div className='cabecalho-associados '>
                 <img className='logo' src='/assets/images/logodourada.svg' alt='logo' />
                 <div className='div-links'>
                     <a className='links' href='' onClick={VoltarClick}> Inicio</a>
@@ -60,8 +60,8 @@ export default function AssociadosPage() {
             </div>
 
             <div className="titulo-div">
-                    <h1 className='h1-associado'>Nossos Associados</h1>
-                    <div className='row'>
+                <h1 className='h1-associado'>Nossos Associados</h1>
+                <div className='row'>
                     <input value={filtro} className='input' type="text" placeholder='Pesquisar Associados...' onChange={e=> setFiltro(e.target.value)}/>
                     <img onClick={Filtrar} className="Lupa" src='/assets/images/Search.png' />
                 </div>

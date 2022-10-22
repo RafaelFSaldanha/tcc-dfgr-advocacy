@@ -28,7 +28,7 @@ export default function AreaAtuacao() {
 
   return (
     <main className="landingpage">
-      <div className='cabecalho'>
+      <div className='cabecalho-atuacao'>
         <img className='logo' src='/assets/images/logodourada.svg' alt='logo' />
         <div className='div-links'>
           <a className='links' href='' onClick={AssociadosClick}> Associados</a>
