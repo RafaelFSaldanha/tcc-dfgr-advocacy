@@ -225,6 +225,235 @@
 @media (max-width: 1440px) {
     
 }
+
+@media (max-width: 1366px){
+    .landingpage {
+        display: flex;
+        flex-direction: column;
+    
+        .cabecalho-land {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #0D263E;
+            height: 10vh;
+            width: 100%;
+            border-bottom: 3px solid #AD8217;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            
+                .logo{
+                    width: 10%;
+                    margin-left: 2vw;
+                }
+    
+                .div-links{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    height: 50%;
+                    width: 30%;
+                    margin-right: 2vw;
+                    
+                    .links {
+                        text-decoration: none;
+                        color: #FFFFFF;
+                        font-family: 'Open-Sans-SemiBold';
+                        font-size: 0.9em;
+                    }
+                }
+    
+            .cadastro-image{
+                height: 2.3em;
+            }
+        }
+    
+        .faixa-1 {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: 85vh;
+    
+            .div-1 {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                height: 50vh;
+                width: 50vw;
+            }
+    
+            .titulo{
+                font-family: 'Open-Sans-SemiBold';
+                font-size: 4em;
+                color: #AD8217;
+            }
+            .tagp{
+                font-size: 3vh;
+                color: #7d7d7d;
+                font-family: 'Open-Sans-Light';
+                width: 65%;
+            }
+    
+            .botao {
+                color: #cdcdcd;
+                height: 7%;
+                width: 20%;
+                background: #0D263E;
+                box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.25);
+                border-radius: .5em;
+                border: none;
+            }
+        
+            .img-1 {
+                height: 97%;
+            }
+        }
+    
+        .div-titulo{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+    
+            .faixa2-titulo{
+                text-align: center;
+                color: #AD8217;
+                font-size: 3em;
+                font-family: 'Open-Sans-SemiBold';
+            }
+    
+            hr{
+                background-color: #0D263E;
+                width: 10%;
+                height: 0.3vh;
+            }
+    
+        }
+    
+        .section-card{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #F5F5F5;
+            
+    
+            .div-cards {
+                border: px solid red;
+            }
+    
+           .button-faixa2{
+               margin: 3em;
+               font-family: 'Open-Sans-SemiBold';
+               color: #FFFFFF;
+               background-color: #0D263E;
+               padding: 1em 5em;
+               border-radius: .5em;
+               font-size: 15px;
+               border: none;
+               cursor: pointer;
+           }
+        }
+    
+        .section-sobrenos{
+            display: flex;
+            flex-direction: row;
+        }
+        .column-div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            text-align: center;
+            width: 50%;
+    
+            .titulo-sobrenos{
+                color: #AD8217;
+                font-size: 3em;
+                font-family: 'Open-Sans-SemiBold';
+                
+            }
+            
+            .texto-sobrenos{
+                padding: 1em;
+                font-family: 'Open-Sans-Light';
+                font-size: 3vh;
+                color: #7d7d7d;
+            }
+        
+            .button-sobrenos{
+                font-family: 'Open-Sans-SemiBold';
+                color: #FFFFFF;
+                background-color: #0D263E;
+                padding: 1em 3em;
+                border-radius: .5em;
+                border: none;
+                font-size: 2vh;
+                cursor: pointer;
+            }
+        }
+        
+        .img-sobrenos{
+            width: 90%;
+        }
+    
+        .section-associados{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 115vh;
+            background-color: #F5F5F5;
+    
+            .faixa2-titulo{
+                text-align: center;
+                color: #AD8217;
+                font-size: 3em;
+                font-family: 'Open-Sans-SemiBold';
+            }
+    
+            hr{
+                background-color: #0D263E;
+                width: 10%;
+                height: 0.3vh;
+            }
+    
+            .div-associados {
+                margin-top: 5vh;
+                height: 70%;
+                width: 100%;
+            }
+    
+            .button-associados{
+                margin: 5em;
+                font-family: 'Open-Sans-SemiBold';
+                color: #FFFFFF;
+                background-color: #0D263E;
+                padding: 1em 5em;
+                border-radius: .5em;
+                font-size: 15px;
+                cursor: pointer;
+                border: none;
+            }
+        }
+        .div-titulo-associados{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            margin-left: 24em;
+            padding: 6vh;
+        }
+        .titulo-associados{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            color: #AD8217;
+            font-size: 3em;
+            font-family: 'Open-Sans-SemiBold'
+        }
+    }
+}
     
 
 

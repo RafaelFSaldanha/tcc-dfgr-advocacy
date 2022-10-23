@@ -48,10 +48,10 @@ export default function Index() {
                     <div className='div-1'>
                         <div className='div-img'>
                             {!item.foto &&
-                            <img src="/assets/images/semfoto.png" alt="" />
+                            <img className='fotoperfil' src="/assets/images/semfoto.png" alt="" />
                             }
                             {item.foto &&
-                            <img src={buscarfoto(item.foto)} alt="" />
+                            <img className='fotoperfil' src={buscarfoto(item.foto)} alt="" />
                             }
                         </div>
                         <div className='div-cont'>

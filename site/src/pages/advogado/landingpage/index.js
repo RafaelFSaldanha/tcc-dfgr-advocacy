@@ -47,7 +47,7 @@ export default function LandingPage() {
                         A DFGR advocacia tem como principal objetivo ajudar nossos clientes na hora que eles mais precisam, buscamos estar sempre a disposição para ajudar e defender aqueles que mais necessitam.
                     </p>
                 </div>
-                <img className='img-1' src='/assets/images/landingpage-img1.png' alt='img1' />
+                <img className='img-1' src='/assets/images/AdobeStock_431992476 3.svg' alt='img1' />
             </div>
 
             <section className="section-card">

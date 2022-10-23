@@ -5,7 +5,7 @@ export default function Atuacoes(){
 
     return(
         <main className='main'>
-            <div className="div-card">
+            <div className='div-card'>
                 <div className='div-img'>
                 <img src="/assets/images/ambiental.png" alt="" />
                 <p className='titulo-img'>Ambiental</p>

@@ -117,3 +117,126 @@
         }
     }
 }
+
+@media (max-width: 1366px) {
+    .detalhe-perfil {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    
+        header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #0D263E;
+            height: 10%;
+            width: 100%;
+            
+            .logo {
+                height: 8vh;
+                margin-left: 2vw;
+            }
+    
+            .conteudo-header {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                margin-right: 2vw;
+                width: 20%;
+    
+                a {
+                    font-family: 'Open-Sans-SemiBold';
+                    color: #FFF8E8;
+                    cursor: pointer;
+                    font-size: 0.9em;
+                }
+    
+                img {
+                    height: 3.5vh;
+                }
+            }
+        }
+    
+        .div-principal {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            height: 90%;
+            width: 100%;
+    
+            h1 {
+                font-family: 'Open-Sans-SemiBold';
+            }
+    
+            .conteudo {
+                display: flex;
+                flex-direction: row;
+                height: 70%;
+                width: 60%;
+                border-radius: 3vh;
+                background-color: #0D263E;
+    
+                .div-foto {
+                    height: 100%;
+                    width: 35%;
+                    border-radius: 3vh 0px 0px 3vh;
+                }
+    
+                .foto {
+                    height: 100%;
+                    width: 100%;
+                    border-radius: 3vh 0px 0px 3vh;
+                }
+    
+                .principal-conteudo {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    height: 100%;
+                    width: 70%;
+    
+                    .conteudo-adv {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        height: 80%;
+                        width: 100%;
+    
+                        .div-conteudo {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-evenly;
+                            height: 80%;
+                            width: 50%;
+                            margin-left: 2vw;
+    
+                            .individual {
+    
+                                .p-titulo {
+                                    font-family: 'Open-Sans-SemiBold';
+                                    color: #AD8217;
+                                }
+    
+                                p {
+                                    font-family: 'Open-Sans-SemiBold';
+                                    color: #FFF;
+                                }
+                            }
+                        }
+                    }
+    
+                    .div-lapis {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-end;
+                        height: 10%;
+                        width: 95%;
+                    }
+                }
+            }
+        }
+    }
+}

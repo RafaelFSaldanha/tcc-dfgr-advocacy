@@ -45,12 +45,12 @@ export default function AreaAtuacao() {
       <div className='div-hr'>
         <hr />
       </div>
-
       <div>
         <Atuacoes />
       </div>
-
+    <footer>
       <Rodape />
+    </footer>
     </main>
   )
 }

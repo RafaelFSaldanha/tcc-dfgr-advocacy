@@ -9,7 +9,7 @@ export default function CardsLandingPage() {
             <div className='div-fileira'>
                 <div className='div-card'>
                     <div>
-                        <img className='img-ambiental' src='/assets/images/folinha.png' alt="" />
+                        <img className='img-ambiental' src='/assets/images/Group 4.svg' alt="" />
                         <h2 className='h2-ambiental'>Ambiental</h2>
                     </div>
                     <p>Nossos profissionas tem a competência de entender e defender as leis fundamentais do meio ambiente.</p>
