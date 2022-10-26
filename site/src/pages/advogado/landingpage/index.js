@@ -31,10 +31,11 @@ export default function LandingPage() {
             <div className='cabecalho-land'>
                 <img className='logo' src='/assets/images/logodourada.svg' alt='logo' />
                 <div className='div-links'>
-                    <a className='links' href='' onClick={AtuacaoClick}> Áreas de Atuação </a>
-                    <a className='links' href='' onClick={SobrenosClick}> Sobre Nós </a>
-                    <a className='links' href='' onClick={AssociadosClick}> Associados </a>
+                    <a className='links' onClick={AtuacaoClick}> Áreas de Atuação </a>
+                    <a className='links' onClick={SobrenosClick}> Sobre Nós </a>
+                    <a className='links' onClick={AssociadosClick}> Associados </a>
                     <img className="cadastro-image links" onClick={CadastroClick} src="/assets/images/Account circle.png" alt="" />
+                    
                 </div>
             </div> 
             

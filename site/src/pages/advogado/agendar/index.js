@@ -4,6 +4,8 @@ import './index.scss'
 import { useEffect, useState } from 'react'
 import { ListarAreas, Agendar, ListarClientes } from '../../../api/Advogadoapi.js';
 import storage from 'local-storage'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 
 export default function AgendarConsultoria(){
@@ -35,11 +37,19 @@ export default function AgendarConsultoria(){
         async function salvar() {
             try {
                 const r = await Agendar(idAdvogado, idCliente, idArea, data, hora, desc);
-                alert('Agendado com sucesso');
+                toast.success('Agendado com sucesso', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark"});
                 
             }
             catch (err) {
-                alert(err.response.data.erro)
+                toast.error(err.response.data.erro)
                 
             }
         }
@@ -47,6 +57,18 @@ export default function AgendarConsultoria(){
 
     return(
         <main className="main-agendar">
+            <ToastContainer 
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        style={{width: '16em'}}/>
             <MenuLateral />
             <div className='container'>
                 <Cabecalho />

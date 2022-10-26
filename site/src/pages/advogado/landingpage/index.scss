@@ -10,7 +10,7 @@
         background-color: #0D263E;
         height: 10vh;
         width: 100%;
-        border-bottom: 3px solid #AD8217;
+        border-bottom: 2px solid #AD8217;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         
             .logo{
@@ -109,9 +109,6 @@
         align-items: center;
         background-color: #F5F5F5;
 
-        .div-cards {
-            border: 1px solid red;
-        }
 
        .button-faixa2{
            margin: 3em;
@@ -237,14 +234,15 @@
             align-items: center;
             justify-content: space-between;
             background-color: #0D263E;
-            height: 10vh;
+            height: 25vh;
             width: 100%;
             border-bottom: 3px solid #AD8217;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             
                 .logo{
-                    width: 10%;
+                    width: 15%;
                     margin-left: 2vw;
+                    padding: 1em;
                 }
     
                 .div-links{
@@ -286,11 +284,11 @@
     
             .titulo{
                 font-family: 'Open-Sans-SemiBold';
-                font-size: 4em;
+                font-size: 5em;
                 color: #AD8217;
             }
             .tagp{
-                font-size: 3vh;
+                font-size: 1.5em;
                 color: #7d7d7d;
                 font-family: 'Open-Sans-Light';
                 width: 65%;
@@ -307,7 +305,7 @@
             }
         
             .img-1 {
-                height: 97%;
+                height: 80%;
             }
         }
     
@@ -350,7 +348,7 @@
                color: #FFFFFF;
                background-color: #0D263E;
                padding: 1em 5em;
-               border-radius: .5em;
+               border-radius: 1em;
                font-size: 15px;
                border: none;
                cursor: pointer;
@@ -379,7 +377,7 @@
             .texto-sobrenos{
                 padding: 1em;
                 font-family: 'Open-Sans-Light';
-                font-size: 3vh;
+                font-size: 1.5em;
                 color: #7d7d7d;
             }
         
@@ -388,7 +386,7 @@
                 color: #FFFFFF;
                 background-color: #0D263E;
                 padding: 1em 3em;
-                border-radius: .5em;
+                border-radius: 1em;
                 border: none;
                 font-size: 2vh;
                 cursor: pointer;
@@ -455,5 +453,3 @@
     }
 }
     
-
-

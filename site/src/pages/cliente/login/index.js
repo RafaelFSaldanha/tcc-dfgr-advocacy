@@ -15,6 +15,8 @@ export default function Index() {
     const ref = useRef(); 
 
 
+
+
     function AdvLogin(){
         navigate('/advogado/login')
     }
@@ -75,7 +77,7 @@ export default function Index() {
             <div className='div-bg-button'>
                 <button  onClick={entrarClick} className='entrar-button' >Entrar</button>
                 <p className='cadastro-con'>Não tem uma conta ainda? <a onClick={cadastrarClick}> Cadastre-se </a></p>
-                <p className='cadastro-con'>Já trabalha conosco? <a onClick={AdvLogin}> Entrar </a></p>
+                <p className='cadastro-con'>Já é um de nossos associados? <a onClick={AdvLogin}> Entrar </a></p>
             </div>
         </div>
     </main>

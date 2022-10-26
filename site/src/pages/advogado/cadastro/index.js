@@ -2,9 +2,10 @@ import './index.scss';
 import '../../common/common.scss';
 import {useState, useRef, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom'
-import LoadingBar from 'react-top-loading-bar'
 import storage from 'local-storage'
 import { AdvogadoCadastro, ListarAreas } from '../../../api/Advogadoapi';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 
 
@@ -36,15 +37,35 @@ export default function CadastroAdvogado(){
     async function cadastrar(){
         try {
             const r = await AdvogadoCadastro(nome, estado, oab, idArea, telefone, email, senha);
-            alert('deu certo')
+            toast.success('Você agora é um de nós!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                });
         } catch (err) {
-            alert(err.response.data.erro)
+         toast.error(err.response.data.erro)
         }
     }
 
 
     return(
        <main className='tela-cadastro'>
+        <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"/>
             <div className='div-principal'>
                 <img className='logo' src='/assets/images/logodourada.svg' alt='logo' />
                 <div className='div-inputs'>
