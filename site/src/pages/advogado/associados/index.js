@@ -67,38 +67,41 @@ export default function AssociadosPage() {
                 </div>
             </div>
 
-            <div>
-            
-            {advogado.map(item =>
-                <div>
-                    <div>
-                        <img src={buscarfoto(item.foto)}/>
-                     </div>
-                    <div className='div-nome'>
-                        <img src="/assets/images/Account circle.png" />
-                        <h3>{item.nome}</h3>
-                    </div>
-                    <div>
-                        <p>
-                           {item.area}
-                        </p>
-                    </div>
-                    <div>
-                        <img src="/assets/images/telefone.png" alt="" />
-                        <p>
-                            {item.telefone}
-                        </p>
+            <div className='div-principal'>
+                {advogado.map(item =>
+                    <div className='div-card'>
+                        <div className='div-imagem'>
+                            <img src={buscarfoto(item.foto)}/>
+                        </div>
+                        <div className='div-conteudo'>
+                            <div className='div-nome'>
+                                <img className='imgs' src="/assets/images/Account circle.png" />
+                                <h3>{item.nome}</h3>
+                            </div>
+                            <div className='area'>
+                                <p>
+                                {item.area}
+                                </p>
+                            </div>
+                            <div className='tel-loc'>
+                                <div className='div-indiv'>
+                                    <img className='imgs' src="/assets/images/telefone.png" alt="" />
+                                    <p>
+                                        {item.telefone}
+                                    </p>
+                                </div>
+                                <div className='div-indiv'>
+                                    <img className='imgs' src="/assets/images/localizacao.png" alt="" />
+                                    <p>
+                                        {item.localizacao}
+                                    </p>
+                                </div>
 
-                        <img src="/assets/images/localizacao.png" alt="" />
-                        <p>
-                            {item.localizacao}
-                        </p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            )}
+                )}
             </div>
-
-
             <div className="torne-se">
                 <div>
                     <h1 className='h1-associado'>Torne-se um Associado</h1>
@@ -107,10 +110,6 @@ export default function AssociadosPage() {
                     <button className='button-cadastro' onClick={CadastroClick}> Cadastre-se</button>
                 </div>
             </div>
-
-
-
-
             <Rodape />
         </main>
     )
