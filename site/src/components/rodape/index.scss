@@ -76,6 +76,7 @@
     
             .logo {
                 height: 12vh;
+                width: 30vw;
             }
     
             p {
@@ -86,10 +87,14 @@
             .div-social {
                 display: flex;
                 flex-direction: row;
-                justify-content: space-between;
+                justify-content: space-evenly;
                 height: 6vh;
-                width: 7vw;
+                width: 12vw;
             }
+            img{
+                width: 2em;
+            }
+            
         }
     
         .div2 {
@@ -113,6 +118,9 @@
             p {
                 color: #d7d7d7;
                 font-family: 'Open-Sans-SemiBold';
+            }
+            img{
+                width: 1em;
             }
         }
     }

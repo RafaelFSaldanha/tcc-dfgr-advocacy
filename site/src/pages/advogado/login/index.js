@@ -14,12 +14,13 @@ export default function LoginPage() {
     const navigate = useNavigate();
     const ref = useRef(); 
 
+
     useEffect(() =>{
         if(storage('advogado-logado')){
             navigate('/advogado/home')
         }
     }, [])
-    async function entrarClick(){
+    async function entrarClicke(){
     ref.current.continuousStart();
 
     try{
@@ -54,6 +55,13 @@ export default function LoginPage() {
             navigate('/advogado/cadastro');
         }, 1)
     }
+    async function clienteClick(){
+        ref.current.continuousStart();
+
+        setTimeout(() => {
+            navigate('/cadastro');
+        }, 1)
+    }
 
 
 
@@ -77,8 +85,9 @@ export default function LoginPage() {
                         {erro}
                         </div>
                 <div className='div-bg-button'>
-                    <button  onClick={entrarClick} className='entrar-button' >Entrar</button>
-                    <p className='cadastro-con'>Não tem uma conta ainda? <a onClick={cadastrarClick}> Cadastre-se </a></p>
+                    <button  onClick={entrarClicke} className='entrar-button' >Entrar</button>
+                    <p className='cadastro-con'>Torne-se um de nós!  <a onClick={cadastrarClick}> Cadastre-se Agora</a></p>
+                    <p className='cadastro-con'>Quer ser apenas um cliente?<a onClick={clienteClick}> Clique aqui</a></p>
                 
                 </div>
             </div>
