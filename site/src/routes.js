@@ -26,6 +26,8 @@ import DetalhePerfil from './pages/cliente/detalhePerfil/index.js';
 import EditarPerfilUsuario from './pages/cliente/editarPerfil/index.js';
 import HomeCliente from './pages/cliente/home/index.js';
 
+
+
 export default function Index() {
     return(
     <BrowserRouter>

@@ -8,8 +8,6 @@ import { useNavigate } from 'react-router-dom';
 export default function Index () {
 
     const [card, setCard] = useState([]);
-    const [id, setId] = useState(0);
-
     const navigate = useNavigate();
 
     async function Listar(){

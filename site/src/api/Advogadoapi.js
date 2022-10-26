@@ -167,3 +167,9 @@ export async function ClienteId(id) {
     const r = await api.get(`/cliente/clienteid/${id}`)
     return r.data
 }
+
+export async function InfoCliente(id) {
+
+    const r = await api.get(`/cliente/informacoes/${id}`)
+    return r.data
+}

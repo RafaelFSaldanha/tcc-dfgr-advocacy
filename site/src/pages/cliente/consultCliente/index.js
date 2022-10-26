@@ -4,11 +4,16 @@ import  {useState} from 'react'
 import storage from 'local-storage';
 import { ConsultoriasId } from '../../../api/Advogadoapi';
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 
 export default function Index() {
 
+  
     const[card, setCard]= useState([])
+
+    const navigate= useNavigate()
 
     async function Listar(){
         const cliente = storage('cliente-logado')
@@ -16,12 +21,12 @@ export default function Index() {
         const r = await ConsultoriasId(cliente.id)
 
         setCard(r)
-        console.log(card)
     }
 
     useEffect(()=>{
         Listar();
     },[])
+
 
 
     return (
@@ -34,7 +39,7 @@ export default function Index() {
                     <img src="/assets/images/config.png" alt="" />
                 </div>
             </header>
-            <div className='div-geral'>
+            <div  className='div-geral'>
                 <h1> Consultorias agendadas </h1>
                 <div className='div-tit'>
                     <div className='div-ind'>
