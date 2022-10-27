@@ -2,6 +2,9 @@ import './index.scss'
 import '../../common/common.scss'
 
 export default function Index() {
+
+
+    
     return (
         <main className='info-adv'>
             <header>

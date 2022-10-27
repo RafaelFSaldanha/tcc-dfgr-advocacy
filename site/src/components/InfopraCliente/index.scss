@@ -1,0 +1,25 @@
+.main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0D263E;
+    border-radius: 10px;
+    height: 60vh;
+    width: 20vw;
+    margin-top: 5vh;
+    color: white;
+    font-family: 'Open-Sans-SemiBold';
+
+    .sec{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+        height: 50vh;
+        width: 16vw;
+
+        .content{
+            color: #AD8217;
+        }
+    }
+}

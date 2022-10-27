@@ -116,6 +116,7 @@ export async function informacoesparacliente(id) {
     `select id_consultoria        as id,
             nm_area                  as area,    
             nm_advogado              as advogado,
+            ds_email                as email,
             dt_consultoria        as dia,
             hr_consultoria          as hora,
             ds_consultoria        as descricao

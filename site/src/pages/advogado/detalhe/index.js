@@ -14,6 +14,7 @@ export default function Index() {
 
     useEffect(() =>{
         carregarInformaçoes();
+        console.log(idParam)
     },[])
 
     async function carregarInformaçoes() {
