@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { AlterarSit, ListarAdvAdmin, ListarAdvAdmin2, ListarConsultorias, LoginAdmin } from '../repository/AdminRepository.js';
+import { AlterarSit, ListarAdvAdmin, ListarAdvAdmin2, ListarConsultorias, LoginAdmin, Remover } from '../repository/AdminRepository.js';
 
 const server = Router();
 

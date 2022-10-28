@@ -1,6 +1,6 @@
 import './index.scss'
 import { useState, useEffect } from 'react';
-import { ListarAdvAdmin2, DeletarAdvogado, Deletar } from '../../api/Advogadoapi';
+import { ListarAdvAdmin2, DeletarAdvogado } from '../../api/Advogadoapi';
 
 
 export default function Index () {
@@ -15,7 +15,7 @@ export default function Index () {
     }
 
     async function deletar(id){
-        const r = await Deletar(id)
+        const r = await DeletarAdvogado(id)
         Listar();
     }
 
@@ -35,7 +35,7 @@ export default function Index () {
                     <td className='info'>{item.local}</td>
                     <td className='info'>{item.area}</td>
                     <td className='info'>{item.email}</td>
-                    <div onClick={deletar}>
+                    <div onClick={()=> deletar(item.id)}>
                     <img  className='foto' src="../assets/images/deletar.png" alt="" />
                     </div>
                 </div>
