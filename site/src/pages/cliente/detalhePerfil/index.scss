@@ -104,13 +104,10 @@
 
             .div-edit {
                 display: flex;
-                align-items: flex-end;
-                height: 6%;
-                width: 90%;
-
-                img {
-                    height: 100%;
-                }
+                position: relative;
+                bottom: 230px;
+                left: 490px;
+               
             }
         }
     }
@@ -229,13 +226,10 @@
     
                 .div-edit {
                     display: flex;
-                    align-items: flex-end;
-                    height: 6%;
-                    width: 90%;
+                    position: relative;
+                    bottom: 90px;
+                    left: 350px;
     
-                    img {
-                        height: 100%;
-                    }
                 }
             }
         }
