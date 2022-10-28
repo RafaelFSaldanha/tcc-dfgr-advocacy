@@ -92,7 +92,7 @@ export default function CadastroAdvogado(){
 
                     <div className='div-input'>
                         <p> Telefone <span> *</span></p>
-                        <input className='input' value={telefone} type='text' placeholder='Insira seu telefone' onChange={e => setTelefone(e.target.value)}/>
+                        <input className='input' value={telefone} type='number' placeholder='Insira seu telefone' onChange={e => setTelefone(e.target.value)}/>
                     </div>
 
                     <div className='div-input'>

@@ -15,17 +15,20 @@
         height: 5vh;
         padding-left: 2em;
          p{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 12vw;
-                height: 4vh;
-                border: 1px solid #FFFFFF;
-                border-radius: .4em; 
-                color: #FFFFFF;
-                cursor: pointer;
-                font-family: 'Open-Sans-SemiBold';
-                font-size: 1em;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            padding-top: 1.5em;
+            padding-bottom: 1.5em;
+            width: 12vw;
+            height: 4vh;
+            border: 1px solid #AD8217;
+            border-radius: .4em; 
+            color: #FFFFFF;
+            cursor: pointer;
+            font-family: 'Open-Sans-SemiBold';
+            font-size: 1em;
          }
          p:hover{
             cursor: pointer;
