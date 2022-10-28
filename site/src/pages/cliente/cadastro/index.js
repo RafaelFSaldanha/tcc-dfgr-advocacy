@@ -44,7 +44,9 @@ export default function Index() {
     function navegaradv(){
         navigate('/advogado/login')
     }
-    
+    function VoltarLanding(){
+        navigate('/')
+    }
     
     return (
         <main className='tela-cadastro'>
@@ -59,6 +61,9 @@ export default function Index() {
             draggable
             pauseOnHover
             theme="dark"/>
+            <header>
+            <p onClick={VoltarLanding}> Continuar como visitante</p>
+        </header>
             <div className='div-cadastro'>
                 <img className='logo' src='/assets/images/logodourada.svg' alt=''/>
                 <div className='div-inputs'>

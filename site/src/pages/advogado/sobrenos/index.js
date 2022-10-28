@@ -9,7 +9,7 @@ export default function SobreNos () {
     const navigate = useNavigate();
 
     async function EntrarClick(){
-        navigate('/advogado/cadastro');
+        navigate('/login');
     }
 
     async function VoltarClick(){

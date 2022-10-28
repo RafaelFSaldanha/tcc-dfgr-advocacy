@@ -5,6 +5,25 @@
     height: 100vh;
     background-color: #0D263E;
 
+    header{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100vw;
+        height: 5vh;
+        padding-left: 2em;
+         p{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 15vw;
+                height: 4vh;
+                color: #FFFFFF;
+                cursor: pointer;
+                font-family: 'Open-Sans-SemiBold';
+                font-size: 1em;
+         }
+        }
     .div-principal {
         display: flex;
         flex-direction: column;
