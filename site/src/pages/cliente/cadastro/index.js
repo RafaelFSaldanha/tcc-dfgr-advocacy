@@ -35,11 +35,7 @@ export default function Index() {
         } catch (err) {
             toast.error(err.response.data.erro)
         }
-        console.log(telefone)
-        console.log(senha)
-        console.log(email)
-        console.log(localizacao)
-        console.log(nome)
+
     }
     
     function navegar(){

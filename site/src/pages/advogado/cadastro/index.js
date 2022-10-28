@@ -77,32 +77,32 @@ export default function CadastroAdvogado(){
                 <div className='div-inputs'>
                     <div className='div-input'>
                         <p>Nome <span>*</span> </p>
-                        <input value={nome} type='text'placeholder='Insira seu nome completo' onChange={e => setNome(e.target.value)} />
+                        <input className='input' value={nome} type='text'placeholder='Insira seu nome completo' onChange={e => setNome(e.target.value)} />
                     </div>
                     
                     <div className='div-input'>
                         <p>Estado de Atuação <span>*</span></p>
-                        <input value={estado} type='text' placeholder='Insira o seu estado de atuação' onChange={e => setEstado(e.target.value)}/>
+                        <input className='input' value={estado} type='text' placeholder='Insira o seu estado de atuação' onChange={e => setEstado(e.target.value)}/>
                     </div>
 
                     <div className='div-input'>
                         <p>Número do OAB <span> *</span></p>
-                        <input value={oab} type='text' placeholder='Insira o número do seu OAB' onChange={e => setOab(e.target.value)}/>
+                        <input className='input' value={oab} type='text' placeholder='Insira o número do seu OAB' onChange={e => setOab(e.target.value)}/>
                     </div>
 
                     <div className='div-input'>
                         <p> Telefone <span> *</span></p>
-                        <input value={telefone} type='text' placeholder='Insira seu telefone' onChange={e => setTelefone(e.target.value)}/>
+                        <input className='input' value={telefone} type='text' placeholder='Insira seu telefone' onChange={e => setTelefone(e.target.value)}/>
                     </div>
 
                     <div className='div-input'>
                         <p> Email <span> *</span></p>
-                        <input value={email} type='email' placeholder='Insira seu email' onChange={e => setEmail(e.target.value)}/>
+                        <input className='input' value={email} type='email' placeholder='Insira seu email' onChange={e => setEmail(e.target.value)}/>
                     </div>
 
                     <div className='div-input'>
                         <p>Senha <span> *</span></p>
-                        <input value={senha} type='password' placeholder='*********' onChange={e => setSenha(e.target.value)}/>
+                        <input className='input' value={senha} type='password' placeholder='*********' onChange={e => setSenha(e.target.value)}/>
                     </div>
 
                     <div className='div-input'>
@@ -115,7 +115,7 @@ export default function CadastroAdvogado(){
                         </select>
                     </div>
                 </div>
-                <button onClick={cadastrar}> Cadastrar-se </button>
+                <button className='button' onClick={cadastrar}> Cadastrar-se </button>
                 <p className='entrar-con'>Já possui uma conta? <a onClick={voltar}> Entrar </a></p>
             </div>
        </main>

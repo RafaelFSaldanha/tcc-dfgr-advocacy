@@ -95,7 +95,7 @@
             border-radius: 1em;
             cursor: pointer;
             box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
-            font-family: 'Open-Sans-SemiBold';
+            
         }
 
         .entrar-con{
@@ -113,7 +113,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 160vh;
+        height: 140vh;
         background-color: #0D263E;
     
         .div-principal {
@@ -122,12 +122,12 @@
             justify-content: space-evenly;
             align-items: center;
             height: 96vh;
-            width: 50vw;
+            width: 40vw;
             background-color: #ffffff;
             border-radius: 2em;
     
             img {
-                height: 10vh;
+                height: 9vh;
             }
     
             .div-inputs {
@@ -136,15 +136,32 @@
                 justify-content: space-between;
                 height: 70vh;
                 width: 33vw;
+                border: px solid red;
     
                 .div-input {
                     display: flex;
                     flex-direction: column;
-                    height: 10%;
-                    width: 100%;
+                    height: 7vh;
+                    width: 33vw;
+                    border: px red solid;
+
+                    .input{
+                        width: 33vw;
+                        height: 5.5vh;
+                        padding: 1em;
+                        outline: none;
+                        outline: 1px solid #dadada;
+                        border: none;
+                        font-family: 'Open-Sans-SemiBold';
+                        border-radius: .4em;
+                        box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+                        font-size: 0.9em;
+                        color: #8d8d8d;
+                    }
     
                     p{
                         font-family: 'Open-Sans-SemiBold';
+                        font-size: 0.9em;
                         span{
                             color: red;
                         }
@@ -153,20 +170,19 @@
                     
                      select {
                         width: 33vw;
-                        height: 100vh;
-                        font-size: 1em;
+                        font-size: 0.9em;
                         border: 1px solid #dadada;
                         outline: none;
                         border-radius: .4em;
                         box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
                         font-family: 'Open-Sans-SemiBold';
-                        padding:  0.2em 1em 0.2em 1em;
+                        padding:  0.4em 1em 0.4em 0.7em;
                         color: #8d8d8d;
                     }
                 }
             }
     
-            button {
+            .button {
                 background-color: #0D263E;
                 margin-top: 1em;
                 width: 50%;
@@ -181,6 +197,7 @@
     
             .entrar-con{
                 font-family: 'Open-Sans-SemiBold';
+                font-size: 0.9em;
                 a{
                     color: #AD8217;
                     cursor: pointer;
