@@ -111,6 +111,7 @@ export async function buscarIdCliente(id) {
                ds_localizacao     as local,
                ds_telefone        as tel,
                ds_email           as email,
+               ds_senha             as senha,
                img_cliente       as foto     
           from tb_cliente
           where id_cliente = ?

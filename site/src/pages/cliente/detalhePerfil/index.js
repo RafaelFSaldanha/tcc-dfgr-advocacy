@@ -1,6 +1,6 @@
 import './index.scss'
 import '../../common/common.scss'
-import {useEffect, useState} from 'react'
+import {useEffect, useState, useParams} from 'react'
 import { ClienteId, buscarfoto } from '../../../api/Advogadoapi'
 import storage from 'local-storage'
 import { Navigate, useNavigate } from 'react-router-dom'
@@ -73,7 +73,7 @@ export default function Index() {
                                 </div>
                                 <div className='individual'>
                                     <p className='p-t'>Localização:</p>
-                                    <p className='p-p'>{item.localizacao}</p>
+                                    <p className='p-p'>{item.local}</p>
                                 </div>
                             </div>
                         </div>

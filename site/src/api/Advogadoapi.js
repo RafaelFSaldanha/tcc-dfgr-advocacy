@@ -180,3 +180,13 @@ export async function Advogadosid2(id) {
     const r = await api.get(`/advogado/advogadosid2/${id}`)
     return r.data
 }
+export async function AlterarDados(id, nome, tel, local, email, senha){
+    const resposta = await api.put(`/cliente/editarperfil/${id}`, {
+        nome: nome,
+        telefone: tel,
+        local: local,
+        email: email,
+        senha: senha
+    });
+    return resposta.data
+}
