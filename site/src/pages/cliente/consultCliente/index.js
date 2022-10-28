@@ -39,9 +39,8 @@ export default function Index() {
             <header className='header-consultar'>
                 <img src="/assets/images/logodourada.svg" alt="" />
                 <div className='div-links'>
-                    <a href="/home"> Voltar ao perfil </a>
-                    <a href="/"> Início </a>
-                    <img src="/assets/images/config.png" alt="" />
+                    <a className='link' href="/home"> Voltar ao perfil </a>
+                    <a className='link' href="/"> Início </a>
                 </div>
             </header>
             <div className='div-geral'>

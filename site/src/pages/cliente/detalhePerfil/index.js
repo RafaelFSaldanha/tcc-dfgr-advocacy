@@ -40,13 +40,13 @@ export default function Index() {
             <header>
                 <img src="/assets/images/logodourada.svg" alt="" />
                 <div className='div-links'>
-                    <img onClick={VoltarPerfil} src="/assets/images/Account circle.png" alt="" />
-                    <img onClick={VoltarInicio} src="/assets/images/home.png" alt="" />
+                    <p className='link' onClick={VoltarPerfil}>Perfil</p>
+                    <p className='link' onClick={VoltarInicio}>Início</p>
                 </div>
             </header>
             
             {info.map(item=>
-                <div className='div-geral'>
+                <div className='div-geral-detalheperfil'>
                 <div>
                     <div className='div-1'>
                         <div className='div-img'>
