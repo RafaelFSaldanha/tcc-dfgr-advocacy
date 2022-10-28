@@ -35,6 +35,7 @@ export async function ListarAdvAdmin(){
     const comando = 
     ` 
     SELECT
+       id_advogado      id, 
 	   nm_advogado	    nome,
        ds_oab	        oab,
 	   ds_localizacao   local,

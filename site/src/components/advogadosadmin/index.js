@@ -36,7 +36,7 @@ export default function Index () {
                     <td className='info'>{item.oab}</td>
                     <td className='info'>{item.local}</td>
                     <td className='info'>{item.email}</td>
-                    <img onClick={Aceito} className='foto' src="../assets/images/Checkmark.png" alt="" />
+                    <img onClick={()=>Aceito(item.id)} className='foto' src="../assets/images/Checkmark.png" alt="" />
 
                 </div>
             </tr>
