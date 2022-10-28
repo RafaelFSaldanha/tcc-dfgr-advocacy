@@ -6,7 +6,7 @@ export default function Atuacoes(){
     return(
         <main className='main'>
             <div className='div-card'>
-                <div className='div-img'>
+                <div className='div-img-atuacoes'>
                 <img src="/assets/images/ambiental.png" alt="" />
                 <p className='titulo-img'>Ambiental</p>
                 </div>
@@ -16,7 +16,7 @@ export default function Atuacoes(){
                 </div>
             </div>
             <div className="div-card">
-                <div className='div-img'>
+                <div className='div-img-atuacoes'>
                 <img src="/assets/images/civel.png" alt="" />
                 <p className='titulo-img'>Cível</p>
                 </div>
@@ -26,7 +26,7 @@ export default function Atuacoes(){
                 </div>
             </div>
             <div className="div-card">
-                <div className='div-img'>
+                <div className='div-img-atuacoes'>
                 <img src="/assets/images/criminalista.png" alt="" />
                 <p className='titulo-img'>Criminalista</p>
                 </div>
@@ -36,7 +36,7 @@ export default function Atuacoes(){
                 </div>
             </div>
             <div className="div-card">
-                <div className='div-img'>
+                <div className='div-img-atuacoes'>
                 <img src="/assets/images/tributario.png" alt="" />
                 <p className='titulo-img'>Tributário</p>
                 </div>
@@ -46,7 +46,7 @@ export default function Atuacoes(){
                 </div>
             </div>
             <div className="div-card">
-                <div className='div-img'>
+                <div className='div-img-atuacoes'>
                 <img src="/assets/images/imobiliario.png" alt="" />
                 <p className='titulo-img'>Imobiliario</p>
                 </div>
@@ -55,7 +55,7 @@ export default function Atuacoes(){
                 </div>
             </div>
             <div className="div-card">
-                <div className='div-img'>
+                <div className='div-img-atuacoes'>
                 <img src="/assets/images/familiar.png" alt="" />
                 <p className='titulo-img'>Familiar</p>
                 </div>

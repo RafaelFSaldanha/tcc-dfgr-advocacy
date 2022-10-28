@@ -45,6 +45,11 @@ export default function AssociadosPage() {
         navigate('/');
     }
 
+    async function MaisInfo(id) {
+        navigate(`/infoadv/${id}`);
+    }
+
+
 
 
     return (
@@ -69,9 +74,14 @@ export default function AssociadosPage() {
 
             <div className='div-principal'>
                 {advogado.map(item =>
-                    <div className='div-card'>
+                    <div onClick={()=> MaisInfo(item.id)} className='div-card'>
                         <div className='div-imagem'>
-                            <img src={buscarfoto(item.foto)}/>
+                        {!item.foto &&
+                        <img className="foto" src="/assets/images/semfoto.png" alt="" />
+                        }
+                        {item.foto &&
+                        <img className='foto' src= {buscarfoto(item.foto)} alt='' />    
+                        }
                         </div>
                         <div className='div-conteudo'>
                             <div className='div-nome'>

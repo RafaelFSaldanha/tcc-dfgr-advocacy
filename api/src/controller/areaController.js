@@ -1,4 +1,4 @@
-import { buscarAdvogadoPorId, ListarAreas, ListarClientes, buscarConsultoriaPorId, buscarId, buscarIdAdvogado } from "../repository/areaRepository.js";
+import { buscarAdvogadoPorId, ListarAreas, ListarClientes, buscarConsultoriaPorId, buscarId, buscarIdAdvogado, buscarIdAdvogado2 } from "../repository/areaRepository.js";
 
 import { Router } from "express";
 const server = Router();
@@ -108,6 +108,25 @@ server.get('/advogado/advogadosid/:id', async (req, resp) => {
         const id = Number(req.params.id);
         
         const resposta = await buscarIdAdvogado(id)
+        if(!resposta){
+            resp.status(404).send('Não foi possível localizar esse advogado')
+        }
+        else {
+            resp.send(resposta)
+        }
+    }
+    catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+server.get('/advogado/advogadosid2/:id', async (req, resp) => {
+    try {
+        const id = Number(req.params.id);
+        
+        const resposta = await buscarIdAdvogado2(id)
         if(!resposta){
             resp.status(404).send('Não foi possível localizar esse advogado')
         }

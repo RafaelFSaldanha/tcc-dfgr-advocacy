@@ -1,43 +1,69 @@
 import './index.scss';
 import '../../pages/common/common.scss';
+import { Advogadosid2, buscarfoto } from '../../api/Advogadoapi';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 
 
-export default function InfoAdvComp(){
+
+export default function Index(){
+
+    const[advogado, setAdvogado]= useState([])
+    const{idParam}= useParams()
+
+    async function Carregar() {
+        const r = await Advogadosid2(idParam)
+        setAdvogado(r)
+        console.log(r)
+    }
+
+    useEffect(()=> {
+        Carregar()
+    },[])
+
     return(
         <main className="main">
-        <div className='div-mae'>
-
-            <div className='div-img'>
-                <img className='img' src="/assets/images/fred.png" alt="" />
+            {advogado.map(item=>
+                <div className='div-mae'>
+                <div className='div-img'>
+                {!item.foto &&
+                    <img className="img" src="/assets/images/semfoto.png" alt="" />
+                }
+                {item.foto &&
+                    <img className='img' src= {buscarfoto(item.foto)} alt='' />    
+                }
+                </div>
+                <div className='container-aa'>
+                    <div className='container'>
+                        <div className='div'>
+                            <p className='titulo'>Nome:</p>
+                            <p className='conteudo'>{item.nome}</p>
+                        </div>
+                        <div className='div'>
+                            <p className='titulo'>Contato:</p>
+                            <p className='conteudo'>{item.email}</p>
+                            <p className='conteudo'>{item.tel}</p>
+                        </div>
+                        <div className='div'>
+                            <p className='titulo'>Escritório:</p>
+                            <p className='conteudo'>{item.local}</p>
+                        </div>
+                        <div className='div'>
+                            <p className='titulo'>Áreas de atuação:</p>
+                            <p className='conteudo'>{item.area}</p>
+                        </div>
+                    </div>
+                    <div className='container2'>
+                        <div className='div'>
+                            <p className='titulo'>Descrição:</p>
+                            <p className='conteudo'>{item.descricao}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className='container'>
-            <div className='div'>
-                <p className='titulo'>Nome:</p>
-                <p className='conteudo'>Fred Matheus de Sá Carvalho</p>
-            </div>
-            <div className='div'>
-                <p className='titulo'>Contato:</p>
-                <p className='conteudo'>emailgenerico@gmail.com</p>
-                <p className='conteudo'>11 93207-7414</p>
-            </div>
-            <div className='div'>
-                <p className='titulo'>Esquitório:</p>
-                <p className='conteudo'>São Paulo</p>
-            </div>
-            <div className='div'>
-                <p className='titulo'>Áreas de Atuação:</p>
-                <p className='conteudo'>Direito Civel</p>
-            </div>
-        </div>
-            <div className='container2'>
-        <div className='div'>
-                <p className='titulo'>Descrição:</p>
-                <p className='conteudo'>Fluente em Português, estudei em tal lugar</p>
-            </div>
-        </div>
-        </div>
-    </main>
+                )}
+        </main>
     )
 
 

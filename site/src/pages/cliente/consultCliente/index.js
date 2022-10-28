@@ -8,9 +8,9 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-export default function Index() {
 
-  
+export default function Index() {
+   
     const[card, setCard]= useState([])
 
     const navigate= useNavigate()
@@ -25,7 +25,12 @@ export default function Index() {
 
     useEffect(()=>{
         Listar();
+        
     },[])
+
+    function Info(id) {
+        navigate(`/consultoria/${id}`)
+    }
 
 
 
@@ -39,7 +44,7 @@ export default function Index() {
                     <img src="/assets/images/config.png" alt="" />
                 </div>
             </header>
-            <div  className='div-geral'>
+            <div className='div-geral'>
                 <h1> Consultorias agendadas </h1>
                 <div className='div-tit'>
                     <div className='div-ind'>
@@ -57,7 +62,7 @@ export default function Index() {
                 </div>
                 
                 {card.map(item=>
-                    <div className='div-consultar'>
+                    <div onClick={()=> Info(item.id)} className='div-consultar'>
                         <div className='div-ind'>
                             <p>{item.area}</p>
                         </div>
@@ -70,10 +75,17 @@ export default function Index() {
                         <div className='div-ind'>
                             <p>{item.email}</p>
                         </div>
+                        
                     </div>
-                    )}
+                    )
+                    
+                    }
+
+                    
+
 
             </div>
+            
         </main>
     )
 }

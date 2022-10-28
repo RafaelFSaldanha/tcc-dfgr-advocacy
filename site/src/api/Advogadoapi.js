@@ -175,3 +175,8 @@ export async function InfoCliente(id) {
     const r = await api.get(`/cliente/informacoes/${id}`)
     return r.data
 }
+
+export async function Advogadosid2(id) {
+    const r = await api.get(`/advogado/advogadosid2/${id}`)
+    return r.data
+}
