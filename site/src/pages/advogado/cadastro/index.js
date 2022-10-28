@@ -51,6 +51,9 @@ export default function CadastroAdvogado(){
          toast.error(err.response.data.erro)
         }
     }
+    function VoltarLanding(){
+        navigate('/')
+    }
 
 
     return(
@@ -66,6 +69,9 @@ export default function CadastroAdvogado(){
         draggable
         pauseOnHover
         theme="dark"/>
+        <header>
+            <p onClick={VoltarLanding}> Continuar como visitante</p>
+        </header>
             <div className='div-principal'>
                 <img className='logo' src='/assets/images/logodourada.svg' alt='logo' />
                 <div className='div-inputs'>

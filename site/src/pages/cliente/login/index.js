@@ -60,9 +60,18 @@ export default function Index() {
         }, 500)
     }
 
+    function VoltarLanding() {
+        navigate('/')
+    }
+
     return (
+        
         <main className='tela-login'>
+            <header>
+            <p onClick={VoltarLanding}> Continuar como visitante</p>
+        </header>
         <LoadingBar color='#AD8217' ref={ref} />
+       
         <div className='div-bg-main'>
             <img className='logo' src='/assets/images/logodourada.svg' alt=''/>
             <div className='div-bg-input'>

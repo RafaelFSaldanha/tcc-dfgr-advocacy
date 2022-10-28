@@ -68,13 +68,18 @@ export default function LoginPage() {
             navigate('/cadastro');
         }, 1)
     }
-
+    function VoltarLanding() {
+        navigate('/')
+    }
 
 
 
     return(
         <main className='tela-login'>
             <LoadingBar color='#AD8217' ref={ref} />
+            <header>
+            <p onClick={VoltarLanding}> Continuar como visitante</p>
+        </header>
             <div className='div-bg-main'>
                 <img className='logo' src='/assets/images/logodourada.svg' alt=''/>
                 <div className='div-bg-input'>
