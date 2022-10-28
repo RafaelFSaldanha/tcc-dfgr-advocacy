@@ -11,13 +11,15 @@
         align-items: center;
         width: 100vw;
         height: 5vh;
-        padding-left: 2em;
+        padding-right: 2em;
          p{
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                width: 15vw;
+                width: 12vw;
                 height: 4vh;
+                border: 1px solid #FFFFFF;
+                border-radius: .4em;
                 color: #FFFFFF;
                 cursor: pointer;
                 font-family: 'Open-Sans-SemiBold';
