@@ -9,7 +9,9 @@ import 'react-toastify/dist/ReactToastify.min.css';
 
 export default function Index() {
     
-    const [nome,setNome] = useState('')
+    const [nome, setNome] = useState('')
+    const [telefone, setTelefone]= useState('')
+    const [localizacao, setLocalizacao] = useState('')
     const [email,setEmail] = useState('')
     const [senha,setSenha] = useState('')
 
@@ -19,7 +21,7 @@ export default function Index() {
 
     async function cadastrare(){
         try {
-            const r = await CadastrarCliente(nome, email, senha);
+            const r = await CadastrarCliente(nome, telefone, localizacao, email, senha);
             toast.success('Cadastro feito com sucesso', {
                 position: "top-right",
                 autoClose: 5000,
@@ -33,6 +35,11 @@ export default function Index() {
         } catch (err) {
             toast.error(err.response.data.erro)
         }
+        console.log(telefone)
+        console.log(senha)
+        console.log(email)
+        console.log(localizacao)
+        console.log(nome)
     }
     
     function navegar(){
@@ -62,6 +69,14 @@ export default function Index() {
                     <div className='individual'>
                         <p className='nome-input'> Nome <span>*</span></p>
                         <input value={nome} type='text' className='input' placeholder='Insira seu nome completo' onChange={e => setNome(e.target.value)}/>
+                    </div>
+                    <div className='individual'>
+                        <p className='nome-input'> Telefone <span>*</span></p>
+                        <input value={telefone} type='text' className='input' placeholder='Insira um número para contato' onChange={e => setTelefone(e.target.value)}/>
+                    </div>
+                    <div className='individual'>
+                        <p className='nome-input'> Localização <span>*</span></p>
+                        <input value={localizacao} type='text' className='input' placeholder='Insira o seu estado de moradia' onChange={e => setLocalizacao(e.target.value)}/>
                     </div>
                     <div className='individual'>
                         <p className='nome-input'> Email <span>*</span></p>

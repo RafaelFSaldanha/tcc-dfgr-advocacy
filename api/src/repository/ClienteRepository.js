@@ -1,10 +1,10 @@
 import { con } from "./connection.js";
 
 export async function CadastroCliente(cliente){
-    const comando=` insert into tb_cliente (nm_cliente, ds_email, ds_senha)
-    values (?, ?, ?)`
+    const comando=` insert into tb_cliente (nm_cliente, ds_telefone, ds_localizacao, ds_email, ds_senha)
+    values (?, ?, ?, ?, ?)`
 
-    const[resposta]= await con.query(comando, [cliente.nome, cliente.email, cliente.senha])
+    const[resposta]= await con.query(comando, [cliente.nome, cliente.telefone, cliente.localizacao, cliente.email, cliente.senha])
     cliente.id = resposta.insertId;
 
     return cliente;
@@ -14,6 +14,8 @@ export async function LoginCliente(email, senha){
     const comando = 
         `Select id_cliente    id,
                 nm_cliente    nome,
+                ds_telefone,
+                ds_localizacao,
                 ds_email
          from   tb_cliente
          where  ds_email    =   ?
@@ -21,6 +23,13 @@ export async function LoginCliente(email, senha){
 
     const [linhas] = await con.query(comando, [email, senha]);
     return linhas[0];
+}
+export async function ClienteEmail(email) {
+	const c = `
+        SELECT ds_email FROM tb_cliente WHERE ds_email = ?;
+        `;
+	const [res] = await con.query(c, [email]);
+	return res[0];
 }
 
 export async function alterarimgcliente(imagem, id){
@@ -127,4 +136,18 @@ export async function informacoesparacliente(id) {
 
     const [linhas] = await con.query(comando, [id]);
     return linhas[0];
+}
+
+export async function EditarPerfilCliente(id, cliente) {
+    const comando = 
+    `UPDATE tb_cliente 
+        SET  nm_cliente	= ?,
+        ds_telefone = ?,
+        ds_localizacao = ?, 
+        ds_email = ?,		
+        ds_senha = ?		
+       WHERE id_cliente = ?
+    `
+    const [resposta] = await con.query (comando, [ cliente.nome, cliente.telefone, cliente.localizacao,cliente.email, cliente.senha, id])
+    return resposta.affectedRows
 }

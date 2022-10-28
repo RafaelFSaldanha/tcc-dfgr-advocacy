@@ -14,7 +14,11 @@ export default function Index() {
     const navigate = useNavigate();
     const ref = useRef(); 
 
-
+    document.addEventListener("keypress", function (e) {
+		if (e.key === "Enter") {
+			entrarClick();
+		}
+	})
 
 
     function AdvLogin(){

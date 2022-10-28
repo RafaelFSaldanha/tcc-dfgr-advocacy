@@ -56,11 +56,13 @@ export async function ListarConsultorias(id) {
     return r.data
 }
 
-export async function CadastrarCliente(nome, email, senha) {
+export async function CadastrarCliente(nome, telefone, localizacao, email, senha) {
     const r = await api.post('/cliente/cadastro' ,{
-        nome,
-        email,
-        senha
+        nome: nome,
+        telefone: telefone,
+        localizacao: localizacao,
+        email: email,
+        senha: senha
     })
 
     return r.data

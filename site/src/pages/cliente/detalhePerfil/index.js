@@ -13,11 +13,14 @@ export default function Index() {
     const navigate=useNavigate();
 
     async function AA() {
-        const cliente=storage('cliente-logado')
+        const cliente = storage('cliente-logado')
         const  r= await ClienteId(cliente.id)
         setInfo([r])
         console.log(r)
         
+    }
+    function EditarClick(){
+        navigate('/editarperfil')
     }
 
     useEffect(()=>{
@@ -76,7 +79,7 @@ export default function Index() {
                         </div>
                     </div>
                     <div className='div-edit'>
-                        <img src="/assets/images/edit-perfil.png" alt="" />
+                        <img onClick={EditarClick} src="/assets/images/edit-perfil.png" alt="" />
                     </div>
                 </div>
             </div>

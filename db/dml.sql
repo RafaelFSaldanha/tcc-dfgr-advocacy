@@ -1,5 +1,5 @@
-insert into tb_cliente(nm_cliente, ds_email, ds_senha)
-	values('Gabriel Firmino da Silva', 'gabrielcliente@gmail.com', 'gabo1234');
+insert into tb_cliente(nm_cliente, ds_telefone, ds_localizacao, ds_email, ds_senha)
+	values('Gabriel Firmino da Silva', '11982776312', 'São Paulo', 'gabrielcliente@gmail.com', 'gabo1234');
     
 insert into tb_area_atuacao(nm_area)
 	values("Ambiental");	

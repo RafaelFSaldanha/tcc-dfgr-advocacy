@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import multer from 'multer'
-import { LoginAdvogado, AgendarConsultoria, CadastroAdvogado, Remover, alterarimgadvogado, EditarPerfil } from '../repository/AdvogadoRepository.js';
+import { LoginAdvogado, AgendarConsultoria, CadastroAdvogado, Remover, alterarimgadvogado, EditarPerfil, AdvogadoEmail } from '../repository/AdvogadoRepository.js';
 
 const server = Router();
 const upload = multer({dest: 'storage/FotoAdvogado'})
@@ -24,6 +24,23 @@ server.post('/login/advogado', async (req, resp) => {
 
     }
 })
+
+server.post("/email/advogado", async (req, resp) => {
+	try {   
+		const advogado = req.body;
+		const verif = await AdvogadoEmail(advogado.email);
+		if (!verif) {
+			const r = await LoginAdvogado(email);
+			resp.send(r);
+		} else {
+			throw new Error("Esse e-mail já está em uso.");
+		}
+	} catch (err) {
+		resp.status(401).send({
+			erro: err.message,
+		});
+	}
+});
 
 server.post('/advogado/admin/agendar', async (req, resp) => {
     try {

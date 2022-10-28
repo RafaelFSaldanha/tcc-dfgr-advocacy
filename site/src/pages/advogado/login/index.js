@@ -14,6 +14,12 @@ export default function LoginPage() {
     const navigate = useNavigate();
     const ref = useRef(); 
 
+    document.addEventListener("keypress", function (e) {
+		if (e.key === "Enter") {
+			entrarClicke();
+		}
+	})
+
 
     useEffect(() =>{
         if(storage('advogado-logado')){

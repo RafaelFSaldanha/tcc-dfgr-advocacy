@@ -12,7 +12,13 @@ export async function LoginAdvogado(email, senha) {
     const [linhas] = await con.query(comando, [email, senha]);
     return linhas[0];
 }
-
+export async function AdvogadoEmail(email) {
+	const c = `
+        SELECT ds_email FROM tb_advogado WHERE ds_email = ?;
+        `;
+	const [res] = await con.query(c, [email]);
+	return res[0];
+}
 export async function AgendarConsultoria(consultoria) {
     const comando = `insert into tb_consultoria (id_advogado, id_cliente, id_area, dt_consultoria, hr_consultoria, ds_consultoria)
     values (?, ?, ?, ?, ?, ?)`

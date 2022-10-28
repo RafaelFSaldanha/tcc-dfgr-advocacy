@@ -31,6 +31,11 @@
                     text-decoration: none;
                     color: #FFFFFF;
                     font-family: 'Open-Sans-SemiBold';
+                    transition-duration: 100ms;
+                }
+                .links:hover {
+                    cursor: pointer;
+                    transform: scale(1.1);
                 }
             }
 

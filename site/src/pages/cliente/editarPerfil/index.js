@@ -38,7 +38,7 @@ export default function Index() {
                         </div>
                     </div>
                     <div className='div-check'>
-                        <img src="/assets/images/check.png" alt="" />
+                        <button><img src="/assets/images/check.png" alt="" /></button>
                     </div>
                 </div>
             </div>
