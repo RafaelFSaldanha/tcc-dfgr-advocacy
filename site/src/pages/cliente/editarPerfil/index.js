@@ -8,20 +8,22 @@ import 'react-toastify/dist/ReactToastify.min.css';
 
 export default function Index() {
     const [dados, setDados] = useState([])
+    const [ids, setIds]= useState(0)
     const [nome, setNome] = useState('')
     const [tel, setTelefone]= useState('')
-    const [local, setLocalizacao] = useState('')
+    const [local, setLocal] = useState('')
     const [email,setEmail] = useState('')
     const [senha,setSenha] = useState('')
     async function Abrir() {
     const cliente = storage('cliente-logado')
     const  r = await ClienteId(cliente.id)
+    setIds(cliente.id)
     setDados([r])
     }
 
     async function SalvarAlt() {
         try {
-            const r = await AlterarDados( nome, tel, local, email, senha);
+            const r = await AlterarDados(ids,nome, tel, local, email, senha);
             toast.success('Agendado com sucesso', {
                 position: "top-right",
                 autoClose: 5000,
@@ -31,16 +33,19 @@ export default function Index() {
                 draggable: true,
                 progress: undefined,
                 theme: "dark"});
+
+                console.log(nome)
             
         }
         catch (err) {
             toast.error(err.response.data.erro)
-            
+            console.log(local)
         }
     }
 
     useEffect(()=>{
         Abrir()
+        
     },[])
     return (
         <main className='info-adv'>
@@ -96,7 +101,7 @@ export default function Index() {
                                 </div>
                                 <div className='individual'>
                                     <p className='p-t'>Localização:</p>
-                                    <input placeholder={item.local}className='p-p' onChange={e => setLocalizacao(e.target.value)}></input>
+                                    <input placeholder={item.local}className='p-p' onChange={e => setLocal(e.target.value)}></input>
                                 </div>
                             </div>
                             

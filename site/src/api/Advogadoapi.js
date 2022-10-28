@@ -184,7 +184,7 @@ export async function AlterarDados(id, nome, tel, local, email, senha){
     const resposta = await api.put(`/cliente/editarperfil/${id}`, {
         nome: nome,
         telefone: tel,
-        local: local,
+        localizacao: local,
         email: email,
         senha: senha
     });
