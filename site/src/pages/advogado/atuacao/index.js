@@ -48,9 +48,7 @@ export default function AreaAtuacao() {
       <div>
         <Atuacoes />
       </div>
-    <footer>
-      <Rodape />
-    </footer>
+      
     </main>
   )
 }
