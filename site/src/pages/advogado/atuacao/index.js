@@ -17,7 +17,7 @@ export default function AreaAtuacao() {
   }
 
   async function CadastroClick() {
-    navigate('/advogado/cadastro')
+    navigate('/login')
   }
 
   async function VoltarClick() {

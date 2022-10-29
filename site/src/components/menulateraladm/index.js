@@ -1,6 +1,7 @@
 import './index.scss'
 import { useNavigate } from 'react-router-dom'
 import storage from 'local-storage'
+import { useEffect } from 'react';
 
 export default function Menulateral(){
 
@@ -22,6 +23,13 @@ export default function Menulateral(){
     async function associados() {
         navigate('/admin/associados');
     }
+
+    useEffect(()=>{
+        if(!storage('admin-logado')){
+            navigate('/admin/login')
+        }
+    },[])
+
 
     return(
         <nav className="main-menu-lateral">

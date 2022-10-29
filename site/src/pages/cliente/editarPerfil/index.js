@@ -3,7 +3,7 @@ import '../../common/common.scss'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import storage from 'local-storage'
-import { ClienteId, buscarfoto, AlterarDados, enviarfotocliente } from '../../../api/Advogadoapi'
+import { ClienteId, AlterarDados, enviarfotocliente } from '../../../api/Advogadoapi'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 
@@ -82,7 +82,7 @@ export default function Index() {
             <header>
                 <img src="/assets/images/logodourada.svg" alt="" />
                 <div className='div-link-home'>
-                    <img src="/assets/images/home.png" alt="" />
+                    <p className='link' onClick={navegar}>Cancelar</p>
                 </div>
             </header>
                 <div>
