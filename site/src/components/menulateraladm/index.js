@@ -32,7 +32,7 @@ export default function Menulateral(){
 
 
     return(
-        <nav className="main-menu-lateral">
+        <nav className="main-menu-lateral-adm">
             <div className='menu-lateral-items'>
                 <div onClick={consultorias}>
                     <p> Consultorias </p>

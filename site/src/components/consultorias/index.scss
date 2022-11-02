@@ -1,13 +1,19 @@
-.conteudos {
+.conteudos-agendadas {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
     background: #0D263E;
     border-radius: 10px;
     height: 9vh;
-    width: 70vw;
+    width: 75vw;
     margin-top: 5vh;
+
+    .div{
+        display: flex;
+        justify-content: space-between;
+        width: 5vw;
+    }
     
 
     .info{
@@ -15,19 +21,27 @@
         font-family: 'Open-Sans-SemiBold';
     }
     .botao{
-        height: 15px;
+        height: 2em;
+        
+        z-index: 100;
 
 
         .foto{
-            width: 1em;
+            width: 20.19px;
+            height: 20.19px;
+            margin-top: 4px;
+           
+        }
+        .foto-2{
+            width: 1.7em;
         }
         .foto:hover {
-            visibility: visible;
-            cursor: alias;
+            
+            cursor: pointer;
         }
     }
     .container{
-        width: 68vw;
+        width:70vw;
         display: flex;
         justify-content: space-around;
     }
