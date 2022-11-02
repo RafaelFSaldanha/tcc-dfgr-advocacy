@@ -35,3 +35,5 @@ insert into tb_advogado(id_area, nm_advogado, ds_email, ds_senha, ds_localizacao
         insert into tb_advogado(id_area, nm_advogado, ds_email, ds_senha, ds_localizacao, ds_oab, nr_telefone)
 	values(4, "Rafael Saldanha", "rafael@advogado.com", "1234", "São Paulo", "SP123456", "(11)98277-6312");
     
+    insert into tb_admin(id_admin, ds_email, ds_senha)
+	values(1, "admin", "admin");

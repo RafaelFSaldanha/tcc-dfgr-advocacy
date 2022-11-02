@@ -35,12 +35,15 @@ export default function Menulateral(){
         <nav className="main-menu-lateral-adm">
             <div className='menu-lateral-items'>
                 <div onClick={consultorias}>
+                <img src='/assets/images/calendar.svg' alt=''/>
                     <p> Consultorias </p>
                 </div>
                 <div onClick={novosAssociados}>
+                    <img src='/assets/images/novoadv.svg' alt=''/>
                     <p> Novos Associados </p>
                 </div>
                 <div onClick={associados}>
+                <img src='/assets/images/associados.svg' alt=''/>
                     <p> Associados </p>
                 </div>
             </div>

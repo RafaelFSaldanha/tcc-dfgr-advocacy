@@ -31,12 +31,15 @@ export default function MenulateralCliente(){
 
             <div className='menu-lateral-items'>
                 <div >
-                    <p> Conversas </p>
+                   <img src='/assets/images/chat.svg' alt=''/>
+                    <p> Minhas Conversas </p>
                 </div>
                 <div onClick={agendadasClick}>
+                <img src='/assets/images/calendar.svg' alt=''/>
                     <p>Consultorias Agendadas</p>
                 </div>
                 <div onClick={Associadosclick}>
+                <img src='/assets/images/associados.svg' alt=''/>
                     <p>Associados</p>
                 </div>
             </div>

@@ -32,7 +32,7 @@ export default function Cabecalho() {
                 <div className='main-bem-vindo'>Olá, seja bem-vindo Dr. {usuario} </div>
             </div>
             <div className='main-perfil'>
-                <img onClick={navegar} src='/assets/images/perfil.svg' alt=''/>
+            <img onClick={navegar} src='/assets/images/account-cog.png' alt=''/>
             </div>
         </header>
     )
