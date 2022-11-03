@@ -192,11 +192,11 @@ export async function AlterarDados(id, nome, tel, local, email, senha){
     });
     return resposta.data
 }
-<<<<<<< HEAD
+
 export async function ListarClientesChat(idAdvogado) {
     const resposta = await api.get(`/advogado/chat/${idAdvogado}`)
     return resposta.data;
-=======
+}
 
 export async function enviarfotocliente(id, imagem){
     const formData = new FormData();
@@ -208,5 +208,4 @@ export async function enviarfotocliente(id, imagem){
         },
     })
     return resposta.status
->>>>>>> 19a60e8d56591a1af6ee88ead4a5d27271c4987c
 }
