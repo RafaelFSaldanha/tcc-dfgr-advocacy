@@ -12,14 +12,14 @@ export default function Index() {
             <div className='div-geral'>
                 <Menulateral />
                 <div className='div-principal'>
-                    <h1> Associados </h1>
+                    <h1 className='assoc'> Associados </h1>
                     <thead className='thead'>
                         <div className="container">
                             <th>Indentificação</th>
                             <th>Nome do Advogado</th>
                             <th>Localização</th>
                             <th>Área de atuação</th>
-                            <th>Telefone</th>
+                            <th>Email</th>
                         </div>
                         
                     </thead>

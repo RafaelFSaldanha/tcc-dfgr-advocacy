@@ -12,7 +12,7 @@ export default function Index() {
             <div className='div-geral'>
                 <Menulateral />
                 <div className='div-principal'>
-                    <h1> Novos Associados </h1>
+                    <h1 className='assoc'> Novos Associados </h1>
                     <thead className='thead'>
                         <div className="container">
                             <th>Nome</th>
