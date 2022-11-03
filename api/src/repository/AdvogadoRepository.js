@@ -40,7 +40,7 @@ export async function CadastroAdvogado(advogado) {
 }
 export async function ListarAreas() {
     const comando = `
-    select id_area         as id,
+    select  id_area         as id,
             nm_area         as area
           from tb_area_atuacao`
 

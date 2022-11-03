@@ -12,7 +12,7 @@ export async function CadastroCliente(cliente){
 
 export async function LoginCliente(email, senha){
     const comando = 
-        `Select id_cliente    id,
+        `Select id_cliente    idCliente,
                 nm_cliente    nome,
                 ds_telefone,
                 ds_localizacao,
@@ -46,7 +46,7 @@ export async function ListarAssociados(){
     const comando = 
     ` 
     SELECT
-    id_advogado      id,
+    id_advogado      idAdvogado,
     nm_advogado	    nome,
     nm_area          area,
     ds_oab           oab,    
@@ -66,7 +66,7 @@ export async function ListarAssociados(){
 
 export async function PesquisaAssociado(nome){
     const comando= `
-    SELECT id_advogado      id,
+    SELECT id_advogado      idAdvogado,
     nm_advogado	    nome,
     nm_area          area,
     ds_oab           oab,    
@@ -153,3 +153,4 @@ export async function EditarPerfilCliente(id, cliente) {
     const [resposta] = await con.query (comando, [ cliente.nome, cliente.telefone, cliente.localizacao,cliente.email, cliente.senha, id])
     return resposta.affectedRows
 }
+

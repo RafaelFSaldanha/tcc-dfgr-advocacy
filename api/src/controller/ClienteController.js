@@ -40,7 +40,17 @@ server.post('/cliente/cadastro', async (req,resp) => {
     }
 })
 
-
+server.get('/listarclienteschat', async (req, resp) => {
+    try {
+        const linhas = await ListarClientesChat();
+        resp.send(linhas);
+    }
+    catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
 
 server.post('/login/cliente', async (req, resp) => {
     try {
@@ -235,7 +245,24 @@ server.put('/cliente/editarperfil/:id', async (req, resp) => {
     }
 })
 
-
+server.get('/cliente/consultorias/:id', async (req, resp) => {
+    try {
+        const id = Number(req.params.id);
+        
+        const resposta = await buscarConsultoriaPorIdCliente(id)
+        if(resposta === []){
+            resp.status(404).send('Nenhuma comanda correspondente foi encontrada')
+        }
+        else {
+            resp.send(resposta)
+        }
+    }
+    catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
 
 export default server;
 

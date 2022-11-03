@@ -190,3 +190,7 @@ export async function AlterarDados(id, nome, tel, local, email, senha){
     });
     return resposta.data
 }
+export async function ListarClientesChat(idAdvogado) {
+    const resposta = await api.get(`/advogado/chat/${idAdvogado}`)
+    return resposta.data;
+}
