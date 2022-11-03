@@ -99,7 +99,7 @@ export default function Index() {
             </div>
 
             <footer className='botaoadm'>
-                <p onClick={Adm} className='a'>Adm</p>
+                <p onClick={Adm} className='a'>Area Administrativa</p>
             </footer>
         </main>
     )
