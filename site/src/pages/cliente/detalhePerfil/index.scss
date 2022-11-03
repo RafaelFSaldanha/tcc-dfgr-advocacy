@@ -14,17 +14,24 @@
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
         img {
-            height: 90%;
+            height: 8vh;
             margin-left: 2vw;
         }
 
         .div-links {
             display: flex;
             flex-direction: row;
+            align-items: center;
             justify-content: space-between;
-            height: 50%;
-            width: 10%;
-            margin-right: 5vw;
+            background-color: #0D263E;
+            height: 10%;
+            width: 8%;
+
+            .link{
+                font-family: 'Open-Sans-SemiBold';
+                color: #FFF8E8;
+                cursor: pointer;
+            }
 
             img {
                 height: 100%;
@@ -104,13 +111,10 @@
 
             .div-edit {
                 display: flex;
-                align-items: flex-end;
-                height: 6%;
-                width: 90%;
-
-                img {
-                    height: 100%;
-                }
+                position: relative;
+                bottom: 230px;
+                left: 490px;
+               
             }
         }
     }
@@ -229,13 +233,10 @@
     
                 .div-edit {
                     display: flex;
-                    align-items: flex-end;
-                    height: 6%;
-                    width: 90%;
+                    position: relative;
+                    bottom: 90px;
+                    left: 350px;
     
-                    img {
-                        height: 100%;
-                    }
                 }
             }
         }

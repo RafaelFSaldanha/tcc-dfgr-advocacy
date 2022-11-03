@@ -1,8 +1,9 @@
 import './index.scss'
 import '../../common/common.scss'
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import storage from 'local-storage'
-import { ClienteId, buscarfoto, AlterarDados } from '../../../api/Advogadoapi'
+import { ClienteId, AlterarDados, enviarfotocliente } from '../../../api/Advogadoapi'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 
@@ -14,6 +15,9 @@ export default function Index() {
     const [local, setLocal] = useState('')
     const [email,setEmail] = useState('')
     const [senha,setSenha] = useState('')
+    const [foto, setFoto]= useState()
+    const navigate= useNavigate()
+
     async function Abrir() {
     const cliente = storage('cliente-logado')
     const  r = await ClienteId(cliente.id)
@@ -24,7 +28,12 @@ export default function Index() {
     async function SalvarAlt() {
         try {
             const r = await AlterarDados(ids,nome, tel, local, email, senha);
+<<<<<<< HEAD
             toast.success('Perfil Alterado com sucesso', {
+=======
+            const j = enviarfotocliente(ids, foto)
+            toast.success('Agendado com sucesso', {
+>>>>>>> 19a60e8d56591a1af6ee88ead4a5d27271c4987c
                 position: "top-right",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -33,8 +42,9 @@ export default function Index() {
                 draggable: true,
                 progress: undefined,
                 theme: "dark"});
-
-                console.log(nome)
+            
+            navegar()    
+                
             
         }
         catch (err) {
@@ -43,10 +53,22 @@ export default function Index() {
         }
     }
 
+    function navegar() {
+        navigate('/detalheperfil')
+    }
+
     useEffect(()=>{
         Abrir()
         
     },[])
+
+    function escolherImagem() {
+        document.getElementById('foto').click()
+    }
+
+    function MostrarImagem() {
+        return URL.createObjectURL(foto)
+    }
     return (
         <main className='info-adv'>
             <ToastContainer 
@@ -64,7 +86,7 @@ export default function Index() {
             <header>
                 <img src="/assets/images/logodourada.svg" alt="" />
                 <div className='div-link-home'>
-                    <img src="/assets/images/home.png" alt="" />
+                    <p className='link' onClick={navegar}>Cancelar</p>
                 </div>
             </header>
                 <div>
@@ -73,13 +95,14 @@ export default function Index() {
                 <div className='div-geral'>
                 <div>
                     <div className='div-1'>
-                        <div className='div-img'>
-                            {!item.foto &&
+                        <div onClick={escolherImagem} className='div-img'>
+                            {!foto &&
                             <img className='fotoperfil' src="/assets/images/semfoto.png" alt="" />
                             }
-                            {item.foto &&
-                            <img className='fotoperfil' src={buscarfoto(item.foto)} alt="" />
+                            {foto &&
+                            <img className='fotoperfil' src={MostrarImagem()} alt="" />
                             }
+                            <input type="file" id='foto' onChange={e=> setFoto(e.target.files[0])}/>
                         </div>
                         <div className='div-cont'>
                             <div className='div-cont-1'>
@@ -103,8 +126,14 @@ export default function Index() {
                                     <p className='p-t'>Localização:</p>
                                     <input placeholder={item.local}className='p-p' onChange={e => setLocal(e.target.value)}></input>
                                 </div>
+<<<<<<< HEAD
                                 <div className='div-check'>
                             <img onClick={SalvarAlt} src="/assets/images/check.png" alt="" />
+=======
+
+                                <div className='div-check'>
+                                    <img onClick={SalvarAlt} src="/assets/images/check.png" alt="" />
+>>>>>>> 19a60e8d56591a1af6ee88ead4a5d27271c4987c
                                 </div>
                             </div>
                             

@@ -1,4 +1,4 @@
-.main-menu-lateral{
+.main-menu-lateral-adm{
     background-color: #0D263E;
     height: 90vh;
     width: 20%;
@@ -16,9 +16,14 @@
        
         p{
             color: #cfcfcf;
+            text-align: center;
             font-family: 'Open-Sans-SemiBold';
             font-size: 1.39em;
             width: 20vw;
+        }
+
+        img{
+            width: 3em;
         }
     }
     
@@ -62,7 +67,7 @@
 }
 
 @media (max-width: 1366px) {
-    .main-menu-lateral{
+    .main-menu-lateral-adm{
         background-color: #0D263E;
         height: 90vh;
         width: 20%;

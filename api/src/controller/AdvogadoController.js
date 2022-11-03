@@ -159,6 +159,11 @@ server.put('/advogado/editar/:id', async (req, resp)=>{
         if (!advogado.telefone) {
             throw new Error("Insira um telefone")
         }
+
+        if (!advogado.desc) {
+            throw new Error("Insira uma descrição")
+        }
+    
     
         const resposta = await EditarPerfil(id, advogado)
         if(resposta!=1){

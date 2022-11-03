@@ -77,8 +77,9 @@ export async function EditarPerfil(id, advogado) {
             id_area			    = ?,
             ds_email            = ?,
             ds_localizacao  	= ?,
-            nr_telefone 	    = ?
+            nr_telefone 	    = ?,
+            ds_advogado         = ?
             WHERE id_advogado       = ? `
-    const [resposta]= await con.query(comando, [advogado.nome, advogado.area, advogado.email, advogado.localizacao, advogado.telefone, id])   
+    const [resposta]= await con.query(comando, [advogado.nome, advogado.area, advogado.email, advogado.localizacao, advogado.telefone, advogado.desc, id])   
     return resposta.affectedRows     
 }

@@ -24,19 +24,22 @@ export default function MenulateralCliente(){
 }
 
     return(
-        <nav className="main-menu-lateral">
+        <nav className="main-menu-lateral-cliente">
             <div className='logo'>
                 <img src='/assets/images/logodourada.svg' alt=''/>
             </div>
 
             <div className='menu-lateral-items'>
                 <div >
-                    <p> Conversas </p>
+                   <img src='/assets/images/chat.svg' alt=''/>
+                    <p> Minhas Conversas </p>
                 </div>
                 <div onClick={agendadasClick}>
+                <img src='/assets/images/calendar.svg' alt=''/>
                     <p>Consultorias Agendadas</p>
                 </div>
                 <div onClick={Associadosclick}>
+                <img src='/assets/images/associados.svg' alt=''/>
                     <p>Associados</p>
                 </div>
             </div>

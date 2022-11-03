@@ -13,12 +13,13 @@ export default function Index() {
                 <div className='div-conteudos'>
                     
                     <thead className='thead'>
-                        <div className="container">
-                            <th>Área de atuação</th>
-                            <th>Nome do Cliente</th>
-                            <th>Data</th>
-                            <th>Hora</th>
-                        </div>
+                        
+                            <th className='th'>Área de atuação</th>
+                            <th className='th'>Nome do Cliente</th>
+                            <th className='th'>Data e Hora</th>
+                            
+                            <th>        </th>
+                       
                     </thead>
                     <CardConsultoria />
                 </div>    

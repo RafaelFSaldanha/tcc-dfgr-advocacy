@@ -31,7 +31,7 @@ export default function CabecalhoCliente() {
     }
     
     return (
-        <header className='header-main'>
+        <header className='header-main-cliente'>
             <div className='img-text'>
                 <img src='/assets/images/arrowleft.png' alt='' onClick={clickArrow} />
                 <div className='main-bem-vindo'>Olá, seja bem-vindo Sr. {cliente} </div>

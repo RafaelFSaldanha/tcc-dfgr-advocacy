@@ -99,19 +99,21 @@ export async function enviarfotoadvogado(id, imagem){
             "Content-Type": "multipart/form-data"
         },
     })
+    return resposta.status
 }
 
 export function buscarfoto(imagem){
     return `${api.getUri()}/${imagem}`
 }
 
-export async function EditPerfil(id, nome, area, email, localizacao, telefone){
+export async function EditPerfil(id, nome, area, email, localizacao, telefone, desc){
     const resposta = await api.put(`/advogado/editar/${id}`, {
         nome,
         area,
         email,
         localizacao,
-        telefone
+        telefone,
+        desc
     });
     return resposta.data
 }
@@ -190,7 +192,21 @@ export async function AlterarDados(id, nome, tel, local, email, senha){
     });
     return resposta.data
 }
+<<<<<<< HEAD
 export async function ListarClientesChat(idAdvogado) {
     const resposta = await api.get(`/advogado/chat/${idAdvogado}`)
     return resposta.data;
+=======
+
+export async function enviarfotocliente(id, imagem){
+    const formData = new FormData();
+    formData.append('foto', imagem);
+
+    const resposta = await api.put(`/cliente/${id}/foto`, formData,{
+        headers:{
+            "Content-Type": "multipart/form-data"
+        },
+    })
+    return resposta.status
+>>>>>>> 19a60e8d56591a1af6ee88ead4a5d27271c4987c
 }

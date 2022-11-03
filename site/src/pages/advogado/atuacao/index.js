@@ -17,7 +17,7 @@ export default function AreaAtuacao() {
   }
 
   async function CadastroClick() {
-    navigate('/advogado/cadastro')
+    navigate('/login')
   }
 
   async function VoltarClick() {
@@ -48,9 +48,9 @@ export default function AreaAtuacao() {
       <div>
         <Atuacoes />
       </div>
-      <footer>
+      
       <Rodape/>
-      </footer>
+      
     </main>
   )
 }

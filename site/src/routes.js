@@ -49,7 +49,7 @@ export default function Index() {
         <Route path='/consultoria/:idParam' element={<InformaçoesParaCliente />} />
         <Route path='/advogado/informacoes/:idParam' element={<Informaçoes />} />
         <Route path='/perfil/advogado' element={<PerfilAdvogado />} />
-        <Route path='/advogado/editarperfil/:idParam' element={<EditarPerfil />} />
+        <Route path='/advogado/editarperfil' element={<EditarPerfil />} />
         <Route path='/admin/home' element={<AdminHome />} />
         <Route path='/admin/associados' element={<AdminAssociados />} />
         <Route path='/admin/consultorias' element={<AdminConsultorias />} />

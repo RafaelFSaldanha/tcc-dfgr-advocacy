@@ -10,7 +10,7 @@ export default function Index(props){
     const[imagem,setImagem] = useState()
 
     function Editar() {
-        navigate('/editarperfil/advogado')
+        navigate('/advogado/editarperfil')
     }
 
     function MostrarImagem(){
@@ -26,6 +26,7 @@ export default function Index(props){
         }
     }
     useEffect(() =>{
+        console.log(props.advogado)
         setImagem(props.advogado.foto)
         if(imagem){
         MostrarImagem()
@@ -74,7 +75,7 @@ export default function Index(props){
 
                                 <div className='individual'>
                                     <p className='p-titulo'> Descriçao: </p>
-                                    <p> {props.advogado.desc} </p>
+                                    <p> {props.advogado.descricao} </p>
                                 </div>
                         
                             </div>

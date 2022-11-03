@@ -75,6 +75,7 @@
             margin-top: 2vh;
             width: 1.5em;
             height: 1.5em;
+            cursor: pointer;
         }
     }
 
@@ -94,6 +95,8 @@
             width: 40%;
             background-color: #0D263E;
             border-radius: 10px;
+            margin-top: 2em;
+            cursor: pointer;
 
             .div-imagem {
                 width: 30%;
@@ -185,6 +188,7 @@
     .main {
         display: flex;
         flex-direction: column;
+        height: 100vh;
     
         .cabecalho-associados {
             display: flex;
@@ -220,7 +224,7 @@
                 }
     
             .cadastro-image{
-                height: 2.3em;
+                height: 2.5em;
             }
         }
         
@@ -259,6 +263,86 @@
                 margin-top: 2vh;
                 width: 1.5em;
                 height: 1.5em;
+                cursor: pointer;
+            }
+        }
+    
+        .div-principal {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            width: 100%;
+            height: 70%;
+            flex-wrap: wrap;
+    
+            .div-card {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                height: 20vh;
+                width: 40%;
+                background-color: #0D263E;
+                border-radius: 10px;
+                margin-top: 2em;
+                cursor: pointer;
+    
+                .div-imagem {
+                    width: 30%;
+                    height: 100%;
+                    border-radius: 10px 0 0 10px;
+                    img{
+                        width: 13vw;
+                        height: 20vh;
+                        border-radius: 10px 0px 0px 10px;
+                    }
+                }
+    
+                .div-conteudo {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    width: 65%;
+                    height: 100%;
+    
+                    .div-nome {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        width: 98%;
+                        height: 15%;
+                        font-size: 0.9em;
+                        font-family: 'Open-Sans-SemiBold';
+                        color: #fff;
+                    }
+    
+                    .imgs {
+                        height: 4vh;
+                        margin: 1vw;
+                    }
+    
+                    .area {
+                        font-family: 'Open-Sans-SemiBold';
+                        color: #fff;
+                        text-align: start;
+                    }
+    
+                    .tel-loc {
+                        display: flex;
+                        flex-direction: row;
+                        width: 100%;
+                        height: 20%;
+    
+                        .div-indiv {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            width: 100%;
+                            height: 100%;
+                            font-family: 'Open-Sans-SemiBold';
+                            color: #fff;
+                        }
+                    }
+                }
             }
         }
         
@@ -288,4 +372,5 @@
             border: none;
         }
     }
+    
 }

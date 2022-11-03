@@ -96,6 +96,7 @@ export async function buscarIdAdvogado(id) {
                nm_area            as area,
                nr_telefone        as tel,
                ds_email           as email,
+               ds_advogado        as descricao,  
                img_advogado       as foto     
           from tb_advogado
           inner join tb_area_atuacao on tb_area_atuacao.id_area = tb_advogado.id_area
