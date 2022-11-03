@@ -20,7 +20,7 @@ export default function ChatPage() {
                     <div className='chat-messages'>
                     </div>
                     <div className='input-message'>
-                        <input type="text" />
+                        <input value={mensagem} type="text" onChange={e => setMensagem(e.target.value)}/>
                         <img src='/assets/images/enviar.svg'/>
                     </div>
                 </div>

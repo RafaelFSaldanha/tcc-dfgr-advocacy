@@ -123,7 +123,6 @@ export default function Index() {
                                     <p className='p-t'>Localização:</p>
                                     <input placeholder={item.local}className='p-p' onChange={e => setLocal(e.target.value)}></input>
                                 </div>
-  
 
                                 <div className='div-check'>
                                     <img onClick={SalvarAlt} src="/assets/images/check.png" alt="" />
