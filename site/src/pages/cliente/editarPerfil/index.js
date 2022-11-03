@@ -28,12 +28,10 @@ export default function Index() {
     async function SalvarAlt() {
         try {
             const r = await AlterarDados(ids,nome, tel, local, email, senha);
-<<<<<<< HEAD
-            toast.success('Perfil Alterado com sucesso', {
-=======
+
             const j = enviarfotocliente(ids, foto)
             toast.success('Agendado com sucesso', {
->>>>>>> 19a60e8d56591a1af6ee88ead4a5d27271c4987c
+
                 position: "top-right",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -126,14 +124,11 @@ export default function Index() {
                                     <p className='p-t'>Localização:</p>
                                     <input placeholder={item.local}className='p-p' onChange={e => setLocal(e.target.value)}></input>
                                 </div>
-<<<<<<< HEAD
-                                <div className='div-check'>
-                            <img onClick={SalvarAlt} src="/assets/images/check.png" alt="" />
-=======
+
 
                                 <div className='div-check'>
                                     <img onClick={SalvarAlt} src="/assets/images/check.png" alt="" />
->>>>>>> 19a60e8d56591a1af6ee88ead4a5d27271c4987c
+
                                 </div>
                             </div>
                             

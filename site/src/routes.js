@@ -60,7 +60,7 @@ export default function Index() {
         <Route path='/detalheperfil' element={<DetalhePerfil />} />
         <Route path='/editarperfil' element={<EditarPerfilUsuario />} />
         <Route path='/home' element={<HomeCliente />} />
-        <Route path='/advogado/conversas/:idParam' element={<ChatPage />} />
+        <Route path='/advogado/conversas' element={<ChatPage />} />
         <Route path='/side' element={<SideBar />} />
     </Routes>
     </BrowserRouter>
