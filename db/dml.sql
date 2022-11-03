@@ -37,3 +37,9 @@ insert into tb_advogado(id_area, nm_advogado, ds_email, ds_senha, ds_localizacao
     
     insert into tb_admin(id_admin, ds_email, ds_senha)
 	values(1, "admin", "admin");
+
+INSERT INTO tb_mensagem(id_contato, id_cliente, ds_mensagem)
+                        VALUES( 1, 1, "Olá Mundo");
+                        
+INSERT INTO tb_mensagem(id_contato, id_advogado, ds_mensagem)
+                        VALUES(1, 1, "Olá Mundo");
