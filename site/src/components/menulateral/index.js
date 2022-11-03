@@ -24,7 +24,7 @@ export default function Menulateral(){
 }
 
     return(
-        <nav className="main-menu-lateral">
+        <nav className="main-menu-lateral-adv">
             <div className='logo'>
                 <img src='/assets/images/logodourada.svg' alt=''/>
             </div>

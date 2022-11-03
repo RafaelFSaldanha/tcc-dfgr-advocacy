@@ -48,7 +48,7 @@ export default function Menulateral(){
                 </div>
             </div>
             <div onClick={sairClick} className='menu-lateral-sair'>
-                <img src='/assets/images/sair.svg' alt=''/>
+                <img className='img' src='/assets/images/sair.svg' alt=''/>
                 <p> Sair </p>
             </div>
         </nav>

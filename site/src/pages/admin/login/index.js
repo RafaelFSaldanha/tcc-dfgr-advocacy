@@ -15,6 +15,10 @@ export default function Index() {
     const navigate = useNavigate();
     const ref = useRef(); 
 
+    function voltar() {
+        navigate('/login')
+    }
+
     useEffect(() =>{
         if(storage('admin-logado')){
             navigate('/admin/home')
@@ -68,6 +72,7 @@ export default function Index() {
             <div className='div-bg-button'>
                 <button onClick={entrarClick} className='entrar-button' >Entrar</button>
             </div>
+            <p>Está no lugar errado? <span onClick={voltar}>Voltar</span></p>
         </div>
     </main>
     )

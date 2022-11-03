@@ -23,7 +23,7 @@ export default function Index(){
     },[])
 
     return(
-        <main className="main">
+        <main className="main-bla">
             {advogado.map(item=>
                 <div className='div-mae'>
                 <div className='div-img'>

@@ -25,7 +25,7 @@ export default function Index() {
                 <Menulateral />
                 <div className='div-principal'>
                     <p> Área do Administrador </p>
-                    <img src="/assets/images/logoapagada.svg" alt="" />
+                    <img className='icon' src="/assets/images/logoapagada.svg" alt="" />
                 </div>
             </div>
         </main>

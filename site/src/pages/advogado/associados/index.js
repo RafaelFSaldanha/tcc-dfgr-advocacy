@@ -20,10 +20,10 @@ export default function AssociadosPage() {
     async function Listar() {
         const resp = await ListarAssociados();
         setAdvogado(resp)
+        console.log(resp)
     }
     useEffect(()=>{
         Listar();
-        console.log(advogado)
         
     },[])
 
@@ -47,6 +47,7 @@ export default function AssociadosPage() {
 
     async function MaisInfo(id) {
         navigate(`/infoadv/${id}`);
+        console.log(id)
     }
 
 
@@ -74,7 +75,7 @@ export default function AssociadosPage() {
 
             <div className='div-principal'>
                 {advogado.map(item =>
-                    <div onClick={()=> MaisInfo(item.id)} className='div-card'>
+                    <div onClick={()=> MaisInfo(item.idAdvogado)} className='div-card'>
                         <div className='div-imagem'>
                         {!item.foto &&
                         <img className="foto" src="/assets/images/semfoto.png" alt="" />

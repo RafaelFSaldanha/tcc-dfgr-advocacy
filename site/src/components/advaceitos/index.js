@@ -70,7 +70,7 @@ export default function Index () {
         theme="dark"
         style={{width: '16em'}}/>
         {card.map(item =>
-            <tr className='conteudos-advogado-admin '>
+            <tr className='conteudos-advogado-admin'>
                 <div className='container'>
                     <td className='info'>{item.id}</td>
                     <td className='info'>{item.nome}</td>
