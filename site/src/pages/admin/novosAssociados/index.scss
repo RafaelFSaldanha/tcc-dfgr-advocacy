@@ -1,3 +1,17 @@
-.assoc{
-    margin-top: 2em;
+.div-principal{
+    display: flex;
+    flex-direction: row;
+    
+    .assoc{
+        margin-top: 2em;
+    }
+    .thead{
+    
+        .container-nov{
+            justify-content: space-evenly;
+            width:60vw;
+            display: flex;
+            margin-right: 10em;
+        }
+    }
 }

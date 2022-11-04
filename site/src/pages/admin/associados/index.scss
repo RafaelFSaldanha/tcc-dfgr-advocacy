@@ -7,7 +7,10 @@
     }
     .thead{
     
-        .container{
+        .container-assoc{
+            justify-content: space-around;
+            width:60vw;
+            display: flex;
             margin-right: 18em;
         }
     }

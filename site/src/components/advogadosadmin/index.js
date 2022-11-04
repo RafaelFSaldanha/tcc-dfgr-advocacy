@@ -32,7 +32,7 @@ export default function Index () {
         {card.map(item =>
             <tr className='conteudos-advogado-admin '>
                 <div className='container'>
-                    <td className='info'>{item.nome}</td>
+                    <td className='info'>{item.nome.substr(0,15)}...</td>
                     <td className='info'>{item.oab}</td>
                     <td className='info'>{item.local}</td>
                     <td className='info'>{item.email}</td>
