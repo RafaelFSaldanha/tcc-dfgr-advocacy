@@ -20,15 +20,12 @@ export default function Index () {
 
     }
 
-    //async function remover(id, nome) {
-   //     const resp = await Deletar(id);
-   //     Listar();
-    //}
+    
 
     async function remover(id, nome) {
         confirmAlert({
             title: `Cancelar Consultoria`,
-            message: `Deseja a consulta com o ${nome} ? `,
+            message: `Deseja cancelar a consulta com o ${nome} ? `,
             buttons: [
                 {
                     label: 'Sim',

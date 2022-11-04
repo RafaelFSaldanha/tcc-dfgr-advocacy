@@ -20,8 +20,8 @@ export default function Index() {
 
     async function Abrir() {
     const cliente = storage('cliente-logado')
-    const  r = await ClienteId(cliente.id)
-    setIds(cliente.id)
+    const  r = await ClienteId(cliente.idCliente)
+    setIds(cliente.idCliente)
     setDados([r])
     }
 

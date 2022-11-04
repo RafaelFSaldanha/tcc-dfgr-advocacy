@@ -43,7 +43,7 @@ export default function Index() {
                     <a className='link' href="/"> Início </a>
                 </div>
             </header>
-            <div className='div-geral'>
+            <div className='div-geral-1'>
                 <h1> Consultorias agendadas </h1>
                 <div className='div-tit'>
                     <div className='div-ind'>

@@ -15,8 +15,8 @@ export default function Index() {
                     <h1 className='assoc'> Associados </h1>
                     <thead className='thead'>
                         <div className="container-assoc">
-                            <th>Indentificação</th>
-                            <th>Nome do Advogado</th>
+                            <th>ID</th>
+                            <th>Nome</th>
                             <th>Localização</th>
                             <th>Área de atuação</th>
                             <th>Email</th>

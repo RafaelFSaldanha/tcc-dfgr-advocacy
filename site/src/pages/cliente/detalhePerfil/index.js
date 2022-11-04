@@ -14,7 +14,7 @@ export default function Index() {
 
     async function AA() {
         const cliente = storage('cliente-logado')
-        const  r= await ClienteId(cliente.id)
+        const  r= await ClienteId(cliente.idCliente)
         setInfo([r])
         console.log(r)
         
@@ -48,6 +48,7 @@ export default function Index() {
             {info.map(item=>
                 <div className='div-geral-detalheperfil'>
                 <div>
+                <h1 className='meu-perfil-h1'>Meu Perfil</h1>
                     <div className='div-1'>
                         <div className='div-img'>
                             {!item.foto &&

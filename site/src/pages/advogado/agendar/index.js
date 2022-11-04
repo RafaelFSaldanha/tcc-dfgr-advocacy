@@ -2,7 +2,7 @@ import MenuLateral from '../../../components/menulateral/index.js';
 import Cabecalho from '../../../components/cabecalho/index.js';
 import './index.scss'
 import { useEffect, useState } from 'react'
-import { ListarAreas, Agendar, ListarClientes } from '../../../api/Advogadoapi.js';
+import { ListarAreas, Agendar, ListarClientes, Situacao } from '../../../api/Advogadoapi.js';
 import storage from 'local-storage'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
@@ -17,6 +17,7 @@ export default function AgendarConsultoria(){
     const [data, setData] = useState('')
     const [hora, setHora] = useState('')
     const [desc, setDesc] = useState('')
+    const [situ, setSitu]= useState('')
 
     async function listarAreas(){
         const r = await ListarAreas();
@@ -27,15 +28,31 @@ export default function AgendarConsultoria(){
         setCliente(r)
     }
 
+    async function Sit() {
+        const r = await Situacao(idAdvogado)
+        setSitu(r.situacao)
+        console.log(r.situacao)
+    }
+
         useEffect(() =>{
             listarAreas();
             listarClientes();
             const Advogado = storage('advogado-logado')
             setidAdvogado(Advogado.id)
+            console.log(idAdvogado)
+            Sit()
         }, [])
+
+        useEffect(()=>{
+            Sit()
+        })
         
         async function salvar() {
             try {
+               if (situ==='Em Análise') {
+                    toast.error('Sua Conta está em análise')
+               }
+               else{
                 const r = await Agendar(idAdvogado, idCliente, idArea, data, hora, desc);
                 toast.success('Agendado com sucesso', {
                     position: "top-right",
@@ -46,7 +63,7 @@ export default function AgendarConsultoria(){
                     draggable: true,
                     progress: undefined,
                     theme: "dark"});
-                
+               }
             }
             catch (err) {
                 toast.error(err.response.data.erro)

@@ -39,7 +39,7 @@
         }
     }
 
-    .div-geral {
+    .div-geral-1 {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -47,27 +47,25 @@
         height: 90%;
         width: 100%;
         
-
-    
-
         h1 {
             font-family: 'Open-Sans-semibold';
-            
+            margin: 4em 0 5em 0;
         }
 
         .div-tit {
+            
             display: flex;
             flex-direction: row;
             align-items: center;
-            justify-content: space-around;
-            height: 1%;
+            justify-content: space-evenly;
+            height: 3%;
             width: 90%;
             background-color: #ffffff;
 
             .div-ind {
                 display: flex;
                 align-items: center;
-                justify-content: center;
+                justify-content: flex-start;
                 height: 100%;
                 width: 65%;
                 
@@ -80,6 +78,7 @@
         }
 
         .div-consultar {
+            border: solid red 1px;
             display: flex;
             flex-direction: row;
             align-items: center;

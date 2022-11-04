@@ -35,7 +35,6 @@ export default function PerfilAdvogado() {
                 <div className='conteudo-header'>
                     <a onClick={Agendadas}> Agendamentos </a>
                     <a> Conversas </a>
-                    <img src='/assets/images/home.png' alt='' />
                 </div>
             </header>
                 <DetalhePerfil advogado={advogado}/>
