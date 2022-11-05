@@ -33,7 +33,7 @@ export default function AreaAtuacao() {
         <div className='div-links'>
           <a className='links' href='' onClick={AssociadosClick}> Associados</a>
           <a className='links' href='' onClick={SobrenosClick}> Sobre Nós </a>
-          <a className='links' href='' onClick={VoltarClick}> Inicio </a>
+          <a className='links' href='' onClick={VoltarClick}> Início </a>
           <img className='links cadastro-image' onClick={CadastroClick} src="/assets/images/Account circle.png" alt="" />
         </div>
       </div>
@@ -48,9 +48,7 @@ export default function AreaAtuacao() {
       <div>
         <Atuacoes />
       </div>
-      
       <Rodape/>
-      
     </main>
   )
 }

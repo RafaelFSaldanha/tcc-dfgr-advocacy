@@ -1,5 +1,10 @@
+// * {
+//     border: 1px solid red;
+// } 
+
 .tela-login {
     height: 100vh;
+    width: 100vw;
     background-color: #0D263E;
     display: flex;
     flex-direction: column;
@@ -14,7 +19,8 @@
         padding-right: 2em;  
         height: 5vh;
         padding-left: 2em;
-         p{
+
+        p{
             display: flex;
             justify-content: center;
             text-align: center;
@@ -29,10 +35,10 @@
             cursor: pointer;
             font-family: 'Open-Sans-SemiBold';
             font-size: 1em;
-         }
-         p:hover{
+        }
+        p:hover{
             cursor: pointer;
-         }
+        }
     }
     .logo{
         width: 15vw;
@@ -118,13 +124,12 @@
     }
     .botaoadm{
         color: #FFFFFF;
-        margin-left: 110em;
-        margin-top: 2em;
 
         .a{
             color: #FFFFFF;
             font-family: 'Open-Sans-SemiBold';
             cursor: pointer;
+            margin-left: 85em;
         }
     }    
 }

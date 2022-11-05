@@ -46,9 +46,9 @@ export default function Index() {
             </header>
             
             {info.map(item=>
-                <div className='div-geral-detalheperfil'>
-                <div>
-                <h1 className='meu-perfil-h1'>Meu Perfil</h1>
+            <div className='div-geral-detalheperfil'>
+                <div className='div'>
+                    <h1 className='meu-perfil-h1'>Meu Perfil</h1>
                     <div className='div-1'>
                         <div className='div-img'>
                             {!item.foto &&
@@ -78,14 +78,13 @@ export default function Index() {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div className='div-edit'>
-                        <img onClick={EditarClick} src="/assets/images/edit-perfil.png" alt="" />
+                        <div className='div-edit'>
+                            <img onClick={EditarClick} src="/assets/images/edit-perfil.png" alt="" />
+                        </div>
                     </div>
                 </div>
             </div>
                 )}
-    
         </main>
     )
 }

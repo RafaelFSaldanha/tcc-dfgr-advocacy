@@ -18,6 +18,17 @@
             justify-content: space-between;
             width: 23%;
             margin-right: 2vw;
+            
+            .links {
+                text-decoration: none;
+                color: #FFFFFF;
+                font-family: 'Open-Sans-SemiBold';
+                transition-duration: 100ms;
+            }
+            .links:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+            }
         }
     
         .logo{
@@ -25,11 +36,6 @@
             margin-left: 2vw;
         }
     
-        .links {
-            text-decoration: none;
-            color: #FFFFFF;
-            font-family: 'Open-Sans-SemiBold';
-        }
     }
     .faixa1{
         display: flex;
