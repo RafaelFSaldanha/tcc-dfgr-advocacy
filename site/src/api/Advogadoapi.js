@@ -209,3 +209,8 @@ export async function enviarfotocliente(id, imagem){
     })
     return resposta.status
 }
+
+export async function Situacao(id) {
+    const r = await api.get(`/advogado/situacao/${id}`)
+    return r.data
+}

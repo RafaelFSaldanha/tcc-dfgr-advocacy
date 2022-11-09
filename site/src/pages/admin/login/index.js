@@ -72,7 +72,7 @@ export default function Index() {
             <div className='div-bg-button'>
                 <button onClick={entrarClick} className='entrar-button' >Entrar</button>
             </div>
-            <p>Está no lugar errado? <span onClick={voltar}>Voltar</span></p>
+            <p className='lugar'>Está no lugar errado? <span onClick={voltar}>Voltar</span></p>
         </div>
     </main>
     )

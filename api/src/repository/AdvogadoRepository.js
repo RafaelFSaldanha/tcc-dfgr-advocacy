@@ -83,3 +83,14 @@ export async function EditarPerfil(id, advogado) {
     const [resposta]= await con.query(comando, [advogado.nome, advogado.area, advogado.email, advogado.localizacao, advogado.telefone, advogado.desc, id])   
     return resposta.affectedRows     
 }
+
+export async function SitAdvogado(id){
+    const comando = `
+    select ds_situacao  as situacao
+    from tb_advogado
+    where id_advogado = ?
+    `
+    const [resposta] = await con.query(comando, [id]);
+
+    return resposta[0]
+}

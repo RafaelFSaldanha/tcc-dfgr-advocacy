@@ -2,25 +2,22 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
     background: #0D263E;
     border-radius: 10px;
     height: 9vh;
     width: 70vw;
     margin-top: 5vh;
     
-
     .info{
         color:white;
         font-family: 'Open-Sans-SemiBold';
     }
     .botao{
         height: 15px;
-
-
     }
     .container{
-        width: 68vw;
+        width: 60vw;
         display: flex;
         justify-content: space-around;
         .foto{
@@ -28,8 +25,6 @@
         }
 
     }
-    
-
 }
 .conteudos-advogado-admin:hover{
     cursor: pointer;

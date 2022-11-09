@@ -79,11 +79,9 @@ export default function LandingPage() {
                     <p className='faixa2-titulo'>Associados</p>
                     <hr />
                 </div>
-
                 <div className='div-associados'>
                     <Associados />
                 </div>
-
                 <div className="div-button-associados">
                     <button className="button-associados" onClick={AssociadosClick}>Conhecer Todos os Associados</button>
                 </div>

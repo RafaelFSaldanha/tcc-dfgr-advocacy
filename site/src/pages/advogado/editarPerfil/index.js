@@ -96,7 +96,6 @@ export default function EditarPerfil() {
         style={{width: '16em'}}/>
             <header>
                 <img src='/assets/images/logodourada.svg' alt='' />
-                
             </header>
             <div className='div-principal'>
                 {dados.map(item =>

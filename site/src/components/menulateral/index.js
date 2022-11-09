@@ -22,6 +22,11 @@ export default function Menulateral(){
         navigate('/advogado/consultoriasagendadas');
     
 }
+async function conversasClick(){
+        
+    navigate('/advogado/conversas');
+
+}
 
     return(
         <nav className="main-menu-lateral-adv">
@@ -30,7 +35,7 @@ export default function Menulateral(){
             </div>
 
             <div className='menu-lateral-items'>
-                <div >
+                <div onClick={conversasClick}>
                     <img src='/assets/images/chat.svg' alt=''/>
                     <p> Minhas Conversas </p>
                 </div>

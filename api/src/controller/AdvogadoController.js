@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import multer from 'multer'
-import { LoginAdvogado, AgendarConsultoria, CadastroAdvogado, Remover, alterarimgadvogado, EditarPerfil, AdvogadoEmail } from '../repository/AdvogadoRepository.js';
+import { LoginAdvogado, AgendarConsultoria, CadastroAdvogado, Remover, alterarimgadvogado, EditarPerfil, AdvogadoEmail, SitAdvogado } from '../repository/AdvogadoRepository.js';
 
 const server = Router();
 const upload = multer({dest: 'storage/FotoAdvogado'})
@@ -87,8 +87,45 @@ server.post('/advogado/admin/agendar', async (req, resp) => {
 server.post('/cadastro/advogado', async (req, resp) => {
     try {
         const novoadvo = req.body;
-        const advogado = await CadastroAdvogado(novoadvo)
+        
+        if (!novoadvo.nome) {
+            throw new Error("Coloque um nome")
+        }
 
+        if (!novoadvo.localizacao) {
+            throw new Error("Selecione um local")
+        }
+
+        if (!novoadvo.oab ) {
+            throw new Error("Insira sua OAB")
+        }
+        
+        if (novoadvo.oab.lenght > 8 ) {
+            throw new Error("Tem algo de errado com sua OAB")
+        }
+        
+        
+        if (!novoadvo.telefone) {
+            throw new Error("Insira um telefone")
+        }
+        
+        if (!novoadvo.email) {
+            throw new Error("Insira um email")
+        }
+        
+        if (!novoadvo.senha) {
+            throw new Error("Insira uma senha")
+        }
+        
+        if (!novoadvo.area) {
+            throw new Error("Selecione uma área")
+        }
+
+        if (novoadvo.area == 0) {
+            throw new Error("Selecione uma área")
+        }
+        
+        const advogado = await CadastroAdvogado(novoadvo)
         
 
         resp.status(204).send()
@@ -179,4 +216,17 @@ server.put('/advogado/editar/:id', async (req, resp)=>{
     }
 })
 
+server.get('/advogado/situacao/:id', async (req, resp) => {
+    try {
+        const {id}= req.params
+        const resposta = await SitAdvogado(id)
+
+        resp.send(resposta)
+    }
+    catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
 export default server;
