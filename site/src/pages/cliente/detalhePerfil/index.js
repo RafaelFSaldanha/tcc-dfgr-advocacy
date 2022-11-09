@@ -14,7 +14,7 @@ export default function Index() {
 
     async function AA() {
         const cliente = storage('cliente-logado')
-        const  r= await ClienteId(cliente.id)
+        const  r= await ClienteId(cliente.idCliente)
         setInfo([r])
         console.log(r)
         
