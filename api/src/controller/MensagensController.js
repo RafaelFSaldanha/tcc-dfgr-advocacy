@@ -18,9 +18,9 @@ server.get('/mensagens', async (req, resp) => {
 
 server.post('/mensagens', async (req, resp) => {
     try {
-        const { contato, tipo, IdEnvio} = req.query
+        const { contato, tipo, idEnvio} = req.query
         const { mensagem } = req.body;
-        const r = await EnviarMensagem(tipo, contato, mensagem, IdEnvio)
+        const r = await EnviarMensagem(tipo, contato, mensagem, idEnvio)
         resp.sendStatus(200);
        
     } 

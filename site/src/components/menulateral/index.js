@@ -1,11 +1,19 @@
 import './index.scss'
 import { useNavigate } from 'react-router-dom'
 import storage from 'local-storage'
+import { useEffect, useState } from 'react'
 
 export default function Menulateral(){
 
+    const [id, setId] = useState(0) 
     const navigate = useNavigate();
+    
 
+    useEffect(() =>{
+    const aaa = storage('advogado-logado')
+    setId(aaa.id)
+    console.log(aaa)
+    }, [])
     async function sairClick(){
         storage.remove('advogado-logado');
         navigate('/advogado/login');
@@ -24,7 +32,7 @@ export default function Menulateral(){
 }
 async function conversasClick(){
         
-    navigate('/advogado/conversas');
+    navigate(`/advogado/chat/${id}`);
 
 }
 
