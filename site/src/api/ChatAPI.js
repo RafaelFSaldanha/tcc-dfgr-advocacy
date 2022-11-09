@@ -28,3 +28,8 @@ export async function iniciarChat(idCliente, idAdvogado){
     });
     return r.data
 }
+
+export async function listarClientes(idAdvogado){
+    const r = await api.get(`/advogado/chat/${idAdvogado}`)
+    return r.data
+}

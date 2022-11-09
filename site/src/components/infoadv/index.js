@@ -3,6 +3,7 @@ import '../../pages/common/common.scss';
 import { Advogadosid2, buscarfoto } from '../../api/Advogadoapi';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -11,6 +12,12 @@ export default function Index(){
 
     const[advogado, setAdvogado]= useState([])
     const{idParam}= useParams()
+
+    const navigate = useNavigate();
+
+    async function chatClick() {
+        navigate('/conversas');
+    }
 
     async function Carregar() {
         const r = await Advogadosid2(idParam)
@@ -59,10 +66,12 @@ export default function Index(){
                             <p className='titulo'>Descrição:</p>
                             <p className='conteudo'>{item.descricao}</p>
                         </div>
+                        <div className='Chat-div'> <h1>Para iniciar uma conversa com esse profissional <span onClick={chatClick}> clique aqui </span></h1></div>
                     </div>
                 </div>
             </div>
                 )}
+                
         </main>
     )
 

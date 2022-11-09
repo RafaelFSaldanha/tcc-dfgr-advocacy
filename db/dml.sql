@@ -38,8 +38,18 @@ insert into tb_advogado(id_area, nm_advogado, ds_email, ds_senha, ds_localizacao
     insert into tb_admin(id_admin, ds_email, ds_senha)
 	values(1, "admin", "admin");
 
-INSERT INTO tb_mensagem(id_contato, id_cliente, ds_mensagem)
-                        VALUES( 1, 1, "Olá Mundo");
-                        
-INSERT INTO tb_mensagem(id_contato, id_advogado, ds_mensagem)
-                        VALUES(1, 1, "Olá Mundo");
+	
+INSERT INTO tb_sender(nm_sender)
+			VALUES("Cliente");
+            
+INSERT INTO tb_sender(nm_sender)
+			VALUES("Advogado");
+            
+INSERT INTO tb_sender(nm_sender)
+			VALUES("Sistema");
+
+INSERT INTO tb_contato(id_advogado, id_cliente)
+            VALUES(1, 1);
+
+INSERT INTO tb_mensagem(id_typeOfSender, id_contato, ds_mensagem, dt_mensagem, id_sender)
+                VALUES(2, 1, "Olá Cliente", null, 1);

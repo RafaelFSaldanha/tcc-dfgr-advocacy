@@ -23,8 +23,6 @@ export default function SideBar(){
            <div className='menu-lateral-items'>
             <p> <div> D </div> Diego Silva Dias</p>
             </div>
-            
-            
         </nav>
     );
 }

@@ -1,12 +1,27 @@
 import './index.scss';
 import '../../common/common.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { listarClientes } from '../../../api/ChatAPI';
 import SideBar from '../../../components/sideBarChat';
 
 
 export default function ChatPage() {
     const [mensagem, setMensagem] = useState('')
+    const [clientes, setClientes] = useState ([])
     const [mensagens, setMensagens] = useState([])
+	const [conversaId, setConversaId] = useState(-1);
+    const { idParam } = useParams();
+
+    async function CarregarClientes() {
+        const r = await listarClientes(idParam)
+        setClientes(r)
+    }
+
+    useEffect(()=> {
+        CarregarClientes()
+        console.log(idParam)
+    },[])
 
     return(
         <main classsName="Chat-page">
@@ -15,7 +30,7 @@ export default function ChatPage() {
                 <SideBar/>
                     <div className='chat-content'>
                         <header className='chat-header'>
-                        <p> <div> D </div> Diego Silva Dias</p>
+                        {clientes.map ((item) => <p><div> D </div> {item.nome} </p>)}
                         </header>
                     <div className='chat-messages'>
                     </div>

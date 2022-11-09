@@ -54,6 +54,11 @@ create table tb_consultoria(
         
 );
 
+CREATE TABLE tb_sender(
+		id_sender		INT PRIMARY KEY AUTO_INCREMENT,
+        nm_sender		VARCHAR(50)
+);
+
 create table tb_contato(
 		id_contato	int primary key auto_increment,
         id_advogado	int,
@@ -63,14 +68,13 @@ create table tb_contato(
         
 );
 
-create table tb_mensagem(
-		id_mensagem	int primary key auto_increment,
-        id_contato  int,
-        id_advogado	int,
-        id_cliente	int,
-        dt_mensagem	datetime,
-        ds_mensagem	varchar(10000),
-        foreign key(id_contato) references tb_contato(id_contato),
-        foreign key (id_advogado) references tb_advogado(id_advogado),
-        foreign key (id_cliente) references	tb_cliente(id_cliente)
+CREATE TABLE tb_mensagem(
+	id_mensagem			INT PRIMARY KEY AUTO_INCREMENT,
+    id_typeOfSender		INT,
+    id_contato			INT,
+    ds_mensagem			VARCHAR(500),
+    dt_mensagem			DATE,
+    id_sender			INT,
+    FOREIGN KEY (id_contato) REFERENCES tb_contato(id_contato),
+    FOREIGN KEY (id_typeOfSender) REFERENCES tb_sender(id_sender)
 );
