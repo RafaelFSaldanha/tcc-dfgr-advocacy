@@ -1,1 +1,6 @@
-export const FoneNumero = new RegExp ('/\([1-9]{2}\) 9[1-9]\d{3}-d{4}/') ;
+export function formattel(tel){
+    return tel.replace(/\D/g, '')
+    .replace(/(\d{2})(\d)/, '($1) $2')
+    .replace(/(\d{5})(\d)/, '$1-$2')
+    .replace(/(-\d{4})\d+?$/, '$1')
+}

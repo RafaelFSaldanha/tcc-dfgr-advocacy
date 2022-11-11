@@ -47,3 +47,4 @@ export async function ListarClientesChat(idAdvogado) {
     const [resposta] = await con.query(comando, [idAdvogado]);
     return resposta
 }
+

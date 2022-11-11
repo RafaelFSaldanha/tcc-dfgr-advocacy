@@ -108,9 +108,18 @@
     display: flex;
     flex-direction: column;
     height: 72vh;
-    background-color: #0D263E;
+    
+
+    .msg-left{
+        background-color: #0D263E;
+    }
+
+    .msg-right{
+        background-color: #ffff;
+    }
 
 }
+
 .chat-header{
     height: 8vh;
     color: #FFFFFF;

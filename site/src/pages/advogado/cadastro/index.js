@@ -55,6 +55,13 @@ export default function CadastroAdvogado(){
         navigate('/')
     }
 
+    function formattel(tel){
+        return tel.replace(/\D/g, '')
+        .replace(/(\d{2})(\d)/, '($1) $2')
+        .replace(/(\d{5})(\d)/, '$1-$2')
+        .replace(/(-\d{4})\d+?$/, '$1')
+    }
+
 
     return(
        <main className='tela-cadastro'>
@@ -121,7 +128,7 @@ export default function CadastroAdvogado(){
 
                     <div className='div-input'>
                         <p> Telefone <span> *</span></p>
-                        <input className='input' value={telefone} type='number' placeholder='Insira seu telefone' onChange={e => setTelefone(e.target.value)}/>
+                        <input className='input' value={telefone} type='text' placeholder='Insira seu telefone' onChange={e => setTelefone(formattel(e.target.value))}/>
                     </div>
 
                     <div className='div-input'>

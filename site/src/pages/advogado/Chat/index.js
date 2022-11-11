@@ -5,6 +5,9 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { listarClientes } from '../../../api/ChatAPI';
 import { ListarClientesChat } from '../../../api/Advogadoapi';
 import storage from 'local-storage';
+import io from "socket.io-client"
+
+const socket = io.connect("http://localhost:5000")
 
 export default function ChatPage() {
     const [mensagem, setMensagem] = useState('');
@@ -13,26 +16,47 @@ export default function ChatPage() {
     const [conversaId, setConversaId] = useState(-1);
     const [exibir, setExibir] = useState(0)
     const { idParam } = useParams();
-
-    async function CarregarClientes() {
-        const r = await listarClientes(idParam)
-        setClientes(r)
-    }
-    const [clienteSelect, setClienteSelect] = useState(0)
     const [cliente, setCliente] = useState([])
     const navigate = useNavigate();
-    async function listarClientesChat(id) {
-        const r = await ListarClientesChat(id);
-        setCliente(r)
+    const aaa = storage('advogado-logado')
+
+    async function listarClientesChat() {
+        const r = await ListarClientesChat(aaa.id);
+        setClientes(r)
     }
+
+    async function EnviarMensagem() {
+		socket.emit("enviarMensagem", {
+			contatoId: conversaId,
+			tipo: 2,
+			idEnvio: aaa.id,
+			mensagem: mensagem,
+		});
+		socket.emit("receberMensagem,", {
+      contato: conversaId,
+    });
+		setMensagem("");
+        console.log(mensagens)
+	}
+
+    function ParteMensagens(type) {
+		if (type == 2) {
+			return "msg-right";
+    } else {
+      return "msg-left"
+    }
+  }
+	socket.on("receberMensagem", (data) => {
+    setMensagens(data);
+	});
+
+   
+
     useEffect(() => {
-        const aaa = storage('advogado-logado')
-        listarClientesChat(aaa.id);
+        listarClientesChat()
     }, [])
-    useEffect(() => {
-        CarregarClientes()
-    }, [])
-    console.log(cliente)
+
+    
     return (
         <main className="Chat-page">
             <header className='cabeca'> <img src='/assets/images/logodourada.svg' /> </header>
@@ -40,7 +64,11 @@ export default function ChatPage() {
                 <nav className="main-menu-lateral">
                     <div className='menu-lateral-items'>
                         {clientes.map(item => <p><div onClick={() => {
-                            setClienteSelect(item.idCliente)
+                            setConversaId(item.idCliente)
+                            
+                            socket.emit("receberMensagem", {
+                                contato: item.idCliente
+                            })
                             console.log(item.idCliente)
                         }}> {item.nomeCliente.substr(0, 1)} </div> {item.nomeCliente} </p>)}
                     </div>
@@ -49,17 +77,18 @@ export default function ChatPage() {
                     <header className='chat-header'>
                     </header>
                     <div className='chat-messages'>
-                        {exibir === 0
-                            ? <div></div>
-                            : <div>{cliente.map(() => (
-                                <div>
-                                    <h1>Cliente NOME</h1>
-                                </div>))}</div>
-                        }
+                    {mensagens &&
+								mensagens.map((item) => {
+									return <div className={ParteMensagens(item.tipo)}> <span className="message-text">{item.mensagem}</span> </div>;
+								})}
                     </div>
                     <div className='input-message'>
                         <input value={mensagem} type="text" onChange={e => setMensagem(e.target.value)} />
-                        <img src='/assets/images/enviar.svg' />
+                        {mensagem &&
+                            <div onClick={()=> EnviarMensagem()}>
+                                <img src='/assets/images/enviar.svg' />
+                            </div>
+                        }
                     </div>
                 </div>
             </div>

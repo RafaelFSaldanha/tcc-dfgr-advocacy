@@ -23,7 +23,7 @@ export async function listarConversas(idAdvogado, idCliente){
 
 export async function iniciarChat(idCliente, idAdvogado){
     const r = await api.post(`/chat`, {
-        idCliente: idAdvogado,
+        idCliente: idCliente,
         idAdvogado: idAdvogado,
     });
     return r.data
@@ -31,5 +31,12 @@ export async function iniciarChat(idCliente, idAdvogado){
 
 export async function listarClientes(idAdvogado){
     const r = await api.get(`/advogado/chat/${idAdvogado}`)
+    return r.data
+}
+
+export function EnviarMensagem(contato, tipo, idEnvio, message){
+    const r = api.post(`mensagens?tipo=${tipo}&contato=${contato}&idEnvio=${idEnvio}`, {
+        message: message,
+    });
     return r.data
 }
