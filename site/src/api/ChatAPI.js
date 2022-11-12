@@ -4,7 +4,7 @@ const api = axios.create({
     baseURL: 'http://localhost:5000'
 })
 
-export default function ClienteEnviarMensagem(idChat, idAdvogado, idCliente, mensagem){
+export function ClienteEnviarMensagem(idChat, idAdvogado, idCliente, mensagem){
     const r = api.post(`/mensagem/${idChat}?idAdvogado=${idAdvogado}&idCliente=${idCliente}`, {
         mensagem: mensagem,
     });
@@ -17,7 +17,14 @@ export async function listarMensagens(idChat){
 }
 
 export async function listarConversas(idAdvogado, idCliente){
-    const r = await api.get(`/chat?idAdvogado=${idAdvogado}&idCliente=${idCliente}`)
+    let call= `/chat?idAdvogado=${idAdvogado}&idCliente=${idCliente}`
+    if (!idAdvogado || idAdvogado == undefined) {
+        call = `/chat?idAdvogado=&idCliente=${idCliente}`
+    }
+    else if (!idCliente || idCliente == undefined) {
+        call = `/chat?idAdvogado=${idAdvogado}&userId=`
+    }
+    const r = await api.get(call)
     return r.data;
 }
 
@@ -34,9 +41,14 @@ export async function listarClientes(idAdvogado){
     return r.data
 }
 
-export function EnviarMensagem(contato, tipo, idEnvio, message){
-    const r = api.post(`mensagens?tipo=${tipo}&contato=${contato}&idEnvio=${idEnvio}`, {
-        message: message,
+export default function EnviarMensagem(idChat, tipo, idEnvio, mensagem){
+    const r = api.post(`mensagens?tipo=${tipo}&contato=${idChat}&idEnvio=${idEnvio}`, {
+        mensagem: mensagem
     });
     return r.data
+}
+
+export async function PegarInfoProChatId(idChat) {
+    const r = await api.get(`/chat/procurar?id=${Number(idChat)}`);
+    return r.data;
 }

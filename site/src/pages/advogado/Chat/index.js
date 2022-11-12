@@ -1,8 +1,8 @@
 import './index.scss';
 import '../../common/common.scss';
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { listarClientes } from '../../../api/ChatAPI';
+import { useParams, useNavigate, Await } from 'react-router-dom';
+import { listarConversas } from '../../../api/ChatAPI';
 import { ListarClientesChat } from '../../../api/Advogadoapi';
 import storage from 'local-storage';
 import io from "socket.io-client"
@@ -13,30 +13,36 @@ export default function ChatPage() {
     const [mensagem, setMensagem] = useState('');
     const [clientes, setClientes] = useState([]);
     const [mensagens, setMensagens] = useState([]);
-    const [conversaId, setConversaId] = useState(-1);
+    const [idChat, setidChat] = useState(-1);
     const [exibir, setExibir] = useState(0)
     const { idParam } = useParams();
     const [cliente, setCliente] = useState([])
     const navigate = useNavigate();
     const aaa = storage('advogado-logado')
 
-    async function listarClientesChat() {
-        const r = await ListarClientesChat(aaa.id);
+    async function ListarConversasProAdv() {
+        const r = await listarConversas(aaa.id, null)
         setClientes(r)
+        console.log(r)
+    }
+
+    async function ProcuparporId(id) {
+        const r = await ListarClientesChat(id)
+        setCliente(r)
+        console.log(r)
     }
 
     async function EnviarMensagem() {
 		socket.emit("enviarMensagem", {
-			contatoId: conversaId,
+			idChat: idChat,
 			tipo: 2,
 			idEnvio: aaa.id,
-			mensagem: mensagem,
+			message: mensagem,
 		});
 		socket.emit("receberMensagem,", {
-      contato: conversaId,
+      idChat: idChat,
     });
 		setMensagem("");
-        console.log(mensagens)
 	}
 
     function ParteMensagens(type) {
@@ -53,7 +59,7 @@ export default function ChatPage() {
    
 
     useEffect(() => {
-        listarClientesChat()
+        ListarConversasProAdv()
     }, [])
 
     
@@ -62,19 +68,30 @@ export default function ChatPage() {
             <header className='cabeca'> <img src='/assets/images/logodourada.svg' /> </header>
             <div className='content'>
                 <nav className="main-menu-lateral">
-                    <div className='menu-lateral-items'>
-                        {clientes.map(item => <p><div onClick={() => {
-                            setConversaId(item.idCliente)
-                            
-                            socket.emit("receberMensagem", {
-                                contato: item.idCliente
-                            })
-                            console.log(item.idCliente)
-                        }}> {item.nomeCliente.substr(0, 1)} </div> {item.nomeCliente} </p>)}
+                    <div>
+                        {clientes.map(item => (
+                            <div className='menu-lateral-items' onClick={()=>{
+                                setidChat(item.contatoId)
+                                ProcuparporId(item.contatoId)
+                                socket.emit("receberMensagem", {
+                                    idChat: item.contatoId
+                                });
+                            }
+                            }>
+                            <div className=''>
+                                <p className='p'><div>{item.nomeCliente}</div></p>
+                            </div>
+                            </div>
+                        ))
+                        }
+            
                     </div>
                 </nav>
                 <div className='chat-content'>
                     <header className='chat-header'>
+                    {cliente.map(item =>
+                            <span>{item.nomeCLiente}</span>
+                            )}
                     </header>
                     <div className='chat-messages'>
                     {mensagens &&

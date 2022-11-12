@@ -3,11 +3,11 @@ import { listarMensagens, EnviarMensagem } from '../controller/MensagensControll
 
 io.on("connection", async (socket) => {
   socket.on("enviarMensagem", async (data) => {
-    const r = await EnviarMensagem(data.tipo, data.contatoId, data.mensagem, data.IdEnvio)
+    const r = await EnviarMensagem(data.tipo, data.idChat, data.mensagem, data.IdEnvio)
   })
 
   socket.on("receberMensagem", async (data) => {
-    const r = await listarMensagens(data.contatoId)
+    const r = await listarMensagens(data.idChat)
     socket.emit("receberMensagem", r)
   })
 });

@@ -14,14 +14,14 @@ export async function ClienteChat(idCliente){
 export async function AdvogadoChat(idAdvogado){
     const comando = `
     SELECT  
-        id_contato	    contatoID,
+        id_contato	    contatoId,
         id_advogado	    idAdvogado,
         id_cliente	    idCliente
         FROM tb_contato
         WHERE id_advogado = ?
     `
     const [resposta] = await con.query(comando, [idAdvogado])
-    return resposta[0];
+    return resposta;
 
 }
 
@@ -34,7 +34,7 @@ export async function CriarChat(idCliente, idAdvogado) {
     return resposta.insertId;
 }
 
-export async function ListarClientesChat(idAdvogado) {
+export async function ListarClientesChat(idChat) {
     const comando = `
     SELECT 
 		tb_contato.id_cliente       idCliente,
@@ -42,9 +42,8 @@ export async function ListarClientesChat(idAdvogado) {
         nm_cliente		            nomeCliente
     FROM tb_contato
     inner join tb_cliente on tb_contato.id_cliente = tb_cliente.id_cliente
-    WHERE id_advogado = ?
+    WHERE id_contato = ?
     `
-    const [resposta] = await con.query(comando, [idAdvogado]);
+    const [resposta] = await con.query(comando, [idChat]);
     return resposta
 }
-

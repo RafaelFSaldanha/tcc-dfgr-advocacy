@@ -15,12 +15,12 @@ export async function listarMensagens(idChat) {
     return resposta;
 }
 
-export async function EnviarMensagem(tipo, contatoId, mensagem, IdEnvio) {
+export async function EnviarMensagem(tipo, idChat, mensagem, idEnvio) {
     const date = new Date();
     const c = `
     INSERT INTO tb_mensagem(id_typeOfSender, id_contato, ds_mensagem, dt_mensagem, id_sender)
                 VALUES(?, ?, ?, ?, ?);`;
-    const [r] = await con.query(c, [tipo, contatoId, mensagem, date, IdEnvio]);
+    const [r] = await con.query(c, [tipo, idChat, mensagem, date, idEnvio]);
     return r.affectedRows;
   }
   

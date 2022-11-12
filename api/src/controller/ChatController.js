@@ -20,30 +20,31 @@ server.post('/chat', async (req, resp) => {
 server.get('/chat', async (req, resp) => {
     try {
 		const { idAdvogado, idCliente } = req.query;
+        if (!idCliente) {
+            idCliente== " "
+        }
 
 		if (idAdvogado && !idCliente) {
-            const r = await AdvogadoChat(idAdvogado);
+            const r = await AdvogadoChat(Number(idAdvogado));
             if (!r || r == undefined) {
                 throw new Error("Nenhum cliente criou uma conversa com você ainda.")
             }
             else {
-                resp.status(200).send;
+                resp.send(r);
             }
 			
 		} 
         else if (idCliente && !idAdvogado) {
-            const r = await ClienteChat(idCliente);
+            const r = await ClienteChat(Number(idCliente));
             if (!r || r == undefined) {
                 throw new Error("Você não tem nenhuma conversa.")
             }
             else {
-                resp.status(200).send;
+                resp.send(r);
             }
 			
         }
-        else if (idCliente && idAdvogado) {
-            throw new Error("Você não pode passar os 2 parâmetros ao mesmo tempo.")
-        }
+    
     } 
     catch (err) {
         resp.status(401).send({
@@ -52,11 +53,11 @@ server.get('/chat', async (req, resp) => {
     }
 });
 
-server.get('/advogado/chat/:idAdvogado', async (req, resp) => {
+server.get('/advogado/chat', async (req, resp) => {
     try {
-        const { idAdvogado } = req.params;
+        const { idChat } = req.query;
         
-        const resposta = await ListarClientesChat(idAdvogado) 
+        const resposta = await ListarClientesChat(idChat) 
        if(resposta.length < 1) {
             throw new Error('Você não iniciou nenhuma conversa com um cliente ainda!')
        }
