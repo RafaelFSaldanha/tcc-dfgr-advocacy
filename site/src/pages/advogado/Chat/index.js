@@ -45,7 +45,7 @@ export default function ChatPage() {
     }
 
     function ParteMensagens(tipo) {
-        if (tipo == 2) {
+        if (tipo === 2) {
             return "msg-right";
         } else {
             return "msg-left"
@@ -87,7 +87,7 @@ export default function ChatPage() {
                             }
                             }>
                                 <div className=''>
-                                    <p className='p'><div>{item.idCliente}</div></p>
+                                    <div className='bolinha'>{item.nomeCliente.substr(0, 1)}</div><p className='p'><div>{item.nomeCliente}</div></p>
                                 </div>
                             </div>
                         ))
@@ -110,9 +110,9 @@ export default function ChatPage() {
                             })}
                     </div>
                     <div className='input-message'>
-                        {idChat != -1 && (
+                        {idChat !== -1 && (
                             <div className='aaa-div'>
-                                <input value={mensagem} type="text" onChange={e => setMensagem(e.target.value)} />
+                                <textarea value={mensagem} onChange={e => setMensagem(e.target.value)} />
                                 {mensagem &&
                                     <div className='foto-enviar' onClick={() => EnviarMensagem()}>
                                         <img className='foto' src='/assets/images/enviar.svg' />

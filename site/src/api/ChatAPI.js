@@ -18,10 +18,10 @@ export async function listarMensagens(idChat){
 
 export async function listarConversas(idAdvogado, idCliente){
     let call= `/chat?idAdvogado=${idAdvogado}&idCliente=${idCliente}`
-    if (!idAdvogado || idAdvogado == undefined) {
+    if (!idAdvogado || idAdvogado === undefined) {
         call = `/chat?idAdvogado=&idCliente=${idCliente}`
     }
-    else if (!idCliente || idCliente == undefined) {
+    else if (!idCliente || idCliente === undefined) {
         call = `/chat?idAdvogado=${idAdvogado}&userId=`
     }
     const r = await api.get(call)

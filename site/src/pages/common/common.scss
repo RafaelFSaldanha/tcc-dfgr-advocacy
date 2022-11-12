@@ -22,3 +22,11 @@
     box-sizing: border-box;
     border: 0;
 }
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #AD8217;
+    border-radius: .4em;
+  }
+

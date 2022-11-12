@@ -1,5 +1,4 @@
 
-
 .Chat-page {
     display: flex;
     flex-direction: column;
@@ -25,6 +24,9 @@
             color: #fff;
             font-family: 'Open-Sans-SemiBold';
         }
+        .p-cabeca:hover{
+            cursor: pointer;
+        }
     
         img {
             width: 14vw;
@@ -44,11 +46,12 @@
 
 .main-menu-lateral {
     background-color: #ffffff;
-    height: 80vh;
+    height: 90vh;
     width: 18vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow-y: scroll;
 
     .logo {
         display: flex;
@@ -72,7 +75,7 @@
         p {
             color: #AD8217;
             font-family: 'Open-Sans-SemiBold';
-            font-size: 1em;
+            font-size: 1.5em;
             text-align: center;
             width: 20vw;
         }
@@ -80,9 +83,21 @@
         img {
             width: 2em;
         }
+        .bolinha{
+            border: solid 5px #AD8217;
+            border-radius: 50%;
+            color: #AD8217;
+            width: 5vw;
+            height: 6vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            font-family: 'Open-Sans-SemiBold';
+        }
     }
 
-    .menu-lateral-items>div {
+    .menu-lateral-items > div {
         display: flex;
         align-items: center;
         transition: .3s;
@@ -92,7 +107,7 @@
         height: 10vh;
     }
 
-    .menu-lateral-items>div:hover {
+    .menu-lateral-items > div:hover {
         background-color: #dfe6e9;
         width: 100%;
         border-radius: .5em;
@@ -158,6 +173,7 @@
         .message-text {
             background-color: #545454;
             color: #fff;
+            max-width: 45vw;
         }
     }
 
@@ -167,10 +183,12 @@
         margin-bottom: 0.25em;
         justify-content: right;
         width: calc(100% - 1em);
+        
 
         .message-text {
             background-color: #135596;
             color: #fff;
+            max-width: 45vw;
         }
         
     }
@@ -223,12 +241,13 @@
     background-color: #0D263E;
     box-shadow: 10px 10px 4px 4px rgba(0, 0, 0, 0.25);
 
-    input {
+    textarea {
         height: 3em;
-        padding: 0.5em;
+        padding: 0.8em;
         font-family: 'Open-Sans-Semibold';
         font-size: 1em;
         outline: none;
+        resize: none;
         width: 50vw;
         border-radius: .5em;
     }
@@ -237,13 +256,15 @@
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        width: 60vw;
-        
+        align-items: center;
+        width: 65vw;
 
         .foto-enviar{
+            display: flex;
+            justify-content: center;
+            align-items: center;
             .foto{
                 width: 3vw;
-                height: 7vh;
             }
         }
     }
@@ -472,9 +493,9 @@
         background-color: #0D263E;
         box-shadow: 10px 10px 4px 4px rgba(0, 0, 0, 0.25);
     
-        input {
+        textarea {
             height: 3em;
-            padding: 0.5em;
+            padding: 0.6em;
             font-family: 'Open-Sans-Semibold';
             font-size: 1em;
             outline: none;

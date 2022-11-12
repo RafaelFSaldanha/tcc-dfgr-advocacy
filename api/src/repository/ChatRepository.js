@@ -14,10 +14,12 @@ export async function ClienteChat(idCliente){
 export async function AdvogadoChat(idAdvogado){
     const comando = `
     SELECT  
-        id_contato	    contatoId,
-        id_advogado	    idAdvogado,
-        id_cliente	    idCliente
+        id_contato	                contatoId,
+        id_advogado	                idAdvogado,
+        tb_contato.id_cliente	    idCliente,
+        nm_cliente                  nomeCliente
         FROM tb_contato
+        inner join tb_cliente on tb_contato.id_cliente = tb_cliente.id_cliente
         WHERE id_advogado = ?
     `
     const [resposta] = await con.query(comando, [idAdvogado])
