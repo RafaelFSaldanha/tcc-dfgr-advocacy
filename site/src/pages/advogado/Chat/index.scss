@@ -350,6 +350,19 @@
             img {
                 width: 2em;
             }
+
+            .bolinha{
+                border: solid 2px #AD8217;
+                border-radius: 50%;
+                color: #AD8217;
+                width: 5vw;
+                height: 6vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 2em;
+                font-family: 'Open-Sans-SemiBold';
+            }
         }
     
         .menu-lateral-items>div {

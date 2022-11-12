@@ -17,10 +17,10 @@ export default function EditarPerfil() {
     const [localizacao, setLocalizacao] = useState('');
     const [telefone, setTelefone] = useState('');
     const [desc, setDesc] = useState('')
-    const [foto, setFoto]= useState()
+    const [foto, setFoto] = useState()
     const [areas, setAreas] = useState([])
     const [idArea, setIdArea] = useState()
-    const navigate= useNavigate()
+    const navigate = useNavigate()
 
     useEffect(() => {
 
@@ -50,7 +50,7 @@ export default function EditarPerfil() {
 
     async function Alterar() {
         try {
-            const r = await EditPerfil(ids,nome, idArea, email, localizacao, telefone, desc);
+            const r = await EditPerfil(ids, nome, idArea, email, localizacao, telefone, desc);
             const j = enviarfotoadvogado(ids, foto)
             toast.success('Alterado com sucesso', {
                 position: "top-right",
@@ -60,10 +60,11 @@ export default function EditarPerfil() {
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-                theme: "dark"});
-                Navegar()
+                theme: "dark"
+            });
+            Navegar()
 
-            
+
         }
         catch (err) {
             toast.error(err.response.data.erro)
@@ -77,23 +78,30 @@ export default function EditarPerfil() {
     function MostrarImagem() {
         return URL.createObjectURL(foto)
     }
-    
+
+    function formattel(tel) {
+        return tel.replace(/\D/g, '')
+            .replace(/(\d{2})(\d)/, '($1) $2')
+            .replace(/(\d{5})(\d)/, '$1-$2')
+            .replace(/(-\d{4})\d+?$/, '$1')
+    }
+
 
 
     return (
         <main className='editar-perfil'>
-            <ToastContainer 
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-        style={{width: '16em'}}/>
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+                style={{ width: '16em' }} />
             <header>
                 <img src='/assets/images/logodourada.svg' alt='' />
             </header>
@@ -103,13 +111,13 @@ export default function EditarPerfil() {
                         <div className='div-geral'>
                             <div className='div-upload' onClick={escolherImagem}>
                                 {!foto &&
-                                <img src='/assets/images/upload.png' alt='' />
+                                    <img src='/assets/images/upload.png' alt='' />
                                 }
                                 {foto &&
-                                <img className='foto' src={MostrarImagem()} alt="" />
+                                    <img className='foto' src={MostrarImagem()} alt="" />
                                 }
-                                
-                                <input type="file" id='foto' onChange={e=> setFoto(e.target.files[0])}/>
+
+                                <input type="file" id='foto' onChange={e => setFoto(e.target.files[0])} />
                             </div>
                             <div className='div-info1'>
                                 <div>
@@ -122,11 +130,40 @@ export default function EditarPerfil() {
                                 </div>
                                 <div>
                                     <p> Telefone: </p>
-                                    <input placeholder={item.tel} type='text' onChange={e => setTelefone(e.target.value)} />
+                                    <input placeholder={item.tel} type='text' onChange={e => setTelefone(formattel(e.target.value))} />
                                 </div>
                                 <div>
                                     <p> Localização: </p>
-                                    <input placeholder={item.local} type='text' onChange={e => setLocalizacao(e.target.value)} />
+                                    <select className='input' value={localizacao} type='text' onChange={e => setLocalizacao(e.target.value)}>
+                                        <option selected disabled hidden> Selecione um estado</option>
+                                        <option>AC</option>
+                                        <option>AL</option>
+                                        <option>AP</option>
+                                        <option>AM</option>
+                                        <option>BA</option>
+                                        <option>CE</option>
+                                        <option>DF</option>
+                                        <option>ES</option>
+                                        <option>GO</option>
+                                        <option>MA</option>
+                                        <option>MT</option>
+                                        <option>MS</option>
+                                        <option>MG</option>
+                                        <option>PA</option>
+                                        <option>PB</option>
+                                        <option>PR</option>
+                                        <option>PE</option>
+                                        <option>PI</option>
+                                        <option>RJ</option>
+                                        <option>RN</option>
+                                        <option>RS</option>
+                                        <option>RO</option>
+                                        <option>RR</option>
+                                        <option>SC</option>
+                                        <option>SP</option>
+                                        <option>SE</option>
+                                        <option>TO</option>
+                                    </select>
                                 </div>
                                 <div>
                                     <p> Áreas de atuação: </p>
