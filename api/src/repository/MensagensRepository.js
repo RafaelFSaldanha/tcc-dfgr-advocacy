@@ -15,7 +15,7 @@ export async function listarMensagens(idChat) {
     return resposta;
 }
 
-export async function EnviarMensagem(tipo, idChat, mensagem, idEnvio) {
+export async function EnviarMensagens(tipo, idChat, mensagem, idEnvio) {
     const date = new Date();
     const c = `
     INSERT INTO tb_mensagem(id_typeOfSender, id_contato, ds_mensagem, dt_mensagem, id_sender)

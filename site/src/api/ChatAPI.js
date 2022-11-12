@@ -36,13 +36,13 @@ export async function iniciarChat(idCliente, idAdvogado){
     return r.data
 }
 
-export async function listarClientes(idAdvogado){
-    const r = await api.get(`/advogado/chat/${idAdvogado}`)
+export async function listarClientes(idChat){
+    const r = await api.get(`/advogado/chat?idChat=${idChat}`)
     return r.data
 }
 
 export default function EnviarMensagem(idChat, tipo, idEnvio, mensagem){
-    const r = api.post(`mensagens?tipo=${tipo}&contato=${idChat}&idEnvio=${idEnvio}`, {
+    const r = api.post(`mensagens?tipo=${tipo}&chat=${idChat}&idEnvio=${idEnvio}`, {
         mensagem: mensagem
     });
     return r.data

@@ -58,7 +58,7 @@ export default function Index() {
         <Route path='/detalheperfil' element={<DetalhePerfil />} />
         <Route path='/editarperfil' element={<EditarPerfilUsuario />} />
         <Route path='/home' element={<HomeCliente />} />
-        <Route path='/advogado/chat/:idParam' element={<ChatPage />} />
+        <Route path='/advogado/chat' element={<ChatPage />} />
     </Routes>
     </BrowserRouter>
     )

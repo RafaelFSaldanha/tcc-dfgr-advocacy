@@ -28,13 +28,20 @@ export default function PerfilAdvogado() {
         navigate('/advogado/consultoriasagendadas')
     }
 
+    async function conversasClick(){
+        
+        navigate(`/advogado/chat`);
+    
+    }
+    
+
     return (
         <main className='detalhe-perfil'>
             <header>
                 <img className='logo' src='/assets/images/logodourada.svg' alt=''/>
                 <div className='conteudo-header'>
                     <a onClick={Agendadas}> Agendamentos </a>
-                    <a> Conversas </a>
+                    <a onClick={conversasClick}> Conversas </a>
                 </div>
             </header>
                 <DetalhePerfil advogado={advogado}/>

@@ -32,7 +32,7 @@ export default function Menulateral(){
 }
 async function conversasClick(){
         
-    navigate(`/advogado/chat/${id}`);
+    navigate(`/advogado/chat`);
 
 }
 

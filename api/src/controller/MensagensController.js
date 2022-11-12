@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { listarMensagens, EnviarMensagem} from "../repository/MensagensRepository.js";
+import { listarMensagens, EnviarMensagens} from "../repository/MensagensRepository.js";
 
 const server = Router()
 
@@ -20,7 +20,7 @@ server.post('/mensagens', async (req, resp) => {
     try {
         const { chat, tipo, idEnvio} = req.query
         const { mensagem } = req.body;
-        const r = await EnviarMensagem(tipo, chat, mensagem, idEnvio)
+        const r = await EnviarMensagens(tipo, chat, mensagem, idEnvio)
         resp.sendStatus(200);
        
     } 

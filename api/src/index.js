@@ -8,6 +8,7 @@ import ChatController from './controller/ChatController.js';
 import MensagensController from './controller/MensagensController.js';
 
 import { httpServidor, router } from "./WebSocket/socket.js";
+import "./WebSocket/eventosChat.js"
 
 router.use('/storage/FotoAdvogado', express.static('storage/FotoAdvogado'));
 router.use('/storage/FotoCliente', express.static('storage/FotoCliente'));

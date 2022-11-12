@@ -194,7 +194,7 @@ export async function AlterarDados(id, nome, tel, local, email, senha){
 }
 
 export async function ListarClientesChat(idChat) {
-    const resposta = await api.get(`/advogado/chat/${idChat}`)
+    const resposta = await api.get(`/advogado/chat?idChat=${idChat}`)
     return resposta.data;
 }
 
