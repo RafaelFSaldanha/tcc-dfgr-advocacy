@@ -19,27 +19,27 @@ export default function Index() {
                 <div>
                     <div className='div-1'>
                         <div className='div-img'>
-                            <img src="/assets/images/fred.png" alt="" />
+                            <img className='img-adv' src="/assets/images/fred.png" alt="" />
                         </div>
                         <div className='div-cont'>
                             <div className='div-cont-1'>
                                 <div className='individual'>
                                     <p className='p-t'>Nome:</p>
-                                    <p className='p-p'>Fred Matheus</p>
+                                    <p className='p-pp'>Fred Matheus</p>
                                 </div>
                                 <div className='individual'>
                                     <p className='p-t'>Contato:</p>
-                                    <p className='p-p'>emailgenerico@gmail.com</p>
-                                    <p className='p-p'>11 93207-7414</p>
+                                    <p className='p-pp'>emailgenerico@gmail.com</p>
+                                    <p className='p-pp'>11 93207-7414</p>
                                 </div>
                                 <div className='individual'>
                                     <p className='p-t'>Escritório:</p>
-                                    <p className='p-p'>São Paulo</p>
+                                    <p className='p-pp'>São Paulo</p>
                                 </div>
                                 <div className='individual'>
                                     <p className='p-t'>Áreas de atuação:</p>
-                                    <p className='p-p'>Direito Civel</p>
-                                    <p className='p-p'>Direito Familiar</p>
+                                    <p className='p-pp'>Direito Civel</p>
+                                    <p className='p-pp'>Direito Familiar</p>
                                 </div>
                             </div>
                             <div className='div-cont-2'>

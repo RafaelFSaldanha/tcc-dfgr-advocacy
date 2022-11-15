@@ -1,7 +1,3 @@
-// * {
-//     border: 1px solid red;
-// } 
-
 .tela-login {
     height: 100vh;
     width: 100vw;
@@ -52,7 +48,7 @@
         justify-content: space-evenly;
         align-items: center;
         height: 80%;
-        width: 40%;
+        width: 35%;
         background-color: #FFFFFF;
         border-radius: 1em;
         
@@ -63,7 +59,7 @@
             height: 25vh;
             
             input{
-                width: 35vw;
+                width: 30vw;
                 height: 5vh;
                 font-size: 1em;
                 border: 0;
@@ -92,7 +88,7 @@
 
             .entrar-button{
                 background-color: #0D263E;
-                width: 35vw;
+                width: 30vw;
                 height: 7vh;
                 color: #FFFFFF;
                 border-radius: .4em;

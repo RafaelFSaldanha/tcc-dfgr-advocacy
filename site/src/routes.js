@@ -1,4 +1,3 @@
-
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import CadastroAdvogado  from './pages/advogado/cadastro/index.js';
 import LoginAdvogado from './pages/advogado/login/index.js';
