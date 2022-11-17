@@ -17,7 +17,12 @@ export default function Index() {
 
     const navigate= useNavigate();
     
-
+    function formattel(tel){
+        return tel.replace(/\D/g, '')
+        .replace(/(\d{2})(\d)/, '($1) $2')
+        .replace(/(\d{5})(\d)/, '$1-$2')
+        .replace(/(-\d{4})\d+?$/, '$1')
+    }
 
     async function cadastrare(){
         try {
@@ -73,11 +78,40 @@ export default function Index() {
                     </div>
                     <div className='individual'>
                         <p className='nome-input'> Telefone <span>*</span></p>
-                        <input value={telefone} type='text' className='input' placeholder='Insira um número para contato' onChange={e => setTelefone(e.target.value)}/>
+                        <input value={telefone} type='text' className='input' placeholder='Insira um número para contato' onChange={e => setTelefone(formattel(e.target.value))}/>
                     </div>
                     <div className='individual'>
                         <p className='nome-input'> Localização <span>*</span></p>
-                        <input value={localizacao} type='text' className='input' placeholder='Insira o seu estado de moradia' onChange={e => setLocalizacao(e.target.value)}/>
+                        <select value={localizacao} type='text' className='input' placeholder='Insira o seu estado de moradia' onChange={e => setLocalizacao(e.target.value)}>
+                        <option selected disabled hidden> Selecione um estado</option>
+                        <option>AC</option>
+                        <option>AL</option>
+                        <option>AP</option>
+                        <option>AM</option>
+                        <option>BA</option>
+                        <option>CE</option>
+                        <option>DF</option>
+                        <option>ES</option>
+                        <option>GO</option>
+                        <option>MA</option>
+                        <option>MT</option>
+                        <option>MS</option>
+                        <option>MG</option>
+                        <option>PA</option>
+                        <option>PB</option>
+                        <option>PR</option>
+                        <option>PE</option>
+                        <option>PI</option>
+                        <option>RJ</option>
+                        <option>RN</option>
+                        <option>RS</option>
+                        <option>RO</option>
+                        <option>RR</option>
+                        <option>SC</option>
+                        <option>SP</option>
+                        <option>SE</option>
+                        <option>TO</option>
+                        </select>
                     </div>
                     <div className='individual'>
                         <p className='nome-input'> Email <span>*</span></p>

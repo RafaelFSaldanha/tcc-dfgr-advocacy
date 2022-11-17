@@ -172,8 +172,18 @@
                 justify-content: space-between;
                 align-items: center;
                 margin-top: 3vh;
-                height: 55%;
-    
+                height: 58%;
+                
+                select {
+                    width: 100%;
+                    height: 100%;
+                    outline: none;
+                    outline: 1px solid #dadada;
+                    border-radius: .4em;
+                    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+                    font-family: 'Open-Sans-SemiBold';
+                    color: #8d8d8d;
+                }
                 .individual {
     
                     .nome-input {
@@ -182,7 +192,7 @@
         
                     .input {
                         width: 35vw;
-                        height: 4vh;
+                        height: 5.5vh;
                         font-size: 1em;
                         border: 0;
                         outline: 1px solid #dadada;
@@ -224,6 +234,7 @@
 
     
                 .botao-entrar {
+                    margin-top: 2em;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -235,8 +246,6 @@
                     border: none;
                     box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
                     border-radius: 1vh;
-                    
-
                     font-size: 1em;
                    
                     cursor: pointer;

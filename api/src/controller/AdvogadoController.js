@@ -116,6 +116,9 @@ server.post('/cadastro/advogado', async (req, resp) => {
         if (!novoadvo.senha) {
             throw new Error("Insira uma senha")
         }
+        if (novoadvo.senha.lenght < 9) {
+            throw new Error("Insira uma senha maior que 8 caracteres")
+        }
         
         if (!novoadvo.area) {
             throw new Error("Selecione uma área")

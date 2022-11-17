@@ -68,7 +68,7 @@ export default function ChatPage() {
 
     useEffect(() => {
         ListarConversasProAdv()
-    }, [])
+    })
 
     function navegar() {
         navigate('/advogado/home')
@@ -95,7 +95,7 @@ export default function ChatPage() {
                             }
                             }>
                                 <div className=''>
-                                    <div className='bolinha'>{item.nomeCliente.substr(0, 1)}</div><p className='p'><div>{item.nomeCliente}</div></p>
+                                    <div className='bolinha'>{item.nomeCliente.substr(0, 1)}</div><p className='p'><div>{item.nomeCliente.substr(0, 15)}...</div></p>
                                 </div>
                             </div>
                         ))

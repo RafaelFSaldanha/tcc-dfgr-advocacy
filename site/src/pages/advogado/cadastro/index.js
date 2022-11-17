@@ -138,7 +138,7 @@ export default function CadastroAdvogado(){
 
                     <div className='div-input'>
                         <p>Senha <span> *</span></p>
-                        <input className='input' value={senha} type='password' placeholder='*********' onChange={e => setSenha(e.target.value)}/>
+                        <input minLength={8} className='input' value={senha} type='password' placeholder='*********' onChange={e => setSenha(e.target.value)}/>
                     </div>
 
                     <div className='div-input'>

@@ -16,9 +16,10 @@ export default function LoginPage() {
 
     document.addEventListener("keypress", function (e) {
 		if (e.key === "Enter") {
-			entrarClicke();
+			const btn = document.querySelector("#send");
+			btn.click();
 		}
-	})
+	});
 
 
     useEffect(() =>{
@@ -96,7 +97,7 @@ export default function LoginPage() {
                         {erro}
                         </div>
                 <div className='div-bg-button'>
-                    <button  onClick={entrarClicke} className='entrar-button' >Entrar</button>
+                    <button  id="send" onClick={entrarClicke} className='entrar-button' >Entrar</button>
                     <p className='cadastro-con'>Torne-se um de nós!  <a onClick={cadastrarClick}> Cadastre-se Agora</a></p>
                     <p className='cadastro-con'>Quer ser apenas um cliente?<a onClick={clienteClick}> Clique aqui</a></p>
                 
