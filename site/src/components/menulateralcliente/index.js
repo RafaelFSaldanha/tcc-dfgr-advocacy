@@ -20,14 +20,16 @@ export default function MenulateralCliente(){
         
     }
     async function Associadosclick(){
-        if(storage === 'cliente-logado'){
         navigate('/associados');
-        }
     }
 
     async function Conversas(){
         
         navigate('/conversas');
+        
+    }
+    async function Landing(){
+        navigate('/');
         
     }
 
@@ -40,11 +42,11 @@ export default function MenulateralCliente(){
     return(
         <nav className="main-menu-lateral-cliente">
             <div className='logo'>
-                <img src='/assets/images/logodourada.svg' alt=''/>
+                <img onClick={Landing}src='/assets/images/logodourada.svg' alt=''/>
             </div>
 
-            <div className='menu-lateral-items' onClick={Conversas}>
-                <div >
+            <div className='menu-lateral-items'>
+                <div onClick={Conversas}>
                    <img src='/assets/images/chat.svg' alt=''/>
                     <p> Minhas Conversas </p>
                 </div>
