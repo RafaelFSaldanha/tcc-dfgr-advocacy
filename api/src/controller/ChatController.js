@@ -13,7 +13,7 @@ server.post('/chat', async (req, resp) => {
             throw new Error('É necessário passar os dois parâmetros!')
         }
         else{
-            resp.send(r)
+            resp.sendStatus(r)
         }
     }
     catch (err) {

@@ -21,10 +21,18 @@ export default function Index(){
 
    async function chatClick() {
         const r = await iniciarChat(idParam, aaa.idCliente)
-        navigate('/conversas');
-        console.log(r)
-    } 
-
+        toast.success('Contato Criado com sucesso', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark"});
+            navigate('/conversas')
+    
+   }
     async function Carregar() {
         const r = await Advogadosid2(idParam)
         setAdvogado(r)
@@ -32,8 +40,8 @@ export default function Index(){
 
     useEffect(()=> {
         Carregar()
-        setId(aaa.id)
-        console.log(id)
+        setId(aaa.idCliente)
+        console.log(aaa.idCliente)
         console.log(idParam)
     },[])
 
@@ -96,4 +104,5 @@ export default function Index(){
     )
 
 
-}
+
+            }
