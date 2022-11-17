@@ -4,12 +4,13 @@ import Rodape from '../../../components/rodape';
 import { useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react';
 import { PesquisarAssociados, ListarAssociados, buscarfoto } from '../../../api/Advogadoapi';
-
+import storage from "local-storage"
 
 export default function AssociadosPage() {
 
     const[filtro,setFiltro]= useState('');
     const [advogado, setAdvogado] = useState([])
+    const aaa = storage('cliente-logado')
 
 
     async function Filtrar() {
@@ -20,7 +21,6 @@ export default function AssociadosPage() {
     async function Listar() {
         const resp = await ListarAssociados();
         setAdvogado(resp)
-        console.log(resp)
     }
     useEffect(()=>{
         Listar();
@@ -38,7 +38,7 @@ export default function AssociadosPage() {
     }
 
     async function CadastroClick() {
-        navigate('/login')
+        navigate('/advogado/cadastro')
     }
 
     async function VoltarClick() {
@@ -46,7 +46,12 @@ export default function AssociadosPage() {
     }
 
     async function MaisInfo(id) {
+        if(!aaa) {
+            navigate('/login')
+        }
+        else{
         navigate(`/infoadv/${id}`);
+        }
         console.log(id)
     }
 

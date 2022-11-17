@@ -20,18 +20,8 @@ export default function Index(){
     const aaa = storage('cliente-logado')
 
    async function chatClick() {
+        navigate('/conversas')
         const r = await iniciarChat(idParam, aaa.idCliente)
-        toast.success('Contato Criado com sucesso', {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark"});
-            navigate('/conversas')
-    
    }
     async function Carregar() {
         const r = await Advogadosid2(idParam)

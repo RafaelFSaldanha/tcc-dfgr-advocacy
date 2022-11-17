@@ -21,7 +21,7 @@ export default function ChatPage() {
     const aaa = storage('cliente-logado')
 
     async function ListarConversasProAdv() {
-        const r = await listarConversas(aaa.idCliente)
+        const r = await listarConversas(null, aaa.idCliente)
         setAdvogados(r)
         console.log(r)
     }
