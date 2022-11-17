@@ -1,10 +1,18 @@
 import './index.scss'
 import { useNavigate } from 'react-router-dom'
 import storage from 'local-storage'
+import { useState, useEffect } from 'react'
 
 export default function MenulateralCliente(){
 
+    const [id, setId] = useState(0) 
     const navigate = useNavigate();
+
+    useEffect(() =>{
+        const aaa = storage('cliente-logado')
+        setId(aaa.id)
+        console.log(aaa)
+        }, [])
 
     async function sairClick(){
         storage.remove('cliente-logado');
@@ -12,8 +20,13 @@ export default function MenulateralCliente(){
         
     }
     async function Associadosclick(){
-        
         navigate('/associados');
+        
+    }
+
+    async function Conversas(){
+        
+        navigate('/conversas');
         
     }
 
@@ -29,7 +42,7 @@ export default function MenulateralCliente(){
                 <img src='/assets/images/logodourada.svg' alt=''/>
             </div>
 
-            <div className='menu-lateral-items'>
+            <div className='menu-lateral-items' onClick={Conversas}>
                 <div >
                    <img src='/assets/images/chat.svg' alt=''/>
                     <p> Minhas Conversas </p>

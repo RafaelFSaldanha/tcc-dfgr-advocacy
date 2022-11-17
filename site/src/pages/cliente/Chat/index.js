@@ -1,4 +1,4 @@
-import './index.scss';
+
 import '../../common/common.scss';
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
@@ -11,32 +11,32 @@ const socket = io.connect("http://localhost:5000")
 
 export default function ChatPage() {
     const [mensagem, setMensagem] = useState('');
-    const [clientes, setClientes] = useState([]);
+    const [advogados, setAdvogados] = useState([]);
     const [mensagens, setMensagens] = useState([]);
     const [idChat, setidChat] = useState(-1);
     const [exibir, setExibir] = useState(0)
     const { idParam } = useParams();
-    const [cliente, setCliente] = useState([])
+    const [advogado, setAdvogado] = useState([])
     const navigate = useNavigate();
-    const aaa = storage('advogado-logado')
+    const aaa = storage('cliente-logado')
 
     async function ListarConversasProAdv() {
-        const r = await listarConversas(aaa.id, null)
-        setClientes(r)
+        const r = await listarConversas(aaa.idCliente)
+        setAdvogados(r)
         console.log(r)
     }
 
-    async function ProcuparporId(id) {
-        const r = await ListarClientesChat(id)
-        setCliente(r)
+    async function ProcuparporId(idCliente) {
+        const r = await ListarClientesChat(idCliente)
+        setAdvogado(r)
 
     }
 
     async function EnviarMensagem() {
         socket.emit("send_message", {
             idChat: idChat,
-            tipo: 2,
-            idEnvio: aaa.id,
+            tipo: 1,
+            idEnvio: aaa.idCliente,
             mensagem: mensagem,
         });
         socket.emit("receive_message", {
@@ -46,7 +46,7 @@ export default function ChatPage() {
     }
 
     function ParteMensagens(tipo) {
-        if (tipo === 2) {
+        if (tipo === 1) {
             return "msg-right";
         } else {
             return "msg-left"
@@ -65,7 +65,7 @@ export default function ChatPage() {
     }, [])
 
     function navegar() {
-        navigate('/advogado/home')
+        navigate('/home')
     }
 
     return (
@@ -78,7 +78,7 @@ export default function ChatPage() {
             <div className='content'>
                 <nav className="main-menu-lateral">
                     <div>
-                        {clientes.map(item => (
+                        {advogados.map(item => (
                             <div className='menu-lateral-items' onClick={() => {
                                 setidChat(item.contatoId)
                                 ProcuparporId(item.contatoId)
@@ -88,7 +88,7 @@ export default function ChatPage() {
                             }
                             }>
                                 <div className=''>
-                                    <div className='bolinha'>{item.nomeCliente.substr(0, 1)}</div><p className='p'><div>{item.nomeCliente}</div></p>
+                                    <div className='bolinha'>{item.nomeAdvogado.substr(0,1)}</div><p className='p'><div>{item.nomeAdvogado}</div></p>
                                 </div>
                             </div>
                         ))
@@ -98,9 +98,9 @@ export default function ChatPage() {
                 </nav>
                 <div className='chat-content'>
                     <header className='chat-header'>
-                        {cliente.map(item =>
+                        {advogado.map(item =>
                             <div className='info'>
-                                <p>{item.nomeCliente}</p>
+                                <p>{item.nomeAdvogado}</p>
                             </div>
                         )}
                     </header>

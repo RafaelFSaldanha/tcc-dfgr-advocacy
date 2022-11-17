@@ -109,7 +109,7 @@ export async function buscarIdAdvogado(id) {
 
 export async function buscarIdAdvogado2(id) {
     const comando = `
-        select id_advogado        as id,
+        select id_advogado        as idAdvogado,
                nm_advogado        as nome,
                ds_localizacao     as local,
                ds_oab             as oab,

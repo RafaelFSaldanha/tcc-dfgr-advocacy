@@ -26,6 +26,7 @@ import EditarPerfilUsuario from './pages/cliente/editarPerfil/index.js';
 import HomeCliente from './pages/cliente/home/index.js';
 import InformaçoesParaCliente from './pages/cliente/infoConsulta/index.js'
 import ChatPage from './pages/advogado/Chat/index.js'
+import ConversasCliente from './pages/cliente/Chat/index.js'
 
 export default function Index() {
     return(
@@ -54,6 +55,7 @@ export default function Index() {
         <Route path='/detalheperfil' element={<DetalhePerfil />} />
         <Route path='/editarperfil' element={<EditarPerfilUsuario />} />
         <Route path='/home' element={<HomeCliente />} />
+        <Route path='/conversas' element={<ConversasCliente />} />
 
         <Route path='/admin/home' element={<AdminHome />} />
         <Route path='/admin/associados' element={<AdminAssociados />} />

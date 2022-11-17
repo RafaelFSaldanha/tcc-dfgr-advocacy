@@ -1,32 +1,38 @@
 import './index.scss';
 import '../../pages/common/common.scss';
-import { Advogadosid2, buscarfoto } from '../../api/Advogadoapi';
+import { Advogadosid2, buscarfoto} from '../../api/Advogadoapi';
+import { iniciarChat } from '../../api/ChatAPI';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-
-
+import storage from 'local-storage'
 
 
 export default function Index(){
 
     const[advogado, setAdvogado]= useState([])
-    const{idParam}= useParams()
+    const{ idParam }= useParams()
+    const [id, setId] = useState(0)
 
     const navigate = useNavigate();
+    const aaa = storage('cliente-logado')
 
-    async function chatClick() {
+   async function chatClick() {
+        const r = await iniciarChat(idParam, aaa.idCliente)
         navigate('/conversas');
-    }
+        console.log(r)
+    } 
 
     async function Carregar() {
         const r = await Advogadosid2(idParam)
         setAdvogado(r)
-        console.log(r)
     }
 
     useEffect(()=> {
         Carregar()
+        setId(aaa.id)
+        console.log(id)
+        console.log(idParam)
     },[])
 
     return(

@@ -14,13 +14,15 @@ export async function ClienteChat(idCliente){
 export async function AdvogadoChat(idAdvogado){
     const comando = `
     SELECT  
-        id_contato	                contatoId,
-        id_advogado	                idAdvogado,
-        tb_contato.id_cliente	    idCliente,
-        nm_cliente                  nomeCliente
-        FROM tb_contato
-        inner join tb_cliente on tb_contato.id_cliente = tb_cliente.id_cliente
-        WHERE id_advogado = ?
+    id_contato	                            contatoId,
+    tb_contato.id_advogado	                idAdvogado,
+    tb_contato.id_cliente	                idCliente,
+    nm_cliente                              nomeCliente,
+    nm_advogado                             nomeAdvogado
+    FROM tb_contato
+    inner join tb_cliente on tb_contato.id_cliente = tb_cliente.id_cliente
+    inner join tb_advogado on tb_contato.id_advogado = tb_advogado.id_advogado
+    WHERE tb_contato.id_advogado = ?
     `
     const [resposta] = await con.query(comando, [idAdvogado])
     return resposta;
@@ -39,12 +41,14 @@ export async function CriarChat(idCliente, idAdvogado) {
 export async function ListarClientesChat(idChat) {
     const comando = `
     SELECT 
-		tb_contato.id_cliente       idCliente,
-        id_advogado                 idAdvogado,
-        nm_cliente		            nomeCliente
+		tb_contato.id_cliente                   idCliente,
+        tb_contato.id_advogado                  idAdvogado,
+        nm_cliente		                        nomeCliente,
+        nm_advogado                             nomeAdvogado
     FROM tb_contato
     inner join tb_cliente on tb_contato.id_cliente = tb_cliente.id_cliente
-    WHERE id_contato = ?
+    inner join tb_advogado on tb_contato.id_advogado = tb_advogado.id_advogado
+    WHERE tb_contato.id_contato = ?
     `
     const [resposta] = await con.query(comando, [idChat]);
     return resposta

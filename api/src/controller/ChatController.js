@@ -6,9 +6,13 @@ const server = Router();
 
 server.post('/chat', async (req, resp) => {
     try {
-        const { idAdvogado, idCliente } = req.query;
+        const { idAdvogado, idCliente } = req.body;
         const r = await CriarChat(idAdvogado, idCliente)
         resp.sendStatus(200)
+
+        if(!idCliente || !idAdvogado) {
+            throw new Error('É necessário passar os dois parâmetros!')
+        }
     }
     catch (err) {
         resp.status(401).send({

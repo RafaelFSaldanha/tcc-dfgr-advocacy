@@ -28,10 +28,10 @@ export async function listarConversas(idAdvogado, idCliente){
     return r.data;
 }
 
-export async function iniciarChat(idCliente, idAdvogado){
+export async function iniciarChat(idAdvogado, idCliente){
     const r = await api.post(`/chat`, {
-        idCliente: idCliente,
         idAdvogado: idAdvogado,
+        idCliente: idCliente,
     });
     return r.data
 }
