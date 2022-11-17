@@ -29,10 +29,7 @@ export async function listarConversas(idAdvogado, idCliente){
 }
 
 export async function iniciarChat(idCliente, idAdvogado){
-    const r = await api.post(`/chat`, {
-        idCliente: idCliente,
-        idAdvogado: idAdvogado,
-    });
+    const r = await api.post(`/chat?idCliente=${idCliente}&idAdvogado=${idAdvogado}`);
     return r.data
 }
 
@@ -51,4 +48,9 @@ export default function EnviarMensagem(idChat, tipo, idEnvio, mensagem){
 export async function PegarInfoProChatId(idChat) {
     const r = await api.get(`/chat/procurar?id=${Number(idChat)}`);
     return r.data;
+}
+
+export async function ValidarChat(idCliente, idAdvogado) {
+    const r = await api.get(`/chat/validar?idCliente=${idCliente}&idAdvogado=${idAdvogado}`)
+    return r.status
 }

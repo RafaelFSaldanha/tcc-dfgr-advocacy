@@ -29,7 +29,7 @@ export async function AdvogadoChat(idAdvogado){
 
 export async function CriarChat(idCliente, idAdvogado) {
     const comando = `
-    INSERT INTO tb_contato(id_advogado, id_cliente)
+    INSERT INTO tb_contato(id_cliente, id_advogado)
             VALUES(?, ?)
     `
     const [resposta] = await con.query(comando, [idCliente, idAdvogado])
@@ -48,4 +48,17 @@ export async function ListarClientesChat(idChat) {
     `
     const [resposta] = await con.query(comando, [idChat]);
     return resposta
+}
+
+
+export async function ValidaçãoChat(idCliente, idAdvogado){
+    const c = `
+        select id_contato    id,
+        id_advogado 	advogado,
+        id_cliente	cliente
+        from tb_contato
+        where id_cliente like ? and id_advogado like ?; `
+
+        const [resposta]= await con.query(c, [idCliente, idAdvogado]);
+        return resposta[0]
 }

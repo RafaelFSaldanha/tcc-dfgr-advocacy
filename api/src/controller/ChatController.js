@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { CriarChat, ClienteChat, AdvogadoChat, ListarClientesChat } from "../repository/ChatRepository.js";
+import { CriarChat, ClienteChat, AdvogadoChat, ListarClientesChat, ValidaçãoChat } from "../repository/ChatRepository.js";
 
 const server = Router();
 
@@ -59,6 +59,25 @@ server.get('/advogado/chat', async (req, resp) => {
         
         const resposta = await ListarClientesChat(idChat) 
        if(resposta.length < 1) {
+            throw new Error('Você não iniciou nenhuma conversa com um cliente ainda!')
+       }
+       else {
+        resp.send(resposta)
+       }
+    }
+    catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+server.get('/chat/validar', async (req, resp) => {
+    try {
+        const { idCliente, idAdvogado } = req.query;
+        
+        const resposta = await ValidaçãoChat(idCliente, idAdvogado) 
+       if(!resposta) {
             throw new Error('Você não iniciou nenhuma conversa com um cliente ainda!')
        }
        else {
