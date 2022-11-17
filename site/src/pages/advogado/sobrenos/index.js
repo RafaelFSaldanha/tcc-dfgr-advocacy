@@ -47,6 +47,7 @@ export default function SobreNos () {
                     Nós somos a DFGR Advogados & Associados, somos a empresa que preza pela justiça!
                     </p>
                 </div>
+                <Rodape />
             </div>
         </main>
 
