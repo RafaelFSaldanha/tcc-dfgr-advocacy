@@ -115,7 +115,7 @@
     }
 }
 
-@media (max-width: 1024px   ) {
+@media (max-width: 1280px) {
     .tela-cadastro {
         display: flex;
         align-items: center;
@@ -128,7 +128,7 @@
             flex-direction: column;
             justify-content: space-evenly;
             align-items: center;
-            height: 95vh;
+            height: 87vh;
             width: 40vw;
             background-color: #ffffff;
             border-radius: 2em;
@@ -141,7 +141,7 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-                height: 70vh;
+                height: 50vh;
                 width: 33vw;
     
                 .div-input {
@@ -152,7 +152,7 @@
 
                     .input{
                         width: 33vw;
-                        height: 5.3vh;
+                        height: 4vh;
                         padding: 1em;
                         outline: none;
                         outline: 1px solid #dadada;
@@ -166,7 +166,7 @@
     
                     p{
                         font-family: 'Open-Sans-SemiBold';
-                        font-size: 0.7em;
+                        font-size: 0.8em;
                         span{
                             color: red;
                         }
@@ -175,7 +175,7 @@
                     
                      select {
                         width: 33vw;
-                        height: 5.3vh;
+                        height: 4vh;
                         font-size: 0.7em;
                         border: 1px solid #dadada;
                         outline: none;
@@ -203,7 +203,7 @@
     
             .entrar-con{
                 font-family: 'Open-Sans-SemiBold';
-                font-size: 0.7em;
+                font-size: 0.9em;
                 a{
                     color: #AD8217;
                     cursor: pointer;
