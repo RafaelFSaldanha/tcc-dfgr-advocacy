@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { CriarChat, ClienteChat, AdvogadoChat, ListarClientesChat } from "../repository/ChatRepository.js";
+import { CriarChat, ClienteChat, AdvogadoChat, ListarClientesChat, isChatCreated } from "../repository/ChatRepository.js";
 
 const server = Router();
 
@@ -7,14 +7,20 @@ const server = Router();
 server.post('/chat', async (req, resp) => {
     try {
         const { idAdvogado, idCliente } = req.body;
-        const r = await CriarChat(idAdvogado, idCliente)
-
+        const verif = await isChatCreated(idCliente, idAdvogado)
+       
+        
         if(!idCliente || !idAdvogado) {
             throw new Error('É necessário passar os dois parâmetros!')
         }
-        else{
-            resp.sendStatus(r)
-        }
+       if(verif.length > 0){
+        throw new Error("Esta conversa já existe!")
+       }
+       else{
+        const r = await CriarChat(idAdvogado, idCliente)
+        resp.sendStatus(200)
+       }
+      
     }
     catch (err) {
         resp.status(401).send({

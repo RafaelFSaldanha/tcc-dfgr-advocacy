@@ -2,13 +2,29 @@ import { con } from "./connection.js"
 
 export async function ClienteChat(idCliente){
     const comando = `
-    SELECT *
-        FROM tb_contato
-        WHERE id_cliente = ?
+    SELECT  
+    id_contato	                            contatoId,
+    tb_contato.id_advogado	                idAdvogado,
+    tb_contato.id_cliente	                idCliente,
+    nm_cliente                              nomeCliente,
+    nm_advogado                             nomeAdvogado
+    FROM tb_contato
+    inner join tb_cliente on tb_contato.id_cliente = tb_cliente.id_cliente
+    inner join tb_advogado on tb_contato.id_advogado = tb_advogado.id_advogado
+    WHERE tb_contato.id_cliente = ?
     `
     const [resposta] = await con.query(comando, [idCliente])
-    return resposta[0];
+    return resposta;
 
+}
+
+export async function isChatCreated(clientId, advogadoId){
+    const c = 
+    `
+        SELECT * FROM tb_contato WHERE id_cliente = ? AND id_advogado = ?;
+    `
+    const [r] = await con.query(c, [clientId, advogadoId]);
+    return r;
 }
 
 export async function AdvogadoChat(idAdvogado){
