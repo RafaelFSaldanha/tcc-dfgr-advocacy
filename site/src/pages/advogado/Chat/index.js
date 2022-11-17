@@ -19,6 +19,12 @@ export default function ChatPage() {
     const [cliente, setCliente] = useState([])
     const navigate = useNavigate();
     const aaa = storage('advogado-logado')
+    document.addEventListener("keypress", function (e) {
+		if (e.key === "Enter") {
+			const btn = document.querySelector("#send");
+			btn.click();
+		}
+	});
 
     async function ListarConversasProAdv() {
         const r = await listarConversas(aaa.idAdvogado, null)
@@ -116,7 +122,7 @@ export default function ChatPage() {
                             <div className='aaa-div'>
                                 <textarea value={mensagem} onChange={e => setMensagem(e.target.value)} />
                                 {mensagem &&
-                                    <div className='foto-enviar' onClick={() => EnviarMensagem()}>
+                                    <div id="send" className='foto-enviar' onClick={() => EnviarMensagem()}>
                                         <img className='foto' src='/assets/images/enviar.svg' />
                                     </div>
                                 }

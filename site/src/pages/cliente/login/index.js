@@ -14,11 +14,12 @@ export default function Index() {
     const navigate = useNavigate();
     const ref = useRef();
 
-    document.addEventListener("keypress", function (e) {
-        if (e.key === "Enter") {
-            entrarClick();
-        }
-    })
+	document.addEventListener("keypress", function (e) {
+		if (e.key === "Enter") {
+			const btn = document.querySelector("#send");
+			btn.click();
+		}
+	});
 
 
     function AdvLogin() {
@@ -92,7 +93,7 @@ export default function Index() {
                     {erro}
                 </div>
                 <div className='div-bg-button'>
-                    <button onClick={entrarClick} className='entrar-button' >Entrar</button>
+                    <button id="send" onClick={entrarClick} className='entrar-button' >Entrar</button>
                     <p className='cadastro-con'>Não tem uma conta ainda? <a onClick={cadastrarClick}> Cadastre-se </a></p>
                     <p className='cadastro-con'>Já é um de nossos associados? <a onClick={AdvLogin}> Entrar </a></p>
                 </div>
