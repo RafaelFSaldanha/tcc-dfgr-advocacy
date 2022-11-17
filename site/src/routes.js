@@ -31,11 +31,15 @@ export default function Index() {
     return(
     <BrowserRouter>
     <Routes>
-        <Route path="/advogado/cadastro" element={<CadastroAdvogado />} />
         <Route path="/advogado/login" element={<LoginAdvogado />} />
+        <Route path="/advogado/cadastro" element={<CadastroAdvogado />} />
         <Route path="/advogado/home" element={<Admin />} />
         <Route path="/advogado/agendarconsultoria" element={<AgendarConsultoria />} />
         <Route path='/advogado/consultoriasagendadas' element={<ConsultoriasAgendadas />} />
+        <Route path='/advogado/informacoes/:idParam' element={<Informaçoes />} />
+        <Route path='/advogado/editarperfil' element={<EditarPerfil />} />
+        <Route path='/advogado/chat' element={<ChatPage />} />
+
         <Route path="/" element={<LandingPage />} />
         <Route path="/sobrenos" element={< SobreNos/>} />
         <Route path='/atuacao'  element={<AreaAtuacao/>} />
@@ -44,20 +48,18 @@ export default function Index() {
         <Route path='/cadastro' element={<CadastroUsuario />} />
         <Route path='/login' element={<LoginUsuario />} />
         <Route path='/consultoria/:idParam' element={<InformaçoesParaCliente />} />
-        <Route path='/advogado/informacoes/:idParam' element={<Informaçoes />} />
         <Route path='/perfil/advogado' element={<PerfilAdvogado />} />
-        <Route path='/advogado/editarperfil' element={<EditarPerfil />} />
-        <Route path='/admin/home' element={<AdminHome />} />
-        <Route path='/admin/associados' element={<AdminAssociados />} />
-        <Route path='/admin/consultorias' element={<AdminConsultorias />} />
-        <Route path='/admin/login' element={<AdminLogin />} />
-        <Route path='/admin/novosAssociados' element={<AdminNovosAssociados />} />
         <Route path='/infoadvogado' element={<InfoAdvogado />} />
         <Route path='/agendadas' element={<ConsultoriaCliente />} />
         <Route path='/detalheperfil' element={<DetalhePerfil />} />
         <Route path='/editarperfil' element={<EditarPerfilUsuario />} />
         <Route path='/home' element={<HomeCliente />} />
-        <Route path='/advogado/chat' element={<ChatPage />} />
+
+        <Route path='/admin/home' element={<AdminHome />} />
+        <Route path='/admin/associados' element={<AdminAssociados />} />
+        <Route path='/admin/consultorias' element={<AdminConsultorias />} />
+        <Route path='/admin/login' element={<AdminLogin />} />
+        <Route path='/admin/novosAssociados' element={<AdminNovosAssociados />} />
     </Routes>
     </BrowserRouter>
     )

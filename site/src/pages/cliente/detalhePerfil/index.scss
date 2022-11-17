@@ -124,7 +124,7 @@
     }
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 1024px) {
     .info-adv {
         display: flex;
         flex-direction: column;
@@ -214,7 +214,7 @@
                         .div-cont-1 {
                             height: 90%;
                             width: 60%;
-                            margin-left: -15vw;
+                            margin-left: -5vw;
                             
                             .individual {
                                 align-items: flex-start;

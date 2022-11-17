@@ -57,7 +57,7 @@
     }
 }
 
-@media(max-width: 1366px){
+@media(max-width: 1024px){
     .comp-card {
         display: flex;
         flex-direction: column;
@@ -78,7 +78,7 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: space-around;
-                height: 40vh;
+                height: 35vh;
                 width: 20vw;
                 background-color: #0D263E;
                 border-radius: 10px;
@@ -113,7 +113,7 @@
                     font-family: 'Open-Sans-SemiBold';
                     color: #FFFFFF;
                     text-align: center;
-                    font-size: 0.9em;
+                    font-size: 0.7em;
                 }
             }
         }

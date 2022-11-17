@@ -43,7 +43,7 @@ export default function EditarPerfil() {
 
 
     }
-
+    
     function Navegar() {
         navigate('/perfil/advogado')
     }

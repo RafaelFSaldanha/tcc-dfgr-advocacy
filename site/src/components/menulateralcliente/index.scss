@@ -79,7 +79,7 @@
     
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 1024px) {
     
 .main-menu-lateral-cliente{
     background-color: #ffffff;
@@ -94,10 +94,10 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 20%;
+        height: 15%;
         
         img{
-            width: 13em;
+            width: 10em;
             user-select: none;
         }
     }

@@ -73,7 +73,7 @@
 }
 
 
-@media (max-width: 1366px) {
+@media (max-width: 1024px) {
     .main{
         .cabecalho-sobrenos {
             display: flex;
@@ -118,7 +118,7 @@
                 font-size: 1em;
                 font-family: 'Open-Sans-ExtraBold';
                 letter-spacing: 8px;
-                margin-top: 4em;
+                margin-top: 3em;
             }
             
             hr{
@@ -135,7 +135,7 @@
     
               .texto{
                 font-family:Open-Sans-SemiBold;
-                font-size: 2.8vh;
+                font-size: 2.4vh;
                 text-align: center;
               }
             }

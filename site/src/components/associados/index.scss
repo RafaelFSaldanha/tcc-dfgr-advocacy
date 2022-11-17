@@ -35,3 +35,45 @@
         cursor: pointer;
     }
 }
+
+@media (max-width: 1024px) {
+    .comp-associados {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    
+        .cartao-associado {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #0D263E;
+            height: 70%;
+            width: 25%;
+            border-radius: 2em;
+            transition-duration: 1s;
+    
+            img {
+                width: 100%;
+                border-radius: 1em 1em 0 0;
+            }
+    
+            h3 {
+                font-size: 1em;
+                margin: 1.5vh;
+                font-family: 'Open-Sans-SemiBold';
+                color: #cacaca;
+            }
+    
+            h2 {
+                font-size: .9em;
+                margin: 1.5vh;
+                font-family: 'Open-Sans-SemiBold';
+                color: #cacaca;
+            }
+        }
+        .cartao-associado:hover{
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+    }
+}
