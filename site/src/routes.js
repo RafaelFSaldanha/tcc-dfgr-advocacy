@@ -40,6 +40,7 @@ export default function Index() {
         <Route path='/advogado/informacoes/:idParam' element={<Informaçoes />} />
         <Route path='/advogado/editarperfil' element={<EditarPerfil />} />
         <Route path='/advogado/chat' element={<ChatPage />} />
+        <Route path='/perfil/advogado' element={<PerfilAdvogado />} />
 
         <Route path="/" element={<LandingPage />} />
         <Route path="/sobrenos" element={< SobreNos/>} />
@@ -49,7 +50,6 @@ export default function Index() {
         <Route path='/cadastro' element={<CadastroUsuario />} />
         <Route path='/login' element={<LoginUsuario />} />
         <Route path='/consultoria/:idParam' element={<InformaçoesParaCliente />} />
-        <Route path='/perfil/advogado' element={<PerfilAdvogado />} />
         <Route path='/infoadvogado' element={<InfoAdvogado />} />
         <Route path='/agendadas' element={<ConsultoriaCliente />} />
         <Route path='/detalheperfil' element={<DetalhePerfil />} />

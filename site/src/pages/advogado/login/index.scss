@@ -90,7 +90,7 @@
     }    
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
     .tela-login {
         height: 100vh;
         background-color: #0D263E;
@@ -111,13 +111,11 @@
             height: 80%;
             background-color: #FFFFFF;
             border-radius: 1em;
-            border: 1px solid red;
             
             .div-bg-input{
                 display: flex;
                 flex-direction: column;
                 justify-content: space-evenly;
-                height: 25vh;
                 
                 input{
                     width: 30vw;
@@ -136,7 +134,7 @@
                 }
                 p{
                     padding-bottom: .5em;
-                    font-size: .7em;
+                    font-size: .9em;
                     font-family: 'Open-Sans-SemiBold';
                     span{
                         color: red;

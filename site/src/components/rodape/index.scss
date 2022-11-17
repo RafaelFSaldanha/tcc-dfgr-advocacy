@@ -61,7 +61,7 @@
     }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
     .rodape {
         display: flex;
         flex-direction: row;
@@ -69,18 +69,17 @@
         height: 40Vh;
         padding: 5vh;
         background-color: #0D263E;
-    
+        
         .div1 {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             justify-content: space-between;
-            height: 30vh;
-            width: 30vw;
+            height: 100%;
+            width: 30%;
     
             .logo {
-                height: 12vh;
-                width: 15vw;
+                height: 8vh;
             }
     
             p {
@@ -91,14 +90,17 @@
             .div-social {
                 display: flex;
                 flex-direction: row;
-                justify-content: space-evenly;
-                height: 6vh;
-                width: 12vw;
+                justify-content: space-between;
+                height: 15%;
+                width: 30%;
+                margin-top: 2vh;
+
+                img{
+                    height: 2em;
+                    width: 2em;
+                    margin-top: 1vh;
+                }
             }
-            img{
-                width: 2em;
-            }
-            
         }
     
         .div2 {
@@ -122,9 +124,6 @@
             p {
                 color: #d7d7d7;
                 font-family: 'Open-Sans-SemiBold';
-            }
-            img{
-                width: 1em;
             }
         }
     }

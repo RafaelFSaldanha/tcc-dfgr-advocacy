@@ -226,7 +226,7 @@
 }
 
 
-@media (max-width: 1024px){
+@media (max-width: 1280px){
     .landingpage {
         display: flex;
         flex-direction: column;
@@ -260,6 +260,7 @@
                         text-decoration: none;
                         color: #FFFFFF;
                         font-family: 'Open-Sans-SemiBold';
+                        font-size: .9em;
                     }
                 }
     
@@ -382,10 +383,10 @@
                 font-family: 'Open-Sans-SemiBold';
                 color: #FFFFFF;
                 background-color: #0D263E;
-                padding: 1em 3em;
+                padding: .8em 2em;
                 border-radius: 1em;
                 border: none;
-                font-size: 2vh;
+                font-size: .9em;
                 cursor: pointer;
             }
         }

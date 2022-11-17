@@ -8,7 +8,7 @@ export default function Index() {
     return (
         <main className='info-adv'>
             <header>
-                <img src="/assets/images/logodourada.svg" alt="" />
+                <img className='img' src="/assets/images/logodourada.svg" alt="" />
                 <div className='div-links'>
                     <a href=""> Voltar </a>
                     <a href=""> Início </a>
