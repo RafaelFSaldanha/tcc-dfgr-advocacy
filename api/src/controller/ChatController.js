@@ -8,10 +8,12 @@ server.post('/chat', async (req, resp) => {
     try {
         const { idAdvogado, idCliente } = req.body;
         const r = await CriarChat(idAdvogado, idCliente)
-        resp.sendStatus(200)
 
         if(!idCliente || !idAdvogado) {
             throw new Error('É necessário passar os dois parâmetros!')
+        }
+        else{
+            resp.send(r)
         }
     }
     catch (err) {

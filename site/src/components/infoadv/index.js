@@ -6,6 +6,8 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import storage from 'local-storage'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 
 export default function Index(){
@@ -37,6 +39,18 @@ export default function Index(){
 
     return(
         <main className="main-bla">
+             <ToastContainer 
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        style={{width: '16em'}}/>
             {advogado.map(item=>
                 <div className='div-mae'>
                 <div className='div-img'>

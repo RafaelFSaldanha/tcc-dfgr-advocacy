@@ -20,8 +20,9 @@ export default function MenulateralCliente(){
         
     }
     async function Associadosclick(){
+        if(storage === 'cliente-logado'){
         navigate('/associados');
-        
+        }
     }
 
     async function Conversas(){

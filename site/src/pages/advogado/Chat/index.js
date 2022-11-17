@@ -21,7 +21,7 @@ export default function ChatPage() {
     const aaa = storage('advogado-logado')
 
     async function ListarConversasProAdv() {
-        const r = await listarConversas(aaa.id, null)
+        const r = await listarConversas(aaa.idAdvogado, null)
         setClientes(r)
         console.log(r)
     }
@@ -70,6 +70,7 @@ export default function ChatPage() {
 
     return (
         <main className="Chat-page">
+            
             <header className='cabeca'>
                 <div className='cabeca-div'>
                 <img src='/assets/images/logodourada.svg' /> <p onClick={navegar} className='p-cabeca'>Voltar</p>
