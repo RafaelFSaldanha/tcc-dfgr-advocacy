@@ -47,7 +47,7 @@
     }
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 1280px) {
     .header-main{
         background-color: #0D263E;
         display: flex;
@@ -64,7 +64,7 @@
             width: 60%;
             
             img {
-                height: 60%;
+                height: 40%;
                 width: 10%;
                 cursor: pointer;
                 margin-left: 2vw;
@@ -73,7 +73,7 @@
             .main-bem-vindo{
                 font-family: 'Open-Sans-SemiBold';
                 color: #AD8217;
-                font-size: 1.1em;
+                font-size: 1em;
                 width: 70vw;
                 display: flex;
                 align-items: center;

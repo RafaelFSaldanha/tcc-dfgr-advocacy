@@ -25,10 +25,16 @@ export default function Index() {
     setDados([r])
     }
 
+    function formattel(tel){
+        return tel.replace(/\D/g, '')
+        .replace(/(\d{2})(\d)/, '($1) $2')
+        .replace(/(\d{5})(\d)/, '$1-$2')
+        .replace(/(-\d{4})\d+?$/, '$1')
+    }
+
     async function SalvarAlt() {
         try {
             const r = await AlterarDados(ids,nome, tel, local, email, senha);
-
             const j = enviarfotocliente(ids, foto)
             toast.success('Agendado com sucesso', {
                 position: "top-right",
@@ -117,7 +123,7 @@ export default function Index() {
                                 </div>
                                 <div className='individual'>
                                     <p className='p-t'>Telefone:</p>
-                                    <input  placeholder={item.tel} className='p-p' onChange={e => setTelefone(e.target.value)}></input>
+                                    <input  placeholder={item.tel} className='p-p' onChange={e => setTelefone(formattel(e.target.value))}></input>
                                 </div>
                                 <div className='individual'>
                                     <p className='p-t'>Localização:</p>

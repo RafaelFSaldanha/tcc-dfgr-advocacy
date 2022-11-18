@@ -7,7 +7,7 @@
             display: flex;
             align-items: center;
             justify-content: space-around;
-            text-align: center; 
+            text-align: center;
         }
         
         .div-img-atuacoes{
@@ -40,7 +40,7 @@
         }
 }
 
-@media(max-width: 1366px){
+@media(max-width: 1280px){
     .main{
         display: flex;
         flex-direction: column;
@@ -57,7 +57,7 @@
                 flex-direction: column;
                 padding: 3vh;
                 width: 13%;
-                height: 20vh;
+                height: 15vh;
                 border-radius: 20px;
                 background-color: #0D263E;
                 margin-bottom: 5vh;
@@ -71,13 +71,13 @@
                 .titulo-img{
                     font-family: 'Open-Sans-SemiBold';
                     color: #fff;
-                    font-size: 17px;
+                    font-size: 15px;
                 }
             }
     
             .div-texto{
                 font-family: 'Open-Sans-SemiBold'; 
-                font-size: 2.5vh;
+                font-size: 2vh;
                 width: 60em;
                 margin-bottom: 1.5em;
             }

@@ -57,7 +57,7 @@
     }
 }
 
-@media(max-width: 1366px){
+@media(max-width: 1024px){
     .comp-card {
         display: flex;
         flex-direction: column;
@@ -78,7 +78,7 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: space-around;
-                height: 40vh;
+                height: 35vh;
                 width: 20vw;
                 background-color: #0D263E;
                 border-radius: 10px;
@@ -113,7 +113,70 @@
                     font-family: 'Open-Sans-SemiBold';
                     color: #FFFFFF;
                     text-align: center;
-                    font-size: 0.9em;
+                    font-size: 0.7em;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 1280px){
+    .comp-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin-top: 5vh;
+        height: 90vh;
+        width: 80%;
+    
+        .div-fileira {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            height: 50%;
+            width: 100%;
+    
+            .div-card {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                height: 35vh;
+                width: 20vw;
+                background-color: #0D263E;
+                border-radius: 10px;
+                padding: 2vh;
+    
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-around;
+                    height: 10vh;
+    
+                    .img-ambiental {
+                        height: 124vh;
+                    }
+    
+                    .h2-ambiental {
+                        margin-top: -0.1em;
+                    }
+    
+                    img {
+                        height: 10vh;
+                    }
+        
+                    h2 {
+                        font-family: 'Open-Sans-SemiBold';
+                        color: #FFFFFF;
+                    }
+                }
+    
+                p {
+                    font-family: 'Open-Sans-SemiBold';
+                    color: #FFFFFF;
+                    text-align: center;
+                    font-size: 0.7em;
                 }
             }
         }

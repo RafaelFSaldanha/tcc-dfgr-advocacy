@@ -42,6 +42,7 @@ export async function alterarimgcliente(imagem, id){
     return resposta.affectedRows  
 }
 
+
 export async function ListarAssociados(){
     const comando = 
     ` 

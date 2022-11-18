@@ -19,10 +19,17 @@ export default function ChatPage() {
     const [cliente, setCliente] = useState([])
     const navigate = useNavigate();
     const aaa = storage('advogado-logado')
+    document.addEventListener("keypress", function (e) {
+		if (e.key === "Enter") {
+			const btn = document.querySelector("#send");
+			btn.click();
+		}
+	});
 
     async function ListarConversasProAdv() {
-        const r = await listarConversas(aaa.id, null)
+        const r = await listarConversas(aaa.idAdvogado, null)
         setClientes(r)
+        console.log(r)
     }
 
     async function ProcuparporId(id) {
@@ -61,7 +68,7 @@ export default function ChatPage() {
 
     useEffect(() => {
         ListarConversasProAdv()
-    }, [])
+    })
 
     function navegar() {
         navigate('/advogado/home')
@@ -69,6 +76,7 @@ export default function ChatPage() {
 
     return (
         <main className="Chat-page">
+            
             <header className='cabeca'>
                 <div className='cabeca-div'>
                 <img src='/assets/images/logodourada.svg' /> <p onClick={navegar} className='p-cabeca'>Voltar</p>
@@ -87,7 +95,7 @@ export default function ChatPage() {
                             }
                             }>
                                 <div className=''>
-                                    <div className='bolinha'>{item.nomeCliente.substr(0, 1)}</div><p className='p'><div>{item.nomeCliente}</div></p>
+                                    <div className='bolinha'>{item.nomeCliente.substr(0, 1)}</div><p className='p'><div>{item.nomeCliente.substr(0, 15)}...</div></p>
                                 </div>
                             </div>
                         ))
@@ -114,7 +122,7 @@ export default function ChatPage() {
                             <div className='aaa-div'>
                                 <textarea value={mensagem} onChange={e => setMensagem(e.target.value)} />
                                 {mensagem &&
-                                    <div className='foto-enviar' onClick={() => EnviarMensagem()}>
+                                    <div id="send" className='foto-enviar' onClick={() => EnviarMensagem()}>
                                         <img className='foto' src='/assets/images/enviar.svg' />
                                     </div>
                                 }

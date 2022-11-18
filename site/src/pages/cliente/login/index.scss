@@ -131,7 +131,7 @@
     }    
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 1280px) {
     .tela-login {
         height: 100vh;
         background-color: #0D263E;
@@ -145,16 +145,12 @@
             justify-content: flex-end;
             align-items: center;
             width: 100vw;
-            padding-right: 2em;  
-            height: 5vh;
-            padding-left: 2em;
-             p{
+            
+            p{
                 display: flex;
                 justify-content: center;
                 text-align: center;
                 align-items: center;
-                padding-top: 1.5em;
-                padding-bottom: 1.5em;
                 width: 12vw;
                 height: 4vh;
                 border: 1px solid #AD8217;
@@ -178,7 +174,7 @@
             flex-direction: column;
             justify-content: space-evenly;
             align-items: center;
-            height: 80%;
+            height: 70%;
             width: 40%;
             background-color: #FFFFFF;
             border-radius: 1em;
@@ -187,12 +183,12 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: space-evenly;
-                height: 25vh;
+                height: 20vh;
                 
                 input{
                     width: 35vw;
-                    height: 5vh;
-                    font-size: 1em;
+                    height: 4vh;
+                    font-size: .9em;
                     border: 0;
                     outline: 1px solid #dadada;
                     border-radius: .4em;
@@ -205,7 +201,7 @@
                     color: #bcbcbc;
                 }
                 p{
-                    padding-bottom: .5em;
+                    padding-bottom: .7em;
                     font-family: 'Open-Sans-SemiBold';
                     span{
                         color: red;
@@ -219,8 +215,8 @@
     
                 .entrar-button{
                     background-color: #0D263E;
-                    width: 35vw;
-                    height: 7vh;
+                    width: 33vw;
+                    height: 5vh;
                     color: #FFFFFF;
                     border-radius: .4em;
                     border: 0;

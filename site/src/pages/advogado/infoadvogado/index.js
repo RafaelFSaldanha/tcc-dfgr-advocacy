@@ -2,18 +2,25 @@ import './index.scss'
 import '../../common/common.scss'
 import InfoAdvComp from '../../../components/infoadv';
 import { useNavigate } from 'react-router-dom';
+import storage from "local-storage"
 
 
 export default function InformaAdvogado(){
 
     const navigate = useNavigate();
+    const aaa = storage('cliente-logado')
 
     async function InicioClick() {
         navigate('/');
     }
 
     async function AssociadosClick() {
-        navigate('/associados')
+        if(!aaa.idCliente) {
+            navigate('/login')
+        }
+        else {
+            navigate('/associados')
+        }
     }
 
     return(

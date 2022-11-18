@@ -38,7 +38,7 @@
                 font-size: 2em;
                 font-family: 'Open-Sans-SemiBold';
                 color: #3d3d3d;
-                height: 1.3em;
+                margin-top: 5vh;
             }
             .thead{
                 display: flex;
@@ -51,12 +51,77 @@
                 color: #0D263E;
                 font-family: 'Open-Sans-SemiBold';
         
+                .container{
+                    width:65vw;
+                    display: flex;
+                    justify-content: space-around;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1280px) {
+    .home-adm {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    
+        header {
+            display: flex;
+            align-items: center;
+            height: 10%;
+            width: 100%;
+            background-color: #0D263E;
+            
+    
+            .img {
+                height: 70%;
+                margin-left: 3vw;
+            }
+        }
+        
+        .div-geral {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+    
+            .div-principal {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+    
+                .icon{
+                    width: 15em;
+                    height: 15em;
+                }
+    
+                p {
+                    font-size: 1.5em;
+                    font-family: 'Open-Sans-SemiBold';
+                    color: #3d3d3d;
+                    margin-top: 5vh;
+                }
+
+                .thead{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    border-radius: 10px;
+                    height: 9vh;
+                    width: 70vw;
+                    color: #0D263E;
+                    font-family: 'Open-Sans-SemiBold';
+            
                     .container{
                         width:65vw;
                         display: flex;
                         justify-content: space-around;
                     }
-        
+                }
             }
         }
     }

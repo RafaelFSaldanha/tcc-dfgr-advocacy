@@ -115,7 +115,7 @@
     }
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 1280px) {
     .tela-cadastro {
         display: flex;
         align-items: center;
@@ -128,33 +128,31 @@
             flex-direction: column;
             justify-content: space-evenly;
             align-items: center;
-            height: 96vh;
+            height: 87vh;
             width: 40vw;
             background-color: #ffffff;
             border-radius: 2em;
     
             img {
-                height: 9vh;
+                height: 7vh;
             }
     
             .div-inputs {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-                height: 70vh;
+                height: 50vh;
                 width: 33vw;
-                border: px solid red;
     
                 .div-input {
                     display: flex;
                     flex-direction: column;
                     height: 7vh;
                     width: 33vw;
-                    border: px red solid;
 
                     .input{
                         width: 33vw;
-                        height: 5.5vh;
+                        height: 4vh;
                         padding: 1em;
                         outline: none;
                         outline: 1px solid #dadada;
@@ -162,13 +160,13 @@
                         font-family: 'Open-Sans-SemiBold';
                         border-radius: .4em;
                         box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
-                        font-size: 0.9em;
+                        font-size: 0.7em;
                         color: #8d8d8d;
                     }
     
                     p{
                         font-family: 'Open-Sans-SemiBold';
-                        font-size: 0.9em;
+                        font-size: 0.8em;
                         span{
                             color: red;
                         }
@@ -177,7 +175,8 @@
                     
                      select {
                         width: 33vw;
-                        font-size: 0.9em;
+                        height: 4vh;
+                        font-size: 0.7em;
                         border: 1px solid #dadada;
                         outline: none;
                         border-radius: .4em;

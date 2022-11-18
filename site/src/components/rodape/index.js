@@ -4,7 +4,7 @@ import '../../pages/common/common.scss';
 export default function Rodape(){
 
     return(
-        <footer className='rodape'>
+        <div className='rodape'>
             <div className='div1'>
                 <img className='logo' src='/assets/images/logodourada.svg' alt='logo' />
                 <p>Há mais de 30 anos trabalhando para garantir o seu direito com responsabilidade e ética.</p>
@@ -22,7 +22,7 @@ export default function Rodape(){
                 <p> <img src="/assets/images/telefone.svg" /> (11) 5921-1924 </p>
                 <p> <img src="/assets/images/telefone.svg" /> (11) 5920-3596 </p>
             </div>
-        </footer>
+        </div>
     )
    
 }

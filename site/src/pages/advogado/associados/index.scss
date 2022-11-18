@@ -189,7 +189,7 @@
     }
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 1280px) {
     .main {
         display: flex;
         flex-direction: column;
@@ -285,14 +285,14 @@
                 flex-direction: row;
                 justify-content: space-between;
                 height: 20vh;
-                width: 40%;
+                width: 45vw;
                 background-color: #0D263E;
                 border-radius: 10px;
                 margin-top: 2em;
                 cursor: pointer;
     
                 .div-imagem {
-                    width: 30%;
+                    width: 10vh;
                     height: 100%;
                     border-radius: 10px 0 0 10px;
                     img{

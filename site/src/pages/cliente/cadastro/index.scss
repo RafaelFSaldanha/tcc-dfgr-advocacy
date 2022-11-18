@@ -142,7 +142,7 @@
 }
 
 
-@media (max-width: 1366px) {
+@media (max-width: 1280px) {
     .tela-cadastro {
         display: flex;
         flex-direction: column;
@@ -156,7 +156,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            height: 88%;
+            height: 80%;
             width: 43%;
             background: linear-gradient(115.7deg, #FFFFFF 101.91%, rgba(255, 255, 255, 0) 101.91%);
             border-radius: 1em;
@@ -172,8 +172,18 @@
                 justify-content: space-between;
                 align-items: center;
                 margin-top: 3vh;
-                height: 55%;
-    
+                height: 58%;
+                
+                select {
+                    width: 100%;
+                    height: 100%;
+                    outline: none;
+                    outline: 1px solid #dadada;
+                    border-radius: .4em;
+                    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+                    font-family: 'Open-Sans-SemiBold';
+                    color: #8d8d8d;
+                }
                 .individual {
     
                     .nome-input {
@@ -182,7 +192,7 @@
         
                     .input {
                         width: 35vw;
-                        height: 5vh;
+                        height: 5.5vh;
                         font-size: 1em;
                         border: 0;
                         outline: 1px solid #dadada;
@@ -224,18 +234,18 @@
 
     
                 .botao-entrar {
+                    margin-top: 2em;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     font-family: "Open-Sans-Semibold";
                     box-sizing: border-box;
                     width: 35vw;
+                    height: 5vh;
                     background: #0D263E;
                     border: none;
                     box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
                     border-radius: 1vh;
-                    
-
                     font-size: 1em;
                    
                     cursor: pointer;

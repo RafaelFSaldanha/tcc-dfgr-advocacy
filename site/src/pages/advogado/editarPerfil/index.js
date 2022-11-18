@@ -36,14 +36,14 @@ export default function EditarPerfil() {
 
     async function carregaradvogado() {
         const advogado = storage('advogado-logado')
-        const r = await AdvogadoId(advogado.id);
+        const r = await AdvogadoId(advogado.idAdvogado);
         setDados([r])
-        setIds(advogado.id)
+        setIds(advogado.idAdvogado)
         console.log(r)
 
 
     }
-
+    
     function Navegar() {
         navigate('/perfil/advogado')
     }

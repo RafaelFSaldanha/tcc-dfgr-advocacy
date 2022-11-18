@@ -13,7 +13,7 @@ export default function PerfilAdvogado() {
 
     async function carregar() {
         const Advogado = storage('advogado-logado')
-        const r = await AdvogadoId(Advogado.id)
+        const r = await AdvogadoId(Advogado.idAdvogado)
         setAdvogado(r)
     }
 

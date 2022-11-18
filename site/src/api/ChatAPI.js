@@ -28,8 +28,13 @@ export async function listarConversas(idAdvogado, idCliente){
     return r.data;
 }
 
-export async function iniciarChat(idCliente, idAdvogado){
-    const r = await api.post(`/chat?idCliente=${idCliente}&idAdvogado=${idAdvogado}`);
+
+export async function iniciarChat(idAdvogado, idCliente){
+    const r = await api.post(`/chat`, {
+        idAdvogado: idAdvogado,
+        idCliente: idCliente,
+    });
+
     return r.data
 }
 
@@ -50,7 +55,3 @@ export async function PegarInfoProChatId(idChat) {
     return r.data;
 }
 
-export async function ValidarChat(idCliente, idAdvogado) {
-    const r = await api.get(`/chat/validar?idCliente=${idCliente}&idAdvogado=${idAdvogado}`)
-    return r.status
-}

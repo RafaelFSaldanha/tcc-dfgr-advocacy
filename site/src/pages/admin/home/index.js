@@ -19,7 +19,7 @@ export default function Index() {
     return (
         <main className='home-adm'>
             <header>
-                <img src="/assets/images/logodourada.svg" alt="" />
+                <img className='img' src="/assets/images/logodourada.svg" alt="" />
             </header>
             <div className='div-geral'>
                 <Menulateral />

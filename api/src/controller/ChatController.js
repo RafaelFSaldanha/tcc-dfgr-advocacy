@@ -1,14 +1,28 @@
 import { Router } from "express";
-import { CriarChat, ClienteChat, AdvogadoChat, ListarClientesChat, ValidaçãoChat } from "../repository/ChatRepository.js";
+
+import { CriarChat, ClienteChat, AdvogadoChat, ListarClientesChat, isChatCreated } from "../repository/ChatRepository.js";
+
 
 const server = Router();
 
 
 server.post('/chat', async (req, resp) => {
     try {
-        const { idAdvogado, idCliente } = req.query;
+        const { idAdvogado, idCliente } = req.body;
+        const verif = await isChatCreated(idCliente, idAdvogado)
+       
+        
+        if(!idCliente || !idAdvogado) {
+            throw new Error('É necessário passar os dois parâmetros!')
+        }
+       if(verif.length > 0){
+        throw new Error("Esta conversa já existe!")
+       }
+       else{
         const r = await CriarChat(idAdvogado, idCliente)
         resp.sendStatus(200)
+       }
+      
     }
     catch (err) {
         resp.status(401).send({
@@ -59,25 +73,6 @@ server.get('/advogado/chat', async (req, resp) => {
         
         const resposta = await ListarClientesChat(idChat) 
        if(resposta.length < 1) {
-            throw new Error('Você não iniciou nenhuma conversa com um cliente ainda!')
-       }
-       else {
-        resp.send(resposta)
-       }
-    }
-    catch (err) {
-        resp.status(400).send({
-            erro: err.message
-        })
-    }
-})
-
-server.get('/chat/validar', async (req, resp) => {
-    try {
-        const { idCliente, idAdvogado } = req.query;
-        
-        const resposta = await ValidaçãoChat(idCliente, idAdvogado) 
-       if(!resposta) {
             throw new Error('Você não iniciou nenhuma conversa com um cliente ainda!')
        }
        else {

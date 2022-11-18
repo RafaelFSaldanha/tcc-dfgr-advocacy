@@ -79,7 +79,7 @@
     
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 1280px) {
     
 .main-menu-lateral-adv{
     background-color: #ffffff;
@@ -94,10 +94,10 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 20%;
+        height: 15%;
         
         img{
-            width: 13em;
+            width: 10em;
             user-select: none;
         }
     }
@@ -107,18 +107,17 @@
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
-        margin-bottom: 15vh;
        
         p{
             color: #AD8217;
             font-family: 'Open-Sans-SemiBold';
-            font-size: 1em;
+            font-size: .9em;
             text-align: center;
             width: 20vw;
         }
         
         img{
-            width: 2em;
+            width: 1.5em;
         }
     }
     

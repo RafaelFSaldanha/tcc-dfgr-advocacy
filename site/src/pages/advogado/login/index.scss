@@ -42,6 +42,7 @@
             }
             p{
                 padding-bottom: .5em;
+                font-size: .7em;
                 font-family: 'Open-Sans-SemiBold';
                 span{
                     color: red;
@@ -78,6 +79,7 @@
             font-family: 'Open-Sans-SemiBold';
             text-align: center;
             margin-top: 3vh;
+            font-size: 1em;
 
             a{
                 color: #AD8217;
@@ -86,4 +88,97 @@
         }
         
     }    
+}
+
+@media (max-width: 1280px) {
+    .tela-login {
+        height: 100vh;
+        background-color: #0D263E;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        .logo{
+            width: 1vw;
+            margin-top: 1em;
+        }
+    
+        .div-bg-main{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 80%;
+            background-color: #FFFFFF;
+            border-radius: 1em;
+            
+            .div-bg-input{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                
+                input{
+                    width: 30vw;
+                    height: 5vh;
+                    font-size: 1em;
+                    border: 0;
+                    outline: 1px solid #dadada;
+                    border-radius: .4em;
+                    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+                    padding:  1em 1em 1em 1em;
+                    font-family: 'Open-Sans-SemiBold';
+                    
+                }
+                input::placeholder{
+                    color: #bcbcbc;
+                }
+                p{
+                    padding-bottom: .5em;
+                    font-size: .9em;
+                    font-family: 'Open-Sans-SemiBold';
+                    span{
+                        color: red;
+                    }
+                }
+            }
+            .div-bg-button{
+                display: flex;
+                flex-direction: column;
+                margin-top: 1em;
+    
+                .entrar-button{
+                    background-color: #0D263E;
+                    width: 35vw;
+                    height: 7vh;
+                    color: #FFFFFF;
+                    border-radius: .4em;
+                    border: 0;
+                    cursor: pointer;
+                    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+                    font-family: 'Open-Sans-SemiBold';
+                    font-size: 1.2em;
+                }
+    
+    
+            }
+            .error{
+                color: red;
+                font-family: 'Open-Sans-SemiBold';
+                font-size: 1em;
+            }
+    
+            .cadastro-con{
+                font-family: 'Open-Sans-SemiBold';
+                text-align: center;
+                margin-top: 3vh;
+                font-size: .9em;
+    
+                a{
+                    color: #AD8217;
+                    cursor: pointer;
+                }
+            }
+            
+        }    
+    }
 }
