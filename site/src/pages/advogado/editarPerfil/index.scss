@@ -3,18 +3,30 @@
     flex-direction: column;
     height: 100vh;
 
-    header {
+    .header {
         display: flex;
         align-items: center;
+        justify-content: space-around;
         height: 10%;
         width: 100%;
         background-color: #0D263E;
-        background: #0D263E;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-        img {
-            height: 85%;
-            margin-left: 2vw;
+        .h-h{
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 90vw;
+
+            .img-logo {
+                width: 10em;
+                margin-left: 2vw;
+            }
+            .hihihi{
+                color: #fff;
+                font-family: 'Open-Sans-semibold';
+            }
         }
     }
 
@@ -46,7 +58,7 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    height: 115%;
+                    height: 100%;
                     width: 30%;
                     background-color: #FFF;
                     border-radius: 10px;
@@ -71,12 +83,12 @@
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
-                    height: 75%;
+                    height: 80%;
                     width: 33%;
 
                     p {
                         font-family: 'Open-Sans-semibold';
-                        color: #AD8217;
+                        color: #FFF;
                     } 
                 
                     input {
@@ -86,6 +98,7 @@
                         border-radius: 1.3vh;
                         outline: none;
                         padding: 1vh;
+                        font-family: 'Open-Sans-semibold';
                     }
 
                     .select{
@@ -103,7 +116,7 @@
 
                     p {
                         font-family: 'Open-Sans-semibold';
-                        color: #AD8217;
+                        color: #fff;
                     }
 
                     textarea {

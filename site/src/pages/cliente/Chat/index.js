@@ -14,8 +14,6 @@ export default function ChatPage() {
     const [advogados, setAdvogados] = useState([]);
     const [mensagens, setMensagens] = useState([]);
     const [idChat, setidChat] = useState(-1);
-    const [exibir, setExibir] = useState(0)
-    const { idParam } = useParams();
     const [advogado, setAdvogado] = useState([])
     const navigate = useNavigate();
     const aaa = storage('cliente-logado')
@@ -30,7 +28,7 @@ export default function ChatPage() {
     async function ListarConversasProAdv() {
         const r = await listarConversas(null, aaa.idCliente)
         setAdvogados(r)
-        console.log(r)
+        
     }
 
     async function ProcuparporId(idCliente) {

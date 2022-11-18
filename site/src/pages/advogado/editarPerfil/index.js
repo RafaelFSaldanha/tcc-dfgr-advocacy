@@ -102,8 +102,11 @@ export default function EditarPerfil() {
                 pauseOnHover
                 theme="dark"
                 style={{ width: '16em' }} />
-            <header>
-                <img src='/assets/images/logodourada.svg' alt='' />
+            <header className='header'>
+                <div className='h-h'>
+                    <img className='img-logo' src='/assets/images/logodourada.svg' alt='' />
+                    <p onClick={Navegar} className='hihihi'>Cancelar</p>
+                </div>
             </header>
             <div className='div-principal'>
                 {dados.map(item =>
@@ -111,7 +114,7 @@ export default function EditarPerfil() {
                         <div className='div-geral'>
                             <div className='div-upload' onClick={escolherImagem}>
                                 {!foto &&
-                                    <img src='/assets/images/upload.png' alt='' />
+                                    <img src='/assets/images/download.svg' alt='' />
                                 }
                                 {foto &&
                                     <img className='foto' src={MostrarImagem()} alt="" />
@@ -134,7 +137,7 @@ export default function EditarPerfil() {
                                 </div>
                                 <div>
                                     <p> Localização: </p>
-                                    <select className='input' value={localizacao} type='text' onChange={e => setLocalizacao(e.target.value)}>
+                                    <select className='select' value={localizacao} type='text' onChange={e => setLocalizacao(e.target.value)}>
                                         <option selected disabled hidden> Selecione um estado</option>
                                         <option>AC</option>
                                         <option>AL</option>
