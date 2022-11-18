@@ -18,8 +18,12 @@
         height: 50vh;
         width: 16vw;
 
-        .content{
+        .content-info{
             color: #AD8217;
+        }
+        .content-info-desc{
+            word-wrap: break-word;
+            width: 13em;
         }
     }
 }

@@ -243,9 +243,8 @@
     align-items: center;
     justify-content: space-evenly;
     background-color: #0D263E;
-    box-shadow: 10px 10px 4px 4px rgba(0, 0, 0, 0.25);
 
-    textarea {
+    input {
         height: 3em;
         padding: 0.8em;
         font-family: 'Open-Sans-Semibold';
@@ -510,9 +509,8 @@
         align-items: center;
         justify-content: space-evenly;
         background-color: #0D263E;
-        box-shadow: 10px 10px 4px 4px rgba(0, 0, 0, 0.25);
 
-        textarea {
+        input {
             height: 3em;
             padding: 0.6em;
             font-family: 'Open-Sans-Semibold';
@@ -574,17 +572,13 @@
 
 
     }
-
-    .content {
-        display: flex;
-        flex-direction: row;
-        width: 90vw;
-        height: 110vh;
+    .content{
+        height: 90vh;
     }
 
     .main-menu-lateral {
         background-color: #ffffff;
-        height: 80vh;
+        height: 90vh;
         width: 18vw;
         display: flex;
         flex-direction: column;
@@ -685,7 +679,7 @@
     .chat-messages {
         display: flex;
         flex-direction: column;
-        height: 72vh;
+        height: 82vh;
         width: 82vw;
         background-color: #0D263E;
         overflow-y: scroll;
@@ -768,7 +762,7 @@
     }
 
     .input-message {
-        height: 10vh;
+        height: 12vh;
         width: 82vw;
         display: flex;
         flex-direction: row;
@@ -776,7 +770,7 @@
         justify-content: space-evenly;
         background-color: #0D263E;
 
-        textarea {
+        input {
             height: 3em;
             padding: 0.6em;
             font-family: 'Open-Sans-Semibold';
@@ -791,7 +785,6 @@
             flex-direction: row;
             justify-content: space-evenly;
             width: 60vw;
-            border: px solid red;
 
             .foto-enviar {
                 .foto {

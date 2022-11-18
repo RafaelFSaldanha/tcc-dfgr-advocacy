@@ -38,7 +38,7 @@ export default function AgendarConsultoria(){
             listarAreas();
             listarClientes();
             const Advogado = storage('advogado-logado')
-            setidAdvogado(Advogado.id)
+            setidAdvogado(Advogado.idAdvogado)
             console.log(idAdvogado)
             Sit()
         }, [])

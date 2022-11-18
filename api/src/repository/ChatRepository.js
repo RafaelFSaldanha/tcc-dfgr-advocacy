@@ -18,12 +18,12 @@ export async function ClienteChat(idCliente){
 
 }
 
-export async function isChatCreated(clientId, advogadoId){
+export async function isChatCreated(idCliente, idAdvogado){
     const c = 
     `
         SELECT * FROM tb_contato WHERE id_cliente = ? AND id_advogado = ?;
     `
-    const [r] = await con.query(c, [clientId, advogadoId]);
+    const [r] = await con.query(c, [idCliente, idAdvogado]);
     return r;
 }
 

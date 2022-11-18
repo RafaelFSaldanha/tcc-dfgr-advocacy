@@ -45,6 +45,9 @@ export default function AssociadosPage() {
         navigate('/');
     }
 
+    async function LoginClick() {
+        navigate('/login');
+    }
     async function MaisInfo(id) {
         if(!aaa) {
             navigate('/login')
@@ -63,10 +66,10 @@ export default function AssociadosPage() {
             <div className='cabecalho-associados '>
                 <img className='logo' src='/assets/images/logodourada.svg' alt='logo' />
                 <div className='div-links'>
-                    <a className='links' href='' onClick={VoltarClick}> Inicio</a>
+                    <a className='links' href='' onClick={VoltarClick}> Início</a>
                     <a className='links' href='' onClick={SobrenosClick}> Sobre Nós </a>
-                    <a className='links' href='' onClick={AtuacaoClick}> Areas de Atuação </a>
-                    <img className='links cadastro-image' onClick={CadastroClick} src="/assets/images/Account circle.png" alt="" />
+                    <a className='links' href='' onClick={AtuacaoClick}> Áreas de Atuação </a>
+                    <img className='links cadastro-image' onClick={LoginClick} src="/assets/images/Account circle.png" alt="" />
                 </div>
             </div>
 

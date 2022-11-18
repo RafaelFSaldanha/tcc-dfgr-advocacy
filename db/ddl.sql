@@ -72,7 +72,7 @@ CREATE TABLE tb_mensagem(
 	id_mensagem			INT PRIMARY KEY AUTO_INCREMENT,
     id_typeOfSender		INT,
     id_contato			INT,
-    ds_mensagem			VARCHAR(500),
+    ds_mensagem			VARCHAR(2500),
     dt_mensagem			DATE,
     id_sender			INT,
     FOREIGN KEY (id_contato) REFERENCES tb_contato(id_contato),

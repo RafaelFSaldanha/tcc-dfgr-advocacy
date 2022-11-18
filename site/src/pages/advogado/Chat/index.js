@@ -120,7 +120,7 @@ export default function ChatPage() {
                     <div className='input-message'>
                         {idChat !== -1 && (
                             <div className='aaa-div'>
-                                <textarea value={mensagem} onChange={e => setMensagem(e.target.value)} />
+                                <input value={mensagem} placeholder="Digite uma mensagem.." onChange={e => setMensagem(e.target.value)} />
                                 {mensagem &&
                                     <div id="send" className='foto-enviar' onClick={() => EnviarMensagem()}>
                                         <img className='foto' src='/assets/images/enviar.svg' />

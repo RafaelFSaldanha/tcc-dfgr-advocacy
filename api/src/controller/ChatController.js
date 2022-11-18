@@ -10,8 +10,6 @@ server.post('/chat', async (req, resp) => {
     try {
         const { idAdvogado, idCliente } = req.body;
         const verif = await isChatCreated(idCliente, idAdvogado)
-       
-        
         if(!idCliente || !idAdvogado) {
             throw new Error('É necessário passar os dois parâmetros!')
         }

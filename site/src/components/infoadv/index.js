@@ -21,7 +21,7 @@ export default function Index(){
 
    async function chatClick() {
         navigate('/conversas')
-        const r = await iniciarChat(idParam, aaa.idCliente)
+        const r = await iniciarChat(id, idParam)
    }
     async function Carregar() {
         const r = await Advogadosid2(idParam)

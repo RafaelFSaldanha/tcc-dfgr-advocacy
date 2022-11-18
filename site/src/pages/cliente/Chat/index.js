@@ -32,7 +32,9 @@ export default function ChatPage() {
     }
 
     async function ProcuparporId(idCliente) {
+        console.log(idCliente)
         const r = await ListarClientesChat(idCliente)
+        console.log(r)
         setAdvogado(r)
 
     }
@@ -85,6 +87,7 @@ export default function ChatPage() {
                     <div>
                         {advogados.map(item => (
                             <div className='menu-lateral-items' onClick={() => {
+                                console.log(item)
                                 setidChat(item.contatoId)
                                 ProcuparporId(item.contatoId)
                                 socket.emit("receive_message", {
@@ -118,7 +121,7 @@ export default function ChatPage() {
                     <div className='input-message'>
                         {idChat !== -1 && (
                             <div className='aaa-div'>
-                                <textarea value={mensagem} onChange={e => setMensagem(e.target.value)} />
+                                <input value={mensagem} placeholder="Digite uma mensagem.." onChange={e => setMensagem(e.target.value)} />
                                 {mensagem &&
                                     <div id="send" className='foto-enviar' onClick={() => EnviarMensagem()}>
                                         <img className='foto' src='/assets/images/enviar.svg' />

@@ -18,7 +18,7 @@ export default function Index() {
     async function Listar(){
         const cliente = storage('cliente-logado')
         
-        const r = await ConsultoriasId(cliente.id)
+        const r = await ConsultoriasId(cliente.idCliente)
 
         setCard(r)
     }
@@ -44,7 +44,7 @@ export default function Index() {
                 </div>
             </header>
             <div className='div-geral-1'>
-                <h1> Consultorias agendadas </h1>
+                <p className='consulo-agendadas'> Consultorias agendadas </p>
                 <div className='div-tit'>
                     <div className='div-ind'>
                         <p>Tipo de Consultoria</p>

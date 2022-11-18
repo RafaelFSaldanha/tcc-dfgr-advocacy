@@ -15,7 +15,7 @@ export default function Index () {
 
     async function Listar(){
         const Advogado = storage('advogado-logado');
-        const r = await ListarConsultorias(Advogado.id);
+        const r = await ListarConsultorias(Advogado.idAdvogado);
         setCard(r)
 
     }
