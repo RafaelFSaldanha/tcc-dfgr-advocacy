@@ -90,7 +90,7 @@ export default function CadastroAdvogado(){
                     <div className='div-input'>
                         <p>Estado de Atuação <span>*</span></p>
                         <select className='input' value={estado} type='text' onChange={e => setEstado(e.target.value)}> 
-                        <option selected disabled hidden> Selecione um estado</option>
+                        <option> Selecione um estado</option>
                         <option>AC</option>
                         <option>AL</option>
                         <option>AP</option>

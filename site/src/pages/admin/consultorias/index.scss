@@ -41,7 +41,7 @@
     }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
     .home-adm {
         display: flex;
         flex-direction: column;
@@ -71,6 +71,20 @@
                 justify-content: flex-start;
                 margin-top: 2em; 
                 width: 100%;
+
+                .thead{
+                    margin-right: 3em;
+
+                    .container-1{
+                        justify-content: space-around;
+                        width: 90vw;
+                        display: flex;
+
+                        .id{
+                            margin-left: 2em;
+                        }
+                    }
+                }
                 
                 .assoc{
                     margin-top: 2em;

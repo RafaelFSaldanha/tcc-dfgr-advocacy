@@ -133,7 +133,7 @@ export default function EditarPerfil() {
                                 </div>
                                 <div>
                                     <p> Telefone: </p>
-                                    <input placeholder={item.tel} type='text' onChange={e => setTelefone(formattel(e.target.value))} />
+                                    <input placeholder={item.tel} type='text' maxLength={11} onChange={e => setTelefone(formattel(e.target.value))}/>
                                 </div>
                                 <div>
                                     <p> Localização: </p>

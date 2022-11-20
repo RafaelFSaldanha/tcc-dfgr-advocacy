@@ -19,7 +19,6 @@ import AdminConsultorias from './pages/admin/consultorias/index.js';
 import AdminLogin from './pages/admin/login/index.js';
 import AdminNovosAssociados from './pages/admin/novosAssociados/index.js';
 import InformaAdvogado from './pages/advogado/infoadvogado/index.js';
-import InfoAdvogado from './pages/cliente/InfoAdvogado/index.js';
 import ConsultoriaCliente from './pages/cliente/consultCliente/index.js';
 import DetalhePerfil from './pages/cliente/detalhePerfil/index.js';
 import EditarPerfilUsuario from './pages/cliente/editarPerfil/index.js';
@@ -50,7 +49,6 @@ export default function Index() {
         <Route path='/cadastro' element={<CadastroUsuario />} />
         <Route path='/login' element={<LoginUsuario />} />
         <Route path='/consultoria/:idParam' element={<InformaçoesParaCliente />} />
-        <Route path='/infoadvogado' element={<InfoAdvogado />} />
         <Route path='/agendadas' element={<ConsultoriaCliente />} />
         <Route path='/detalheperfil' element={<DetalhePerfil />} />
         <Route path='/editarperfil' element={<EditarPerfilUsuario />} />

@@ -31,10 +31,10 @@ export default function Index () {
             <tr className='conteudos'>
                 <div className='container'>
                     <td className='info'>{item.id}</td>
-                    <td className='info'>{item.advogado}</td>
+                    <td className='info'>{item.advogado.substr(0,15)}</td>
                     <td className='info'>{item.dia.substr(0, 10)}</td>
                     <td className='info'>{item.hora.substr(0, 5)}</td>
-                    <td className='info'>{item.cliente}</td>
+                    <td className='info'>{item.cliente.substr(0,15)}</td>
                 </div>
             </tr>
             

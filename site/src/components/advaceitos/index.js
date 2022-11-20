@@ -73,7 +73,7 @@ export default function Index () {
             <tr className='conteudos-advogado-admin'>
                 <div className='container'>
                     <td className='info'>{item.id}</td>
-                    <td className='info'>{item.nome}</td>
+                    <td className='info'>{item.nome.substr(0,15)}...</td>
                     <td className='info'>{item.local}</td>
                     <td className='info'>{item.area}</td>
                     <td className='info'>{item.email}</td>

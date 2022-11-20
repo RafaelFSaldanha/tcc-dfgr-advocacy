@@ -16,7 +16,16 @@
     }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
+
+    .home-adm{
+     header{
+        .imagem-1{
+            width: 14em;
+            height: 14em;
+        }
+    }
+
     .div-principal{
         display: flex;
         flex-direction: row;
@@ -30,8 +39,9 @@
                 justify-content: space-evenly;
                 width: 60vw;
                 display: flex;
-                margin-right: 3em;
+                margin-right: 8.5em;
             }
         }
     }
+}
 }

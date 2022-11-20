@@ -16,7 +16,7 @@
     }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
     .div-principal{
         display: flex;
         flex-direction: row;
@@ -25,12 +25,11 @@
             margin-top: 2em;
         }
         .thead{
-        
+
             .container-assoc{
-                justify-content: space-between;
-                width: 100vw;
+                justify-content: space-around;
+                width: 90vw;
                 display: flex;
-                margin-left: 5em;
             }
         }
     }

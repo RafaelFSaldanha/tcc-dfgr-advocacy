@@ -14,8 +14,8 @@ export default function Index() {
                 <div className='div-principal'>
                     <h1 className='assoc'> Consultorias </h1>
                     <thead className='thead'>
-                        <div className="container">
-                            <th>Indentificação</th>
+                        <div className="container-1">
+                            <th className='id'>ID</th>
                             <th>Nome do Advogado</th>
                             <th>Data</th>
                             <th>Hora</th>

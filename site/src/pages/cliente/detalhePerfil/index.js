@@ -38,7 +38,7 @@ export default function Index() {
     return (
         <main className='info-adv'>
             <header>
-                <img src="/assets/images/logodourada.svg" alt="" />
+                <img className='imagem' src="/assets/images/logodourada.svg" alt="" />
                 <div className='div-links'>
                     <p className='link' onClick={VoltarPerfil}>Perfil</p>
                     <p className='link' onClick={VoltarInicio}>Início</p>
