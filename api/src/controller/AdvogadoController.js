@@ -100,13 +100,17 @@ server.post('/cadastro/advogado', async (req, resp) => {
             throw new Error("Insira sua OAB")
         }
         
-        if (novoadvo.oab.lenght > 8 ) {
+        if (novoadvo.oab.length < 8 ) {
             throw new Error("Tem algo de errado com sua OAB")
         }
         
         
         if (!novoadvo.telefone) {
             throw new Error("Insira um telefone")
+        }
+
+        if (novoadvo.telefone.length < 15) {
+            throw new Error("Coloque o número corretamente")
         }
         
         if (!novoadvo.email) {
@@ -116,7 +120,7 @@ server.post('/cadastro/advogado', async (req, resp) => {
         if (!novoadvo.senha) {
             throw new Error("Insira uma senha")
         }
-        if (novoadvo.senha.lenght < 9) {
+        if (novoadvo.senha.length < 9) {
             throw new Error("Insira uma senha maior que 8 caracteres")
         }
         

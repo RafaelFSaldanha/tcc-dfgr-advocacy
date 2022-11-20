@@ -16,6 +16,11 @@ server.post('/cliente/cadastro', async (req,resp) => {
         if(!novocliente.telefone){
             throw new Error("Insira um telefone")
         }
+
+        if (novocliente.telefone.length < 15) {
+            throw new Error("Coloque o número corretamente")
+        }
+
         if(!novocliente.localizacao){
             throw new Error("Insira um estado válido")
         }
@@ -25,6 +30,10 @@ server.post('/cliente/cadastro', async (req,resp) => {
         
         if(!novocliente.senha){
             throw new Error("Insira uma senha")
+        }
+
+        if (novocliente.senha.length < 9) {
+            throw new Error("Insira uma senha maior que 8 caracteres")
         }
         
         

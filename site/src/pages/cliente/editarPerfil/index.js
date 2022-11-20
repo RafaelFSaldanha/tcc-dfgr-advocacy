@@ -119,7 +119,7 @@ export default function Index() {
                                 </div>
                                 <div className='individual'>
                                     <p className='p-t'>Senha:</p>
-                                    <input placeholder={item.senha} className='p-p'onChange={e => setSenha(e.target.value)} />
+                                    <input placeholder='Informe sua nova senha' className='p-p'onChange={e => setSenha(e.target.value)} />
                                 </div>
                                 <div className='individual'>
                                     <p className='p-t'>Telefone:</p>
@@ -127,7 +127,36 @@ export default function Index() {
                                 </div>
                                 <div className='individual'>
                                     <p className='p-t'>Localização:</p>
-                                    <input placeholder={item.local}className='p-p' onChange={e => setLocal(e.target.value)}></input>
+                                    <select className='select-cliente' value={local} type='text' onChange={e => setLocal(e.target.value)}>
+                                        <option selected disabled hidden> Selecione um estado</option>
+                                        <option>AC</option>
+                                        <option>AL</option>
+                                        <option>AP</option>
+                                        <option>AM</option>
+                                        <option>BA</option>
+                                        <option>CE</option>
+                                        <option>DF</option>
+                                        <option>ES</option>
+                                        <option>GO</option>
+                                        <option>MA</option>
+                                        <option>MT</option>
+                                        <option>MS</option>
+                                        <option>MG</option>
+                                        <option>PA</option>
+                                        <option>PB</option>
+                                        <option>PR</option>
+                                        <option>PE</option>
+                                        <option>PI</option>
+                                        <option>RJ</option>
+                                        <option>RN</option>
+                                        <option>RS</option>
+                                        <option>RO</option>
+                                        <option>RR</option>
+                                        <option>SC</option>
+                                        <option>SP</option>
+                                        <option>SE</option>
+                                        <option>TO</option>
+                                    </select>
                                 </div>
 
                                 <div className='div-check'>
