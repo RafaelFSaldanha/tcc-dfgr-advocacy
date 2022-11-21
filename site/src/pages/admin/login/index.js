@@ -51,6 +51,13 @@ export default function Index() {
         }
         }
     }
+
+    document.addEventListener("keypress", function (e) {
+		if (e.key === "Enter") {
+			const btn = document.querySelector("#send");
+			btn.click();
+		}
+	});
     return (
         <main className='Login-main'>
             <LoadingBar color='#AD8217' ref={ref} />
@@ -70,7 +77,7 @@ export default function Index() {
                 {erro}
             </div>
             <div className='div-bg-button'>
-                <button onClick={entrarClick} className='entrar-button' >Entrar</button>
+                <button onClick={entrarClick} className='entrar-button' id="send">Entrar</button>
             </div>
             <p className='lugar'>Está no lugar errado? <span onClick={voltar}>Voltar</span></p>
         </div>

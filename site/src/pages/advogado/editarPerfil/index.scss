@@ -23,10 +23,16 @@
                 width: 10em;
                 margin-left: 2vw;
             }
+            .buttons {
+            width: 15vw;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
             .hihihi{
                 color: #fff;
                 font-family: 'Open-Sans-semibold';
             }
+        }
         }
     }
 
@@ -140,6 +146,9 @@
                 img {
                     height: 100%;
                 }
+            }
+            .div-check > img:hover{
+                cursor: pointer;
             }
         }
     }

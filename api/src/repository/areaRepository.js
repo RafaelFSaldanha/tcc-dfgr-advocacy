@@ -94,8 +94,9 @@ export async function buscarIdAdvogado(id) {
                ds_localizacao     as local,
                ds_oab             as oab,
                nm_area            as area,
-               nr_telefone        as tel,
+               nr_telefone        as tele,
                ds_email           as email,
+               ds_senha           as senha,
                ds_advogado        as descricao,  
                img_advogado       as foto     
           from tb_advogado
@@ -111,11 +112,12 @@ export async function buscarIdAdvogado2(id) {
     const comando = `
         select id_advogado        as idAdvogado,
                nm_advogado        as nome,
-               ds_localizacao     as local,
+               ds_localizacao     as localizacao,
+               ds_senha           as senha,
                ds_oab             as oab,
                ds_advogado        as descricao, 
                nm_area            as area,
-               nr_telefone        as tel,
+               nr_telefone        as telefone,
                ds_email           as email,
                img_advogado       as foto     
           from tb_advogado

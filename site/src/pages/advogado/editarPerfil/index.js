@@ -2,7 +2,7 @@ import '../../common/common.scss'
 import './index.scss'
 import { useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import { AdvogadoId, EditPerfil, enviarfotoadvogado, ListarAreas } from '../../../api/Advogadoapi'
+import { AdvogadoId, EditPerfil, enviarfotoadvogado, ListarAreas, Advogadosid2 } from '../../../api/Advogadoapi'
 import storage from 'local-storage'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
@@ -10,23 +10,27 @@ import 'react-toastify/dist/ReactToastify.min.css';
 
 
 export default function EditarPerfil() {
+    const advogado = storage('advogado-logado')
     const [dados, setDados] = useState([])
+    const [senha, setSenha] = useState(advogado.senha)
     const [ids, setIds] = useState(0)
-    const [nome, setNome] = useState('');
-    const [email, setEmail] = useState('');
-    const [localizacao, setLocalizacao] = useState('');
-    const [telefone, setTelefone] = useState('');
-    const [desc, setDesc] = useState('')
+    const [nome, setNome] = useState(advogado.nome);
+    const [email, setEmail] = useState(advogado.email);
+    const [localizacao, setLocalizacao] = useState(advogado.localizacao);
+    const [telefone, setTelefone] = useState(advogado.telefone);
+    const [desc, setDesc] = useState(advogado.descricao)
     const [foto, setFoto] = useState()
     const [areas, setAreas] = useState([])
-    const [idArea, setIdArea] = useState()
+    const [idArea, setIdArea] = useState(advogado.area)
     const navigate = useNavigate()
 
     useEffect(() => {
-
         carregaradvogado();
         listarAreas();
-
+        alteraraPerfilVerif();
+        if(!storage('advogado-logado')){
+            navigate('/advogado/login')
+        }
     }, [])
 
     async function listarAreas() {
@@ -36,23 +40,26 @@ export default function EditarPerfil() {
 
     async function carregaradvogado() {
         const advogado = storage('advogado-logado')
-        const r = await AdvogadoId(advogado.idAdvogado);
-        setDados([r])
+        const r = await Advogadosid2(advogado.idAdvogado);
+        setDados(r)
         setIds(advogado.idAdvogado)
-        console.log(r)
-
+        console.log()
 
     }
     
     function Navegar() {
         navigate('/perfil/advogado')
     }
+    function LoginClick() {
+        storage.remove("advogado-logado")
+        navigate('/advogado/login')
+    }
 
     async function Alterar() {
         try {
             const r = await EditPerfil(ids, nome, idArea, email, localizacao, telefone, desc);
             const j = enviarfotoadvogado(ids, foto)
-            toast.success('Alterado com sucesso', {
+            toast.success('Faça login novamente para que as alterações possam ser feitas! ', {
                 position: "top-right",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -62,8 +69,6 @@ export default function EditarPerfil() {
                 progress: undefined,
                 theme: "dark"
             });
-            Navegar()
-
 
         }
         catch (err) {
@@ -74,6 +79,29 @@ export default function EditarPerfil() {
     function escolherImagem() {
         document.getElementById('foto').click()
     }
+    function alteraraPerfilVerif() {
+		if (!nome || nome === undefined) {
+			setNome(advogado.nome);
+		}
+        if (!telefone || telefone === undefined) {
+			setTelefone(advogado.telefone);
+		}
+        if (localizacao || localizacao === undefined) {
+			setLocalizacao(advogado.localizacao);
+		}
+        if (!desc || desc === undefined) {
+			setDesc(advogado.descricao);
+		}
+        if (!idArea || idArea === undefined) {
+			setIdArea(advogado.area);
+		}
+		if (!email || email === undefined) {
+			setEmail(advogado.email);
+		}
+		if (!senha || senha === undefined) {
+			setSenha(advogado.senha);
+		}
+	}
 
     function MostrarImagem() {
         return URL.createObjectURL(foto)
@@ -101,17 +129,20 @@ export default function EditarPerfil() {
                 draggable
                 pauseOnHover
                 theme="dark"
-                style={{ width: '16em' }} />
+                style={{ width: '19em' }} />
             <header className='header'>
                 <div className='h-h'>
                     <img className='img-logo' src='/assets/images/logodourada.svg' alt='' />
-                    <p onClick={Navegar} className='hihihi'>Cancelar</p>
+                    <div className='buttons'>
+                    <p onClick={LoginClick} className='hihihi'>Fazer Login</p>
+                    <p onClick={Navegar} className='hihihi'>Voltar</p>
+                    </div>
                 </div>
             </header>
             <div className='div-principal'>
-                {dados.map(item =>
                     <div className='conteudo'>
-                        <div className='div-geral'>
+                        {dados.map(item =>
+                        <div className='div-geral'>                   
                             <div className='div-upload' onClick={escolherImagem}>
                                 {!foto &&
                                     <img src='/assets/images/download.svg' alt='' />
@@ -122,23 +153,88 @@ export default function EditarPerfil() {
 
                                 <input type="file" id='foto' onChange={e => setFoto(e.target.files[0])} />
                             </div>
+
                             <div className='div-info1'>
-                                <div>
-                                    <p> Nome: </p>
-                                    <input placeholder={item.nome} type='text' onChange={e => setNome(e.target.value)} />
-                                </div>
-                                <div>
-                                    <p> Email: </p>
-                                    <input placeholder={item.email} type='email' onChange={e => setEmail(e.target.value)} />
-                                </div>
-                                <div>
-                                    <p> Telefone: </p>
-                                    <input placeholder={item.tel} type='text' maxLength={11} onChange={e => setTelefone(formattel(e.target.value))}/>
-                                </div>
+                            {!nome ? (
+									<div>
+										<p> Nome: </p>
+										<input type="text" placeholder={item.nome} value={nome} onChange={(e) => setNome(e.target.value)} />
+										
+									</div>
+								) : (
+									<div>
+										<p>Nome:</p>
+										<input
+											type="text"
+											value={nome}
+											onChange={(e) => {
+												setNome(e.target.value);
+												alteraraPerfilVerif();
+											}}
+										/>
+									</div>
+								)}
+                            {!email ? (
+									<div>
+										<p> Email: </p>
+										<input type="text" placeholder={item.email} value={email} onChange={(e) => setEmail(e.target.value)} />
+										
+									</div>
+								) : (
+									<div>
+										<p>Email:</p>
+										<input
+											type="text"
+											value={email}
+											onChange={(e) => {
+												setEmail(e.target.value);
+												alteraraPerfilVerif();
+											}}
+										/>
+									</div>
+								)}
+                            {!senha ? (
+									<div>
+										<p> Senha: </p>
+										<input type="text" placeholder={item.senha} value={senha} onChange={(e) => setSenha(e.target.value)} />
+										
+									</div>
+								) : (
+									<div>
+										<p>Senha:</p>
+										<input
+											type="password"
+											value={senha}
+											onChange={(e) => {
+												setSenha(e.target.value);
+												alteraraPerfilVerif();
+											}}
+										/>
+									</div>
+								)}
+                            {!telefone ? (
+									<div>
+										<p> Telefone: </p>
+										<input type="text" placeholder={item.telefone} value={telefone} onChange={(e) => setTelefone(formattel(e.target.value))} />
+										
+									</div>
+								) : (
+									<div>
+										<p>Telefone:</p>
+										<input
+											type="text"
+											value={telefone}
+											onChange={(e) => {
+												setTelefone(e.target.value);
+												alteraraPerfilVerif();
+											}}
+										/>
+									</div>
+								)}
                                 <div>
                                     <p> Localização: </p>
-                                    <select className='select' value={localizacao} type='text' onChange={e => setLocalizacao(e.target.value)}>
-                                        <option selected disabled hidden> Selecione um estado</option>
+                                    <select className='select' value={localizacao} onChange={e => setLocalizacao(e.target.value)}>
+                                        <option selected disabled hidden> Selecione </option>
                                         <option>AC</option>
                                         <option>AL</option>
                                         <option>AP</option>
@@ -179,15 +275,33 @@ export default function EditarPerfil() {
                                 </div>
                             </div>
                             <div className='div-info2'>
-                                <p> Descrição: </p>
-                                <textarea value={desc} type='text' onChange={e => setDesc(e.target.value)} />
+                            {!desc ? (
+									<div>
+										<p> Descrição: </p>
+										<textarea type="text" placeholder={item.descricao} value={desc} onChange={(e) => setDesc(e.target.value)} />
+										
+									</div>
+								) : (
+									<div>
+										<p>Descrição:</p>
+										<textarea
+											type="text"
+											value={desc}
+											onChange={(e) => {
+												setDesc(e.target.value);
+												alteraraPerfilVerif();
+											}}
+										/>
+									</div>
+								)}
                             </div>
+
                         </div>
+                        )}
                         <div onClick={Alterar} className='div-check'>
                             <img src='/assets/images/check.png' alt='' />
                         </div>
                     </div>
-                )}
             </div>
         </main>
     )

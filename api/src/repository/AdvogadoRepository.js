@@ -3,8 +3,15 @@ import { con } from "./connection.js";
 export async function LoginAdvogado(email, senha) {
     const comando =
         `Select id_advogado    idAdvogado,
+                img_advogado    foto,
                 nm_advogado    nome,
-                ds_email
+                ds_email        email,
+                ds_senha        senha,
+                nr_telefone        telefone,
+                ds_localizacao        localizacao,
+                id_area                 area,
+                ds_advogado             descricao,
+                ds_oab                  oab
          from   tb_advogado
          where  ds_email    =   ?
          and    ds_senha    =   ?         `
