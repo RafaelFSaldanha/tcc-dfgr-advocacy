@@ -8,13 +8,14 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 
 export default function Index() {
+    const cliente = storage("cliente-logado")
     const [dados, setDados] = useState([])
     const [ids, setIds]= useState(0)
-    const [nome, setNome] = useState('')
-    const [tel, setTelefone]= useState('')
-    const [local, setLocal] = useState('')
-    const [email,setEmail] = useState('')
-    const [senha,setSenha] = useState('')
+    const [nome, setNome] = useState(cliente.nome)
+    const [telefone, setTelefone]= useState(cliente.telefone)
+    const [local, setLocal] = useState(cliente.localizacao)
+    const [email,setEmail] = useState(cliente.email)
+    const [senha,setSenha] = useState(cliente.senha)
     const [foto, setFoto]= useState()
     const navigate= useNavigate()
 
@@ -25,6 +26,24 @@ export default function Index() {
     setDados([r])
     }
 
+    function alteraraPerfilVerif() {
+		if (!nome || nome === undefined) {
+			setNome(cliente.nome);
+		}
+        if (!telefone || telefone === undefined) {
+			setTelefone(cliente.telefone);
+		}
+        if (local || local === undefined) {
+			setLocal(cliente.localizacao);
+		}
+		if (!email || email === undefined) {
+			setEmail(cliente.email);
+		}
+		if (!senha || senha === undefined) {
+			setSenha(cliente.senha);
+		}
+	}
+
     function formattel(tel){
         return tel.replace(/\D/g, '')
         .replace(/(\d{2})(\d)/, '($1) $2')
@@ -34,9 +53,9 @@ export default function Index() {
 
     async function SalvarAlt() {
         try {
-            const r = await AlterarDados(ids,nome, tel, local, email, senha);
+            const r = await AlterarDados(ids,nome, telefone, local, email, senha);
             const j = enviarfotocliente(ids, foto)
-            toast.success('Agendado com sucesso', {
+            toast.success('Faça login novamente para que as alterações possam ser feitas!', {
                 position: "top-right",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -44,24 +63,26 @@ export default function Index() {
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-                theme: "dark"});
-            
-            navegar()    
+                theme: "dark"}); 
                 
             
         }
         catch (err) {
             toast.error(err.response.data.erro)
-            console.log(local)
         }
     }
 
     function navegar() {
         navigate('/detalheperfil')
     }
+    function LoginClick() {
+        storage.remove("cliente-logado")
+        navigate('/login')
+    }
 
     useEffect(()=>{
         Abrir()
+        alteraraPerfilVerif()
         
     },[])
 
@@ -89,41 +110,114 @@ export default function Index() {
             <header>
                 <img src="/assets/images/logodourada.svg" alt="" />
                 <div className='div-link-home'>
-                    <p className='link' onClick={navegar}>Cancelar</p>
+                    <p className='link' onClick={LoginClick}>Fazer Login</p>
+                    <p className='link' onClick={navegar}>Voltar</p>
                 </div>
             </header>
                 <div>
-                        <div className='div-cont'>
-                        {dados.map(item=>
+                    <div className='div-cont'>
+                    {dados.map(item =>
                 <div className='div-geral'>
                 <div>
                     <div className='div-1'>
                         <div onClick={escolherImagem} className='div-img'>
                             {!foto &&
-                            <img className='fotoperfil' src="/assets/images/semfoto.png" alt="" />
+                            <img className='fotoperfil' src="/assets/images/download.svg" alt="" />
                             }
                             {foto &&
-                            <img className='fotoperfil' src={MostrarImagem()} alt="" />
+                            <img className='foto' src={MostrarImagem()} alt="" />
                             }
                             <input type="file" id='foto' onChange={e=> setFoto(e.target.files[0])}/>
                         </div>
                         <div className='div-cont'>
                             <div className='div-cont-1'>
                                 <div className='individual'>
-                                    <p className='p-t'>Nome:</p>
-                                    <input placeholder={item.nome}className='p-p' onChange={e => setNome(e.target.value)}></input>
+                                {!nome ? (
+									<div>
+										<p className='p-t'> Nome: </p>
+										<input className="p-p" type="text" placeholder={item.nome} value={nome} onChange={(e) => setNome(e.target.value)} />
+										
+									</div>
+								) : (
+									<div>
+										<p className='p-t'>Nome:</p>
+										<input
+											type="text"
+                                            className="p-p"
+											value={nome}
+											onChange={(e) => {
+												setNome(e.target.value);
+												alteraraPerfilVerif();
+											}}
+										/>
+									</div>
+								)}
                                 </div>
                                 <div className='individual'>
-                                    <p className='p-t'>Email:</p>
-                                    <input placeholder={item.email}className='p-p' onChange={e => setEmail(e.target.value)}></input>
+                                {!email ? (
+									<div>
+										<p className='p-t'> Email: </p>
+										<input className="p-p" type="text" placeholder={item.email} value={email} onChange={(e) => setEmail(e.target.value)} />
+										
+									</div>
+								) : (
+									<div>
+										<p className='p-t'>Email:</p>
+										<input
+											type="text"
+                                            className="p-p"
+											value={email}
+											onChange={(e) => {
+												setEmail(e.target.value);
+												alteraraPerfilVerif();
+											}}
+										/>
+									</div>
+								)}
                                 </div>
                                 <div className='individual'>
-                                    <p className='p-t'>Senha:</p>
-                                    <input placeholder='Informe sua nova senha' className='p-p'onChange={e => setSenha(e.target.value)} />
+                                {!senha ? (
+									<div>
+										<p className='p-t'> Senha: </p>
+										<input className="p-p" type="text" placeholder={item.senha} value={senha} onChange={(e) => setSenha(e.target.value)} />
+										
+									</div>
+								) : (
+									<div>
+										<p className='p-t'>Senha:</p>
+										<input
+											type="password"
+                                            className="p-p"
+											value={senha}
+											onChange={(e) => {
+												setSenha(e.target.value);
+												alteraraPerfilVerif();
+											}}
+										/>
+									</div>
+								)}
                                 </div>
                                 <div className='individual'>
-                                    <p className='p-t'>Telefone:</p>
-                                    <input  placeholder={item.tel} className='p-p' onChange={e => setTelefone(formattel(e.target.value))}></input>
+                                {!telefone ? (
+									<div>
+										<p className='p-t'> Telefone: </p>
+										<input className="p-p" type="text" placeholder={item.telefone} value={telefone} onChange={(e) => setTelefone(formattel(e.target.value))} />
+										
+									</div>
+								) : (
+									<div>
+										<p className='p-t'>Telefone:</p>
+										<input
+											type="text"
+                                            className="p-p"
+											value={telefone}
+											onChange={(e) => {
+												setTelefone(e.target.value);
+												alteraraPerfilVerif();
+											}}
+										/>
+									</div>
+								)}
                                 </div>
                                 <div className='individual'>
                                     <p className='p-t'>Localização:</p>

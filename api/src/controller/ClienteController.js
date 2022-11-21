@@ -66,7 +66,7 @@ server.post('/login/cliente', async (req, resp) => {
         const { email, senha } = req.body;
         const resposta = await LoginCliente(email, senha)
         if (!resposta) {
-            throw new Error('Email ou senha inválidos!')
+            throw new Error('Email ou senha incorretos!')
         }
             
         resp.send(resposta)

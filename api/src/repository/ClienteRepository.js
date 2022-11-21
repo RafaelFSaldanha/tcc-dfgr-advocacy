@@ -14,9 +14,11 @@ export async function LoginCliente(email, senha){
     const comando = 
         `Select id_cliente    idCliente,
                 nm_cliente    nome,
-                ds_telefone,
-                ds_localizacao,
-                ds_email
+                ds_telefone   telefone,
+                ds_localizacao      localizacao,
+                ds_email            email,
+                ds_senha            senha,
+                img_cliente         foto
          from   tb_cliente
          where  ds_email    =   ?
          and    ds_senha    =   ?         `

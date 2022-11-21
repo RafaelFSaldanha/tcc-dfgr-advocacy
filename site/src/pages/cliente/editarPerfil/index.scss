@@ -1,4 +1,3 @@
-
 .info-adv {
     display: flex;
     flex-direction: column;
@@ -23,6 +22,7 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            width: 10vw;
             margin-right: 5vw;
 
             .link{
@@ -83,7 +83,14 @@
                     }
                     .fotoperfil{
                         width: 20vw;
-                        height: 70vh;
+                        height: 20vh;
+                    }
+                    .foto {
+                        width: 19vw;
+                        height: 60vh;
+                    }
+                    .fotoperfil:hover{
+                        cursor: pointer;
                     }
                 }
     
@@ -102,6 +109,10 @@
                             align-items: flex-start;
                             height: 20%;
                             width: 100%;
+                            div{
+                                width: 100%;
+                                align-items: flex-start;
+                            }
 
                             .p-t {
                                 font-family: 'Open-Sans-semibold';
@@ -150,7 +161,7 @@
 }
 
 @media (max-width: 1024px) {
-    
+
 .info-adv {
     display: flex;
     flex-direction: column;
@@ -176,6 +187,7 @@
             flex-direction: row;
             justify-content: space-between;
             margin-right: 5vw;
+            width: 15vw;
 
             .link{
                 font-family: 'Open-Sans-semibold';
@@ -235,7 +247,7 @@
                     }
                     .fotoperfil{
                         width: 20vw;
-                        height: 70vh;
+                        height: 20vh;
                     }
                 }
     
@@ -289,7 +301,7 @@
 
             .div-check {
                 display: flex;
-                padding-left: 45em;
+                padding-right: 15em;
                 height: 7%;
                 width: 7%;
 
