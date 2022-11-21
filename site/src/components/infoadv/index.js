@@ -71,7 +71,7 @@ export default function Index(){
                         </div>
                         <div className='div'>
                             <p className='titulo'>Escritório:</p>
-                            <p className='conteudo'>{item.local}</p>
+                            <p className='conteudo'>{item.localizacao}</p>
                         </div>
                         <div className='div'>
                             <p className='titulo'>Áreas de atuação:</p>
